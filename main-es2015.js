@@ -387,6 +387,58 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-cloture/create-cloture.component.html":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-cloture/create-cloture.component.html ***!
+  \************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Clôturer un marché</p>\n\n<mat-dialog-content>\n\n    <form class=\"example-container\">\n\n      <mat-form-field class=\"example-full-width\">\n        <mat-label>Motif</mat-label>\n        <mat-select>\n          <mat-option value=\"FondsPropre\">Réception</mat-option>\n          <mat-option value=\"SUP\">Résiliation</mat-option>\n          <mat-option value=\"FNI\">Annulation de la procédure</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <div matTooltip=\"NB: Reception normale: 1Mois, 15J rapport complémentaire\">\n        Joindre le rapport de clôture\n        <input type=\"file\">\n      </div>\n\n\n      <div>\n        <mat-form-field class=\"example-full-width\" matTooltip=\"1 mois (sauf Travaux 2 mois)\">\n          <input matInput [matDatepicker]=\"pickerDateNotif\" placeholder=\"Date de notifcation\">\n          <mat-datepicker-toggle matSuffix [for]=\"pickerDateNotif\"></mat-datepicker-toggle>\n          <mat-datepicker #pickerDateNotif></mat-datepicker>\n        </mat-form-field>\n      </div>\n\n\n      <mat-checkbox [(ngModel)]=\"rapportReglementChecked\" class=\"example-full-width\" name=\"rapportReglement\">\n        Rapport de règlement (cas: Réception définitive)\n      </mat-checkbox>\n      <div [ngStyle]=\"{display: rapportReglementChecked? 'block' : 'none'}\">\n        <div>\n          Joindre le rapport de règlement\n          <input type=\"file\">\n        </div>\n        <div>\n          <mat-form-field class=\"example-full-width\" matTooltip=\"15Jours\">\n            <input matInput [matDatepicker]=\"pickerDateRapportComplementaire\" placeholder=\"Date de notifcation\">\n            <mat-datepicker-toggle matSuffix [for]=\"pickerDateRapportComplementaire\"></mat-datepicker-toggle>\n            <mat-datepicker #pickerDateRapportComplementaire></mat-datepicker>\n          </mat-form-field>\n        </div>\n      </div>\n\n\n\n\n\n      </form>\n\n</mat-dialog-content>\n<mat-dialog-actions >\n    <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n    <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component.html":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component.html ***!
+  \******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Ajouter déclaration d'attribution provisoire</p>\n<mat-dialog-content>\n\n  <form class=\"example-full-width\">\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"Intitulé de la publication (lot/lots)\">\n      </mat-form-field>\n    </div>\n    \n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput [matDatepicker]=\"pickerDateParution\" placeholder=\"Date de parution\">\n        <mat-datepicker-toggle matSuffix [for]=\"pickerDateParution\"></mat-datepicker-toggle>\n        <mat-datepicker #pickerDateParution></mat-datepicker>\n      </mat-form-field>\n    </div>\n\n    \n    <div>\n      Avis d'attribution: <input type=\"file\">\n    </div>\n\n    \n    <div class=\"example-full-width\">\n      <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z2\">\n\n        <!-- Checkbox Column -->\n        <ng-container matColumnDef=\"select\">\n          <th mat-header-cell *matHeaderCellDef>\n            <mat-checkbox (change)=\"$event ? masterToggle() : null\" [checked]=\"selection.hasValue() && isAllSelected()\"\n              [indeterminate]=\"selection.hasValue() && !isAllSelected()\" [aria-label]=\"checkboxLabel()\">\n            </mat-checkbox>\n          </th>\n          <td mat-cell *matCellDef=\"let row\">\n            <mat-checkbox (click)=\"$event.stopPropagation()\" (change)=\"$event ? selection.toggle(row) : null\"\n              [checked]=\"selection.isSelected(row)\" [aria-label]=\"checkboxLabel(row)\">\n            </mat-checkbox>\n          </td>\n        </ng-container>\n\n        <!-- Position Column -->\n        <ng-container matColumnDef=\"position\">\n          <th mat-header-cell *matHeaderCellDef> No. </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.position}} </td>\n        </ng-container>\n\n        <!-- Name Column -->\n        <ng-container matColumnDef=\"name\">\n          <th mat-header-cell *matHeaderCellDef> Entreprise </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n        </ng-container>\n\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\" (click)=\"selection.toggle(row)\">\n        </tr>\n      </table>\n      * cocher l'attributaire concerné\n    </div>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput [matDatepicker]=\"pickerDateNotif\" placeholder=\"Date de notification\">\n        <mat-datepicker-toggle matSuffix [for]=\"pickerDateNotif\"></mat-datepicker-toggle>\n        <mat-datepicker #pickerDateNotif></mat-datepicker>\n      </mat-form-field>\n    </div>\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <mat-label>Moyen de notification</mat-label>\n        <mat-select>\n          <mat-option value=mainspropres>Mains propres</mat-option>\n          <mat-option value=email>Email</mat-option>\n          <mat-option value=fax>Fax</mat-option>\n          <mat-option value=lettre>lettre</mat-option>\n          <mat-option value=Services>Autre</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"(si autre-mentionner)\">\n      </mat-form-field>\n    </div>\n\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-demande-clarification/create-demande-clarification.component.html":
+/*!****************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-demande-clarification/create-demande-clarification.component.html ***!
+  \****************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Ajouter une demande de clarification</p>\n<mat-dialog-content>\n\n  <form class=\"example-full-width\">\n\n\n\n    <div class=\"example-full-width\">\n      <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z2\">\n\n        <!-- Checkbox Column -->\n        <ng-container matColumnDef=\"select\">\n          <th mat-header-cell *matHeaderCellDef>\n            <mat-checkbox (change)=\"$event ? masterToggle() : null\" [checked]=\"selection.hasValue() && isAllSelected()\"\n              [indeterminate]=\"selection.hasValue() && !isAllSelected()\" [aria-label]=\"checkboxLabel()\">\n            </mat-checkbox>\n          </th>\n          <td mat-cell *matCellDef=\"let row\">\n            <mat-checkbox (click)=\"$event.stopPropagation()\" (change)=\"$event ? selection.toggle(row) : null\"\n              [checked]=\"selection.isSelected(row)\" [aria-label]=\"checkboxLabel(row)\">\n            </mat-checkbox>\n          </td>\n        </ng-container>\n\n        <!-- Position Column -->\n        <ng-container matColumnDef=\"position\">\n          <th mat-header-cell *matHeaderCellDef> No. </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.position}} </td>\n        </ng-container>\n\n        <!-- Name Column -->\n        <ng-container matColumnDef=\"name\">\n          <th mat-header-cell *matHeaderCellDef> Entreprise </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n        </ng-container>\n\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\" (click)=\"selection.toggle(row)\">\n        </tr>\n      </table>\n      * cocher si le plis est conforme\n    </div>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput [matDatepicker]=\"pickerDateNotif\" placeholder=\"Date de notification\">\n        <mat-datepicker-toggle matSuffix [for]=\"pickerDateNotif\"></mat-datepicker-toggle>\n        <mat-datepicker #pickerDateNotif></mat-datepicker>\n      </mat-form-field>\n    </div>\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <mat-label>Moyen de notification</mat-label>\n        <mat-select>\n          <mat-option value=mainspropres>Mains propres</mat-option>\n          <mat-option value=email>Email</mat-option>\n          <mat-option value=fax>Fax</mat-option>\n          <mat-option value=lettre>lettre</mat-option>\n          <mat-option value=Services>Autre</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"(si autre-mentionner)\">\n      </mat-form-field>\n    </div>\n    <div>\n      demande: <input type=\"file\">\n    </div>\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-demande-complement/create-demande-complement.component.html":
+/*!**********************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-demande-complement/create-demande-complement.component.html ***!
+  \**********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Ajouter une demande de complément</p>\n<mat-dialog-content>\n\n  <form class=\"example-full-width\">\n\n\n\n    <div class=\"example-full-width\">\n      <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z2\">\n\n        <!-- Checkbox Column -->\n        <ng-container matColumnDef=\"select\">\n          <th mat-header-cell *matHeaderCellDef>\n            <mat-checkbox (change)=\"$event ? masterToggle() : null\" [checked]=\"selection.hasValue() && isAllSelected()\"\n              [indeterminate]=\"selection.hasValue() && !isAllSelected()\" [aria-label]=\"checkboxLabel()\">\n            </mat-checkbox>\n          </th>\n          <td mat-cell *matCellDef=\"let row\">\n            <mat-checkbox (click)=\"$event.stopPropagation()\" (change)=\"$event ? selection.toggle(row) : null\"\n              [checked]=\"selection.isSelected(row)\" [aria-label]=\"checkboxLabel(row)\">\n            </mat-checkbox>\n          </td>\n        </ng-container>\n\n        <!-- Position Column -->\n        <ng-container matColumnDef=\"position\">\n          <th mat-header-cell *matHeaderCellDef> No. </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.position}} </td>\n        </ng-container>\n\n        <!-- Name Column -->\n        <ng-container matColumnDef=\"name\">\n          <th mat-header-cell *matHeaderCellDef> Entreprise </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n        </ng-container>\n\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\" (click)=\"selection.toggle(row)\">\n        </tr>\n      </table>\n      * cocher si le plis est conforme\n    </div>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput [matDatepicker]=\"pickerDateNotif\" placeholder=\"Date de notification\">\n        <mat-datepicker-toggle matSuffix [for]=\"pickerDateNotif\"></mat-datepicker-toggle>\n        <mat-datepicker #pickerDateNotif></mat-datepicker>\n      </mat-form-field>\n    </div>\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <mat-label>Moyen de notification</mat-label>\n        <mat-select>\n          <mat-option value=mainspropres>Mains propres</mat-option>\n          <mat-option value=email>Email</mat-option>\n          <mat-option value=fax>Fax</mat-option>\n          <mat-option value=lettre>lettre</mat-option>\n          <mat-option value=Services>Autre</mat-option>\n        </mat-select>\n      </mat-form-field>\n\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"(si autre-mentionner)\">\n      </mat-form-field>\n    </div>\n\n    <div>\n      demande: <input type=\"file\">\n    </div>\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-demande-eclaircissement/create-demande-eclaircissement.component.html":
 /*!********************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-demande-eclaircissement/create-demande-eclaircissement.component.html ***!
@@ -400,6 +452,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component.html":
+/*!****************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component.html ***!
+  \****************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Créer une demande de rallonge financière</p>\n<mat-dialog-content>\n\n  <form class=\"example-container\">\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput [matDatepicker]=\"pickerDateDemande\" placeholder=\"Date de la demande\">\n      <mat-datepicker-toggle matSuffix [for]=\"pickerDateDemande\"></mat-datepicker-toggle>\n      <mat-datepicker #pickerDateDemande></mat-datepicker>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\" >\n      <input matInput placeholder=\"Montant demandé\">\n    </mat-form-field>\n\n    Joindre Demande\n    <input type=\"file\">\n          \n          \n    </form>\n\n</mat-dialog-content>\n<mat-dialog-actions >\n    <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n    <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-facture/create-facture.component.html":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-facture/create-facture.component.html ***!
+  \************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Créer une nouvelle facture</p>\n<mat-dialog-content>\n\n  <form class=\"example-container\">\n\n    <mat-checkbox class=\"example-full-width\">Pénalités de retard</mat-checkbox>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Numéro de la facture\">\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput [matDatepicker]=\"pickerDateReceptionFacture\" placeholder=\"Date de réception de la facture\">\n      <mat-datepicker-toggle matSuffix [for]=\"pickerDateReceptionFacture\"></mat-datepicker-toggle>\n      <mat-datepicker #pickerDateReceptionFacture></mat-datepicker>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Montant\">\n    </mat-form-field>\n\n    <div>\n      Joindre la facture\n      <input type=\"file\">\n    </div>\n\n\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-litige/create-litige.component.html":
 /*!**********************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-litige/create-litige.component.html ***!
@@ -410,6 +488,45 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Créer un nouveau litige</p>\n<mat-dialog-content>\n\n    <form class=\"example-container\">\n        <mat-grid-list cols=\"2\" rowHeight=\"4em\" gutterSize=\"1rem\">\n          \n            <mat-grid-tile>\n              <mat-form-field class=\"example-full-width\">\n                <mat-label>Litige introduit par</mat-label>\n                <mat-select matNativeControl required>\n                  <mat-option value=\"pc\">Partenaire Cocontractant</mat-option>\n                  <mat-option value=\"sc\">Service Contractant</mat-option>\n                </mat-select>\n              </mat-form-field>\n            </mat-grid-tile>\n\n\n            <mat-grid-tile>\n              <mat-form-field class=\"example-full-width\">\n                <input matInput placeholder=\"Partie Adverse (Select?)\">\n              </mat-form-field>\n            </mat-grid-tile>\n\n            \n            <mat-grid-tile>\n              <mat-form-field class=\"example-full-width\">\n                <textarea matInput placeholder=\"Leave a comment\"></textarea>\n              </mat-form-field>\n            </mat-grid-tile>\n            \n            <mat-grid-tile>\n              <mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"pickerDateSaisie\" placeholder=\"Date de saisie (?)\">\n                <mat-datepicker-toggle matSuffix [for]=\"pickerDateSaisie\"></mat-datepicker-toggle>\n                <mat-datepicker #pickerDateSaisie></mat-datepicker>\n              </mat-form-field>\n            </mat-grid-tile>\n          \n            <mat-grid-tile>\n              <mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"pickerDateLimite\" placeholder=\"Date limite (?)\">\n                <mat-datepicker-toggle matSuffix [for]=\"pickerDateLimite\"></mat-datepicker-toggle>\n                <mat-datepicker #pickerDateLimite></mat-datepicker>\n              </mat-form-field>\n            </mat-grid-tile>\n\n            <mat-grid-tile>\n              <mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"pickerDateLitige\" placeholder=\"Date litige (?)\">\n                <mat-datepicker-toggle matSuffix [for]=\"pickerDateLitige\"></mat-datepicker-toggle>\n                <mat-datepicker #pickerDateLitige></mat-datepicker>\n              </mat-form-field>\n            </mat-grid-tile>\n          \n            <mat-grid-tile>\n              <mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"pickerDateReponse\" placeholder=\"Date réponse (?)\">\n                <mat-datepicker-toggle matSuffix [for]=\"pickerDateReponse\"></mat-datepicker-toggle>\n                <mat-datepicker #pickerDateReponse></mat-datepicker>\n              </mat-form-field>\n            </mat-grid-tile>\n\n\n            <mat-grid-tile>\n                Joindre Litige\n                <input type=\"file\">\n            </mat-grid-tile>          \n\n            <mat-grid-tile>\n                Joindre réponse\n                <input type=\"file\">\n            </mat-grid-tile>\n\n            <mat-grid-tile>\n              <mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"pickerDatePassageCommission\" placeholder=\"Date passage commission (laquelle?)\">\n                <mat-datepicker-toggle matSuffix [for]=\"pickerDatePassageCommission\"></mat-datepicker-toggle>\n                <mat-datepicker #pickerDatePassageCommission></mat-datepicker>\n              </mat-form-field>\n            </mat-grid-tile>          \n          \n            <mat-grid-tile>\n              <mat-form-field class=\"example-full-width\">\n                <mat-label>Décision de la commission</mat-label>\n                <mat-select matNativeControl required>\n                  <mat-option value=\"irrecevable\">Irrecevable</mat-option>\n                  <mat-option value=\"dansLaForme\">Dans la forme</mat-option>\n                  <mat-option value=\"fonde\">Fondé</mat-option>\n                  <mat-option value=\"nonFonde\">Non Fondé</mat-option>\n                </mat-select>\n              </mat-form-field>\n            </mat-grid-tile>                    \n          \n            <mat-grid-tile>\n                Joindre PV \n                <input type=\"file\">\n            </mat-grid-tile>                    \n\n            <mat-grid-tile>\n                Joindre Decision\n                <input type=\"file\">\n            </mat-grid-tile>                    \n            \n          </mat-grid-list>\n      </form>\n\n</mat-dialog-content>\n<mat-dialog-actions >\n    <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n    <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-mise-au-point/create-mise-au-point.component.html":
+/*!************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-mise-au-point/create-mise-au-point.component.html ***!
+  \************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Mise au point et optimisation du marché</p>\n<mat-dialog-content>\n  <form class=\"example-container\">\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Resumé\">\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput [matDatepicker]=\"pickerDateDemande\" placeholder=\"Date de la demande\">\n      <mat-datepicker-toggle matSuffix [for]=\"pickerDateDemande\"></mat-datepicker-toggle>\n      <mat-datepicker #pickerDateDemande></mat-datepicker>\n    </mat-form-field>    \n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput [matDatepicker]=\"pickerDateMiseAuPoint\" placeholder=\"Date de la mise au point\">\n      <mat-datepicker-toggle matSuffix [for]=\"pickerDateMiseAuPoint\"></mat-datepicker-toggle>\n      <mat-datepicker #pickerDateMiseAuPoint></mat-datepicker>\n    </mat-form-field>\n\n    <div>\n      joindre PV \n      <input type=\"file\">\n    </div>\n\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-mise-en-demeure/create-mise-en-demeure.component.html":
+/*!****************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-mise-en-demeure/create-mise-en-demeure.component.html ***!
+  \****************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Créer une nouvelle mise en demeure</p>\n<mat-dialog-content>\n\n  <form class=\"example-container\">\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Numéro de la mise en demeure\">\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Objet\">\n    </mat-form-field>\n\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput [matDatepicker]=\"pickerDateNotif\" placeholder=\"Date de notification\">\n      <mat-datepicker-toggle matSuffix [for]=\"pickerDateNotif\"></mat-datepicker-toggle>\n      <mat-datepicker #pickerDateNotif></mat-datepicker>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Moyen de notification\">\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Delai de prise en charge\">\n    </mat-form-field>\n\n    <div>\n      Joindre la mise en demeure\n      <input type=\"file\">\n    </div>\n\n    <mat-form-field class=\"example-full-width\">\n      <textarea matInput placeholder=\"Résultat\"></textarea>\n    </mat-form-field>\n\n\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-ods/create-ods.component.html":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-ods/create-ods.component.html ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Créer un nouveau ODS (Ordre de Service)</p>\n<mat-dialog-content>\n\n    <form class=\"example-container\">\n\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"Numéro de l'ODS\">\n      </mat-form-field>\n\n              <mat-form-field class=\"example-full-width\">\n                <mat-label>Type</mat-label>\n                <mat-select matNativeControl required>\n                  <mat-option value=\"arret\">Arrêt</mat-option>\n                  <mat-option value=\"reprise\">Reprise</mat-option>\n                  <mat-option value=\"prolongation\">Augmentation/Prolongation</mat-option>\n                  <mat-option value=\"diminution\">diminution</mat-option>\n                  <mat-option value=\"autre\">autre?</mat-option>\n                </mat-select>\n              </mat-form-field>\n\n\n\n              <mat-form-field class=\"example-full-width\">\n                <input matInput placeholder=\"(si autre) mentionner\">\n              </mat-form-field>\n\n\n\n              <mat-form-field class=\"example-full-width\">\n                <input matInput placeholder=\"Objet\">\n              </mat-form-field>\n            \n\n              <mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"pickerDateEtablissement\" placeholder=\"Date d'établissement\">\n                <mat-datepicker-toggle matSuffix [for]=\"pickerDateEtablissement\"></mat-datepicker-toggle>\n                <mat-datepicker #pickerDateEtablissement></mat-datepicker>\n              </mat-form-field>\n\n\n              <mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"pickerDateEffet\" placeholder=\"Date d'effet\">\n                <mat-datepicker-toggle matSuffix [for]=\"pickerDateEffet\"></mat-datepicker-toggle>\n                <mat-datepicker #pickerDateEffet></mat-datepicker>\n              </mat-form-field>\n    \n\n\n            <div>\n                Joindre ODS\n                <input type=\"file\">\n            </div>          \n\n\n      </form>\n\n</mat-dialog-content>\n<mat-dialog-actions >\n    <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n    <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>\n");
 
 /***/ }),
 
@@ -452,6 +569,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-passage-comite-technique/create-passage-comite-technique.component.html":
+/*!**********************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-passage-comite-technique/create-passage-comite-technique.component.html ***!
+  \**********************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Sélectionner la COPEO (pour: Evaluation des offres)</p>\n<mat-dialog-content>\n  <form class=\"example-container\">\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Sélectionner la COPEO\">\n    </mat-form-field>\n\n    \n    <button mat-button matTooltip=\"COPEO pas dans la liste?\">Créer</button>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput [matDatepicker]=\"pickerDateEvaluationOffres\" placeholder=\"Date d'evaluation des offres\">\n      <mat-datepicker-toggle matSuffix [for]=\"pickerDateEvaluationOffres\"></mat-datepicker-toggle>\n      <mat-datepicker #pickerDateEvaluationOffres></mat-datepicker>\n    </mat-form-field>    \n\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-passage-commission-competente/create-passage-commission-competente.component.html":
 /*!********************************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-passage-commission-competente/create-passage-commission-competente.component.html ***!
@@ -462,6 +592,32 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Créer un nouveau passage commission compétente</p>\n<mat-dialog-content>\n\n    <form class=\"example-container\">\n        <mat-grid-list cols=\"2\" rowHeight=\"4em\" gutterSize=\"1rem\">\n\n          \n          <mat-grid-tile>\n            <mat-form-field class=\"example-full-width\">\n              <input matInput [matDatepicker]=\"pickerDateDepotSecretariat\" placeholder=\"Date dépôt secrétariat commission\">\n              <mat-datepicker-toggle matSuffix [for]=\"pickerDateDepotSecretariat\"></mat-datepicker-toggle>\n              <mat-datepicker #pickerDateDepotSecretariat></mat-datepicker>\n            </mat-form-field>\n          </mat-grid-tile>\n        \n          <mat-grid-tile>\n            <mat-form-field class=\"example-full-width\">\n              <input matInput [matDatepicker]=\"pickerDatePassageCommission\" placeholder=\"Date passage commission\">\n              <mat-datepicker-toggle matSuffix [for]=\"pickerDatePassageCommission\"></mat-datepicker-toggle>\n              <mat-datepicker #pickerDatePassageCommission></mat-datepicker>\n            </mat-form-field>\n          </mat-grid-tile>\n\n\n            <mat-grid-tile>\n              <mat-form-field class=\"example-full-width\">\n                <mat-label>décision</mat-label>\n                <mat-select matNativeControl required>\n                  <mat-option value=\"report\">Report</mat-option>\n                  <mat-option value=\"visa\">Visa</mat-option>\n                  <mat-option value=\"visaAvecReserves\">Visa (avec réserves)</mat-option>\n                  <mat-option value=\"refusDeVisa\">Refus de visa</mat-option>\n                </mat-select>\n              </mat-form-field>\n            </mat-grid-tile>\n\n\n            <mat-grid-tile>\n              <mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"pickerDateLeveeReserves\" placeholder=\"Date de levée des réserves\">\n                <mat-datepicker-toggle matSuffix [for]=\"pickerDateLeveeReserves\"></mat-datepicker-toggle>\n                <mat-datepicker #pickerDateLeveeReserves></mat-datepicker>\n              </mat-form-field>\n            </mat-grid-tile>\n          \n            <mat-grid-tile>\n              PV\n              <input type=\"file\">\n            </mat-grid-tile>    \n\n            <mat-grid-tile>\n              <mat-form-field class=\"example-full-width\">\n                <input matInput [matDatepicker]=\"pickerDateDecision\" placeholder=\"Date de la décision\">\n                <mat-datepicker-toggle matSuffix [for]=\"pickerDateDecision\"></mat-datepicker-toggle>\n                <mat-datepicker #pickerDateDecision></mat-datepicker>\n              </mat-form-field>\n            </mat-grid-tile>            \n            \n            <mat-grid-tile>\n              <mat-form-field class=\"example-full-width\">\n                <input matInput placeholder=\"numéro\">\n              </mat-form-field>\n            </mat-grid-tile>\n\n            <mat-grid-tile>\n                Décision (PV)\n                <input type=\"file\">\n            </mat-grid-tile>                  \n            \n          </mat-grid-list>\n      </form>\n\n</mat-dialog-content>\n<mat-dialog-actions >\n    <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n    <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component.html":
+/*!************************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component.html ***!
+  \************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Sélectionner la COPEO (pour: Evaluation des offres)</p>\n<mat-dialog-content>\n  <form class=\"example-container\">\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Sélectionner la COPEO\">\n    </mat-form-field>\n\n    \n    <button mat-button matTooltip=\"COPEO pas dans la liste?\">Créer</button>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput [matDatepicker]=\"pickerDateEvaluationOffres\" placeholder=\"Date d'evaluation des offres\">\n      <mat-datepicker-toggle matSuffix [for]=\"pickerDateEvaluationOffres\"></mat-datepicker-toggle>\n      <mat-datepicker #pickerDateEvaluationOffres></mat-datepicker>\n    </mat-form-field>    \n\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component.html":
+/*!******************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component.html ***!
+  \******************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Sélectionner la COPEO (pour: Ouverture des plis)</p>\n<mat-dialog-content>\n  <form class=\"example-container\">\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Sélectionner la COPEO\">\n    </mat-form-field>\n\n    \n    <button mat-button matTooltip=\"COPEO pas dans la liste?\">Créer</button>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput [matDatepicker]=\"pickerDateOuverturePlis\" placeholder=\"Date d'ouverture des plis\">\n      <mat-datepicker-toggle matSuffix [for]=\"pickerDateOuverturePlis\"></mat-datepicker-toggle>\n      <mat-datepicker #pickerDateOuverturePlis></mat-datepicker>\n    </mat-form-field>    \n\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
 
 /***/ }),
 
@@ -491,6 +647,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-reception/create-reception.component.html":
+/*!****************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-reception/create-reception.component.html ***!
+  \****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Réception d'un marché</p>\n\n<mat-dialog-content>\n\n  <form class=\"example-container\">\n\n    <div>\n      Joindre le PV de Réception\n      <input type=\"file\">\n    </div>\n\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput [matDatepicker]=\"pickerDateReceptionProvisoire\" placeholder=\"Réception provisoire prononcée le\">\n        <mat-datepicker-toggle matSuffix [for]=\"pickerDateReceptionProvisoire\"></mat-datepicker-toggle>\n        <mat-datepicker #pickerDateReceptionProvisoire></mat-datepicker>\n      </mat-form-field>\n    </div>\n\n\n    <div>\n      <mat-checkbox [(ngModel)]=\"delaiGarantieChecked\" class=\"example-full-width\" name=\"delaiGarantie\">\n        Avec délai de garantie\n      </mat-checkbox>\n    </div>\n    <div [ngStyle]=\"{display: delaiGarantieChecked? 'block' : 'none'}\">\n\n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Délai de garantie (jours)\">\n        </mat-form-field>\n      </div>\n\n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput [matDatepicker]=\"pickerDateReceptionDifinitivePrevue\"\n            placeholder=\"Date de récepetion définitive (prévue)\">\n          <mat-datepicker-toggle matSuffix [for]=\"pickerDateReceptionDifinitivePrevue\"></mat-datepicker-toggle>\n          <mat-datepicker #pickerDateReceptionDifinitivePrevue></mat-datepicker>\n        </mat-form-field>\n      </div>\n\n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput [matDatepicker]=\"pickerDateReceptionDifinitiveReelle\"\n            placeholder=\"Date de récepetion définitive (réelle)\">\n          <mat-datepicker-toggle matSuffix [for]=\"pickerDateReceptionDifinitiveReelle\"></mat-datepicker-toggle>\n          <mat-datepicker #pickerDateReceptionDifinitiveReelle></mat-datepicker>\n        </mat-form-field>\n      </div>\n\n      <div>\n        Joindre le justificatif du retard le cas echeant (si date reelle != prevue)\n        <input type=\"file\">\n      </div>\n\n      <mat-checkbox [(ngModel)]=\"mainLeveeChecked\" class=\"example-full-width\" name=\"mainLevee\">\n        Main levée des cautions\n      </mat-checkbox>\n      <div [ngStyle]=\"{display: mainLeveeChecked? 'block' : 'none'}\">\n        <div>\n          <mat-form-field class=\"example-full-width\">\n            <input matInput [matDatepicker]=\"pickerDateMainLevee\" placeholder=\"Date de main levée\">\n            <mat-datepicker-toggle matSuffix [for]=\"pickerDateMainLevee\"></mat-datepicker-toggle>\n            <mat-datepicker #pickerDateMainLevee></mat-datepicker>\n          </mat-form-field>\n        </div>\n\n        <div>\n          <mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Observations\">\n          </mat-form-field>\n        </div>\n\n      </div>\n    </div>\n\n    <div>\n      <mat-checkbox [(ngModel)]=\"dgdChecked\" class=\"example-full-width\" name=\"mainLevee\">\n        DGD (Décompte Général et Définitif)\n      </mat-checkbox>\n    </div>\n    <div [ngStyle]=\"{display: dgdChecked? 'block' : 'none'}\">\n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput [matDatepicker]=\"pickerDateDGD\" placeholder=\"Date DGD\">\n          <mat-datepicker-toggle matSuffix [for]=\"pickerDateDGD\"></mat-datepicker-toggle>\n          <mat-datepicker #pickerDateDGD></mat-datepicker>\n        </mat-form-field>\n      </div>\n\n\n      <div>\n        Joindre DGD (Obligatoire: cas travaux)\n        <input type=\"file\">\n      </div>\n\n    </div>\n\n\n\n\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-recours/create-recours.component.html":
 /*!************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-recours/create-recours.component.html ***!
@@ -504,6 +673,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component.html":
+/*!****************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component.html ***!
+  \****************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Créer une réponse à une demande de rallonge financère</p>\n<mat-dialog-content>\n\n  <form class=\"example-container\">\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput [matDatepicker]=\"pickerDateReponse\" placeholder=\"Date de la réponse\">\n        <mat-datepicker-toggle matSuffix [for]=\"pickerDateReponse\"></mat-datepicker-toggle>\n        <mat-datepicker #pickerDateReponse></mat-datepicker>\n      </mat-form-field>\n    </div>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"ٌRéponse\">\n      </mat-form-field>\n    </div>\n\n    <div>\n      <mat-checkbox class=\"example-full-width\" [(ngModel)]=\"reponsePositiveChecked\" name=\"reponsePositiveChecked\">\n        Réponse positive\n      </mat-checkbox>\n    </div>\n    <div>\n      <mat-form-field class=\"example-full-width\" [ngStyle]=\"{display: reponsePositiveChecked?  'block': 'none'}\">\n        <input matInput placeholder=\"Montant accordé\">\n      </mat-form-field>\n    </div>\n\n    <div>\n      Joindre réponse (justificatif)\n      <input type=\"file\">\n    </div>\n\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-resiliation/create-resiliation.component.html":
+/*!********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-resiliation/create-resiliation.component.html ***!
+  \********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Résilier un marché</p>\n<mat-dialog-content>\n\n\n\n  <section>\n    <label>Selection le cas:</label>\n    <mat-radio-group [(ngModel)]=\"typeResiliation\">\n      <mat-radio-button value=\"rc\">Résiliation contractuelle</mat-radio-button>\n      <mat-radio-button value=\"ru\">Résiliation unilatérale</mat-radio-button>\n      <mat-radio-button value=\"rp\">Résiliation partielle</mat-radio-button>\n    </mat-radio-group>\n  </section>\n\n  <!-- START Résiliation contractuelle-->\n  <div [ngStyle]=\"{display: typeResiliation =='rc'? 'block' : 'none'}\">\n    <p>Résiliation contractuelle</p>\n    <form class=\"example-container\">\n\n      <div>\n        Joindre la decision de résiliation\n        <input type=\"file\">\n      </div>\n\n      <mat-form-field class=\"example-full-width\">\n        <textarea matInput placeholder=\"Observations\"></textarea>\n      </mat-form-field>\n\n      <mat-form-field class=\"example-full-width\">\n        <input matInput [matDatepicker]=\"pickerDateResiliationContractuelle\" placeholder=\"Date de la résiliation\">\n        <mat-datepicker-toggle matSuffix [for]=\"pickerDateResiliationContractuelle\"></mat-datepicker-toggle>\n        <mat-datepicker #pickerDateResiliationContractuelle></mat-datepicker>\n      </mat-form-field>\n\n\n\n      <mat-checkbox [(ngModel)]=\"redditionChecked\" class=\"example-full-width\" name=\"reddition\">\n        Reddition des comptes\n      </mat-checkbox>\n      <div [ngStyle]=\"{display: redditionChecked? 'block' : 'none'}\">\n        <mat-form-field class=\"example-full-width\">\n          <input matInput [matDatepicker]=\"pickerDateRedditionComptes\" placeholder=\"Date de la reddition des comptes\">\n          <mat-datepicker-toggle matSuffix [for]=\"pickerDateRedditionComptes\"></mat-datepicker-toggle>\n          <mat-datepicker #pickerDateRedditionComptes></mat-datepicker>\n        </mat-form-field>\n\n        <div>\n          Joindre le rapport de la reddition\n          <input type=\"file\">\n        </div>\n      </div>\n\n\n\n    </form>\n  </div>\n  <!-- START Résiliation contractuelle-->\n\n\n\n  <!-- START Résiliation unilatérale-->\n  <div [ngStyle]=\"{display: typeResiliation =='ru'? 'block' : 'none'}\">\n    <p>Résiliation unilatérale</p>\n\n    <div>\n      Afficher les mise en demeure ici (autoriser si deux mise en demeure sans reponse)\n    </div>\n\n  </div>\n  <!-- END Résiliation unilatérale-->\n\n  <!-- START Résiliation partielle-->\n  <div [ngStyle]=\"{display: typeResiliation =='rp'? 'block' : 'none'}\">\n    <p>Résiliation partielle</p>\n\n    <form class=\"example-container\">\n\n      <mat-form-field class=\"example-full-width\">\n        <input matInput [matDatepicker]=\"pickerDateResiliationPartielle\" placeholder=\"Date de la résiliation\">\n        <mat-datepicker-toggle matSuffix [for]=\"pickerDateResiliationPartielle\"></mat-datepicker-toggle>\n        <mat-datepicker #pickerDateResiliationPartielle></mat-datepicker>\n      </mat-form-field>\n\n    </form>\n\n  </div>\n  <!-- END Résiliation partielle-->\n\n\n\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-response-demande-eclaircissement/create-response-demande-eclaircissement.component.html":
 /*!**************************************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-response-demande-eclaircissement/create-response-demande-eclaircissement.component.html ***!
@@ -514,6 +709,32 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Créer une nouvelle réponse à une demande d'eclaircissement</p>\n<mat-dialog-content>\n\n  <form class=\"example-full-width\">\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput disabled placeholder=\"ID (demande)\">\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput [matDatepicker]=\"pickerDateReponse\" placeholder=\"Date de la réponse\">\n      <mat-datepicker-toggle matSuffix [for]=\"pickerDateReponse\"></mat-datepicker-toggle>\n      <mat-datepicker #pickerDateReponse></mat-datepicker>\n    </mat-form-field>\n\n\n    <div class=\"example-full-width\">\n      Joindre Réponse\n      <input type=\"file\">\n    </div> \n\n    <div class=\"example-full-width\">\n      <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z2\">\n\n        <!-- Checkbox Column -->\n        <ng-container matColumnDef=\"select\">\n          <th mat-header-cell *matHeaderCellDef>\n            <mat-checkbox (change)=\"$event ? masterToggle() : null\"\n                          [checked]=\"selection.hasValue() && isAllSelected()\"\n                          [indeterminate]=\"selection.hasValue() && !isAllSelected()\"\n                          [aria-label]=\"checkboxLabel()\">\n            </mat-checkbox>\n          </th>\n          <td mat-cell *matCellDef=\"let row\">\n            <mat-checkbox (click)=\"$event.stopPropagation()\"\n                          (change)=\"$event ? selection.toggle(row) : null\"\n                          [checked]=\"selection.isSelected(row)\"\n                          [aria-label]=\"checkboxLabel(row)\">\n            </mat-checkbox>\n          </td>\n        </ng-container>\n      \n        <!-- Position Column -->\n        <ng-container matColumnDef=\"position\">\n          <th mat-header-cell *matHeaderCellDef> No. </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.position}} </td>\n        </ng-container>\n      \n        <!-- Name Column -->\n        <ng-container matColumnDef=\"name\">\n          <th mat-header-cell *matHeaderCellDef> Entreprise </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n        </ng-container>\n      \n        <!-- Email Column -->\n        <ng-container matColumnDef=\"email\">\n          <th mat-header-cell *matHeaderCellDef> Email </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.email}} </td>\n        </ng-container>\n      \n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"\n            (click)=\"selection.toggle(row)\">\n        </tr>\n      </table>\n      <div class=\"alert alert-info m-3 text-center\" role=\"alert\">Les candidats sélectionnés seront notifiés par email (la réponse sera jointe)</div>\n    </div>\n\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions >\n    <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n    <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component.html":
+/*!**************************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component.html ***!
+  \**************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Communiquer les résultats de la COPEO (Evaluation des offres)</p>\n<mat-dialog-content>\n\n  <form class=\"example-full-width\">\n\n    <div class=\"alert alert-success m-3 text-center\" role=\"alert\">\n      <p>Nombre de plis conformes:</p>\n    </div>\n\n    <div class=\"example-full-width\">\n      <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z2\">\n\n        <!-- Checkbox Column -->\n        <ng-container matColumnDef=\"select\">\n          <th mat-header-cell *matHeaderCellDef>\n            <mat-checkbox (change)=\"$event ? masterToggle() : null\"\n                          [checked]=\"selection.hasValue() && isAllSelected()\"\n                          [indeterminate]=\"selection.hasValue() && !isAllSelected()\"\n                          [aria-label]=\"checkboxLabel()\">\n            </mat-checkbox>\n          </th>\n          <td mat-cell *matCellDef=\"let row\">\n            <mat-checkbox (click)=\"$event.stopPropagation()\"\n                          (change)=\"$event ? selection.toggle(row) : null\"\n                          [checked]=\"selection.isSelected(row)\"\n                          [aria-label]=\"checkboxLabel(row)\">\n            </mat-checkbox>\n          </td>\n        </ng-container>\n      \n        <!-- Position Column -->\n        <ng-container matColumnDef=\"position\">\n          <th mat-header-cell *matHeaderCellDef> No. </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.position}} </td>\n        </ng-container>\n      \n        <!-- Name Column -->\n        <ng-container matColumnDef=\"name\">\n          <th mat-header-cell *matHeaderCellDef> Entreprise </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n        </ng-container>\n\n        <!-- Name Column -->\n        <ng-container matColumnDef=\"note\">\n          <th mat-header-cell *matHeaderCellDef> Note </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.note}} </td>\n        </ng-container>\n        \n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"\n            (click)=\"selection.toggle(row)\">\n        </tr>\n      </table>\n      * cocher si le plis est conforme\n    </div>\n    <div>\n      Join PV d'evalution des offres\n      <input type=\"file\">\n    </div>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <textarea matInput placeholder=\"Observations\"></textarea>\n      </mat-form-field>\n    </div>\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions >\n    <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n    <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component.html":
+/*!********************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component.html ***!
+  \********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Communiquer les résultats de la COPEO (Ouverture des plis)</p>\n<mat-dialog-content>\n\n  <form class=\"example-full-width\">\n\n    <div class=\"alert alert-success m-3 text-center\" role=\"alert\">\n      <p>Nombre de plis conformes:</p>\n    </div>\n\n    <div class=\"example-full-width\">\n      <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z2\">\n\n        <!-- Checkbox Column -->\n        <ng-container matColumnDef=\"select\">\n          <th mat-header-cell *matHeaderCellDef>\n            <mat-checkbox (change)=\"$event ? masterToggle() : null\"\n                          [checked]=\"selection.hasValue() && isAllSelected()\"\n                          [indeterminate]=\"selection.hasValue() && !isAllSelected()\"\n                          [aria-label]=\"checkboxLabel()\">\n            </mat-checkbox>\n          </th>\n          <td mat-cell *matCellDef=\"let row\">\n            <mat-checkbox (click)=\"$event.stopPropagation()\"\n                          (change)=\"$event ? selection.toggle(row) : null\"\n                          [checked]=\"selection.isSelected(row)\"\n                          [aria-label]=\"checkboxLabel(row)\">\n            </mat-checkbox>\n          </td>\n        </ng-container>\n      \n        <!-- Position Column -->\n        <ng-container matColumnDef=\"position\">\n          <th mat-header-cell *matHeaderCellDef> No. </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.position}} </td>\n        </ng-container>\n      \n        <!-- Name Column -->\n        <ng-container matColumnDef=\"name\">\n          <th mat-header-cell *matHeaderCellDef> Entreprise </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n        </ng-container>\n            \n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"\n            (click)=\"selection.toggle(row)\">\n        </tr>\n      </table>\n      * cocher si le plis est conforme\n    </div>\n    <div>\n      Join PV d'ouverture des plis \n      <input type=\"file\">\n    </div>\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions >\n    <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n    <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>\n");
 
 /***/ }),
 
@@ -553,6 +774,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Créer un nouveau soumissionnaire</p>\n<mat-dialog-content>\n\n  <form class=\"example-full-width\">\n\n    <div class=\"alert alert-success m-3 text-center\" role=\"alert\" matTooltip=\"Mettre en rouge ou vert(ne pas autoriser si dépassement du délais)\">\n      <p>Date et heure du dépôt (deadlline). (Ex: 02/02/2020 - 18:30)</p>\n      <p>Date et heure du depot (date du systeme). (Ex: 02/02/2020 - 10:30)</p>\n    </div>\n\n    <div class=\"example-full-width\">\n      <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z2\">\n\n        <!-- Checkbox Column -->\n        <ng-container matColumnDef=\"select\">\n          <th mat-header-cell *matHeaderCellDef>\n            <mat-checkbox (change)=\"$event ? masterToggle() : null\"\n                          [checked]=\"selection.hasValue() && isAllSelected()\"\n                          [indeterminate]=\"selection.hasValue() && !isAllSelected()\"\n                          [aria-label]=\"checkboxLabel()\">\n            </mat-checkbox>\n          </th>\n          <td mat-cell *matCellDef=\"let row\">\n            <mat-checkbox (click)=\"$event.stopPropagation()\"\n                          (change)=\"$event ? selection.toggle(row) : null\"\n                          [checked]=\"selection.isSelected(row)\"\n                          [aria-label]=\"checkboxLabel(row)\">\n            </mat-checkbox>\n          </td>\n        </ng-container>\n      \n        <!-- Position Column -->\n        <ng-container matColumnDef=\"position\">\n          <th mat-header-cell *matHeaderCellDef> No. </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.position}} </td>\n        </ng-container>\n      \n        <!-- Name Column -->\n        <ng-container matColumnDef=\"name\">\n          <th mat-header-cell *matHeaderCellDef> Entreprise </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n        </ng-container>\n            \n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"\n            (click)=\"selection.toggle(row)\">\n        </tr>\n      </table>\n    </div>\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions >\n    <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n    <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-sous-traitant/create-sous-traitant.component.html":
+/*!************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-sous-traitant/create-sous-traitant.component.html ***!
+  \************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Créer un nouveau Sous-traitant</p>\n<mat-dialog-content>\n\n  <form class=\"example-container\">\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Sous-traitant\">\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Objet de la sous-traitance\">\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput [matDatepicker]=\"pickerDateDebutIntervention\" placeholder=\"Date de début de l'intervention\">\n      <mat-datepicker-toggle matSuffix [for]=\"pickerDateDebutIntervention\"></mat-datepicker-toggle>\n      <mat-datepicker #pickerDateDebutIntervention></mat-datepicker>\n    </mat-form-field>\n\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput [matDatepicker]=\"pickerDateFinIntervention\" placeholder=\"Date de fin de l'intervention\">\n      <mat-datepicker-toggle matSuffix [for]=\"pickerDateFinIntervention\"></mat-datepicker-toggle>\n      <mat-datepicker #pickerDateFinIntervention></mat-datepicker>\n    </mat-form-field>\n\n\n\n    <div>\n      Joindre la déclaration du sous-traitant\n      <input type=\"file\">\n    </div>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Taux d'intervention\">\n    </mat-form-field>\n\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
 
 /***/ }),
 
@@ -643,7 +877,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"m-3\">\n  <div class=\"m-3 text-center\" >\n    Informations sur le projet ici! Montant, Date, S/C, Forme du marche, ...\n  </div>\n\n<mat-accordion >\n\n    <mat-expansion-panel>\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n            Inscription\n        </mat-panel-title>\n        <mat-panel-description>\n          (Code Operation)\n        </mat-panel-description>\n        <mat-panel-description>\n          (Code Projet)\n        </mat-panel-description>        \n      </mat-expansion-panel-header>\n  \n      *Récupérer ces informations de l'opération et fiche projet\n    </mat-expansion-panel>\n\n\n\n\n\n    <mat-expansion-panel (opened)=\"panelOpenState = true\"\n                         (closed)=\"panelOpenState = false\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n            Passation\n        </mat-panel-title>\n        <mat-panel-description>\n          ({{panelOpenState ? 'open' : 'closed'}})\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      \n      <mat-card class=\"m-3\">\n        <mat-card-title class=\"small\">Elaboration CdC1</mat-card-title>\n        <mat-card-subtitle>Date: 22/15/2019</mat-card-subtitle>\n        <mat-card-content>\n        <!--ELABORATION DU CDC-->\n\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Type de passation</mat-label>\n            <mat-select>\n              <mat-option value=\"AO\">Appel d’offres</mat-option>\n              <mat-option value=\"AO\">Appel d’offres ouvert</mat-option>\n              <mat-option value=\"AOOECM\">Appel d’offres ouvert avec exigence de capacités minimales</mat-option>\n              <mat-option value=\"AOR\">Appel d’offres restreint</mat-option>\n              <mat-option value=\"Concours\">Concours</mat-option>\n              <mat-option value=\"GGS\">Gré à gré simple</mat-option>\n              <mat-option value=\"GGC\">Gré à gré après consultation</mat-option>        \n            </mat-select>\n          </mat-form-field>\n  \n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Type procédure</mat-label>\n            <mat-select>\n              <mat-option value=\"PF\">Procédure formalisée</mat-option>\n              <mat-option value=\"PAC\">Procédure adaptée (Consultation)</mat-option>\n              <mat-option value=\"PABC\">Procédure adaptée (Bon de Commande)</mat-option>\n            </mat-select>\n          </mat-form-field>        \n  \n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Forme du marché</mat-label>\n            <mat-select>\n              <mat-option value=\"MAC\">Marché à commandes</mat-option>\n              <mat-option value=\"MA\">Marché alloti</mat-option>       \n              <mat-option value=\"MPC\">Marchés à procédures spécifiques</mat-option>  \n              <mat-option value=\"CP\">Contrat Programme</mat-option>  \n              <mat-option value=\"MTFTC\">Marché à tranche ferme et tranche conditionnelle</mat-option>  \n              <mat-option value=\"MG\">Marché global</mat-option>  \n            </mat-select>\n          </mat-form-field>        \n\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Caractère</mat-label>\n            <mat-select>\n              <mat-option value=\"national\">National</mat-option>\n              <mat-option value=\"international\">International</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <br>\n          <mat-slide-toggle [(ngModel)]=\"passageCommissionChecked\" matTooltip=\"PF: tjrs pass. comm.; PA: avc ou sans pass. comm.\">Passage par la commission des marchés</mat-slide-toggle>\n          <div [ngStyle]=\"{display: passageCommissionChecked? 'block' : 'none'}\" class=\"border border-secondary p-3\">\n            <br>\n            Projet de CDC (Draft)\n            <input type=\"file\">\n            <br>\n            <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreatePassageCommissionCompetenteCDC()\">Ajouter Passage Com. Comp.</button>\n\n            <table mat-table #tablePassagesCommissionCompetenteCDC [dataSource]=\"passagesCommissionCompetenteCDC\" class=\"mat-elevation-z2\">\n\n              <ng-container matColumnDef=\"dateDepotSecretariatCommission\">\n                <th mat-header-cell *matHeaderCellDef matTooltip='Date de dépôt au niveau du secrétariat de la commission'> Date de dépôt </th>\n                <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDepotSecretariatCommission) }} </td>\n              </ng-container>\n      \n              <ng-container matColumnDef=\"datePassageCommission\">\n                <th mat-header-cell *matHeaderCellDef matTooltip='Date de passage dans la commission'> Date commission </th>\n                <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.datePassageCommission) }} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"decision\">\n                <th mat-header-cell *matHeaderCellDef> Décision </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.decision}} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"dateLeveeReserves\">\n                <th mat-header-cell *matHeaderCellDef matTooltip> Date Levée Réserves </th>\n                <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLeveeReserves) }} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"PVPath\">\n                <th mat-header-cell *matHeaderCellDef> PV </th>\n                <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon>  </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"dateDecision\">\n                <th mat-header-cell *matHeaderCellDef> Date décision </th>\n                <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDecision) }} </td>\n              </ng-container>\n      \n              <ng-container matColumnDef=\"numero\">\n                <th mat-header-cell *matHeaderCellDef> Numéro </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.numero}} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"decisionPath\">\n                <th mat-header-cell *matHeaderCellDef> Recours </th>\n                <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon> </td>\n              </ng-container>\n        \n      \n              <tr mat-header-row *matHeaderRowDef=\"displayedColumnsPassagesCommissionCompetente\"></tr>\n              <tr mat-row *matRowDef=\"let row; columns: displayedColumnsPassagesCommissionCompetente;\"></tr>\n            </table>\n          </div>\n          <br>\n\n          <!--<mat-checkbox [(ngModel)]=\"additifsChecked\">Additifs</mat-checkbox>-->\n          <mat-slide-toggle [(ngModel)]=\"additifsChecked\">Additifs</mat-slide-toggle>\n          <div [ngStyle]=\"{display: additifsChecked? 'block' : 'none'}\" class=\"border border-secondary p-3\">\n            <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateAdditif()\">Ajouter Additif</button>\n            <div *ngFor=\"let additif of additifs\" class=\"bg-light\">\n              <div class=\"m-2 p-2\">Additif : {{additif.numero}}</div>\n              <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreatePassageCommissionCompetenteAdditifs(additif.numero)\">Ajouter Passage Com. Comp.</button>\n              <div [ngStyle]=\"{display: passagesCommissionCompetenteAdditifs.get(additif.numero) && passagesCommissionCompetenteAdditifs.get(additif.numero).length > 0 ? 'block' : 'none'}\">\n                <table mat-table #tablePassagesCommissionCompetenteAdditif [dataSource]=\"passagesCommissionCompetenteAdditifs.get(additif.numero)\" class=\"mat-elevation-z2\">\n\n                  <ng-container matColumnDef=\"dateDepotSecretariatCommission\">\n                    <th mat-header-cell *matHeaderCellDef matTooltip='Date de dépôt au niveau du secrétariat de la commission'> Date de dépôt </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDepotSecretariatCommission) }} </td>\n                  </ng-container>\n          \n                  <ng-container matColumnDef=\"datePassageCommission\">\n                    <th mat-header-cell *matHeaderCellDef matTooltip='Date de passage dans la commission'> Date commission </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.datePassageCommission) }} </td>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"decision\">\n                    <th mat-header-cell *matHeaderCellDef> Décision </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.decision}} </td>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"dateLeveeReserves\">\n                    <th mat-header-cell *matHeaderCellDef matTooltip> Date Levée Réserves </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLeveeReserves) }} </td>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"PVPath\">\n                    <th mat-header-cell *matHeaderCellDef> PV </th>\n                    <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon>  </td>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"dateDecision\">\n                    <th mat-header-cell *matHeaderCellDef> Date décision </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDecision) }} </td>\n                  </ng-container>\n          \n                  <ng-container matColumnDef=\"numero\">\n                    <th mat-header-cell *matHeaderCellDef> Numéro </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.numero}} </td>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"decisionPath\">\n                    <th mat-header-cell *matHeaderCellDef> Recours </th>\n                    <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon> </td>\n                  </ng-container>\n            \n          \n                  <tr mat-header-row *matHeaderRowDef=\"displayedColumnsPassagesCommissionCompetente\"></tr>\n                  <tr mat-row *matRowDef=\"let row; columns: displayedColumnsPassagesCommissionCompetente;\"></tr>\n                </table>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"p-3\">\n            joindre CDC finalisé/visé (si après pass. comm. comp.)\n            <input type=\"file\">\n          </div>\n\n          <!--LANCEMENT-->\n          <mat-card class=\"m-3\">\n            <mat-card-title class=\"small\">Lancement (Iteration1) </mat-card-title>\n            <mat-card-subtitle>Premier lancement</mat-card-subtitle>\n            <mat-card-content>\n              <mat-accordion>\n\n\n                <mat-expansion-panel>\n                  <mat-expansion-panel-header>\n                    <mat-panel-title>\n                      Lancement de la concurrence\n                    </mat-panel-title>\n                  </mat-expansion-panel-header>\n                  <p>Lancement de la concurrence</p>\n\n                  <section>\n                    <label>Appel d'offre ou consultation (auto selected):</label>\n                    <mat-radio-group [(ngModel)]=\"appelOffreOuConsultation\">\n                      <mat-radio-button value=\"ao\">Appel d'offres</mat-radio-button>\n                      <mat-radio-button value=\"c\">Consultation</mat-radio-button>\n                    </mat-radio-group>\n                  </section>\n\n                  <div class=\"border border-secondary\" [ngStyle]=\"{display: appelOffreOuConsultation =='ao'? 'block' : 'none'}\"><!-- START (si) appel d'offre-->\n                    <p>(si) Appel d'offre</p>\n                    <div> <!--START - ORGANES DE PRESSE -->\n                      <table #tableOrganesPresse mat-table [dataSource]=\"dataSourceOrganesPresse\" class=\"mat-elevation-z8\">\n                      \n                        <ng-container matColumnDef=\"denomination\">\n                          <th mat-header-cell *matHeaderCellDef> Dénomination (Organe de presse) </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{element.denomination}} </td>\n                        </ng-container>\n                      \n                        <ng-container matColumnDef=\"dateParution\">\n                          <th mat-header-cell *matHeaderCellDef> Date de parution </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateParution)}} </td>\n                        </ng-container>\n                      \n                        <ng-container matColumnDef=\"justificatif\">\n                          <th mat-header-cell *matHeaderCellDef> Justificatif </th>\n                          <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.justificatif}} mat-list-icon>insert_drive_file</mat-icon> </td>\n                        </ng-container>\n                      \n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsOrganesPresse\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsOrganesPresse;\"></tr>\n                      </table>\n                      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateOrganePresse()\">Créer Organe de Presse</button>                    \n                    </div><!--END - ORGANES DE PRESSE -->\n\n                    <div> <!--START - Sitewebs -->\n                      <table #tableSitewebsAO mat-table [dataSource]=\"dataSourceSitewebsAO\" class=\"mat-elevation-z8\">\n                      \n                        <ng-container matColumnDef=\"denomination\">\n                          <th mat-header-cell *matHeaderCellDef> Dénomination (Siteweb) </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{element.denomination}} </td>\n                        </ng-container>\n                      \n                        <ng-container matColumnDef=\"dateParution\">\n                          <th mat-header-cell *matHeaderCellDef> Date de parution </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateParution)}} </td>\n                        </ng-container>\n                      \n                        <ng-container matColumnDef=\"lien\">\n                          <th mat-header-cell *matHeaderCellDef> Justificatif(lien) </th>\n                          <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.lien}} mat-list-icon>link</mat-icon> </td>\n                        </ng-container>\n                      \n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsSitewebsAO\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsSitewebsAO;\"></tr>\n                      </table>\n                      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateSitewebAppelOffres()\">Créer Siteweb</button>                    \n                    </div><!--END - Sitewebs -->\n\n                  </div><!-- END (si) appel d'offre-->\n\n                  <div class=\"border border-secondary\" [ngStyle]=\"{display: appelOffreOuConsultation =='c'? 'block' : 'none'}\"> <!-- START (si) Consultation-->\n                    <p>(si) Consultation</p>\n\n                    <div> <!--START - Oper. Econoq. -->\n                      <table #tableOperateursEconomiques mat-table [dataSource]=\"dataSourceOperateursEconomiques\" class=\"mat-elevation-z8\">\n                      \n                        <ng-container matColumnDef=\"denomination\">\n                          <th mat-header-cell *matHeaderCellDef> Dénomination (Op. Eco.) </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{element.denomination}} </td>\n                        </ng-container>\n                      \n                        <ng-container matColumnDef=\"moyenNotification\">\n                          <th mat-header-cell *matHeaderCellDef> Moyen de notification </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{element.moyenNotification}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"dateParution\">\n                          <th mat-header-cell *matHeaderCellDef> Date de parution </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateParution)}} </td>\n                        </ng-container>\n                      \n                        <ng-container matColumnDef=\"justificatif\">\n                          <th mat-header-cell *matHeaderCellDef> Justificatif(File) </th>\n                          <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.justificatif}} mat-list-icon>insert_drive_file</mat-icon> </td>\n                        </ng-container>\n                      \n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsOperateursEconomiques\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsOperateursEconomiques;\"></tr>\n                      </table>\n                      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateOperateurEconomique()\">Créer Operateur economique</button>                    \n                    </div><!--END - Oper. Econoq -->                    \n\n                    <div> <!--START - Sitewebs -->\n                      <table #tableSitewebsC mat-table [dataSource]=\"dataSourceSitewebsC\" class=\"mat-elevation-z8\">\n                      \n                        <ng-container matColumnDef=\"denomination\">\n                          <th mat-header-cell *matHeaderCellDef> Dénomination (Siteweb) </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{element.denomination}} </td>\n                        </ng-container>\n                      \n                        <ng-container matColumnDef=\"dateParution\">\n                          <th mat-header-cell *matHeaderCellDef> Date de parution </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateParution)}} </td>\n                        </ng-container>\n                      \n                        <ng-container matColumnDef=\"lien\">\n                          <th mat-header-cell *matHeaderCellDef> Justificatif(lien) </th>\n                          <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.lien}} mat-list-icon>link</mat-icon> </td>\n                        </ng-container>\n                      \n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsSitewebsC\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsSitewebsC;\"></tr>\n                      </table>\n                      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateSitewebConsultation()\">Créer Siteweb</button>                    \n                    </div><!--END - Sitewebs -->\n\n                    <div><!--START Canaux d'affichage-->\n                      <p>Canaux d'affichage</p>\n  \n                      <p><mat-checkbox [(ngModel)]=\"bureauDePosteChecked\">Bureau de poste</mat-checkbox></p>\n                      <div [ngStyle]=\"{display: bureauDePosteChecked? 'block' : 'none'}\">\n  \n                        <mat-form-field class=\"example-full-width\">\n                          <input matInput placeholder=\"Bureau de poste\">\n                        </mat-form-field>\n  \n                        <mat-form-field class=\"example-full-width\">\n                          <input matInput [matDatepicker]=\"pickerParutionBureauDePoste\" placeholder=\"Date parution\">\n                          <mat-datepicker-toggle matSuffix [for]=\"pickerParutionBureauDePoste\"></mat-datepicker-toggle>\n                          <mat-datepicker #pickerParutionBureauDePoste></mat-datepicker>\n                        </mat-form-field>\n  \n                        <button mat-button>Enregistrer</button>\n                      </div>\n  \n                      <p><mat-checkbox [(ngModel)]=\"siegeChecked\">Siège</mat-checkbox></p>\n                      <div [ngStyle]=\"{display: siegeChecked? 'block' : 'none'}\">\n  \n                        <mat-form-field class=\"example-full-width\">\n                          <input matInput placeholder=\"Siège\">\n                        </mat-form-field>\n  \n                        <mat-form-field class=\"example-full-width\">\n                          <input matInput [matDatepicker]=\"pickerParutionSiege\" placeholder=\"Date parution\">\n                          <mat-datepicker-toggle matSuffix [for]=\"pickerParutionSiege\"></mat-datepicker-toggle>\n                          <mat-datepicker #pickerParutionSiege></mat-datepicker>\n                        </mat-form-field>\n  \n                        <button mat-button>Enregistrer</button>\n                      </div>                  \n                      \n                      <p><mat-checkbox [(ngModel)]=\"autreChecked\">Autre</mat-checkbox></p>\n                      <div [ngStyle]=\"{display: autreChecked? 'block' : 'none'}\">\n  \n                        <mat-form-field class=\"example-full-width\">\n                          <input matInput placeholder=\"Autre\">\n                        </mat-form-field>\n  \n                        <mat-form-field class=\"example-full-width\">\n                          <input matInput [matDatepicker]=\"pickerParutionAutre\" placeholder=\"Date parution\">\n                          <mat-datepicker-toggle matSuffix [for]=\"pickerParutionAutre\"></mat-datepicker-toggle>\n                          <mat-datepicker #pickerParutionAutre></mat-datepicker>\n                        </mat-form-field>\n  \n                        <button mat-button>Enregistrer</button>\n                      </div>\n                    </div><!--END Canaux d'affichage-->\n                  </div><!-- END (si) Consultation-->\n\n                  <div> <!--START Dates preparation, prolongation, validite des offres-->\n\n                    <mat-form-field class=\"example-full-width\" matTooltip=\"retrieved from first dateParution\">\n                      <input disabled matInput [matDatepicker]=\"pickerDebutPrepOffres\" placeholder=\"Date de début de préparation des offres\" [value]=\"today.value\">\n                      <mat-datepicker-toggle matSuffix [for]=\"pickerDebutPrepOffres\" ></mat-datepicker-toggle>\n                      <mat-datepicker #pickerDebutPrepOffres></mat-datepicker>\n                    </mat-form-field>\n\n                    <mat-form-field class=\"example-full-width\">\n                      <input matInput disabled placeholder=\"Durée de préparation des offres (jours)\" [value]=\"dureePreparationDesOffres\">\n                    </mat-form-field>\n\n\n                    <table #tableProlongations mat-table [dataSource]=\"dataSourceProlongations\" class=\"mat-elevation-z8\">\n                    \n                      <ng-container matColumnDef=\"id\">\n                        <th mat-header-cell *matHeaderCellDef> ID </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.id}} </td>\n                        <td mat-footer-cell *matFooterCellDef> Total </td>\n                      </ng-container>\n                    \n                      <ng-container matColumnDef=\"jours\">\n                        <th mat-header-cell *matHeaderCellDef> Prolongations (jours) </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{ element.jours}} </td>\n                        <td mat-footer-cell *matFooterCellDef> {{getTotalProlongations()}} </td>\n                      </ng-container>\n                    \n                      <tr mat-header-row *matHeaderRowDef=\"displayedColumnsProlongations\"></tr>\n                      <tr mat-row *matRowDef=\"let row; columns: displayedColumnsProlongations;\"></tr>\n                      <tr mat-footer-row *matFooterRowDef=\"displayedColumnsProlongations\"></tr>\n                    </table>\n                    <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateProlongation()\">Ajouter prolongation</button>                    \n\n\n                    <mat-form-field class=\"example-full-width\" matTooltip=\"Durée de préparation des offres + toutes les prolongations\">\n                      <input matInput disabled placeholder=\"Durée totale de préparation des offres (jours)\" [value]=\"dureeTotalePreparationDesOffres\">\n                    </mat-form-field>\n\n                    <!--START Calender-->\n                    <p class=\"h1 p-3\">[Calendrier]</p>\n\n                    <!--END Calender-->\n\n                    <mat-form-field class=\"example-full-width\" matTooltip=\"durée totale de prépration des offres + 3 mois(90j)\">\n                      <input matInput disabled placeholder=\"Durée de validité des offres\" [value]=\"dureeValiditeOffres\">\n                    </mat-form-field>\n\n                    \n                    <div class=\"alert alert-danger\" role=\"alert\" matTooltip=\"dernier jour de la préparation des offres (08:00 - 12:00)\">\n\n                      <mat-form-field class=\"example-full-width\">\n                        <input matInput disabled placeholder=\"Prévision (date dépôt)\" [value]=\"deadlineValiditeOffres | date \">\n                      </mat-form-field>\n\n                      <mat-form-field class=\"example-full-width\">\n                        <input matInput disabled placeholder=\"Prévision (heures dépôt)\" value=\"08:00 - 12:00\">\n                      </mat-form-field>\n                      \n                    </div>\n                  </div> <!--END Dates preparation, prolongation, validite des offres-->\n                </mat-expansion-panel>\n\n\n                <mat-expansion-panel>\n                  <mat-expansion-panel-header>\n                    <mat-panel-title>\n                      Retrait CdC\n                    </mat-panel-title>\n                  </mat-expansion-panel-header>\n\n                    <!--START Retrait CDC-->\n                    \n                    <mat-form-field class=\"example-full-width\">\n                      <input matInput disabled placeholder=\"Nombre de candidats\" [value]=\"dataSourceCandidats.length\">\n                    </mat-form-field>\n\n                    <!--Table des candidats-->\n                    ADD UP/DOWN etp. (N reste fixe)\n                    <table #tableCandidats mat-table [dataSource]=\"dataSourceCandidats\" class=\"mat-elevation-z8\">\n\n                      <ng-container matColumnDef=\"position\">\n                        <th mat-header-cell *matHeaderCellDef> N. </th>\n                        <td mat-cell *matCellDef=\"let element\"> 0 </td>\n                      </ng-container>\n\n                      <ng-container matColumnDef=\"denominationEntreprise\">\n                        <th mat-header-cell *matHeaderCellDef> Entreprise </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.denominationEntreprise}} </td>\n                      </ng-container>\n                    \n                      <ng-container matColumnDef=\"dateRetrait\">\n                        <th mat-header-cell *matHeaderCellDef> Date du retrait </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{ element.dateEtHeureRetrait | date}} </td>\n                      </ng-container>\n                    \n                      <ng-container matColumnDef=\"heureRetrait\">\n                        <th mat-header-cell *matHeaderCellDef> Heure du retrait </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{ element.dateEtHeureRetrait | date:'shortTime'}} </td>\n                      </ng-container>\n\n                      <tr mat-header-row *matHeaderRowDef=\"displayedColumnsCandidats\"></tr>\n                      <tr mat-row *matRowDef=\"let row; columns: displayedColumnsCandidats;\"></tr>\n                    </table>\n\n                    \n                    <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateCandidat()\">Ajouter candidat</button>                    \n\n                    <br>\n                    Joindre la liste des retraits\n                    <input type=\"file\">\n\n                    <!--Table des demandes d'eclairssissement-->\n                    <table #tableDemandesEclaircissement mat-table [dataSource]=\"dataSourceDemandesEclaircissement\" class=\"mat-elevation-z8\">\n\n                      <ng-container matColumnDef=\"identifiant\">\n                        <th mat-header-cell *matHeaderCellDef> ID. </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.identifiant}} </td>\n                      </ng-container>\n\n                      <ng-container matColumnDef=\"dateDemande\">\n                        <th mat-header-cell *matHeaderCellDef> Date de la demande </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.dateDemande|date}} </td>\n                      </ng-container>\n\n                      <ng-container matColumnDef=\"candidat\">\n                        <th mat-header-cell *matHeaderCellDef> Candidat </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.candidat}} </td>\n                      </ng-container>\n\n                      <ng-container matColumnDef=\"demandePath\">\n                        <th mat-header-cell *matHeaderCellDef> Demande </th>\n                        <td mat-cell *matCellDef=\"let element\"> \n                          <mat-icon matTooltip={{element.demandePath}} mat-list-icon>insert_drive_file</mat-icon>\n                        </td>\n                      </ng-container>\n\n                      <ng-container matColumnDef=\"dateNotificationSC\">\n                        <th mat-header-cell *matHeaderCellDef> Date de notifcation (S/C) </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{ element.dateNotificationSC | date}} </td>\n                      </ng-container>\n                  \n\n                      <ng-container matColumnDef=\"ReponseEclaircissement\">\n                        <th mat-header-cell *matHeaderCellDef> Réponse </th>\n                        <td mat-cell *matCellDef=\"let element\" matTooltip=\"TODO: voir avec DCM- et Sketches\"> \n                          <button mat-button class=\"text-primary\" (click)=\"openDialogCreateReponseDemandeEclaircissement()\">Ajouter Réponse</button> \n                          <button mat-button class=\"text-primary\">Voir Réponse</button> \n                          <button mat-button class=\"text-primary\">Gérer notifications</button>\n                        </td>\n                      </ng-container>\n\n                      <tr mat-header-row *matHeaderRowDef=\"displayedColumnsDemandesEclaircissement\"></tr>\n                      <tr mat-row *matRowDef=\"let row; columns: displayedColumnsDemandesEclaircissement;\"></tr>\n                    </table>                    \n                    <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateDemandeEclaircissement()\">Ajouter demande d'éclaircissement</button>\n\n\n\n                    <div [ngClass]=\"dataSourceProlongations.length > 0 ? 'alert alert-secondary': 'alert alert-success'\" role=\"alert\">\n                      Date et heures limites de dépôt des offres: {{deadlineValiditeOffres| date}}-{{deadlineValiditeOffres| date:'shortTime'}}\n                    </div>\n                    <div>\n                      Nombre de prolongations: {{dataSourceProlongations.length}} (attention: les dates anciennes ne sont pas calculées-elles sont la a titre d'info- que deadline final)\n                    </div>\n                    <div *ngFor=\"let prolongation of dataSourceProlongations; last as last\">\n                      <div [ngClass]=\"!last ? 'alert alert-secondary': 'alert alert-success'\"  role=\"alert\">\n                      Prolongation: ({{prolongation.jours}} jours), Deadline: {{deadlineValiditeOffres| date}}-{{deadlineValiditeOffres| date:'shortTime'}}\n                      </div>\n                    </div>\n\n\n                    <!--Table des depots-->\n                    <mat-form-field class=\"example-full-width\">\n                      <input matInput disabled placeholder=\"Nombre de soumissionnaires\" [value]=\"dataSourceSoumissionnaires.length\">\n                    </mat-form-field>\n\n                    <table #tableSoumissionnaires mat-table [dataSource]=\"dataSourceSoumissionnaires\" class=\"mat-elevation-z8\">\n                      <ng-container matColumnDef=\"position\">\n                        <th mat-header-cell *matHeaderCellDef> N. </th>\n                        <td mat-cell *matCellDef=\"let element\"> 0 </td>\n                      </ng-container>\n\n                      <ng-container matColumnDef=\"denominationEntreprise\">\n                        <th mat-header-cell *matHeaderCellDef> Entreprise </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.denominationEntreprise}} </td>\n                      </ng-container>\n                    \n                      <ng-container matColumnDef=\"dateDepot\">\n                        <th mat-header-cell *matHeaderCellDef> Date du dépôt </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{ element.dateEtHeureDepot | date}} </td>\n                      </ng-container>\n                    \n                      <ng-container matColumnDef=\"heureDepot\">\n                        <th mat-header-cell *matHeaderCellDef> Heure du dépôt </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{ element.dateEtHeureDepot | date:'shortTime'}} </td>\n                      </ng-container>\n\n                      <tr mat-header-row *matHeaderRowDef=\"displayedColumnsSoumissionnaires\"></tr>\n                      <tr mat-row *matRowDef=\"let row; columns: displayedColumnsSoumissionnaires;\"></tr>\n                    </table>\n                    <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateSoumissionnaire()\">Ajouter soumissionnaire</button>\n\n                    \n                    <!--END Retrait CDC-->\n\n\n                    <!--START demande d'éclaircissement-->\n                    \n                    <!--END demande d'éclaircissement-->\n\n\n                    <!--START Depot des offres -->\n                    \n                    <!--END Depot des offres-->\n\n                    <mat-card class=\"m-3\">\n                      <mat-card-title class=\"small\">Choix du partenaire</mat-card-title>\n                      <mat-card-subtitle>Date: 22/15/2019</mat-card-subtitle>\n                      <mat-card-content>\n                      </mat-card-content>\n                    </mat-card>\n\n                    <mat-card class=\"m-3\">\n                      <mat-card-title class=\"small\">Attribution</mat-card-title>\n                      <mat-card-subtitle>Date: 22/15/2019</mat-card-subtitle>\n                      <mat-card-content>\n\n\n\n                        <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateRecours()\">Créer Recours</button>\n\n\n\n                        <table mat-table #tableRecours [dataSource]=\"recours\" class=\"mat-elevation-z2\">\n      \n                          <ng-container matColumnDef=\"soumissionnaire\">\n                            <th mat-header-cell *matHeaderCellDef> Soumissionnaire </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{element.soumissionnaire}} </td>\n                          </ng-container>\n                        \n                          <ng-container matColumnDef=\"objetRecours\">\n                            <th mat-header-cell *matHeaderCellDef> Objet du recours </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{element.objetRecours}} </td>\n                          </ng-container>\n                        \n                          <ng-container matColumnDef=\"type\">\n                            <th mat-header-cell *matHeaderCellDef> Type </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{element.type}} </td>\n                          </ng-container>\n                        \n                          <ng-container matColumnDef=\"dateDeSaisie\">\n                            <th mat-header-cell *matHeaderCellDef> Date de saisie </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDeSaisie) }} </td>\n                          </ng-container>\n                  \n                          <ng-container matColumnDef=\"dateLimite\">\n                            <th mat-header-cell *matHeaderCellDef> Date Limite </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLimite) }} </td>\n                          </ng-container>\n                  \n                          <ng-container matColumnDef=\"dateRecours\">\n                            <th mat-header-cell *matHeaderCellDef> Date Litige </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateRecours) }} </td>\n                          </ng-container>\n                  \n                          <ng-container matColumnDef=\"dateReponse\">\n                            <th mat-header-cell *matHeaderCellDef> Date réponse </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateReponse) }} </td>\n                          </ng-container>\n                  \n                          <ng-container matColumnDef=\"recoursPath\">\n                            <th mat-header-cell *matHeaderCellDef> Recours </th>\n                            <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.recoursPath}} mat-list-icon>insert_drive_file</mat-icon> </td>\n                          </ng-container>\n                  \n                          <ng-container matColumnDef=\"reponsePath\">\n                            <th mat-header-cell *matHeaderCellDef> Réponse </th>\n                            <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.reponsePath}} mat-list-icon>insert_drive_file</mat-icon> </td>\n                          </ng-container>\n                  \n                          <ng-container matColumnDef=\"datePassageCommission\">\n                            <th mat-header-cell *matHeaderCellDef> Date Commission </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{formatDate(element.datePassageCommission)}} </td>\n                          </ng-container>\n                  \n                          <ng-container matColumnDef=\"decisionCommission\">\n                            <th mat-header-cell *matHeaderCellDef> Décision </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{element.decisionCommission}} </td>\n                          </ng-container>\n                  \n                          <ng-container matColumnDef=\"PVPath\">\n                            <th mat-header-cell *matHeaderCellDef> PV </th>\n                            <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon> </td>\n                          </ng-container>\n                  \n                          <ng-container matColumnDef=\"decisionPath\">\n                            <th mat-header-cell *matHeaderCellDef> Decision </th>\n                            <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon>  </td>\n                          </ng-container>\n                          \n                          \n                  \n                          <tr mat-header-row *matHeaderRowDef=\"displayedColumnsRecours\"></tr>\n                          <tr mat-row *matRowDef=\"let row; columns: displayedColumnsRecours;\"></tr>\n                        </table>                        \n\n\n\n\n\n\n\n\n\n\n\n\n                      </mat-card-content>\n                    </mat-card>\n\n                    <mat-card class=\"m-3\">\n                      <mat-card-title class=\"small\">Elaboration du marché</mat-card-title>\n                      <mat-card-subtitle>Date: 22/15/2019</mat-card-subtitle>\n                      <mat-card-content>\n                      </mat-card-content>\n                    </mat-card>\n                    \n                </mat-expansion-panel>\n              </mat-accordion>\n            </mat-card-content>\n          </mat-card>\n\n          <mat-card class=\"m-3\">\n            <mat-card-title class=\"small\">Iteration2</mat-card-title>\n            <mat-card-subtitle>Deuxieme lancement</mat-card-subtitle>\n            <mat-card-content>\n              <mat-accordion>\n                <mat-expansion-panel>\n                  <mat-expansion-panel-header>\n                    <mat-panel-title>\n                      Lancement de la concurrence\n                    </mat-panel-title>\n                  </mat-expansion-panel-header>\n                  <p>Lancment de la concurrence</p>\n                </mat-expansion-panel>\n                <mat-expansion-panel>\n                  <mat-expansion-panel-header>\n                    <mat-panel-title>\n                      Retrait CdC\n                    </mat-panel-title>\n                  </mat-expansion-panel-header>\n                  <code><pre>\n                    Choix du partenaire\n                    Evaluation des offres (Attribution/ Infructuosite)\n                        Recours\n                    Elaboration du marche\n                  </pre></code>\n                </mat-expansion-panel>\n              </mat-accordion>\n            </mat-card-content>\n          </mat-card>\n\n          <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateElborerMarche()\">Ajouter Iteration</button>\n        </mat-card-content>\n      </mat-card>\n\n      <mat-card class=\"m-3\">\n        <mat-card-title class=\"small\">Elaboration CdC2</mat-card-title>\n        <mat-card-subtitle>Date: 22/15/2019</mat-card-subtitle>\n        <mat-card-content>\n          <code><pre>\n          Lancement de la concurrence\n          Retrait CdC\n              Choix du partenaire\n              Attribution\n                  Recours\n              Elaboration du marche\n          </pre></code>              \n        </mat-card-content>\n      </mat-card>\n      \n      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateElborerMarche()\">Créer Elaboration</button>\n\n    </mat-expansion-panel>\n\n\n\n\n\n\n\n    <mat-expansion-panel>\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          Execution\n        </mat-panel-title>\n        \n        <mat-panel-description>\n          (en cours)\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n      \n  \n      <p>Etapes d'execution</p>\n      <p class=\"small\">Litiges</p>\n\n      <table mat-table #tableLitiges [dataSource]=\"litiges\" class=\"mat-elevation-z2\">\n      \n        <ng-container matColumnDef=\"introduitPar\">\n          <th mat-header-cell *matHeaderCellDef> Introduit par </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.introduitPar}} </td>\n        </ng-container>\n      \n        <ng-container matColumnDef=\"partieAdverse\">\n          <th mat-header-cell *matHeaderCellDef> Partie adverse </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.partieAdverse}} </td>\n        </ng-container>\n      \n        <ng-container matColumnDef=\"comment\">\n          <th mat-header-cell *matHeaderCellDef> Info </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.comment}} </td>\n        </ng-container>\n      \n        <ng-container matColumnDef=\"dateDeSaisie\">\n          <th mat-header-cell *matHeaderCellDef> Date de saisie </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDeSaisie) }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"dateLimite\">\n          <th mat-header-cell *matHeaderCellDef> Date Limite </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLimite) }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"dateLitige\">\n          <th mat-header-cell *matHeaderCellDef> Date Litige </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLitige) }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"dateReponse\">\n          <th mat-header-cell *matHeaderCellDef> Date réponse </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateReponse) }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"litigePath\">\n          <th mat-header-cell *matHeaderCellDef> Litige </th>\n          <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.litigePath}} mat-list-icon>insert_drive_file</mat-icon> </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"reponsePath\">\n          <th mat-header-cell *matHeaderCellDef> Réponse </th>\n          <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.reponsePath}} mat-list-icon>insert_drive_file</mat-icon> </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"datePassageCommission\">\n          <th mat-header-cell *matHeaderCellDef> Date Commission </th>\n          <td mat-cell *matCellDef=\"let element\"> {{formatDate(element.datePassageCommission)}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"decisionCommission\">\n          <th mat-header-cell *matHeaderCellDef> Décision </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.decisionCommission}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"PVPath\">\n          <th mat-header-cell *matHeaderCellDef> PV </th>\n          <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon> </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"decisionPath\">\n          <th mat-header-cell *matHeaderCellDef> Decision </th>\n          <td mat-cell *matCellDef=\"let element\"> <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon>  </td>\n        </ng-container>\n        \n        \n\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsLitige\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsLitige;\"></tr>\n      </table>\n      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateLitige()\">Créer litige</button>\n\n    </mat-expansion-panel>\n\n\n\n\n\n      <mat-expansion-panel><!--<mat-expansion-panel disabled>-->\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n            Clôture\n          </mat-panel-title>\n          <mat-panel-description>\n            (en cours)\n          </mat-panel-description>\n        </mat-expansion-panel-header>\n    \n        <p>Résiliation/Réception</p>\n\n          <mat-action-row>\n            <button mat-button>Clôturer</button>\n          </mat-action-row>\n        </mat-expansion-panel>\n  </mat-accordion>\n</div>\n\n\n\n\n\n\n<!--\n<mat-list>\n  <h3 mat-subheader>Recours</h3>\n  <mat-list-item *ngFor=\"let recour of recours; last as last\">\n      <mat-icon mat-list-icon>insert_drive_file</mat-icon>\n      <h4 mat-line>{{recour}}</h4>\n      <p mat-line> depassement des delais </p>\n      <mat-divider [inset]=\"true\" *ngIf=\"!last\"></mat-divider>\n  </mat-list-item>\n</mat-list>\n<button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateRecours()\">Créer Recours</button>\n-->");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"m-3\">\n  <div class=\"m-3 text-center\">\n    Informations sur le projet ici! Montant, Date, S/C, Forme du marche, ...\n  </div>\n\n  <mat-accordion>\n\n    <mat-expansion-panel>\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          Inscription\n        </mat-panel-title>\n        <mat-panel-description>\n          (Code Operation)\n        </mat-panel-description>\n        <mat-panel-description>\n          (Code Projet)\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      *Récupérer ces informations de l'opération et fiche projet\n    </mat-expansion-panel>\n\n\n\n\n\n    <mat-expansion-panel (opened)=\"panelOpenState = true\" (closed)=\"panelOpenState = false\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          Passation\n        </mat-panel-title>\n        <mat-panel-description>\n          ({{panelOpenState ? 'open' : 'closed'}})\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n\n      <mat-card class=\"m-3\">\n        <mat-card-title class=\"small\">Elaboration CdC1</mat-card-title>\n        <mat-card-subtitle>Date: 22/15/2019</mat-card-subtitle>\n        <mat-card-content>\n          <!--ELABORATION DU CDC-->\n\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Type de passation</mat-label>\n            <mat-select>\n              <mat-option value=\"AO\">Appel d’offres</mat-option>\n              <mat-option value=\"AO\">Appel d’offres ouvert</mat-option>\n              <mat-option value=\"AOOECM\">Appel d’offres ouvert avec exigence de capacités minimales</mat-option>\n              <mat-option value=\"AOR\">Appel d’offres restreint</mat-option>\n              <mat-option value=\"Concours\">Concours</mat-option>\n              <mat-option value=\"GGS\">Gré à gré simple</mat-option>\n              <mat-option value=\"GGC\">Gré à gré après consultation</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Type procédure</mat-label>\n            <mat-select>\n              <mat-option value=\"PF\">Procédure formalisée</mat-option>\n              <mat-option value=\"PAC\">Procédure adaptée (Consultation)</mat-option>\n              <mat-option value=\"PABC\">Procédure adaptée (Bon de Commande)</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Forme du marché</mat-label>\n            <mat-select>\n              <mat-option value=\"M\">Marché</mat-option>\n              <mat-option value=\"MAC\">Marché à commandes</mat-option>\n              <mat-option value=\"MA\">Marché alloti</mat-option>\n              <mat-option value=\"MPC\">Marchés à procédures spécifiques</mat-option>\n              <mat-option value=\"CP\">Contrat Programme</mat-option>\n              <mat-option value=\"MTFTC\">Marché à tranche ferme et tranche conditionnelle</mat-option>\n              <mat-option value=\"MG\">Marché global</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Caractère</mat-label>\n            <mat-select>\n              <mat-option value=\"national\">National</mat-option>\n              <mat-option value=\"international\">International</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <br>\n          <mat-slide-toggle [(ngModel)]=\"passageCommissionChecked\"\n            matTooltip=\"PF: tjrs pass. comm.; PA: avc ou sans pass. comm.\">Passage par la commission des marchés\n          </mat-slide-toggle>\n          <div [ngStyle]=\"{display: passageCommissionChecked? 'block' : 'none'}\" class=\"border border-secondary p-3\">\n            <br>\n            Projet de CDC (Draft)\n            <input type=\"file\">\n            <br>\n            <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreatePassageCommissionCompetenteCDC()\">Ajouter\n              Passage Com. Comp.</button>\n\n            <table mat-table #tablePassagesCommissionCompetenteCDC [dataSource]=\"passagesCommissionCompetenteCDC\"\n              class=\"mat-elevation-z2\">\n\n              <ng-container matColumnDef=\"dateDepotSecretariatCommission\">\n                <th mat-header-cell *matHeaderCellDef\n                  matTooltip='Date de dépôt au niveau du secrétariat de la commission'> Date de dépôt </th>\n                <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDepotSecretariatCommission) }} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"datePassageCommission\">\n                <th mat-header-cell *matHeaderCellDef matTooltip='Date de passage dans la commission'> Date commission\n                </th>\n                <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.datePassageCommission) }} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"decision\">\n                <th mat-header-cell *matHeaderCellDef> Décision </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.decision}} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"dateLeveeReserves\">\n                <th mat-header-cell *matHeaderCellDef matTooltip> Date Levée Réserves </th>\n                <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLeveeReserves) }} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"PVPath\">\n                <th mat-header-cell *matHeaderCellDef> PV </th>\n                <td mat-cell *matCellDef=\"let element\">\n                  <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon>\n                </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"dateDecision\">\n                <th mat-header-cell *matHeaderCellDef> Date décision </th>\n                <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDecision) }} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"numero\">\n                <th mat-header-cell *matHeaderCellDef> Numéro </th>\n                <td mat-cell *matCellDef=\"let element\"> {{element.numero}} </td>\n              </ng-container>\n\n              <ng-container matColumnDef=\"decisionPath\">\n                <th mat-header-cell *matHeaderCellDef> Recours </th>\n                <td mat-cell *matCellDef=\"let element\">\n                  <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon>\n                </td>\n              </ng-container>\n\n\n              <tr mat-header-row *matHeaderRowDef=\"displayedColumnsPassagesCommissionCompetente\"></tr>\n              <tr mat-row *matRowDef=\"let row; columns: displayedColumnsPassagesCommissionCompetente;\"></tr>\n            </table>\n          </div>\n          <br>\n\n          <!--<mat-checkbox [(ngModel)]=\"additifsChecked\">Additifs</mat-checkbox>-->\n          <mat-slide-toggle [(ngModel)]=\"additifsChecked\">Additifs</mat-slide-toggle>\n          <div [ngStyle]=\"{display: additifsChecked? 'block' : 'none'}\" class=\"border border-secondary p-3\">\n            <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateAdditif()\">Ajouter Additif</button>\n            <div *ngFor=\"let additif of additifs\" class=\"bg-light\">\n              <div class=\"m-2 p-2\">Additif : {{additif.numero}}</div>\n              <button class=\"m-3\" mat-raised-button\n                (click)=\"openDialogCreatePassageCommissionCompetenteAdditifs(additif.numero)\">Ajouter Passage Com.\n                Comp.</button>\n              <div\n                [ngStyle]=\"{display: passagesCommissionCompetenteAdditifs.get(additif.numero) && passagesCommissionCompetenteAdditifs.get(additif.numero).length > 0 ? 'block' : 'none'}\">\n                <table mat-table #tablePassagesCommissionCompetenteAdditif\n                  [dataSource]=\"passagesCommissionCompetenteAdditifs.get(additif.numero)\" class=\"mat-elevation-z2\">\n\n                  <ng-container matColumnDef=\"dateDepotSecretariatCommission\">\n                    <th mat-header-cell *matHeaderCellDef\n                      matTooltip='Date de dépôt au niveau du secrétariat de la commission'> Date de dépôt </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDepotSecretariatCommission) }}\n                    </td>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"datePassageCommission\">\n                    <th mat-header-cell *matHeaderCellDef matTooltip='Date de passage dans la commission'> Date\n                      commission </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.datePassageCommission) }} </td>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"decision\">\n                    <th mat-header-cell *matHeaderCellDef> Décision </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.decision}} </td>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"dateLeveeReserves\">\n                    <th mat-header-cell *matHeaderCellDef matTooltip> Date Levée Réserves </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLeveeReserves) }} </td>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"PVPath\">\n                    <th mat-header-cell *matHeaderCellDef> PV </th>\n                    <td mat-cell *matCellDef=\"let element\">\n                      <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon>\n                    </td>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"dateDecision\">\n                    <th mat-header-cell *matHeaderCellDef> Date décision </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDecision) }} </td>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"numero\">\n                    <th mat-header-cell *matHeaderCellDef> Numéro </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.numero}} </td>\n                  </ng-container>\n\n                  <ng-container matColumnDef=\"decisionPath\">\n                    <th mat-header-cell *matHeaderCellDef> Recours </th>\n                    <td mat-cell *matCellDef=\"let element\">\n                      <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon>\n                    </td>\n                  </ng-container>\n\n\n                  <tr mat-header-row *matHeaderRowDef=\"displayedColumnsPassagesCommissionCompetente\"></tr>\n                  <tr mat-row *matRowDef=\"let row; columns: displayedColumnsPassagesCommissionCompetente;\"></tr>\n                </table>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"p-3\">\n            joindre CDC finalisé/visé (si après pass. comm. comp.)\n            <input type=\"file\">\n          </div>\n\n          <!--LANCEMENT-->\n          <mat-card class=\"m-3\">\n            <mat-card-title class=\"small\">Lancement (Iteration1) </mat-card-title>\n            <mat-card-subtitle>Premier lancement</mat-card-subtitle>\n            <mat-card-content>\n              <mat-accordion>\n\n\n                <mat-expansion-panel>\n                  <mat-expansion-panel-header>\n                    <mat-panel-title>\n                      Lancement de la concurrence\n                    </mat-panel-title>\n                  </mat-expansion-panel-header>\n                  <p>Lancement de la concurrence</p>\n\n                  <section>\n                    <label>Appel d'offre ou consultation (auto selected):</label>\n                    <mat-radio-group [(ngModel)]=\"appelOffreOuConsultation\">\n                      <mat-radio-button value=\"ao\">Appel d'offres</mat-radio-button>\n                      <mat-radio-button value=\"c\">Consultation</mat-radio-button>\n                    </mat-radio-group>\n                  </section>\n\n                  <div class=\"border border-secondary\"\n                    [ngStyle]=\"{display: appelOffreOuConsultation =='ao'? 'block' : 'none'}\">\n                    <!-- START (si) appel d'offre-->\n                    <p>(si) Appel d'offre</p>\n                    <div>\n                      <!--START - ORGANES DE PRESSE -->\n                      <table #tableOrganesPresse mat-table [dataSource]=\"dataSourceOrganesPresse\"\n                        class=\"mat-elevation-z8\">\n\n                        <ng-container matColumnDef=\"denomination\">\n                          <th mat-header-cell *matHeaderCellDef> Dénomination (Organe de presse) </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{element.denomination}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"dateParution\">\n                          <th mat-header-cell *matHeaderCellDef> Date de parution </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateParution)}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"justificatif\">\n                          <th mat-header-cell *matHeaderCellDef> Justificatif </th>\n                          <td mat-cell *matCellDef=\"let element\">\n                            <mat-icon matTooltip={{element.justificatif}} mat-list-icon>insert_drive_file</mat-icon>\n                          </td>\n                        </ng-container>\n\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsOrganesPresse\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsOrganesPresse;\"></tr>\n                      </table>\n                      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateOrganePresse()\">Créer Organe de\n                        Presse</button>\n                    </div>\n                    <!--END - ORGANES DE PRESSE -->\n\n                    <div>\n                      <!--START - Sitewebs -->\n                      <table #tableSitewebsAO mat-table [dataSource]=\"dataSourceSitewebsAO\" class=\"mat-elevation-z8\">\n\n                        <ng-container matColumnDef=\"denomination\">\n                          <th mat-header-cell *matHeaderCellDef> Dénomination (Siteweb) </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{element.denomination}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"dateParution\">\n                          <th mat-header-cell *matHeaderCellDef> Date de parution </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateParution)}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"lien\">\n                          <th mat-header-cell *matHeaderCellDef> Justificatif(lien) </th>\n                          <td mat-cell *matCellDef=\"let element\">\n                            <mat-icon matTooltip={{element.lien}} mat-list-icon>link</mat-icon>\n                          </td>\n                        </ng-container>\n\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsSitewebsAO\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsSitewebsAO;\"></tr>\n                      </table>\n                      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateSitewebAppelOffres()\">Créer\n                        Siteweb</button>\n                    </div>\n                    <!--END - Sitewebs -->\n\n                  </div><!-- END (si) appel d'offre-->\n\n                  <div class=\"border border-secondary\"\n                    [ngStyle]=\"{display: appelOffreOuConsultation =='c'? 'block' : 'none'}\">\n                    <!-- START (si) Consultation-->\n                    <p>(si) Consultation</p>\n\n                    <div>\n                      <!--START - Oper. Econoq. -->\n                      <table #tableOperateursEconomiques mat-table [dataSource]=\"dataSourceOperateursEconomiques\"\n                        class=\"mat-elevation-z8\">\n\n                        <ng-container matColumnDef=\"denomination\">\n                          <th mat-header-cell *matHeaderCellDef> Dénomination (Op. Eco.) </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{element.denomination}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"moyenNotification\">\n                          <th mat-header-cell *matHeaderCellDef> Moyen de notification </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{element.moyenNotification}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"dateParution\">\n                          <th mat-header-cell *matHeaderCellDef> Date de parution </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateParution)}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"justificatif\">\n                          <th mat-header-cell *matHeaderCellDef> Justificatif(File) </th>\n                          <td mat-cell *matCellDef=\"let element\">\n                            <mat-icon matTooltip={{element.justificatif}} mat-list-icon>insert_drive_file</mat-icon>\n                          </td>\n                        </ng-container>\n\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsOperateursEconomiques\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsOperateursEconomiques;\"></tr>\n                      </table>\n                      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateOperateurEconomique()\">Créer\n                        Operateur economique</button>\n                    </div>\n                    <!--END - Oper. Econoq -->\n\n                    <div>\n                      <!--START - Sitewebs -->\n                      <table #tableSitewebsC mat-table [dataSource]=\"dataSourceSitewebsC\" class=\"mat-elevation-z8\">\n\n                        <ng-container matColumnDef=\"denomination\">\n                          <th mat-header-cell *matHeaderCellDef> Dénomination (Siteweb) </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{element.denomination}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"dateParution\">\n                          <th mat-header-cell *matHeaderCellDef> Date de parution </th>\n                          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateParution)}} </td>\n                        </ng-container>\n\n                        <ng-container matColumnDef=\"lien\">\n                          <th mat-header-cell *matHeaderCellDef> Justificatif(lien) </th>\n                          <td mat-cell *matCellDef=\"let element\">\n                            <mat-icon matTooltip={{element.lien}} mat-list-icon>link</mat-icon>\n                          </td>\n                        </ng-container>\n\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsSitewebsC\"></tr>\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsSitewebsC;\"></tr>\n                      </table>\n                      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateSitewebConsultation()\">Créer\n                        Siteweb</button>\n                    </div>\n                    <!--END - Sitewebs -->\n\n                    <div>\n                      <!--START Canaux d'affichage-->\n                      <p>Canaux d'affichage</p>\n\n                      <p>\n                        <mat-checkbox [(ngModel)]=\"bureauDePosteChecked\">Bureau de poste</mat-checkbox>\n                      </p>\n                      <div [ngStyle]=\"{display: bureauDePosteChecked? 'block' : 'none'}\">\n\n                        <mat-form-field class=\"example-full-width\">\n                          <input matInput placeholder=\"Bureau de poste\">\n                        </mat-form-field>\n\n                        <mat-form-field class=\"example-full-width\">\n                          <input matInput [matDatepicker]=\"pickerParutionBureauDePoste\" placeholder=\"Date parution\">\n                          <mat-datepicker-toggle matSuffix [for]=\"pickerParutionBureauDePoste\"></mat-datepicker-toggle>\n                          <mat-datepicker #pickerParutionBureauDePoste></mat-datepicker>\n                        </mat-form-field>\n\n                        <button mat-button>Enregistrer</button>\n                      </div>\n\n                      <p>\n                        <mat-checkbox [(ngModel)]=\"siegeChecked\">Siège</mat-checkbox>\n                      </p>\n                      <div [ngStyle]=\"{display: siegeChecked? 'block' : 'none'}\">\n\n                        <mat-form-field class=\"example-full-width\">\n                          <input matInput placeholder=\"Siège\">\n                        </mat-form-field>\n\n                        <mat-form-field class=\"example-full-width\">\n                          <input matInput [matDatepicker]=\"pickerParutionSiege\" placeholder=\"Date parution\">\n                          <mat-datepicker-toggle matSuffix [for]=\"pickerParutionSiege\"></mat-datepicker-toggle>\n                          <mat-datepicker #pickerParutionSiege></mat-datepicker>\n                        </mat-form-field>\n\n                        <button mat-button>Enregistrer</button>\n                      </div>\n\n                      <p>\n                        <mat-checkbox [(ngModel)]=\"autreChecked\">Autre</mat-checkbox>\n                      </p>\n                      <div [ngStyle]=\"{display: autreChecked? 'block' : 'none'}\">\n\n                        <mat-form-field class=\"example-full-width\">\n                          <input matInput placeholder=\"Autre\">\n                        </mat-form-field>\n\n                        <mat-form-field class=\"example-full-width\">\n                          <input matInput [matDatepicker]=\"pickerParutionAutre\" placeholder=\"Date parution\">\n                          <mat-datepicker-toggle matSuffix [for]=\"pickerParutionAutre\"></mat-datepicker-toggle>\n                          <mat-datepicker #pickerParutionAutre></mat-datepicker>\n                        </mat-form-field>\n\n                        <button mat-button>Enregistrer</button>\n                      </div>\n                    </div>\n                    <!--END Canaux d'affichage-->\n                  </div><!-- END (si) Consultation-->\n\n                  <div>\n                    <!--START Dates preparation, prolongation, validite des offres-->\n\n                    <mat-form-field class=\"example-full-width\" matTooltip=\"retrieved from first dateParution\">\n                      <input disabled matInput [matDatepicker]=\"pickerDebutPrepOffres\"\n                        placeholder=\"Date de début de préparation des offres\" [value]=\"today.value\">\n                      <mat-datepicker-toggle matSuffix [for]=\"pickerDebutPrepOffres\"></mat-datepicker-toggle>\n                      <mat-datepicker #pickerDebutPrepOffres></mat-datepicker>\n                    </mat-form-field>\n\n                    <mat-form-field class=\"example-full-width\">\n                      <input matInput disabled placeholder=\"Durée de préparation des offres (jours)\"\n                        [value]=\"dureePreparationDesOffres\">\n                    </mat-form-field>\n\n\n                    <table #tableProlongations mat-table [dataSource]=\"dataSourceProlongations\"\n                      class=\"mat-elevation-z8\">\n\n                      <ng-container matColumnDef=\"id\">\n                        <th mat-header-cell *matHeaderCellDef> ID </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.id}} </td>\n                        <td mat-footer-cell *matFooterCellDef> Total </td>\n                      </ng-container>\n\n                      <ng-container matColumnDef=\"jours\">\n                        <th mat-header-cell *matHeaderCellDef> Prolongations (jours) </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{ element.jours}} </td>\n                        <td mat-footer-cell *matFooterCellDef> {{getTotalProlongations()}} </td>\n                      </ng-container>\n\n                      <tr mat-header-row *matHeaderRowDef=\"displayedColumnsProlongations\"></tr>\n                      <tr mat-row *matRowDef=\"let row; columns: displayedColumnsProlongations;\"></tr>\n                      <tr mat-footer-row *matFooterRowDef=\"displayedColumnsProlongations\"></tr>\n                    </table>\n                    <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateProlongation()\">Ajouter\n                      prolongation</button>\n\n\n                    <mat-form-field class=\"example-full-width\"\n                      matTooltip=\"Durée de préparation des offres + toutes les prolongations\">\n                      <input matInput disabled placeholder=\"Durée totale de préparation des offres (jours)\"\n                        [value]=\"dureeTotalePreparationDesOffres\">\n                    </mat-form-field>\n\n                    <!--START Calender-->\n                    <p class=\"h1 p-3\">[Calendrier]</p>\n\n                    <!--END Calender-->\n\n                    <mat-form-field class=\"example-full-width\"\n                      matTooltip=\"durée totale de prépration des offres + 3 mois(90j)\">\n                      <input matInput disabled placeholder=\"Durée de validité des offres\" [value]=\"dureeValiditeOffres\">\n                    </mat-form-field>\n\n\n                    <div class=\"alert alert-danger\" role=\"alert\"\n                      matTooltip=\"dernier jour de la préparation des offres (08:00 - 12:00)\">\n\n                      <mat-form-field class=\"example-full-width\">\n                        <input matInput disabled placeholder=\"Prévision (date dépôt)\"\n                          [value]=\"deadlineValiditeOffres | date \">\n                      </mat-form-field>\n\n                      <mat-form-field class=\"example-full-width\">\n                        <input matInput disabled placeholder=\"Prévision (heures dépôt)\" value=\"08:00 - 12:00\">\n                      </mat-form-field>\n\n                    </div>\n                  </div>\n                  <!--END Dates preparation, prolongation, validite des offres-->\n                </mat-expansion-panel>\n\n\n                <mat-expansion-panel>\n                  <mat-expansion-panel-header>\n                    <mat-panel-title>\n                      Retrait CdC\n                    </mat-panel-title>\n                  </mat-expansion-panel-header>\n\n                  <!--START Retrait CDC-->\n\n                  <mat-form-field class=\"example-full-width\">\n                    <input matInput disabled placeholder=\"Nombre de candidats\" [value]=\"dataSourceCandidats.length\">\n                  </mat-form-field>\n\n                  <!--Table des candidats-->\n                  ADD UP/DOWN etp. (N reste fixe)\n                  <table #tableCandidats mat-table [dataSource]=\"dataSourceCandidats\" class=\"mat-elevation-z8\">\n\n                    <ng-container matColumnDef=\"position\">\n                      <th mat-header-cell *matHeaderCellDef> N. </th>\n                      <td mat-cell *matCellDef=\"let element\"> 0 </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"denominationEntreprise\">\n                      <th mat-header-cell *matHeaderCellDef> Entreprise </th>\n                      <td mat-cell *matCellDef=\"let element\"> {{element.denominationEntreprise}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"dateRetrait\">\n                      <th mat-header-cell *matHeaderCellDef> Date du retrait </th>\n                      <td mat-cell *matCellDef=\"let element\"> {{ element.dateEtHeureRetrait | date}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"heureRetrait\">\n                      <th mat-header-cell *matHeaderCellDef> Heure du retrait </th>\n                      <td mat-cell *matCellDef=\"let element\"> {{ element.dateEtHeureRetrait | date:'shortTime'}} </td>\n                    </ng-container>\n\n                    <tr mat-header-row *matHeaderRowDef=\"displayedColumnsCandidats\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: displayedColumnsCandidats;\"></tr>\n                  </table>\n\n\n                  <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateCandidat()\">Ajouter candidat</button>\n\n                  <br>\n                  Joindre la liste des retraits\n                  <input type=\"file\">\n\n                  <!--Table des demandes d'eclairssissement-->\n                  <table #tableDemandesEclaircissement mat-table [dataSource]=\"dataSourceDemandesEclaircissement\"\n                    class=\"mat-elevation-z8\">\n\n                    <ng-container matColumnDef=\"identifiant\">\n                      <th mat-header-cell *matHeaderCellDef> ID. </th>\n                      <td mat-cell *matCellDef=\"let element\"> {{element.identifiant}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"dateDemande\">\n                      <th mat-header-cell *matHeaderCellDef> Date de la demande </th>\n                      <td mat-cell *matCellDef=\"let element\"> {{element.dateDemande|date}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"candidat\">\n                      <th mat-header-cell *matHeaderCellDef> Candidat </th>\n                      <td mat-cell *matCellDef=\"let element\"> {{element.candidat}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"demandePath\">\n                      <th mat-header-cell *matHeaderCellDef> Demande </th>\n                      <td mat-cell *matCellDef=\"let element\">\n                        <mat-icon matTooltip={{element.demandePath}} mat-list-icon>insert_drive_file</mat-icon>\n                      </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"dateNotificationSC\">\n                      <th mat-header-cell *matHeaderCellDef> Date de notifcation (S/C) </th>\n                      <td mat-cell *matCellDef=\"let element\"> {{ element.dateNotificationSC | date}} </td>\n                    </ng-container>\n\n\n                    <ng-container matColumnDef=\"ReponseEclaircissement\">\n                      <th mat-header-cell *matHeaderCellDef> Réponse </th>\n                      <td mat-cell *matCellDef=\"let element\" matTooltip=\"TODO: voir avec DCM- et Sketches\">\n                        <button mat-button class=\"text-primary\"\n                          (click)=\"openDialogCreateReponseDemandeEclaircissement()\">Ajouter Réponse</button>\n                        <button mat-button class=\"text-primary\">Voir Réponse</button>\n                        <button mat-button class=\"text-primary\">Gérer notifications</button>\n                      </td>\n                    </ng-container>\n\n                    <tr mat-header-row *matHeaderRowDef=\"displayedColumnsDemandesEclaircissement\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: displayedColumnsDemandesEclaircissement;\"></tr>\n                  </table>\n                  <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateDemandeEclaircissement()\">Ajouter\n                    demande d'éclaircissement</button>\n\n\n\n                  <div [ngClass]=\"dataSourceProlongations.length > 0 ? 'alert alert-secondary': 'alert alert-success'\"\n                    role=\"alert\">\n                    Date et heures limites de dépôt des offres:\n                    {{deadlineValiditeOffres| date}}-{{deadlineValiditeOffres| date:'shortTime'}}\n                  </div>\n                  <div>\n                    Nombre de prolongations: {{dataSourceProlongations.length}} (attention: les dates anciennes ne sont\n                    pas calculées-elles sont la a titre d'info- que deadline final)\n                  </div>\n                  <div *ngFor=\"let prolongation of dataSourceProlongations; last as last\">\n                    <div [ngClass]=\"!last ? 'alert alert-secondary': 'alert alert-success'\" role=\"alert\">\n                      Prolongation: ({{prolongation.jours}} jours), Deadline:\n                      {{deadlineValiditeOffres| date}}-{{deadlineValiditeOffres| date:'shortTime'}}\n                    </div>\n                  </div>\n\n\n                  <!--Table des depots-->\n                  <mat-form-field class=\"example-full-width\">\n                    <input matInput disabled placeholder=\"Nombre de soumissionnaires\"\n                      [value]=\"dataSourceSoumissionnaires.length\">\n                  </mat-form-field>\n\n                  <table #tableSoumissionnaires mat-table [dataSource]=\"dataSourceSoumissionnaires\"\n                    class=\"mat-elevation-z8\">\n                    <ng-container matColumnDef=\"position\">\n                      <th mat-header-cell *matHeaderCellDef> N. </th>\n                      <td mat-cell *matCellDef=\"let element\"> 0 </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"denominationEntreprise\">\n                      <th mat-header-cell *matHeaderCellDef> Entreprise </th>\n                      <td mat-cell *matCellDef=\"let element\"> {{element.denominationEntreprise}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"dateDepot\">\n                      <th mat-header-cell *matHeaderCellDef> Date du dépôt </th>\n                      <td mat-cell *matCellDef=\"let element\"> {{ element.dateEtHeureDepot | date}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"heureDepot\">\n                      <th mat-header-cell *matHeaderCellDef> Heure du dépôt </th>\n                      <td mat-cell *matCellDef=\"let element\"> {{ element.dateEtHeureDepot | date:'shortTime'}} </td>\n                    </ng-container>\n\n                    <tr mat-header-row *matHeaderRowDef=\"displayedColumnsSoumissionnaires\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: displayedColumnsSoumissionnaires;\"></tr>\n                  </table>\n                  <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateSoumissionnaire()\">Ajouter\n                    soumissionnaire</button>\n\n\n                  <!--END Retrait CDC-->\n\n\n                  <!--START demande d'éclaircissement-->\n\n                  <!--END demande d'éclaircissement-->\n\n\n                  <!--START Depot des offres -->\n\n                  <!--END Depot des offres-->\n\n                  <mat-card class=\"m-3\">\n                    <mat-card-title class=\"small\">Choix du partenaire</mat-card-title>\n                    <mat-card-subtitle>sous titre</mat-card-subtitle>\n                    <mat-card-content>\n                      <!--Start Ouverture des plis-->\n                      <p class=\"h3\">Ouverture des plis</p>\n                      <mat-card class=\"m-3\">\n                        <mat-card-title class=\"small\">Passage#1 (ouverture des plis)</mat-card-title>\n                        <mat-card-subtitle>sous titre</mat-card-subtitle>\n                        <mat-card-content>\n                          <p>COPEO: COPEO-DG-2020-1</p>\n                          <p>Programmée le: 02/02/2020</p>\n                          <p>Annulée <a href=\"#\">(voir justificatif)</a></p>\n                        </mat-card-content>\n                      </mat-card>\n\n                      <mat-card class=\"m-3\">\n                        <mat-card-title class=\"small\">Passage#2 (ouverture des plis)</mat-card-title>\n                        <mat-card-subtitle>sous titre</mat-card-subtitle>\n                        <mat-card-content>\n                          <p>COPEO: COPEO-DG-2020-1</p>\n                          <p>Programmée le: 04/02/2020</p>\n                          <button class=\"m-3\" mat-raised-button\n                            (click)=\"annulerPassageOuverturePlisCOPEO()\">annuler</button>\n                          <button class=\"m-3\" mat-raised-button\n                            (click)=\"openDialogCreateResultatPassageOuverturePlisCOPEO()\">Ajouter résultat (PV Ouvr.\n                            Plis)</button>\n\n                          <table #tableComplementsOffres mat-table [dataSource]=\"dataSourceComplementsOffres\"\n                            class=\"mat-elevation-z8\">\n\n\n                            <ng-container matColumnDef=\"soumissionnaire\">\n                              <th mat-header-cell *matHeaderCellDef> Soumissionnaire </th>\n                              <td mat-cell *matCellDef=\"let element\"> {{element.soumissionnaire}} </td>\n                            </ng-container>\n\n                            <ng-container matColumnDef=\"demande\">\n                              <th mat-header-cell *matHeaderCellDef> Demande </th>\n                              <td mat-cell *matCellDef=\"let element\">\n                                <mat-icon matTooltip={{element.demandePath}} mat-list-icon>insert_drive_file</mat-icon>\n                              </td>\n                            </ng-container>\n\n                            <ng-container matColumnDef=\"dateNotification\">\n                              <th mat-header-cell *matHeaderCellDef> Date de notification </th>\n                              <td mat-cell *matCellDef=\"let element\"> {{element.dateNotification|date}} </td>\n                            </ng-container>\n\n                            <ng-container matColumnDef=\"moyenNotification\">\n                              <th mat-header-cell *matHeaderCellDef> Moyen de notification </th>\n                              <td mat-cell *matCellDef=\"let element\"> {{element.moyenNotification}} </td>\n                            </ng-container>\n\n                            <ng-container matColumnDef=\"reponse\">\n                              <th mat-header-cell *matHeaderCellDef> Réponse </th>\n                              <td mat-cell *matCellDef=\"let element\">\n                                <button mat-button class=\"text-primary\" *ngIf=\"!element.isAnswered\"\n                                  (click)=\"openDialogCreateReponseComplementOffre()\">Ajouter Réponse</button>\n                                <button mat-button class=\"text-primary\" *ngIf=\"element.isAnswered\">Voir Réponse</button>\n                                <span *ngIf=\"element.isAnswered\" matTooltip=\"Date Réponse\">\n                                  {{element.dateReponse|date}}</span>\n                              </td>\n                            </ng-container>\n\n                            <tr mat-header-row *matHeaderRowDef=\"displayedColumnsComplementsOffres\"></tr>\n                            <tr mat-row *matRowDef=\"let row; columns: displayedColumnsComplementsOffres;\"></tr>\n                          </table>\n                          <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateDemandeComplement()\">Ajouter\n                            demande de complément</button>\n                          <div class=\"alert alert-primary\" role=\"alert\">\n                            Nombre de plis recus:6<br>\n                            Nombre de plis recus non conformes:1/6\n                          </div>\n                        </mat-card-content>\n                      </mat-card>\n                      <button class=\"m-3\" mat-raised-button\n                        (click)=\"openDialogSelectPassageCOPEOOuverturePlis()\">Ajouter passage COPEO (Ouverture des\n                        plis)</button>\n\n                      <div>\n                        Traiter les deux cas d'Infructuosite (aucune offre recue+auccune offre conforme).\n                        C'est automatique (voir avec Rachida)\n                        <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateInfructuosite()\"\n                          matTooltip=\"Aucune offre recue/aucune offre conforme\">\n                          Ajouter déclaration d'infructuosité\n                        </button>\n                      </div>\n                      <!--End Ouverture des plis-->\n\n                      <!--Start Evaluation des offres-->\n                      <p class=\"h3\">Evaluation des offres</p>\n\n                      <mat-card class=\"m-3\">\n                        <mat-card-title class=\"small\">Séance#1 (evaluation des offres)</mat-card-title>\n                        <mat-card-subtitle>sous titre</mat-card-subtitle>\n                        <mat-card-content>\n                          <p>COPEO: COPEO-DG-2020-1</p>\n                          <p>Programmée le: 02/02/2020</p>\n                        </mat-card-content>\n                      </mat-card>\n\n                      <mat-card class=\"m-3\">\n                        <mat-card-title class=\"small\">Séance#2 (evaluation des offres)</mat-card-title>\n                        <mat-card-subtitle>sous titre</mat-card-subtitle>\n                        <mat-card-content>\n                          <p>COPEO: COPEO-DG-2020-1</p>\n                          <p>Programmée le: 02/02/2020</p>\n                          <div>\n                            <table #tableClarificationsOffres mat-table [dataSource]=\"dataSourceClarificationsOffres\"\n                              class=\"mat-elevation-z8\">\n\n\n                              <ng-container matColumnDef=\"soumissionnaire\">\n                                <th mat-header-cell *matHeaderCellDef> Soumissionnaire </th>\n                                <td mat-cell *matCellDef=\"let element\"> {{element.soumissionnaire}} </td>\n                              </ng-container>\n\n                              <ng-container matColumnDef=\"demande\">\n                                <th mat-header-cell *matHeaderCellDef> Demande </th>\n                                <td mat-cell *matCellDef=\"let element\">\n                                  <mat-icon matTooltip={{element.demandePath}} mat-list-icon>insert_drive_file\n                                  </mat-icon>\n                                </td>\n                              </ng-container>\n\n                              <ng-container matColumnDef=\"dateNotification\">\n                                <th mat-header-cell *matHeaderCellDef> Date de notification </th>\n                                <td mat-cell *matCellDef=\"let element\"> {{element.dateNotification|date}} </td>\n                              </ng-container>\n\n                              <ng-container matColumnDef=\"moyenNotification\">\n                                <th mat-header-cell *matHeaderCellDef> Moyen de notification </th>\n                                <td mat-cell *matCellDef=\"let element\"> {{element.moyenNotification}} </td>\n                              </ng-container>\n\n                              <ng-container matColumnDef=\"reponse\">\n                                <th mat-header-cell *matHeaderCellDef> Réponse </th>\n                                <td mat-cell *matCellDef=\"let element\">\n                                  <button mat-button class=\"text-primary\" *ngIf=\"!element.isAnswered\"\n                                    (click)=\"openDialogCreateReponseClarificationOffre()\">Ajouter Réponse</button>\n                                  <button mat-button class=\"text-primary\" *ngIf=\"element.isAnswered\">Voir\n                                    Réponse</button>\n                                  <span *ngIf=\"element.isAnswered\" matTooltip=\"Date Réponse\">\n                                    {{element.dateReponse|date}}</span>\n                                </td>\n                              </ng-container>\n\n                              <tr mat-header-row *matHeaderRowDef=\"displayedColumnsClarificationsOffres\"></tr>\n                              <tr mat-row *matRowDef=\"let row; columns: displayedColumnsClarificationsOffres;\"></tr>\n                            </table>\n                            <button class=\"m-3\" mat-raised-button\n                              (click)=\"openDialogCreateDemandeClarification()\">Ajouter demande de clarification</button>\n\n                          </div>\n\n                          <div>\n                            <table #tablePassagesComitesTechniques mat-table\n                              [dataSource]=\"dataSourcePassagesComitesTechniques\" class=\"mat-elevation-z8\">\n\n\n                              <ng-container matColumnDef=\"comiteTechnique\">\n                                <th mat-header-cell *matHeaderCellDef> Comité Technique </th>\n                                <td mat-cell *matCellDef=\"let element\"> {{element.comiteTechnique}} </td>\n                              </ng-container>\n\n                              <ng-container matColumnDef=\"dateSaisie\">\n                                <th mat-header-cell *matHeaderCellDef> Date de saisie </th>\n                                <td mat-cell *matCellDef=\"let element\"> {{element.dateSaisie|date}} </td>\n                              </ng-container>\n\n                              <ng-container matColumnDef=\"demandePath\">\n                                <th mat-header-cell *matHeaderCellDef> Demande </th>\n                                <td mat-cell *matCellDef=\"let element\">\n                                  <mat-icon matTooltip={{element.demandePath}} mat-list-icon>insert_drive_file\n                                  </mat-icon>\n                                </td>\n                              </ng-container>\n\n                              <ng-container matColumnDef=\"reponse\">\n                                <th mat-header-cell *matHeaderCellDef> Réponse </th>\n                                <td mat-cell *matCellDef=\"let element\">\n                                  <button mat-button class=\"text-primary\" *ngIf=\"!element.isAnswered\"\n                                    (click)=\"openDialogCreateReponsePassageComiteTechnique()\">Ajouter Réponse</button>\n                                  <button mat-button class=\"text-primary\" *ngIf=\"element.isAnswered\">Voir\n                                    Réponse</button>\n                                  <span *ngIf=\"element.isAnswered\" matTooltip=\"Date Réponse\">\n                                    {{element.dateReponse|date}}</span>\n                                </td>\n                              </ng-container>\n\n                              <tr mat-header-row *matHeaderRowDef=\"displayedColumnsPassagesComitesTechniques\"></tr>\n                              <tr mat-row *matRowDef=\"let row; columns: displayedColumnsPassagesComitesTechniques;\">\n                              </tr>\n                            </table>\n                            <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreatePassageComiteTechnique()\"\n                              matTooltip=\"demander au CT (Comité Technique) un rapport d’analyse pour la conformité des offres\">Ajouter\n                              passage Comité Technique</button>\n                          </div>\n\n                          <div>\n                            <mat-checkbox matTooltip=\"cocher s'il y a eu une modification de l'offre financière\">\n                              Corrections d’erreurs</mat-checkbox>\n                          </div>\n\n                          <div>\n                            <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateInfructuosite()\"\n                              matTooltip=\"Aucune offre conforme/insuffisance financière\">\n                              Ajouter déclaration d'infructuosité\n                            </button>\n                          </div>\n\n                          <div>\n                            <div class=\"alert alert-primary\" role=\"alert\">\n                              Nombre de plis conformes:2/3<br>\n                              Nombre de plis non conformes (rejetés):1/3<br>\n                              <a href=\"#\">Voir PV</a><br>\n                              Observations: (Ceci est un test d'une observation)\n                            </div>\n                            <button class=\"m-3\" mat-raised-button\n                              (click)=\"openDialogCreateResultatCOPEOEvalutionOffres()\">\n                              Ajouter résultat de l'évaluation\n                            </button>\n                          </div>\n                        </mat-card-content>\n                      </mat-card>\n\n                      <button class=\"m-3\" mat-raised-button\n                        (click)=\"openDialogSelectPassageCOPEOEvaluationOffres()\">Ajouter séance COPEO (Eval. des\n                        offres)</button>\n\n                      <div>\n                        <mat-slide-toggle [(ngModel)]=\"demandeRallongeChecked\">Demande de rallonge financière (S/C)\n                        </mat-slide-toggle>\n                        <div [ngStyle]=\"{display: demandeRallongeChecked? 'block' : 'none'}\"\n                          class=\"border border-secondary p-3\">\n\n                          <table #tableRallongesFinancieres mat-table [dataSource]=\"dataSourceRallongesFinancieres\"\n                            class=\"mat-elevation-z8\">\n\n\n\n                            <ng-container matColumnDef=\"serviceContractant\">\n                              <th mat-header-cell *matHeaderCellDef> S/C </th>\n                              <td mat-cell *matCellDef=\"let element\"> {{element.serviceContractant}} </td>\n                            </ng-container>\n\n                            <ng-container matColumnDef=\"dateDemande\">\n                              <th mat-header-cell *matHeaderCellDef> Date de la demande </th>\n                              <td mat-cell *matCellDef=\"let element\"> {{element.dateDemande|date}} </td>\n                            </ng-container>\n\n                            <ng-container matColumnDef=\"montantDemande\">\n                              <th mat-header-cell *matHeaderCellDef> Montant demandé </th>\n                              <td mat-cell *matCellDef=\"let element\"> {{element.montantDemande}} </td>\n                            </ng-container>\n\n                            <ng-container matColumnDef=\"demandePath\">\n                              <th mat-header-cell *matHeaderCellDef> Demande </th>\n                              <td mat-cell *matCellDef=\"let element\">\n                                <mat-icon matTooltip={{element.demandePath}} mat-list-icon>insert_drive_file</mat-icon>\n                              </td>\n                            </ng-container>\n\n                            <ng-container matColumnDef=\"reponse\">\n                              <th mat-header-cell *matHeaderCellDef> Réponse </th>\n                              <td mat-cell *matCellDef=\"let element\">\n                                <button mat-button class=\"text-primary\" *ngIf=\"!element.isAnswered\"\n                                  (click)=\"openDialogCreateReponseRallongeFinanciere()\">Ajouter Réponse</button>\n                                <button mat-button class=\"text-primary\" *ngIf=\"element.isAnswered\">Voir\n                                  {{element.reponse}}</button>\n                                <button mat-button class=\"text-primary\" *ngIf=\"element.isAnswered\">montant accordé\n                                  {{element.montantAccorde}}</button>\n                                <mat-icon *ngIf=\"element.isAnswered\" matTooltip={{element.reponsePath}} mat-list-icon>\n                                  insert_drive_file</mat-icon>\n                                <span *ngIf=\"element.isAnswered\" matTooltip=\"Date Réponse\">\n                                  {{element.dateReponse|date}}</span>\n                              </td>\n                            </ng-container>\n\n                            <tr mat-header-row *matHeaderRowDef=\"displayedColumnsRallongesFinancieres\"></tr>\n                            <tr mat-row *matRowDef=\"let row; columns: displayedColumnsRallongesFinancieres;\"></tr>\n                          </table>\n\n                          <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateDemandeRallongeFinanciere()\">\n                            Ajouter rallonge financière\n                          </button>\n                        </div>\n\n                        <div>\n                          <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateInfructuosite()\"\n                            matTooltip=\"Aucune offre conforme/insuffisance financière\">\n                            Ajouter déclaration d'infructuosité\n                          </button>\n                          <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateRecours()\"\n                            matTooltip=\"Aucune offre conforme/insuffisance financière\">\n                            Recours (infructuosité)\n                          </button>\n                        </div>\n\n                      </div>\n                      <!--End Evaluation des offres-->\n\n\n                    </mat-card-content>\n                  </mat-card>\n\n                  <mat-card class=\"m-3\">\n                    <mat-card-title class=\"small\">Attribution</mat-card-title>\n                    <mat-card-subtitle>Date: 22/15/2019</mat-card-subtitle>\n                    <mat-card-content>\n                      <div>\n                        <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateDeclarationAttribution()\">\n                          Ajouter déclaration d'attribution\n                        </button>\n                        <div *ngFor=\"let attribution of attributionsProvisoires\">\n                          <mat-card class=\"m-3\">\n                            <mat-card-title class=\"small\">Attributaire: {{attribution.attributaire}} </mat-card-title>\n                            <mat-card-content>\n                              <div>\n                                <mat-icon matTooltip=\"attribution.avisAttributionPath\" mat-list-icon>insert_drive_file\n                                </mat-icon>\n                                <p> Intitulé publication: {{attribution.intitulePublication}}</p>\n                                <p> Date parution: {{attribution.dateParution | date}}</p>\n                              </div>\n                              <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateAnnulerAttribution()\">\n                                annuler l'attribution\n                              </button>\n                              <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateDesistementAttribution()\">\n                                désistement\n                              </button>\n                              <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateRecours()\">\n                                recours (attribution)\n                              </button>\n\n                              <div class=\"alert alert-primary\" role=\"alert\">\n                                Validité des offres (+1mois) : JJ/MM/YYYY\n                              </div>\n\n                              <div class=\"alert alert-danger\" role=\"alert\"\n                                *ngIf=\"annulationsAttributionsProvisoires!=null\">\n                                Annulation de l'attribution<br>\n                                attributaire: {{annulationsAttributionsProvisoires.attributaire}}<br>\n                                dateAnnulation: {{annulationsAttributionsProvisoires.dateAnnulation|date}}<br>\n                                moyenNotification: {{annulationsAttributionsProvisoires.moyenNotification}}<br>\n                                dateNotification: {{annulationsAttributionsProvisoires.dateNotification|date}}<br>\n                                justificatifPath: {{annulationsAttributionsProvisoires.justificatifPath}}<br>\n                                <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateRecours()\">\n                                  recours (annul. de l'attribution)\n                                </button>\n                              </div>\n\n                              <div class=\"alert alert-danger\" role=\"alert\"\n                                *ngIf=\"desistementsAttributionsProvisoires!=null\">\n                                Désistement après attribution<br>\n                                attributaire: {{desistementsAttributionsProvisoires.attributaire}}<br>\n                                dateDésistement: {{desistementsAttributionsProvisoires.dateDesistement|date}}<br>\n                                Raison: {{desistementsAttributionsProvisoires.raison}}<br>\n                                justificatifPath: {{desistementsAttributionsProvisoires.justificatifPath}}<br>\n                              </div>\n                            </mat-card-content>\n                          </mat-card>\n                        </div>\n                      </div>\n\n                      <div>\n                        <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateRecours()\">Créer Recours</button>\n\n\n\n                        <table mat-table #tableRecours [dataSource]=\"recours\" class=\"mat-elevation-z2\">\n\n                          <ng-container matColumnDef=\"soumissionnaire\">\n                            <th mat-header-cell *matHeaderCellDef> Soumissionnaire </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{element.soumissionnaire}} </td>\n                          </ng-container>\n\n                          <ng-container matColumnDef=\"objetRecours\">\n                            <th mat-header-cell *matHeaderCellDef> Objet du recours </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{element.objetRecours}} </td>\n                          </ng-container>\n\n                          <ng-container matColumnDef=\"type\">\n                            <th mat-header-cell *matHeaderCellDef> Type </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{element.type}} </td>\n                          </ng-container>\n\n                          <ng-container matColumnDef=\"dateDeSaisie\">\n                            <th mat-header-cell *matHeaderCellDef> Date de saisie </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDeSaisie) }} </td>\n                          </ng-container>\n\n                          <ng-container matColumnDef=\"dateLimite\">\n                            <th mat-header-cell *matHeaderCellDef> Date Limite </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLimite) }} </td>\n                          </ng-container>\n\n                          <ng-container matColumnDef=\"dateRecours\">\n                            <th mat-header-cell *matHeaderCellDef> Date Litige </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateRecours) }} </td>\n                          </ng-container>\n\n                          <ng-container matColumnDef=\"dateReponse\">\n                            <th mat-header-cell *matHeaderCellDef> Date réponse </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateReponse) }} </td>\n                          </ng-container>\n\n                          <ng-container matColumnDef=\"recoursPath\">\n                            <th mat-header-cell *matHeaderCellDef> Recours </th>\n                            <td mat-cell *matCellDef=\"let element\">\n                              <mat-icon matTooltip={{element.recoursPath}} mat-list-icon>insert_drive_file</mat-icon>\n                            </td>\n                          </ng-container>\n\n                          <ng-container matColumnDef=\"reponsePath\">\n                            <th mat-header-cell *matHeaderCellDef> Réponse </th>\n                            <td mat-cell *matCellDef=\"let element\">\n                              <mat-icon matTooltip={{element.reponsePath}} mat-list-icon>insert_drive_file</mat-icon>\n                            </td>\n                          </ng-container>\n\n                          <ng-container matColumnDef=\"datePassageCommission\">\n                            <th mat-header-cell *matHeaderCellDef> Date Commission </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{formatDate(element.datePassageCommission)}} </td>\n                          </ng-container>\n\n                          <ng-container matColumnDef=\"decisionCommission\">\n                            <th mat-header-cell *matHeaderCellDef> Décision </th>\n                            <td mat-cell *matCellDef=\"let element\"> {{element.decisionCommission}} </td>\n                          </ng-container>\n\n                          <ng-container matColumnDef=\"PVPath\">\n                            <th mat-header-cell *matHeaderCellDef> PV </th>\n                            <td mat-cell *matCellDef=\"let element\">\n                              <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon>\n                            </td>\n                          </ng-container>\n\n                          <ng-container matColumnDef=\"decisionPath\">\n                            <th mat-header-cell *matHeaderCellDef> Decision </th>\n                            <td mat-cell *matCellDef=\"let element\">\n                              <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon>\n                            </td>\n                          </ng-container>\n\n\n\n                          <tr mat-header-row *matHeaderRowDef=\"displayedColumnsRecours\"></tr>\n                          <tr mat-row *matRowDef=\"let row; columns: displayedColumnsRecours;\"></tr>\n                        </table>\n                      </div>\n\n\n\n\n\n\n\n\n\n\n\n                    </mat-card-content>\n                  </mat-card>\n\n                  <mat-card class=\"m-3\">\n                    <mat-card-title class=\"small\">Elaboration du marché</mat-card-title>\n                    <mat-card-content>\n\n                      <!--START Mise au point-->\n                      <div>\n                        <mat-slide-toggle [(ngModel)]=\"miseAuPointChecked\">Mise au point et optimisation\n                          du marché\n                        </mat-slide-toggle>\n                        <div [ngStyle]=\"{display: miseAuPointChecked? 'block' : 'none'}\"\n                          class=\"border border-secondary p-3\">\n\n                          <table #tableMisesAuPoint mat-table\n                            [dataSource]=\"dataSourceMisesAuPoint\" class=\"mat-elevation-z8\">\n\n\n                            <ng-container matColumnDef=\"dateDemande\">\n                              <th mat-header-cell *matHeaderCellDef> Date de la demande </th>\n                              <td mat-cell *matCellDef=\"let element\"> {{element.dateDemande|date}} </td>\n                            </ng-container>\n\n                            <ng-container matColumnDef=\"dateMiseAuPoint\">\n                              <th mat-header-cell *matHeaderCellDef> Date de la mise au point </th>\n                              <td mat-cell *matCellDef=\"let element\"> {{element.dateMiseAuPoint|date}} </td>\n                            </ng-container>\n\n                            <ng-container matColumnDef=\"PVPath\">\n                              <th mat-header-cell *matHeaderCellDef> PV </th>\n                              <td mat-cell *matCellDef=\"let element\">\n                                <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon>\n                              </td>\n                            </ng-container>\n\n                            <ng-container matColumnDef=\"resume\">\n                              <th mat-header-cell *matHeaderCellDef> Résumé</th>\n                              <td mat-cell *matCellDef=\"let element\"> {{element.resume}} </td>\n                            </ng-container>\n\n                            <tr mat-header-row *matHeaderRowDef=\"displayedColumnsMisesAuPoint\"></tr>\n                            <tr mat-row *matRowDef=\"let row; columns: displayedColumnsMisesAuPoint;\">\n                            </tr>\n                          </table>\n\n                          <button class=\"m-3\" mat-raised-button\n                            (click)=\"openDialogCreateMiseAuPoint()\">Créer mise au point</button>\n                        </div>\n\n                      </div>\n                      <!--END Mise au point-->\n\n\n\n                      <!--START Passage commission-->\n                      <div>\n\n                        <mat-slide-toggle [(ngModel)]=\"passageCommissionContratChecked\"\n                          matTooltip=\"AO: passage commission obligatoire, Consultation: passage optionnel. Niveau central: CCME. Niveau Unite: Seuil determine CCME ou CMU\">Passage par la commission des marchés (CCME/CMU)\n                        </mat-slide-toggle>\n\n                        <div [ngStyle]=\"{display: passageCommissionContratChecked? 'block' : 'none'}\" class=\"border border-secondary p-3\">\n                          <br>\n                          Joindre projet de marché (projet de contract)\n                          <input type=\"file\">\n                          <br>\n                          <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreatePassageCommissionCompetenteContrat()\">Ajouter\n                            Passage Com. Comp.</button>\n              \n                          <table mat-table #tablePassagesCommissionCompetenteContrat [dataSource]=\"passagesCommissionCompetenteContrat\"\n                            class=\"mat-elevation-z2\">\n              \n                            <ng-container matColumnDef=\"dateDepotSecretariatCommission\">\n                              <th mat-header-cell *matHeaderCellDef\n                                matTooltip='Date de dépôt au niveau du secrétariat de la commission'> Date de dépôt </th>\n                              <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDepotSecretariatCommission) }} </td>\n                            </ng-container>\n              \n                            <ng-container matColumnDef=\"datePassageCommission\">\n                              <th mat-header-cell *matHeaderCellDef matTooltip='Date de passage dans la commission'> Date commission\n                              </th>\n                              <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.datePassageCommission) }} </td>\n                            </ng-container>\n              \n                            <ng-container matColumnDef=\"decision\">\n                              <th mat-header-cell *matHeaderCellDef> Décision </th>\n                              <td mat-cell *matCellDef=\"let element\"> {{element.decision}} </td>\n                            </ng-container>\n              \n                            <ng-container matColumnDef=\"dateLeveeReserves\">\n                              <th mat-header-cell *matHeaderCellDef matTooltip> Date Levée Réserves </th>\n                              <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLeveeReserves) }} </td>\n                            </ng-container>\n              \n                            <ng-container matColumnDef=\"PVPath\">\n                              <th mat-header-cell *matHeaderCellDef> PV </th>\n                              <td mat-cell *matCellDef=\"let element\">\n                                <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon>\n                              </td>\n                            </ng-container>\n              \n                            <ng-container matColumnDef=\"dateDecision\">\n                              <th mat-header-cell *matHeaderCellDef> Date décision </th>\n                              <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDecision) }} </td>\n                            </ng-container>\n              \n                            <ng-container matColumnDef=\"numero\">\n                              <th mat-header-cell *matHeaderCellDef> Numéro </th>\n                              <td mat-cell *matCellDef=\"let element\"> {{element.numero}} </td>\n                            </ng-container>\n              \n                            <ng-container matColumnDef=\"decisionPath\">\n                              <th mat-header-cell *matHeaderCellDef> Recours </th>\n                              <td mat-cell *matCellDef=\"let element\">\n                                <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon>\n                              </td>\n                            </ng-container>\n              \n              \n                            <tr mat-header-row *matHeaderRowDef=\"displayedColumnsPassagesCommissionCompetente\"></tr>\n                            <tr mat-row *matRowDef=\"let row; columns: displayedColumnsPassagesCommissionCompetente;\"></tr>\n                          </table>\n                        </div>\n                      </div>\n                      <!--End passage commission-->\n\n                      <!--START Joindre marché visé-->\n                      <div>\n                        Joindre marché (contrat) visé\n                        <input type=\"file\">\n                      </div>\n                      <!--END Joindre marché visé-->\n\n                      <!--START Joindre decision-->\n                      <div>\n                        Joindre décision (optional)\n                        <input type=\"file\">\n                      </div>\n                      <!--END Joindre decision-->\n\n                      <!--START date signature-->\n                      <div>\n                        <mat-form-field class=\"example-full-width\">\n                          <input matInput [matDatepicker]=\"pickerDateSignature\" placeholder=\"Date de signature du projet par le partenaire\">\n                          <mat-datepicker-toggle matSuffix [for]=\"pickerDateSignature\"></mat-datepicker-toggle>\n                          <mat-datepicker #pickerDateSignature></mat-datepicker>\n                        </mat-form-field>\n                      </div>\n                      <!--END date signature-->\n                    </mat-card-content>\n                  </mat-card>\n\n                </mat-expansion-panel>\n              </mat-accordion>\n            </mat-card-content>\n          </mat-card>\n\n          <mat-card class=\"m-3\">\n            <mat-card-title class=\"small\">Iteration2</mat-card-title>\n            <mat-card-subtitle>Deuxieme lancement</mat-card-subtitle>\n            <mat-card-content>\n              <mat-accordion>\n                <mat-expansion-panel>\n                  <mat-expansion-panel-header>\n                    <mat-panel-title>\n                      Lancement de la concurrence\n                    </mat-panel-title>\n                  </mat-expansion-panel-header>\n                  <p>Lancment de la concurrence</p>\n                </mat-expansion-panel>\n                <mat-expansion-panel>\n                  <mat-expansion-panel-header>\n                    <mat-panel-title>\n                      Retrait CdC\n                    </mat-panel-title>\n                  </mat-expansion-panel-header>\n                  <code><pre>\n                    Choix du partenaire\n                    Evaluation des offres (Attribution/ Infructuosite)\n                        Recours\n                    Elaboration du marche\n                  </pre></code>\n                </mat-expansion-panel>\n              </mat-accordion>\n            </mat-card-content>\n          </mat-card>\n\n          <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateElborerMarche()\">Ajouter Iteration</button>\n        </mat-card-content>\n      </mat-card>\n\n      <mat-card class=\"m-3\">\n        <mat-card-title class=\"small\">Elaboration CdC2</mat-card-title>\n        <mat-card-subtitle>Date: 22/15/2019</mat-card-subtitle>\n        <mat-card-content>\n          <code><pre>\n          Lancement de la concurrence\n          Retrait CdC\n              Choix du partenaire\n              Attribution\n                  Recours\n              Elaboration du marche\n          </pre></code>\n        </mat-card-content>\n      </mat-card>\n\n      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateElborerMarche()\">Créer Elaboration</button>\n\n    </mat-expansion-panel>\n\n\n\n\n\n\n\n    <mat-expansion-panel>\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          Execution\n        </mat-panel-title>\n\n        <mat-panel-description>\n          (en cours)\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n\n      <p>Gestion des délais</p>\n\n      <table mat-table #tableODS [dataSource]=\"dataSourceODS\" class=\"mat-elevation-z2\">\n\n        <ng-container matColumnDef=\"numeroODS\">\n          <th mat-header-cell *matHeaderCellDef> ODS N. </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.numeroODS}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"type\">\n          <th mat-header-cell *matHeaderCellDef> Type </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.type}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"objet\">\n          <th mat-header-cell *matHeaderCellDef> Objet </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.objet}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"jours\">\n          <th mat-header-cell *matHeaderCellDef> Jours </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.jours}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"dateEtablissement\">\n          <th mat-header-cell *matHeaderCellDef> Etabli le </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ element.dateEtablissement|date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"dateEffet\">\n          <th mat-header-cell *matHeaderCellDef> Date d'effet </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ element.dateEffet|date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"ODSPath\">\n          <th mat-header-cell *matHeaderCellDef> ODS </th>\n          <td mat-cell *matCellDef=\"let element\"> \n            <mat-icon matTooltip={{element.ODSPath}} mat-list-icon>insert_drive_file</mat-icon>\n           </td>\n        </ng-container>\n\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsODS\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsODS;\"></tr>\n      </table>\n      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateODS()\" matTooltip=\"Ordre de service\">Créer ODS</button>\n\n\n      <div class=\"alert alert-primary\" role=\"alert\">\n        Délais contractuels:<br>\n        délais initial: 52J, 02/02/2020<br>\n        délais glissement: 53J 03/02/2020<br>\n        délais augmentation: 60J 10/02/2020<br>\n        délais dimunition: 55J 05/02/2020<br>\n        (afficher ces informations dans un graphe)\n      </div>\n\n\n      <!--START ajouter sous-traitant-->\n      <table mat-table #tableSousTraitants [dataSource]=\"dataSourceSousTraitants\" class=\"mat-elevation-z2\">\n\n\n        <ng-container matColumnDef=\"sousTraitant\">\n          <th mat-header-cell *matHeaderCellDef> Sous-traitant </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.sousTraitant}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"objetSoustraitance\">\n          <th mat-header-cell *matHeaderCellDef> Objet de la soutraitance </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.objetSoustraitance}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"dateDebutIntervention\">\n          <th mat-header-cell *matHeaderCellDef matTooltip=\"Date de début de l'intervention\"> De </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ element.dateDebutIntervention|date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"dateFinIntervention\">\n          <th mat-header-cell *matHeaderCellDef matTooltip=\"Date de fin de l'intervention\"> A </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ element.dateFinIntervention|date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"declarationSoustraitantPath\">\n          <th mat-header-cell *matHeaderCellDef matTooltip=\"Déclaration du sous traitant\"> Déclaration </th>\n          <td mat-cell *matCellDef=\"let element\"> \n            <mat-icon matTooltip={{element.declarationSoustraitantPath}} mat-list-icon>insert_drive_file</mat-icon>\n           </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"tauxIntervention\">\n          <th mat-header-cell *matHeaderCellDef> Taux d'intervention </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.tauxIntervention}}%</td>\n        </ng-container>\n\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsSousTraitants\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsSousTraitants;\"></tr>\n      </table>      \n      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateSousTraitant()\">Créer Sous-traitant</button>\n      <!--END ajouter sous-traitant-->\n\n      <!--START Gestion financiere-->\n      <p>Gestion des financière</p>\n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <mat-label>Modalités de rémunération</mat-label>\n          <mat-select>\n            <mat-option value=pgf>à prix global et forfaitaire</mat-option>\n            <mat-option value=bpu>sur bordereau de prix unitaire</mat-option>\n            <mat-option value=pm>à prix mixte</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <mat-form-field class=\"example-full-width\">\n          <textarea matInput placeholder=\"Ajouter un commentaire\"></textarea>\n        </mat-form-field>\n      </div>\n\n      <p>\n        <mat-checkbox [(ngModel)]=\"actualisationPrixChecked\">Actualisation des prix</mat-checkbox>\n      </p>\n      <div [ngStyle]=\"{display: actualisationPrixChecked? 'block' : 'none'}\">\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Commentaire\">\n        </mat-form-field>\n\n        <button mat-button>Enregistrer</button>\n      </div>\n\n      <p>\n        <mat-checkbox [(ngModel)]=\"revisionPrixChecked\">Révision des prix</mat-checkbox>\n      </p>\n      <div [ngStyle]=\"{display: revisionPrixChecked? 'block' : 'none'}\">\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Commentaire\">\n        </mat-form-field>\n\n        <button mat-button>Enregistrer</button>\n      </div>\n\n      <p>\n        <mat-checkbox [(ngModel)]=\"cautionSoumissionChecked\">Caution de soumission (%  , …DA)</mat-checkbox>\n      </p>\n      <div [ngStyle]=\"{display: cautionSoumissionChecked? 'block' : 'none'}\">\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Banque\">\n        </mat-form-field>\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Commentaire\">\n        </mat-form-field>\n\n        <div>\n          Justificatif <input type=\"file\">\n        </div>\n        <button mat-button>Enregistrer</button>\n      </div>\n\n      \n      <p>\n        <mat-checkbox [(ngModel)]=\"cautionBonneExecutionChecked\">Caution ou retenue de bonne exécution</mat-checkbox>\n      </p>\n      <div [ngStyle]=\"{display: cautionBonneExecutionChecked? 'block' : 'none'}\">\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Banque\">\n        </mat-form-field>\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Commentaire\">\n        </mat-form-field>\n\n        <div>\n          Justificatif <input type=\"file\">\n        </div>\n        <button mat-button>Enregistrer</button>\n      </div>\n\n      <p>\n        <mat-checkbox [(ngModel)]=\"cautionGarantieChecked\">Caution de Garantie</mat-checkbox>\n      </p>\n      <div [ngStyle]=\"{display: cautionGarantieChecked? 'block' : 'none'}\">\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Banque\">\n        </mat-form-field>\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Commentaire\">\n        </mat-form-field>\n\n        <div>\n          Justificatif <input type=\"file\">\n        </div>\n        <button mat-button>Enregistrer</button>\n      </div>\n\n      <p>\n        <mat-checkbox [(ngModel)]=\"garantieAvanceApprovisionnementChecked\">Garantie de l'Avance sur approvisionnement</mat-checkbox>\n      </p>\n      <div [ngStyle]=\"{display: garantieAvanceApprovisionnementChecked? 'block' : 'none'}\">\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Banque\">\n        </mat-form-field>\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Commentaire\">\n        </mat-form-field>\n\n        <div>\n          Justificatif <input type=\"file\">\n        </div>\n        <button mat-button>Enregistrer</button>\n      </div>\n\n      <p>\n        <mat-checkbox [(ngModel)]=\"garantieAvanceForfaitaireChecked\">Garantie sur l'Avance forfaitaire</mat-checkbox>\n      </p>\n      <div [ngStyle]=\"{display: garantieAvanceForfaitaireChecked? 'block' : 'none'}\">\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Banque\">\n        </mat-form-field>\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Commentaire\">\n        </mat-form-field>\n\n        <div>\n          Justificatif <input type=\"file\">\n        </div>\n        <button mat-button>Enregistrer</button>\n      </div>\n\n\n      <mat-slide-toggle>Avance forfaitaire</mat-slide-toggle>\n\n      <mat-slide-toggle>Avance sur approvisionnement</mat-slide-toggle>\n\n        <!--START Facture-->\n        <table mat-table #tableFactures [dataSource]=\"dataSourceFactures\" class=\"mat-elevation-z2\">\n\n\n          <ng-container matColumnDef=\"hasPenaliteRetard\">\n            <th mat-header-cell *matHeaderCellDef> Pénalités de retard </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.hasPenaliteRetard}} </td>\n          </ng-container>\n  \n          <ng-container matColumnDef=\"numFacture\">\n            <th mat-header-cell *matHeaderCellDef> N. Facture </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.numFacture}} </td>\n          </ng-container>\n  \n          <ng-container matColumnDef=\"dateReception\">\n            <th mat-header-cell *matHeaderCellDef matTooltip=\"Date de réception de la facture\"> Date </th>\n            <td mat-cell *matCellDef=\"let element\"> {{ element.dateReception|date }} </td>\n          </ng-container>\n\n  \n          <ng-container matColumnDef=\"facturePath\">\n            <th mat-header-cell *matHeaderCellDef > Facture </th>\n            <td mat-cell *matCellDef=\"let element\"> \n              <mat-icon matTooltip={{element.facturePath}} mat-list-icon>insert_drive_file</mat-icon>\n             </td>\n          </ng-container>\n  \n          <ng-container matColumnDef=\"montant\">\n            <th mat-header-cell *matHeaderCellDef> Montant </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.montant}}</td>\n          </ng-container>\n  \n          <tr mat-header-row *matHeaderRowDef=\"displayedColumnsFactures\"></tr>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumnsFactures;\"></tr>\n        </table>      \n        <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateFacture()\">Ajouter Facture</button>\n                \n        <!--END Facture-->\n\n        <!--Start- DFC -->\n        <div>\n        *Visualiser Etat financier du projet (crédits, débits, soldes) (revoir cette partie avec Rachida-DFC? Interet moratoire?)\n        </div>\n        <!--End - DFC -->\n      <!--END Gestion financiere-->\n\n        <!--DEBUT Litige-->\n      <p class=\"small\">Litiges</p>\n\n      <table mat-table #tableLitiges [dataSource]=\"litiges\" class=\"mat-elevation-z2\">\n\n        <ng-container matColumnDef=\"introduitPar\">\n          <th mat-header-cell *matHeaderCellDef> Introduit par </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.introduitPar}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"partieAdverse\">\n          <th mat-header-cell *matHeaderCellDef> Partie adverse </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.partieAdverse}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"comment\">\n          <th mat-header-cell *matHeaderCellDef> Info </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.comment}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"dateDeSaisie\">\n          <th mat-header-cell *matHeaderCellDef> Date de saisie </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDeSaisie) }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"dateLimite\">\n          <th mat-header-cell *matHeaderCellDef> Date Limite </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLimite) }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"dateLitige\">\n          <th mat-header-cell *matHeaderCellDef> Date Litige </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLitige) }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"dateReponse\">\n          <th mat-header-cell *matHeaderCellDef> Date réponse </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateReponse) }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"litigePath\">\n          <th mat-header-cell *matHeaderCellDef> Litige </th>\n          <td mat-cell *matCellDef=\"let element\">\n            <mat-icon matTooltip={{element.litigePath}} mat-list-icon>insert_drive_file</mat-icon>\n          </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"reponsePath\">\n          <th mat-header-cell *matHeaderCellDef> Réponse </th>\n          <td mat-cell *matCellDef=\"let element\">\n            <mat-icon matTooltip={{element.reponsePath}} mat-list-icon>insert_drive_file</mat-icon>\n          </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"datePassageCommission\">\n          <th mat-header-cell *matHeaderCellDef> Date Commission </th>\n          <td mat-cell *matCellDef=\"let element\"> {{formatDate(element.datePassageCommission)}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"decisionCommission\">\n          <th mat-header-cell *matHeaderCellDef> Décision </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.decisionCommission}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"PVPath\">\n          <th mat-header-cell *matHeaderCellDef> PV </th>\n          <td mat-cell *matCellDef=\"let element\">\n            <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon>\n          </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"decisionPath\">\n          <th mat-header-cell *matHeaderCellDef> Decision </th>\n          <td mat-cell *matCellDef=\"let element\">\n            <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon>\n          </td>\n        </ng-container>\n\n\n\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsLitige\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsLitige;\"></tr>\n      </table>\n      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateLitige()\">Créer litige</button>\n      <!-- END Litige-->\n\n      <!--START mise en demeure-->\n      <p class=\"small\">Mises en demeure</p>\n\n      <table mat-table #tableMisesEnDemeure [dataSource]=\"dataSourceMisesEnDemeure\" class=\"mat-elevation-z2\">\n\n        \n      \n        <ng-container matColumnDef=\"numMiseEnDemeure\">\n          <th mat-header-cell *matHeaderCellDef> Num. Mise en demeure </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.numMiseEnDemeure}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"objet\">\n          <th mat-header-cell *matHeaderCellDef> Objet </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.objet}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"dateNotif\">\n          <th mat-header-cell *matHeaderCellDef> Date de notification </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.dateNotif|date }} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"moyenNotif\">\n          <th mat-header-cell *matHeaderCellDef> Moyen de notification </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.moyenNotif}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"delaiPriseEnCharge\">\n          <th mat-header-cell *matHeaderCellDef> Delai de prise en charge </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.delaiPriseEnCharge}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"miseEnDemeurePath\">\n          <th mat-header-cell *matHeaderCellDef> Litige </th>\n          <td mat-cell *matCellDef=\"let element\">\n            <mat-icon matTooltip={{element.miseEnDemeurePath}} mat-list-icon>insert_drive_file</mat-icon>\n          </td>\n        </ng-container>\n        \n        <ng-container matColumnDef=\"resultat\">\n          <th mat-header-cell *matHeaderCellDef> Resultat </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.resultat}} </td>\n        </ng-container>\n\n\n\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsMisesEnDemeure\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsMisesEnDemeure;\"></tr>\n      </table>\n      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateMiseEnDemeure()\">Créer Mise en demeure</button>      \n      <!--END mise en demeure-->\n\n      <!--Debut Rallonge financiere-->\n      <div>\n      <mat-slide-toggle [(ngModel)]=\"demandeRallongeExecutionChecked\">Demande de rallonge financière\n      </mat-slide-toggle>\n      <div [ngStyle]=\"{display: demandeRallongeExecutionChecked? 'block' : 'none'}\"\n        class=\"border border-secondary p-3\">\n\n        <table #tableRallongesFinancieresExecution mat-table [dataSource]=\"dataSourceRallongesFinancieresExecution\"\n          class=\"mat-elevation-z8\">\n\n\n\n          <ng-container matColumnDef=\"serviceContractant\">\n            <th mat-header-cell *matHeaderCellDef> S/C </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.serviceContractant}} </td>\n          </ng-container>\n\n          <ng-container matColumnDef=\"dateDemande\">\n            <th mat-header-cell *matHeaderCellDef> Date de la demande </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.dateDemande|date}} </td>\n          </ng-container>\n\n          <ng-container matColumnDef=\"montantDemande\">\n            <th mat-header-cell *matHeaderCellDef> Montant demandé </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.montantDemande}} </td>\n          </ng-container>\n\n          <ng-container matColumnDef=\"demandePath\">\n            <th mat-header-cell *matHeaderCellDef> Demande </th>\n            <td mat-cell *matCellDef=\"let element\">\n              <mat-icon matTooltip={{element.demandePath}} mat-list-icon>insert_drive_file</mat-icon>\n            </td>\n          </ng-container>\n\n          <ng-container matColumnDef=\"reponse\">\n            <th mat-header-cell *matHeaderCellDef> Réponse </th>\n            <td mat-cell *matCellDef=\"let element\">\n              <button mat-button class=\"text-primary\" *ngIf=\"!element.isAnswered\"\n                (click)=\"openDialogCreateReponseRallongeFinanciere()\">Ajouter Réponse</button>\n              <button mat-button class=\"text-primary\" *ngIf=\"element.isAnswered\">Voir\n                {{element.reponse}}</button>\n              <button mat-button class=\"text-primary\" *ngIf=\"element.isAnswered\">montant accordé\n                {{element.montantAccorde}}</button>\n              <mat-icon *ngIf=\"element.isAnswered\" matTooltip={{element.reponsePath}} mat-list-icon>\n                insert_drive_file</mat-icon>\n              <span *ngIf=\"element.isAnswered\" matTooltip=\"Date Réponse\">\n                {{element.dateReponse|date}}</span>\n            </td>\n          </ng-container>\n\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumnsRallongesFinancieres\"></tr>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumnsRallongesFinancieres;\"></tr>\n        </table>\n\n        <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateDemandeRallongeFinanciereExecution()\">\n          Ajouter rallonge financière\n        </button>\n      </div>\n\n    </div>      \n      <!-- FIN Rallonge financiere-->\n\n      <!--START Avenant-->\n      <div>\n        Avenant (voir avec Rachida)\n      </div>\n      <!--START Avenant-->\n\n      <mat-action-row>\n        <button mat-button (click)=\"openDialogCreateResiliation()\">Résilier</button>\n      </mat-action-row>\n\n\n    </mat-expansion-panel>\n\n\n\n\n\n    <mat-expansion-panel>\n      <!--<mat-expansion-panel disabled>-->\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          Clôture\n        </mat-panel-title>\n        <mat-panel-description>\n          (en cours)\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <p>Réception/Clôture</p>\n\n      <mat-action-row>\n        <button mat-button (click)=\"openDialogCreateReception()\">Réceptionner</button>\n        <button mat-button (click)=\"openDialogCreateCloture()\">Clôturer</button>\n      </mat-action-row>\n    </mat-expansion-panel>\n  </mat-accordion>\n</div>\n\n\n\n\n\n\n<!--\n<mat-list>\n  <h3 mat-subheader>Recours</h3>\n  <mat-list-item *ngFor=\"let recour of recours; last as last\">\n      <mat-icon mat-list-icon>insert_drive_file</mat-icon>\n      <h4 mat-line>{{recour}}</h4>\n      <p mat-line> depassement des delais </p>\n      <mat-divider [inset]=\"true\" *ngIf=\"!last\"></mat-divider>\n  </mat-list-item>\n</mat-list>\n<button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateRecours()\">Créer Recours</button>\n-->");
 
 /***/ }),
 
@@ -656,7 +890,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("      <p>Personaliser les paramètres du filtrage</p>\n  \n      <mat-grid-list cols=\"5\" rowHeight=\"4em\" gutterSize=\"1rem\">\n        <mat-grid-tile>\n          De\n          <mat-form-field>\n            <input matInput [matDatepicker]=\"pickerDe\" placeholder=\"Choose a date\">\n            <mat-datepicker-toggle matSuffix [for]=\"pickerDe\"></mat-datepicker-toggle>\n            <mat-datepicker #pickerDe></mat-datepicker>\n          </mat-form-field>\n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          A\n          <mat-form-field>\n            <input matInput [matDatepicker]=\"pickerA\" placeholder=\"Choose a date\">\n            <mat-datepicker-toggle matSuffix [for]=\"pickerA\"></mat-datepicker-toggle>\n            <mat-datepicker #pickerA></mat-datepicker>\n          </mat-form-field>        \n        </mat-grid-tile>  \n  \n        <mat-grid-tile>\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Nature des préstations</mat-label>\n            <mat-select multiple>\n              <mat-option value=Travaux>Travaux</mat-option>\n              <mat-option value=Fournitures>Fournitures</mat-option>\n              <mat-option value=Etudes>Etudes</mat-option>\n              <mat-option value=Services>Services</mat-option>\n            </mat-select>\n          </mat-form-field>\n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Source de financement</mat-label>\n            <mat-select multiple>\n              <mat-option value=\"FondsPropre\">Fonds propre</mat-option>\n              <mat-option value=\"SUP\">SUP</mat-option>\n              <mat-option value=\"FNI\">FNI</mat-option>\n              <mat-option value=\"BudgetEtat\">Budget d'Etat</mat-option>\n              <mat-option value=\"BudgetEtat\">Autre</mat-option>\n            </mat-select>\n          </mat-form-field>\n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Type de passation</mat-label>\n            <mat-select multiple>\n              <mat-option value=\"AON\">Appel d’offres national</mat-option>\n              <mat-option value=\"AOI\">Appel d’offres international</mat-option>\n              <mat-option value=\"AOO\">Appel d’offres ouvert</mat-option>\n              <mat-option value=\"AOOECM\">Appel d’offres ouvert avec exigence de capacités minimales</mat-option>\n              <mat-option value=\"AOR\">Appel d’offres restreint</mat-option>\n              <mat-option value=\"Concours\">Concours</mat-option>\n              <mat-option value=\"GGS\">Gré à gré simple</mat-option>\n              <mat-option value=\"GGC\">Gré à gré après consultation</mat-option>        \n            </mat-select>\n          </mat-form-field>\n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Type procédure</mat-label>\n            <mat-select multiple>\n              <mat-option value=\"PF\">Procédure formalisée</mat-option>\n              <mat-option value=\"PAC\">Procédure adaptée (Consultation)</mat-option>\n              <mat-option value=\"PABC\">Procédure adaptée (Bon de Commande)</mat-option>\n            </mat-select>\n          </mat-form-field>        \n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Forme du marché</mat-label>\n            <mat-select multiple>\n              <mat-option value=\"MAC\">Marché à commandes</mat-option>\n              <mat-option value=\"MA\">Marché alloti</mat-option>       \n              <mat-option value=\"MPC\">Marchés à procédures spécifiques</mat-option>  \n              <mat-option value=\"CP\">Contrat Programme</mat-option>  \n              <mat-option value=\"MTFTC\">Marché à tranche ferme et tranche conditionnelle</mat-option>  \n              <mat-option value=\"MG\">Marché global</mat-option>  \n            </mat-select>\n          </mat-form-field>        \n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          <mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Montant Minimal\" \n            name=\"montantMinimal\">\n          </mat-form-field>        \n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          <mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Montant Maximal\" \n            name=\"montantMaximal\">\n          </mat-form-field>         \n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          <button mat-raised-button>\n            Filtrer\n          </button>\n        </mat-grid-tile>\n  \n      </mat-grid-list>\n  \n \n  \n\n\n    \n\n\n\n\n\n\n\n    \n\n  \n  <!--<input class=\"ng-hide\" id=\"input-file-id\" multiple type=\"file\" />-->\n\n  <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateOperation()\">Créer Opération</button>\n    \n  \n    <!-- START - Affichage de la liste des operations avec leurs projets-->\n    <div *ngFor=\"let operation of operations\">\n      <mat-card class=\"m-3\">\n        <mat-card-title>{{ operation.intituleOperation }}</mat-card-title>\n        <mat-card-subtitle>Direction: {{ operation.serviceContractant }}</mat-card-subtitle>\n        <mat-card-subtitle>Code Opération: {{ operation.codeOperation }}</mat-card-subtitle>\n        <mat-card-subtitle>Montant Opération: {{ operation.montantOperation }}</mat-card-subtitle>\n        <mat-card-subtitle>Date Création: {{ operation.creationDateOperation | date:'dd-mm-yyyy h:mm a z' }}</mat-card-subtitle>\n        <mat-card-subtitle>Pour la structure:  {{ operation.pourLaStructureRattachement }}</mat-card-subtitle>\n  \n        <!--Start add projects here-->\n        <mat-card-content *ngFor=\"let project of projectsMap.get(operation.codeOperation)\">\n          <mat-card class=\"m-3\">Projet: Etude\n            <mat-card-title>{{ project.intituleProject }}</mat-card-title>\n            <mat-card-subtitle>Code Projet: {{ project.codeProjet }}</mat-card-subtitle>\n            <mat-card-subtitle>Nature: {{project.naturePrestation}}</mat-card-subtitle>\n            <mat-card-subtitle>Montant: {{project.montantProjet}}</mat-card-subtitle>\n            <mat-card-subtitle>Seuil (Est. Admin.): {{project.estimationAdministrative}}</mat-card-subtitle>\n            <mat-card-subtitle>Date Création: {{ project.creationDateProject | date:'dd-mm-yyyy h:mm a z' }}</mat-card-subtitle>\n          </mat-card>\n        </mat-card-content>\n        <!--End add projects here-->\n  \n        <mat-card-actions>\n          <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateProject(operation)\">Créer Projet</button>\n        </mat-card-actions>\n        <mat-card-footer align=\"right\" class=\"m-3\">Année du plan d'action: {{ operation.yearPlanAction}}</mat-card-footer>\n      </mat-card>\n    </div>\n    <!-- END - Affichage de la liste des operations avec leurs projets-->");
+/* harmony default export */ __webpack_exports__["default"] = ("      <p>Personaliser les paramètres du filtrage</p>\n  \n      <mat-grid-list cols=\"5\" rowHeight=\"4em\" gutterSize=\"1rem\">\n        <mat-grid-tile>\n          De\n          <mat-form-field>\n            <input matInput [matDatepicker]=\"pickerDe\" placeholder=\"Choose a date\">\n            <mat-datepicker-toggle matSuffix [for]=\"pickerDe\"></mat-datepicker-toggle>\n            <mat-datepicker #pickerDe></mat-datepicker>\n          </mat-form-field>\n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          A\n          <mat-form-field>\n            <input matInput [matDatepicker]=\"pickerA\" placeholder=\"Choose a date\">\n            <mat-datepicker-toggle matSuffix [for]=\"pickerA\"></mat-datepicker-toggle>\n            <mat-datepicker #pickerA></mat-datepicker>\n          </mat-form-field>        \n        </mat-grid-tile>  \n  \n        <mat-grid-tile>\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Nature des préstations</mat-label>\n            <mat-select multiple>\n              <mat-option value=Travaux>Travaux</mat-option>\n              <mat-option value=Fournitures>Fournitures</mat-option>\n              <mat-option value=Etudes>Etudes</mat-option>\n              <mat-option value=Services>Services</mat-option>\n            </mat-select>\n          </mat-form-field>\n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Source de financement</mat-label>\n            <mat-select multiple>\n              <mat-option value=\"FondsPropre\">Fonds propre</mat-option>\n              <mat-option value=\"SUP\">SUP</mat-option>\n              <mat-option value=\"FNI\">FNI</mat-option>\n              <mat-option value=\"BudgetEtat\">Budget d'Etat</mat-option>\n              <mat-option value=\"BudgetEtat\">Autre</mat-option>\n            </mat-select>\n          </mat-form-field>\n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Type de passation</mat-label>\n            <mat-select multiple>\n              <mat-option value=\"AON\">Appel d’offres national</mat-option>\n              <mat-option value=\"AOI\">Appel d’offres international</mat-option>\n              <mat-option value=\"AOO\">Appel d’offres ouvert</mat-option>\n              <mat-option value=\"AOOECM\">Appel d’offres ouvert avec exigence de capacités minimales</mat-option>\n              <mat-option value=\"AOR\">Appel d’offres restreint</mat-option>\n              <mat-option value=\"Concours\">Concours</mat-option>\n              <mat-option value=\"GGS\">Gré à gré simple</mat-option>\n              <mat-option value=\"GGC\">Gré à gré après consultation</mat-option>        \n            </mat-select>\n          </mat-form-field>\n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Type procédure</mat-label>\n            <mat-select multiple>\n              <mat-option value=\"PF\">Procédure formalisée</mat-option>\n              <mat-option value=\"PAC\">Procédure adaptée (Consultation)</mat-option>\n              <mat-option value=\"PABC\">Procédure adaptée (Bon de Commande)</mat-option>\n            </mat-select>\n          </mat-form-field>        \n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Forme du marché</mat-label>\n            <mat-select multiple>\n              <mat-option value=\"M\">Marché</mat-option>              \n              <mat-option value=\"MAC\">Marché à commandes</mat-option>\n              <mat-option value=\"MA\">Marché alloti</mat-option>       \n              <mat-option value=\"MPC\">Marchés à procédures spécifiques</mat-option>  \n              <mat-option value=\"CP\">Contrat Programme</mat-option>  \n              <mat-option value=\"MTFTC\">Marché à tranche ferme et tranche conditionnelle</mat-option>  \n              <mat-option value=\"MG\">Marché global</mat-option>  \n            </mat-select>\n          </mat-form-field>        \n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          <mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Montant Minimal\" \n            name=\"montantMinimal\">\n          </mat-form-field>        \n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          <mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Montant Maximal\" \n            name=\"montantMaximal\">\n          </mat-form-field>         \n        </mat-grid-tile>\n  \n        <mat-grid-tile>\n          <button mat-raised-button>\n            Filtrer\n          </button>\n        </mat-grid-tile>\n  \n      </mat-grid-list>\n  \n \n  \n\n\n    \n\n\n\n\n\n\n\n    \n\n  \n  <!--<input class=\"ng-hide\" id=\"input-file-id\" multiple type=\"file\" />-->\n\n  <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateOperation()\">Créer Opération</button>\n    \n  \n    <!-- START - Affichage de la liste des operations avec leurs projets-->\n    <div *ngFor=\"let operation of operations\">\n      <mat-card class=\"m-3\">\n        <mat-card-title>{{ operation.intituleOperation }}</mat-card-title>\n        <mat-card-subtitle>Direction: {{ operation.serviceContractant }}</mat-card-subtitle>\n        <mat-card-subtitle>Code Opération: {{ operation.codeOperation }}</mat-card-subtitle>\n        <mat-card-subtitle>Montant Opération: {{ operation.montantOperation }}</mat-card-subtitle>\n        <mat-card-subtitle>Date Création: {{ operation.creationDateOperation | date:'dd-mm-yyyy h:mm a z' }}</mat-card-subtitle>\n        <mat-card-subtitle>Pour la structure:  {{ operation.pourLaStructureRattachement }}</mat-card-subtitle>\n  \n        <!--Start add projects here-->\n        <mat-card-content *ngFor=\"let project of projectsMap.get(operation.codeOperation)\">\n          <mat-card class=\"m-3\">Projet: Etude\n            <mat-card-title>{{ project.intituleProject }}</mat-card-title>\n            <mat-card-subtitle>Code Projet: {{ project.codeProjet }}</mat-card-subtitle>\n            <mat-card-subtitle>Nature: {{project.naturePrestation}}</mat-card-subtitle>\n            <mat-card-subtitle>Montant: {{project.montantProjet}}</mat-card-subtitle>\n            <mat-card-subtitle>Seuil (Est. Admin.): {{project.estimationAdministrative}}</mat-card-subtitle>\n            <mat-card-subtitle>Date Création: {{ project.creationDateProject | date:'dd-mm-yyyy h:mm a z' }}</mat-card-subtitle>\n          </mat-card>\n        </mat-card-content>\n        <!--End add projects here-->\n  \n        <mat-card-actions>\n          <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateProject(operation)\">Créer Projet</button>\n        </mat-card-actions>\n        <mat-card-footer align=\"right\" class=\"m-3\">Année du plan d'action: {{ operation.yearPlanAction}}</mat-card-footer>\n      </mat-card>\n    </div>\n    <!-- END - Affichage de la liste des operations avec leurs projets-->");
 
 /***/ }),
 
@@ -1028,6 +1262,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dialogs_create_demande_eclaircissement_create_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./dialogs/create-demande-eclaircissement/create-demande-eclaircissement.component */ "./src/app/dialogs/create-demande-eclaircissement/create-demande-eclaircissement.component.ts");
 /* harmony import */ var _dialogs_create_response_demande_eclaircissement_create_response_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ./dialogs/create-response-demande-eclaircissement/create-response-demande-eclaircissement.component */ "./src/app/dialogs/create-response-demande-eclaircissement/create-response-demande-eclaircissement.component.ts");
 /* harmony import */ var _dialogs_create_soumissionnaire_create_soumissionnaire_component__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! ./dialogs/create-soumissionnaire/create-soumissionnaire.component */ "./src/app/dialogs/create-soumissionnaire/create-soumissionnaire.component.ts");
+/* harmony import */ var _dialogs_create_passage_copeo_ouverture_plis_create_passage_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! ./dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component */ "./src/app/dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component.ts");
+/* harmony import */ var _dialogs_create_resultat_copeo_ouverture_plis_create_resultat_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! ./dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component */ "./src/app/dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component.ts");
+/* harmony import */ var _dialogs_create_demande_complement_create_demande_complement_component__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! ./dialogs/create-demande-complement/create-demande-complement.component */ "./src/app/dialogs/create-demande-complement/create-demande-complement.component.ts");
+/* harmony import */ var _dialogs_create_passage_copeo_evaluation_offres_create_passage_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component */ "./src/app/dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component.ts");
+/* harmony import */ var _dialogs_create_demande_clarification_create_demande_clarification_component__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! ./dialogs/create-demande-clarification/create-demande-clarification.component */ "./src/app/dialogs/create-demande-clarification/create-demande-clarification.component.ts");
+/* harmony import */ var _dialogs_create_passage_comite_technique_create_passage_comite_technique_component__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! ./dialogs/create-passage-comite-technique/create-passage-comite-technique.component */ "./src/app/dialogs/create-passage-comite-technique/create-passage-comite-technique.component.ts");
+/* harmony import */ var _dialogs_create_resultat_copeo_evaluation_offres_create_resultat_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(/*! ./dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component */ "./src/app/dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component.ts");
+/* harmony import */ var _dialogs_create_demande_rallonge_financiere_create_demande_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(/*! ./dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component */ "./src/app/dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component.ts");
+/* harmony import */ var _dialogs_create_reponse_rallonge_financiere_create_reponse_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(/*! ./dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component */ "./src/app/dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component.ts");
+/* harmony import */ var _dialogs_create_declaration_attribution_provisoire_create_declaration_attribution_provisoire_component__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(/*! ./dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component */ "./src/app/dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component.ts");
+/* harmony import */ var _dialogs_create_mise_au_point_create_mise_au_point_component__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(/*! ./dialogs/create-mise-au-point/create-mise-au-point.component */ "./src/app/dialogs/create-mise-au-point/create-mise-au-point.component.ts");
+/* harmony import */ var _dialogs_create_ods_create_ods_component__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(/*! ./dialogs/create-ods/create-ods.component */ "./src/app/dialogs/create-ods/create-ods.component.ts");
+/* harmony import */ var _dialogs_create_sous_traitant_create_sous_traitant_component__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(/*! ./dialogs/create-sous-traitant/create-sous-traitant.component */ "./src/app/dialogs/create-sous-traitant/create-sous-traitant.component.ts");
+/* harmony import */ var _dialogs_create_facture_create_facture_component__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(/*! ./dialogs/create-facture/create-facture.component */ "./src/app/dialogs/create-facture/create-facture.component.ts");
+/* harmony import */ var _dialogs_create_resiliation_create_resiliation_component__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(/*! ./dialogs/create-resiliation/create-resiliation.component */ "./src/app/dialogs/create-resiliation/create-resiliation.component.ts");
+/* harmony import */ var _dialogs_create_mise_en_demeure_create_mise_en_demeure_component__WEBPACK_IMPORTED_MODULE_75__ = __webpack_require__(/*! ./dialogs/create-mise-en-demeure/create-mise-en-demeure.component */ "./src/app/dialogs/create-mise-en-demeure/create-mise-en-demeure.component.ts");
+/* harmony import */ var _dialogs_create_cloture_create_cloture_component__WEBPACK_IMPORTED_MODULE_76__ = __webpack_require__(/*! ./dialogs/create-cloture/create-cloture.component */ "./src/app/dialogs/create-cloture/create-cloture.component.ts");
+/* harmony import */ var _dialogs_create_reception_create_reception_component__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(/*! ./dialogs/create-reception/create-reception.component */ "./src/app/dialogs/create-reception/create-reception.component.ts");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1136,7 +1406,25 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _dialogs_create_candidat_create_candidat_component__WEBPACK_IMPORTED_MODULE_55__["CreateCandidatComponent"],
             _dialogs_create_demande_eclaircissement_create_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_57__["CreateDemandeEclaircissementComponent"],
             _dialogs_create_response_demande_eclaircissement_create_response_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_58__["CreateReponseDemandeEclaircissementComponent"],
-            _dialogs_create_soumissionnaire_create_soumissionnaire_component__WEBPACK_IMPORTED_MODULE_59__["CreateSoumissionnaireComponent"]
+            _dialogs_create_soumissionnaire_create_soumissionnaire_component__WEBPACK_IMPORTED_MODULE_59__["CreateSoumissionnaireComponent"],
+            _dialogs_create_passage_copeo_ouverture_plis_create_passage_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_60__["CreatePassageCopeoOuverturePlisComponent"],
+            _dialogs_create_resultat_copeo_ouverture_plis_create_resultat_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_61__["CreateResultatCopeoOuverturePlisComponent"],
+            _dialogs_create_demande_complement_create_demande_complement_component__WEBPACK_IMPORTED_MODULE_62__["CreateDemandeComplementComponent"],
+            _dialogs_create_passage_copeo_evaluation_offres_create_passage_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_63__["CreatePassageCopeoEvaluationOffresComponent"],
+            _dialogs_create_demande_clarification_create_demande_clarification_component__WEBPACK_IMPORTED_MODULE_64__["CreateDemandeClarificationComponent"],
+            _dialogs_create_passage_comite_technique_create_passage_comite_technique_component__WEBPACK_IMPORTED_MODULE_65__["CreatePassageComiteTechniqueComponent"],
+            _dialogs_create_resultat_copeo_evaluation_offres_create_resultat_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_66__["CreateResultatCopeoEvaluationOffresComponent"],
+            _dialogs_create_demande_rallonge_financiere_create_demande_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_67__["CreateDemandeRallongeFinanciereComponent"],
+            _dialogs_create_reponse_rallonge_financiere_create_reponse_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_68__["CreateReponseRallongeFinanciereComponent"],
+            _dialogs_create_declaration_attribution_provisoire_create_declaration_attribution_provisoire_component__WEBPACK_IMPORTED_MODULE_69__["CreateDeclarationAttributionProvisoireComponent"],
+            _dialogs_create_mise_au_point_create_mise_au_point_component__WEBPACK_IMPORTED_MODULE_70__["CreateMiseAuPointComponent"],
+            _dialogs_create_ods_create_ods_component__WEBPACK_IMPORTED_MODULE_71__["CreateODSComponent"],
+            _dialogs_create_sous_traitant_create_sous_traitant_component__WEBPACK_IMPORTED_MODULE_72__["CreateSousTraitantComponent"],
+            _dialogs_create_facture_create_facture_component__WEBPACK_IMPORTED_MODULE_73__["CreateFactureComponent"],
+            _dialogs_create_resiliation_create_resiliation_component__WEBPACK_IMPORTED_MODULE_74__["CreateResiliationComponent"],
+            _dialogs_create_mise_en_demeure_create_mise_en_demeure_component__WEBPACK_IMPORTED_MODULE_75__["CreateMiseEnDemeureComponent"],
+            _dialogs_create_cloture_create_cloture_component__WEBPACK_IMPORTED_MODULE_76__["CreateClotureComponent"],
+            _dialogs_create_reception_create_reception_component__WEBPACK_IMPORTED_MODULE_77__["CreateReceptionComponent"]
         ],
         entryComponents: [
             _dialogs_create_project_create_project_component__WEBPACK_IMPORTED_MODULE_8__["CreateProjectComponent"],
@@ -1154,7 +1442,25 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _dialogs_create_candidat_create_candidat_component__WEBPACK_IMPORTED_MODULE_55__["CreateCandidatComponent"],
             _dialogs_create_demande_eclaircissement_create_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_57__["CreateDemandeEclaircissementComponent"],
             _dialogs_create_response_demande_eclaircissement_create_response_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_58__["CreateReponseDemandeEclaircissementComponent"],
-            _dialogs_create_soumissionnaire_create_soumissionnaire_component__WEBPACK_IMPORTED_MODULE_59__["CreateSoumissionnaireComponent"]
+            _dialogs_create_soumissionnaire_create_soumissionnaire_component__WEBPACK_IMPORTED_MODULE_59__["CreateSoumissionnaireComponent"],
+            _dialogs_create_passage_copeo_ouverture_plis_create_passage_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_60__["CreatePassageCopeoOuverturePlisComponent"],
+            _dialogs_create_resultat_copeo_ouverture_plis_create_resultat_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_61__["CreateResultatCopeoOuverturePlisComponent"],
+            _dialogs_create_demande_complement_create_demande_complement_component__WEBPACK_IMPORTED_MODULE_62__["CreateDemandeComplementComponent"],
+            _dialogs_create_passage_copeo_evaluation_offres_create_passage_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_63__["CreatePassageCopeoEvaluationOffresComponent"],
+            _dialogs_create_demande_clarification_create_demande_clarification_component__WEBPACK_IMPORTED_MODULE_64__["CreateDemandeClarificationComponent"],
+            _dialogs_create_passage_comite_technique_create_passage_comite_technique_component__WEBPACK_IMPORTED_MODULE_65__["CreatePassageComiteTechniqueComponent"],
+            _dialogs_create_resultat_copeo_evaluation_offres_create_resultat_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_66__["CreateResultatCopeoEvaluationOffresComponent"],
+            _dialogs_create_demande_rallonge_financiere_create_demande_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_67__["CreateDemandeRallongeFinanciereComponent"],
+            _dialogs_create_reponse_rallonge_financiere_create_reponse_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_68__["CreateReponseRallongeFinanciereComponent"],
+            _dialogs_create_declaration_attribution_provisoire_create_declaration_attribution_provisoire_component__WEBPACK_IMPORTED_MODULE_69__["CreateDeclarationAttributionProvisoireComponent"],
+            _dialogs_create_mise_au_point_create_mise_au_point_component__WEBPACK_IMPORTED_MODULE_70__["CreateMiseAuPointComponent"],
+            _dialogs_create_ods_create_ods_component__WEBPACK_IMPORTED_MODULE_71__["CreateODSComponent"],
+            _dialogs_create_sous_traitant_create_sous_traitant_component__WEBPACK_IMPORTED_MODULE_72__["CreateSousTraitantComponent"],
+            _dialogs_create_facture_create_facture_component__WEBPACK_IMPORTED_MODULE_73__["CreateFactureComponent"],
+            _dialogs_create_resiliation_create_resiliation_component__WEBPACK_IMPORTED_MODULE_74__["CreateResiliationComponent"],
+            _dialogs_create_mise_en_demeure_create_mise_en_demeure_component__WEBPACK_IMPORTED_MODULE_75__["CreateMiseEnDemeureComponent"],
+            _dialogs_create_cloture_create_cloture_component__WEBPACK_IMPORTED_MODULE_76__["CreateClotureComponent"],
+            _dialogs_create_reception_create_reception_component__WEBPACK_IMPORTED_MODULE_77__["CreateReceptionComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1458,6 +1764,380 @@ CreateCandidatComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/dialogs/create-cloture/create-cloture.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/dialogs/create-cloture/create-cloture.component.css ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtY2xvdHVyZS9jcmVhdGUtY2xvdHVyZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixXQUFXO0VBQ2I7O0VBRUE7SUFDRSxXQUFXO0VBQ2IiLCJmaWxlIjoic3JjL2FwcC9kaWFsb2dzL2NyZWF0ZS1jbG90dXJlL2NyZWF0ZS1jbG90dXJlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhhbXBsZS1mb3JtIHtcclxuICAgIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG4gIFxyXG4gIC5leGFtcGxlLWZ1bGwtd2lkdGgge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-cloture/create-cloture.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/dialogs/create-cloture/create-cloture.component.ts ***!
+  \********************************************************************/
+/*! exports provided: CreateClotureComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateClotureComponent", function() { return CreateClotureComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+
+
+
+let CreateClotureComponent = class CreateClotureComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        console.log(serviceContractant);
+    }
+    createOperation() {
+        this.dialogRef.close({
+            creationDateOperation: 20,
+            intituleOperation: "this.name",
+            codeOperation: "this.name",
+            serviceContractant: "this.name",
+            montantOperation: 20,
+            yearPlanAction: 20
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            creationDateOperation: 20,
+            intituleOperation: "this.name",
+            codeOperation: "this.name",
+            serviceContractant: "this.name",
+            montantOperation: 20,
+            yearPlanAction: 20
+        });
+    }
+    ngOnInit() {
+    }
+};
+CreateClotureComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateClotureComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-cloture',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-cloture.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-cloture/create-cloture.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-cloture.component.css */ "./src/app/dialogs/create-cloture/create-cloture.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateClotureComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component.css":
+/*!***************************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component.css ***!
+  \***************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n.example-full-width {\r\n  width: 100%;\r\n}\r\n  \r\ntable {\r\n  width: 100%;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtZGVjbGFyYXRpb24tYXR0cmlidXRpb24tcHJvdmlzb2lyZS9jcmVhdGUtZGVjbGFyYXRpb24tYXR0cmlidXRpb24tcHJvdmlzb2lyZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixXQUFXO0VBQ2I7O0FBRUY7RUFDRSxXQUFXO0FBQ2I7O0FBQ0E7RUFDRSxXQUFXO0FBQ2IiLCJmaWxlIjoic3JjL2FwcC9kaWFsb2dzL2NyZWF0ZS1kZWNsYXJhdGlvbi1hdHRyaWJ1dGlvbi1wcm92aXNvaXJlL2NyZWF0ZS1kZWNsYXJhdGlvbi1hdHRyaWJ1dGlvbi1wcm92aXNvaXJlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhhbXBsZS1mb3JtIHtcclxuICAgIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG4gIFxyXG4uZXhhbXBsZS1mdWxsLXdpZHRoIHtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG50YWJsZSB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component.ts":
+/*!**************************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component.ts ***!
+  \**************************************************************************************************************************/
+/*! exports provided: CreateDeclarationAttributionProvisoireComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateDeclarationAttributionProvisoireComponent", function() { return CreateDeclarationAttributionProvisoireComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/collections */ "./node_modules/@angular/cdk/esm2015/collections.js");
+
+
+
+
+
+const ELEMENT_DATA = [
+    { position: 1, name: 'mobilis' },
+    { position: 2, name: 'sntf' },
+    { position: 3, name: 'cosider' },
+];
+let CreateDeclarationAttributionProvisoireComponent = class CreateDeclarationAttributionProvisoireComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        this.nonCandidatChecked = false;
+        this.displayedColumns = ['select', 'position', 'name'];
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"](ELEMENT_DATA);
+        this.selection = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_4__["SelectionModel"](true, []);
+        console.log(serviceContractant);
+    }
+    createAdditif() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    ngOnInit() {
+    }
+    /** Whether the number of selected elements matches the total number of rows. */
+    isAllSelected() {
+        const numSelected = this.selection.selected.length;
+        const numRows = this.dataSource.data.length;
+        return numSelected === numRows;
+    }
+    /** Selects all rows if they are not all selected; otherwise clear selection. */
+    masterToggle() {
+        this.isAllSelected() ?
+            this.selection.clear() :
+            this.dataSource.data.forEach(row => this.selection.select(row));
+    }
+    /** The label for the checkbox on the passed row */
+    checkboxLabel(row) {
+        if (!row) {
+            return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
+        }
+        return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+    }
+};
+CreateDeclarationAttributionProvisoireComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateDeclarationAttributionProvisoireComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-declaration-attribution-provisoire',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-declaration-attribution-provisoire.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-declaration-attribution-provisoire.component.css */ "./src/app/dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateDeclarationAttributionProvisoireComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-demande-clarification/create-demande-clarification.component.css":
+/*!*************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-demande-clarification/create-demande-clarification.component.css ***!
+  \*************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n.example-full-width {\r\n  width: 100%;\r\n}\r\n  \r\ntable {\r\n  width: 100%;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtZGVtYW5kZS1jbGFyaWZpY2F0aW9uL2NyZWF0ZS1kZW1hbmRlLWNsYXJpZmljYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtJQUNoQixnQkFBZ0I7SUFDaEIsV0FBVztFQUNiOztBQUVGO0VBQ0UsV0FBVztBQUNiOztBQUNBO0VBQ0UsV0FBVztBQUNiIiwiZmlsZSI6InNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtZGVtYW5kZS1jbGFyaWZpY2F0aW9uL2NyZWF0ZS1kZW1hbmRlLWNsYXJpZmljYXRpb24uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWZvcm0ge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogNTAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbi5leGFtcGxlLWZ1bGwtd2lkdGgge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcbnRhYmxlIHtcclxuICB3aWR0aDogMTAwJTtcclxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-demande-clarification/create-demande-clarification.component.ts":
+/*!************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-demande-clarification/create-demande-clarification.component.ts ***!
+  \************************************************************************************************/
+/*! exports provided: CreateDemandeClarificationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateDemandeClarificationComponent", function() { return CreateDemandeClarificationComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/collections */ "./node_modules/@angular/cdk/esm2015/collections.js");
+
+
+
+
+
+const ELEMENT_DATA = [
+    { position: 1, name: 'mobilis' },
+    { position: 2, name: 'sntf' },
+    { position: 3, name: 'cosider' },
+];
+let CreateDemandeClarificationComponent = class CreateDemandeClarificationComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        this.nonCandidatChecked = false;
+        this.displayedColumns = ['select', 'position', 'name'];
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"](ELEMENT_DATA);
+        this.selection = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_4__["SelectionModel"](true, []);
+        console.log(serviceContractant);
+    }
+    createAdditif() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    ngOnInit() {
+    }
+    /** Whether the number of selected elements matches the total number of rows. */
+    isAllSelected() {
+        const numSelected = this.selection.selected.length;
+        const numRows = this.dataSource.data.length;
+        return numSelected === numRows;
+    }
+    /** Selects all rows if they are not all selected; otherwise clear selection. */
+    masterToggle() {
+        this.isAllSelected() ?
+            this.selection.clear() :
+            this.dataSource.data.forEach(row => this.selection.select(row));
+    }
+    /** The label for the checkbox on the passed row */
+    checkboxLabel(row) {
+        if (!row) {
+            return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
+        }
+        return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+    }
+};
+CreateDemandeClarificationComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateDemandeClarificationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-demande-clarification',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-demande-clarification.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-demande-clarification/create-demande-clarification.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-demande-clarification.component.css */ "./src/app/dialogs/create-demande-clarification/create-demande-clarification.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateDemandeClarificationComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-demande-complement/create-demande-complement.component.css":
+/*!*******************************************************************************************!*\
+  !*** ./src/app/dialogs/create-demande-complement/create-demande-complement.component.css ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n.example-full-width {\r\n  width: 100%;\r\n}\r\n  \r\ntable {\r\n  width: 100%;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtZGVtYW5kZS1jb21wbGVtZW50L2NyZWF0ZS1kZW1hbmRlLWNvbXBsZW1lbnQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtJQUNoQixnQkFBZ0I7SUFDaEIsV0FBVztFQUNiOztBQUVGO0VBQ0UsV0FBVztBQUNiOztBQUNBO0VBQ0UsV0FBVztBQUNiIiwiZmlsZSI6InNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtZGVtYW5kZS1jb21wbGVtZW50L2NyZWF0ZS1kZW1hbmRlLWNvbXBsZW1lbnQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWZvcm0ge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogNTAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbi5leGFtcGxlLWZ1bGwtd2lkdGgge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcbnRhYmxlIHtcclxuICB3aWR0aDogMTAwJTtcclxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-demande-complement/create-demande-complement.component.ts":
+/*!******************************************************************************************!*\
+  !*** ./src/app/dialogs/create-demande-complement/create-demande-complement.component.ts ***!
+  \******************************************************************************************/
+/*! exports provided: CreateDemandeComplementComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateDemandeComplementComponent", function() { return CreateDemandeComplementComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/collections */ "./node_modules/@angular/cdk/esm2015/collections.js");
+
+
+
+
+
+const ELEMENT_DATA = [
+    { position: 1, name: 'mobilis' },
+    { position: 2, name: 'sntf' },
+    { position: 3, name: 'cosider' },
+];
+let CreateDemandeComplementComponent = class CreateDemandeComplementComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        this.nonCandidatChecked = false;
+        this.displayedColumns = ['select', 'position', 'name'];
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"](ELEMENT_DATA);
+        this.selection = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_4__["SelectionModel"](true, []);
+        console.log(serviceContractant);
+    }
+    createAdditif() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    ngOnInit() {
+    }
+    /** Whether the number of selected elements matches the total number of rows. */
+    isAllSelected() {
+        const numSelected = this.selection.selected.length;
+        const numRows = this.dataSource.data.length;
+        return numSelected === numRows;
+    }
+    /** Selects all rows if they are not all selected; otherwise clear selection. */
+    masterToggle() {
+        this.isAllSelected() ?
+            this.selection.clear() :
+            this.dataSource.data.forEach(row => this.selection.select(row));
+    }
+    /** The label for the checkbox on the passed row */
+    checkboxLabel(row) {
+        if (!row) {
+            return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
+        }
+        return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+    }
+};
+CreateDemandeComplementComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateDemandeComplementComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-demande-complement',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-demande-complement.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-demande-complement/create-demande-complement.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-demande-complement.component.css */ "./src/app/dialogs/create-demande-complement/create-demande-complement.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateDemandeComplementComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/dialogs/create-demande-eclaircissement/create-demande-eclaircissement.component.css":
 /*!*****************************************************************************************************!*\
   !*** ./src/app/dialogs/create-demande-eclaircissement/create-demande-eclaircissement.component.css ***!
@@ -1526,6 +2206,141 @@ CreateDemandeEclaircissementComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__de
 
 /***/ }),
 
+/***/ "./src/app/dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component.css":
+/*!*************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component.css ***!
+  \*************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtZGVtYW5kZS1yYWxsb25nZS1maW5hbmNpZXJlL2NyZWF0ZS1kZW1hbmRlLXJhbGxvbmdlLWZpbmFuY2llcmUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtJQUNoQixnQkFBZ0I7SUFDaEIsV0FBVztFQUNiOztFQUVBO0lBQ0UsV0FBVztFQUNiIiwiZmlsZSI6InNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtZGVtYW5kZS1yYWxsb25nZS1maW5hbmNpZXJlL2NyZWF0ZS1kZW1hbmRlLXJhbGxvbmdlLWZpbmFuY2llcmUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWZvcm0ge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogNTAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbiAgLmV4YW1wbGUtZnVsbC13aWR0aCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component.ts":
+/*!************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component.ts ***!
+  \************************************************************************************************************/
+/*! exports provided: CreateDemandeRallongeFinanciereComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateDemandeRallongeFinanciereComponent", function() { return CreateDemandeRallongeFinanciereComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+
+
+
+let CreateDemandeRallongeFinanciereComponent = class CreateDemandeRallongeFinanciereComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        this.nonCandidatChecked = false;
+        console.log(serviceContractant);
+    }
+    createAdditif() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    ngOnInit() {
+    }
+};
+CreateDemandeRallongeFinanciereComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateDemandeRallongeFinanciereComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-demande-rallonge-financiere',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-demande-rallonge-financiere.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-demande-rallonge-financiere.component.css */ "./src/app/dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateDemandeRallongeFinanciereComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-facture/create-facture.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/dialogs/create-facture/create-facture.component.css ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtZmFjdHVyZS9jcmVhdGUtZmFjdHVyZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixXQUFXO0VBQ2I7O0VBRUE7SUFDRSxXQUFXO0VBQ2IiLCJmaWxlIjoic3JjL2FwcC9kaWFsb2dzL2NyZWF0ZS1mYWN0dXJlL2NyZWF0ZS1mYWN0dXJlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhhbXBsZS1mb3JtIHtcclxuICAgIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG4gIFxyXG4gIC5leGFtcGxlLWZ1bGwtd2lkdGgge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-facture/create-facture.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/dialogs/create-facture/create-facture.component.ts ***!
+  \********************************************************************/
+/*! exports provided: CreateFactureComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateFactureComponent", function() { return CreateFactureComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+
+
+
+let CreateFactureComponent = class CreateFactureComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        console.log(serviceContractant);
+    }
+    createLitige() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    ngOnInit() {
+    }
+};
+CreateFactureComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateFactureComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-facture',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-facture.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-facture/create-facture.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-facture.component.css */ "./src/app/dialogs/create-facture/create-facture.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateFactureComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/dialogs/create-litige/create-litige.component.css":
 /*!*******************************************************************!*\
   !*** ./src/app/dialogs/create-litige/create-litige.component.css ***!
@@ -1588,6 +2403,217 @@ CreateLitigeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
 ], CreateLitigeComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-mise-au-point/create-mise-au-point.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/dialogs/create-mise-au-point/create-mise-au-point.component.css ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtbWlzZS1hdS1wb2ludC9jcmVhdGUtbWlzZS1hdS1wb2ludC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixXQUFXO0VBQ2I7O0VBRUE7SUFDRSxXQUFXO0VBQ2IiLCJmaWxlIjoic3JjL2FwcC9kaWFsb2dzL2NyZWF0ZS1taXNlLWF1LXBvaW50L2NyZWF0ZS1taXNlLWF1LXBvaW50LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhhbXBsZS1mb3JtIHtcclxuICAgIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG4gIFxyXG4gIC5leGFtcGxlLWZ1bGwtd2lkdGgge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-mise-au-point/create-mise-au-point.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/dialogs/create-mise-au-point/create-mise-au-point.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: CreateMiseAuPointComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateMiseAuPointComponent", function() { return CreateMiseAuPointComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+
+
+
+let CreateMiseAuPointComponent = class CreateMiseAuPointComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        console.log(serviceContractant);
+    }
+    createOperation() {
+        this.dialogRef.close({
+            creationDateOperation: 20,
+            intituleOperation: "this.name",
+            codeOperation: "this.name",
+            serviceContractant: "this.name",
+            montantOperation: 20,
+            yearPlanAction: 20
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            creationDateOperation: 20,
+            intituleOperation: "this.name",
+            codeOperation: "this.name",
+            serviceContractant: "this.name",
+            montantOperation: 20,
+            yearPlanAction: 20
+        });
+    }
+    ngOnInit() {
+    }
+};
+CreateMiseAuPointComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateMiseAuPointComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-mise-au-point',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-mise-au-point.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-mise-au-point/create-mise-au-point.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-mise-au-point.component.css */ "./src/app/dialogs/create-mise-au-point/create-mise-au-point.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateMiseAuPointComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-mise-en-demeure/create-mise-en-demeure.component.css":
+/*!*************************************************************************************!*\
+  !*** ./src/app/dialogs/create-mise-en-demeure/create-mise-en-demeure.component.css ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtbWlzZS1lbi1kZW1ldXJlL2NyZWF0ZS1taXNlLWVuLWRlbWV1cmUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtJQUNoQixnQkFBZ0I7SUFDaEIsV0FBVztFQUNiOztFQUVBO0lBQ0UsV0FBVztFQUNiIiwiZmlsZSI6InNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtbWlzZS1lbi1kZW1ldXJlL2NyZWF0ZS1taXNlLWVuLWRlbWV1cmUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWZvcm0ge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogNTAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbiAgLmV4YW1wbGUtZnVsbC13aWR0aCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-mise-en-demeure/create-mise-en-demeure.component.ts":
+/*!************************************************************************************!*\
+  !*** ./src/app/dialogs/create-mise-en-demeure/create-mise-en-demeure.component.ts ***!
+  \************************************************************************************/
+/*! exports provided: CreateMiseEnDemeureComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateMiseEnDemeureComponent", function() { return CreateMiseEnDemeureComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+
+
+
+let CreateMiseEnDemeureComponent = class CreateMiseEnDemeureComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        console.log(serviceContractant);
+    }
+    createLitige() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    ngOnInit() {
+    }
+};
+CreateMiseEnDemeureComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateMiseEnDemeureComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-mise-en-demeure',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-mise-en-demeure.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-mise-en-demeure/create-mise-en-demeure.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-mise-en-demeure.component.css */ "./src/app/dialogs/create-mise-en-demeure/create-mise-en-demeure.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateMiseEnDemeureComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-ods/create-ods.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/dialogs/create-ods/create-ods.component.css ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtb2RzL2NyZWF0ZS1vZHMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtJQUNoQixnQkFBZ0I7SUFDaEIsV0FBVztFQUNiOztFQUVBO0lBQ0UsV0FBVztFQUNiIiwiZmlsZSI6InNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtb2RzL2NyZWF0ZS1vZHMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWZvcm0ge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogNTAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbiAgLmV4YW1wbGUtZnVsbC13aWR0aCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-ods/create-ods.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/dialogs/create-ods/create-ods.component.ts ***!
+  \************************************************************/
+/*! exports provided: CreateODSComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateODSComponent", function() { return CreateODSComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+
+
+
+let CreateODSComponent = class CreateODSComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        console.log(serviceContractant);
+    }
+    createLitige() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    ngOnInit() {
+    }
+};
+CreateODSComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateODSComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-ods',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-ods.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-ods/create-ods.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-ods.component.css */ "./src/app/dialogs/create-ods/create-ods.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateODSComponent);
 
 
 
@@ -1804,6 +2830,83 @@ CreateOrganePresseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/dialogs/create-passage-comite-technique/create-passage-comite-technique.component.css":
+/*!*******************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-passage-comite-technique/create-passage-comite-technique.component.css ***!
+  \*******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtcGFzc2FnZS1jb21pdGUtdGVjaG5pcXVlL2NyZWF0ZS1wYXNzYWdlLWNvbWl0ZS10ZWNobmlxdWUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtJQUNoQixnQkFBZ0I7SUFDaEIsV0FBVztFQUNiOztFQUVBO0lBQ0UsV0FBVztFQUNiIiwiZmlsZSI6InNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtcGFzc2FnZS1jb21pdGUtdGVjaG5pcXVlL2NyZWF0ZS1wYXNzYWdlLWNvbWl0ZS10ZWNobmlxdWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWZvcm0ge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogNTAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbiAgLmV4YW1wbGUtZnVsbC13aWR0aCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-passage-comite-technique/create-passage-comite-technique.component.ts":
+/*!******************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-passage-comite-technique/create-passage-comite-technique.component.ts ***!
+  \******************************************************************************************************/
+/*! exports provided: CreatePassageComiteTechniqueComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreatePassageComiteTechniqueComponent", function() { return CreatePassageComiteTechniqueComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+
+
+
+let CreatePassageComiteTechniqueComponent = class CreatePassageComiteTechniqueComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        console.log(serviceContractant);
+    }
+    createOperation() {
+        this.dialogRef.close({
+            creationDateOperation: 20,
+            intituleOperation: "this.name",
+            codeOperation: "this.name",
+            serviceContractant: "this.name",
+            montantOperation: 20,
+            yearPlanAction: 20
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            creationDateOperation: 20,
+            intituleOperation: "this.name",
+            codeOperation: "this.name",
+            serviceContractant: "this.name",
+            montantOperation: 20,
+            yearPlanAction: 20
+        });
+    }
+    ngOnInit() {
+    }
+};
+CreatePassageComiteTechniqueComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreatePassageComiteTechniqueComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-passage-comite-technique',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-passage-comite-technique.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-passage-comite-technique/create-passage-comite-technique.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-passage-comite-technique.component.css */ "./src/app/dialogs/create-passage-comite-technique/create-passage-comite-technique.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreatePassageComiteTechniqueComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/dialogs/create-passage-commission-competente/create-commission-passage-competente.component.ts":
 /*!****************************************************************************************************************!*\
   !*** ./src/app/dialogs/create-passage-commission-competente/create-commission-passage-competente.component.ts ***!
@@ -1868,6 +2971,160 @@ CreatePassageCommissionCompetenteComponent = tslib__WEBPACK_IMPORTED_MODULE_0__[
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtcGFzc2FnZS1jb21taXNzaW9uLWNvbXBldGVudGUvY3JlYXRlLXBhc3NhZ2UtY29tbWlzc2lvbi1jb21wZXRlbnRlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLFdBQVc7RUFDYjs7RUFFQTtJQUNFLFdBQVc7RUFDYiIsImZpbGUiOiJzcmMvYXBwL2RpYWxvZ3MvY3JlYXRlLXBhc3NhZ2UtY29tbWlzc2lvbi1jb21wZXRlbnRlL2NyZWF0ZS1wYXNzYWdlLWNvbW1pc3Npb24tY29tcGV0ZW50ZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmV4YW1wbGUtZm9ybSB7XHJcbiAgICBtaW4td2lkdGg6IDE1MHB4O1xyXG4gICAgbWF4LXdpZHRoOiA1MDBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuICBcclxuICAuZXhhbXBsZS1mdWxsLXdpZHRoIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component.css":
+/*!*********************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component.css ***!
+  \*********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtcGFzc2FnZS1jb3Blby1ldmFsdWF0aW9uLW9mZnJlcy9jcmVhdGUtcGFzc2FnZS1jb3Blby1ldmFsdWF0aW9uLW9mZnJlcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixXQUFXO0VBQ2I7O0VBRUE7SUFDRSxXQUFXO0VBQ2IiLCJmaWxlIjoic3JjL2FwcC9kaWFsb2dzL2NyZWF0ZS1wYXNzYWdlLWNvcGVvLWV2YWx1YXRpb24tb2ZmcmVzL2NyZWF0ZS1wYXNzYWdlLWNvcGVvLWV2YWx1YXRpb24tb2ZmcmVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhhbXBsZS1mb3JtIHtcclxuICAgIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG4gIFxyXG4gIC5leGFtcGxlLWZ1bGwtd2lkdGgge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component.ts":
+/*!********************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component.ts ***!
+  \********************************************************************************************************************/
+/*! exports provided: CreatePassageCopeoEvaluationOffresComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreatePassageCopeoEvaluationOffresComponent", function() { return CreatePassageCopeoEvaluationOffresComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+
+
+
+let CreatePassageCopeoEvaluationOffresComponent = class CreatePassageCopeoEvaluationOffresComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        console.log(serviceContractant);
+    }
+    createOperation() {
+        this.dialogRef.close({
+            creationDateOperation: 20,
+            intituleOperation: "this.name",
+            codeOperation: "this.name",
+            serviceContractant: "this.name",
+            montantOperation: 20,
+            yearPlanAction: 20
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            creationDateOperation: 20,
+            intituleOperation: "this.name",
+            codeOperation: "this.name",
+            serviceContractant: "this.name",
+            montantOperation: 20,
+            yearPlanAction: 20
+        });
+    }
+    ngOnInit() {
+    }
+};
+CreatePassageCopeoEvaluationOffresComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreatePassageCopeoEvaluationOffresComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-passage-copeo-evaluation-offres',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-passage-copeo-evaluation-offres.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-passage-copeo-evaluation-offres.component.css */ "./src/app/dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreatePassageCopeoEvaluationOffresComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component.css":
+/*!***************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component.css ***!
+  \***************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtcGFzc2FnZS1jb3Blby1vdXZlcnR1cmUtcGxpcy9jcmVhdGUtcGFzc2FnZS1jb3Blby1vdXZlcnR1cmUtcGxpcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixXQUFXO0VBQ2I7O0VBRUE7SUFDRSxXQUFXO0VBQ2IiLCJmaWxlIjoic3JjL2FwcC9kaWFsb2dzL2NyZWF0ZS1wYXNzYWdlLWNvcGVvLW91dmVydHVyZS1wbGlzL2NyZWF0ZS1wYXNzYWdlLWNvcGVvLW91dmVydHVyZS1wbGlzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhhbXBsZS1mb3JtIHtcclxuICAgIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG4gIFxyXG4gIC5leGFtcGxlLWZ1bGwtd2lkdGgge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component.ts":
+/*!**************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component.ts ***!
+  \**************************************************************************************************************/
+/*! exports provided: CreatePassageCopeoOuverturePlisComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreatePassageCopeoOuverturePlisComponent", function() { return CreatePassageCopeoOuverturePlisComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+
+
+
+let CreatePassageCopeoOuverturePlisComponent = class CreatePassageCopeoOuverturePlisComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        console.log(serviceContractant);
+    }
+    createOperation() {
+        this.dialogRef.close({
+            creationDateOperation: 20,
+            intituleOperation: "this.name",
+            codeOperation: "this.name",
+            serviceContractant: "this.name",
+            montantOperation: 20,
+            yearPlanAction: 20
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            creationDateOperation: 20,
+            intituleOperation: "this.name",
+            codeOperation: "this.name",
+            serviceContractant: "this.name",
+            montantOperation: 20,
+            yearPlanAction: 20
+        });
+    }
+    ngOnInit() {
+    }
+};
+CreatePassageCopeoOuverturePlisComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreatePassageCopeoOuverturePlisComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-passage-copeo-ouverture-plis',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-passage-copeo-ouverture-plis.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-passage-copeo-ouverture-plis.component.css */ "./src/app/dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreatePassageCopeoOuverturePlisComponent);
+
+
 
 /***/ }),
 
@@ -2003,6 +3260,83 @@ CreateProlongationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/dialogs/create-reception/create-reception.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/dialogs/create-reception/create-reception.component.css ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtcmVjZXB0aW9uL2NyZWF0ZS1yZWNlcHRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtJQUNoQixnQkFBZ0I7SUFDaEIsV0FBVztFQUNiOztFQUVBO0lBQ0UsV0FBVztFQUNiIiwiZmlsZSI6InNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtcmVjZXB0aW9uL2NyZWF0ZS1yZWNlcHRpb24uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWZvcm0ge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogNTAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbiAgLmV4YW1wbGUtZnVsbC13aWR0aCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-reception/create-reception.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/dialogs/create-reception/create-reception.component.ts ***!
+  \************************************************************************/
+/*! exports provided: CreateReceptionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateReceptionComponent", function() { return CreateReceptionComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+
+
+
+let CreateReceptionComponent = class CreateReceptionComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        console.log(serviceContractant);
+    }
+    createOperation() {
+        this.dialogRef.close({
+            creationDateOperation: 20,
+            intituleOperation: "this.name",
+            codeOperation: "this.name",
+            serviceContractant: "this.name",
+            montantOperation: 20,
+            yearPlanAction: 20
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            creationDateOperation: 20,
+            intituleOperation: "this.name",
+            codeOperation: "this.name",
+            serviceContractant: "this.name",
+            montantOperation: 20,
+            yearPlanAction: 20
+        });
+    }
+    ngOnInit() {
+    }
+};
+CreateReceptionComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateReceptionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-reception',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-reception.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-reception/create-reception.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-reception.component.css */ "./src/app/dialogs/create-reception/create-reception.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateReceptionComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/dialogs/create-recours/create-recours.component.css":
 /*!*********************************************************************!*\
   !*** ./src/app/dialogs/create-recours/create-recours.component.css ***!
@@ -2065,6 +3399,141 @@ CreateRecoursComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
 ], CreateRecoursComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component.css":
+/*!*************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component.css ***!
+  \*************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtcmVwb25zZS1yYWxsb25nZS1maW5hbmNpZXJlL2NyZWF0ZS1yZXBvbnNlLXJhbGxvbmdlLWZpbmFuY2llcmUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtJQUNoQixnQkFBZ0I7SUFDaEIsV0FBVztFQUNiOztFQUVBO0lBQ0UsV0FBVztFQUNiIiwiZmlsZSI6InNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtcmVwb25zZS1yYWxsb25nZS1maW5hbmNpZXJlL2NyZWF0ZS1yZXBvbnNlLXJhbGxvbmdlLWZpbmFuY2llcmUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWZvcm0ge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogNTAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbiAgLmV4YW1wbGUtZnVsbC13aWR0aCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component.ts":
+/*!************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component.ts ***!
+  \************************************************************************************************************/
+/*! exports provided: CreateReponseRallongeFinanciereComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateReponseRallongeFinanciereComponent", function() { return CreateReponseRallongeFinanciereComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+
+
+
+let CreateReponseRallongeFinanciereComponent = class CreateReponseRallongeFinanciereComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        this.nonCandidatChecked = false;
+        console.log(serviceContractant);
+    }
+    createAdditif() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    ngOnInit() {
+    }
+};
+CreateReponseRallongeFinanciereComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateReponseRallongeFinanciereComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-reponse-rallonge-financiere',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-reponse-rallonge-financiere.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-reponse-rallonge-financiere.component.css */ "./src/app/dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateReponseRallongeFinanciereComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-resiliation/create-resiliation.component.css":
+/*!*****************************************************************************!*\
+  !*** ./src/app/dialogs/create-resiliation/create-resiliation.component.css ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtcmVzaWxpYXRpb24vY3JlYXRlLXJlc2lsaWF0aW9uLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLFdBQVc7RUFDYjs7RUFFQTtJQUNFLFdBQVc7RUFDYiIsImZpbGUiOiJzcmMvYXBwL2RpYWxvZ3MvY3JlYXRlLXJlc2lsaWF0aW9uL2NyZWF0ZS1yZXNpbGlhdGlvbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmV4YW1wbGUtZm9ybSB7XHJcbiAgICBtaW4td2lkdGg6IDE1MHB4O1xyXG4gICAgbWF4LXdpZHRoOiA1MDBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuICBcclxuICAuZXhhbXBsZS1mdWxsLXdpZHRoIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-resiliation/create-resiliation.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/dialogs/create-resiliation/create-resiliation.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: CreateResiliationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateResiliationComponent", function() { return CreateResiliationComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+
+
+
+let CreateResiliationComponent = class CreateResiliationComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        console.log(serviceContractant);
+    }
+    createLitige() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    ngOnInit() {
+    }
+};
+CreateResiliationComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateResiliationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-resiliation',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-resiliation.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-resiliation/create-resiliation.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-resiliation.component.css */ "./src/app/dialogs/create-resiliation/create-resiliation.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateResiliationComponent);
 
 
 
@@ -2164,6 +3633,204 @@ CreateReponseDemandeEclaircissementComponent = tslib__WEBPACK_IMPORTED_MODULE_0_
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
 ], CreateReponseDemandeEclaircissementComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component.css":
+/*!***********************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component.css ***!
+  \***********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n.example-full-width {\r\n  width: 100%;\r\n}\r\n  \r\ntable {\r\n  width: 100%;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtcmVzdWx0YXQtY29wZW8tZXZhbHVhdGlvbi1vZmZyZXMvY3JlYXRlLXJlc3VsdGF0LWNvcGVvLWV2YWx1YXRpb24tb2ZmcmVzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLFdBQVc7RUFDYjs7QUFFRjtFQUNFLFdBQVc7QUFDYjs7QUFDQTtFQUNFLFdBQVc7QUFDYiIsImZpbGUiOiJzcmMvYXBwL2RpYWxvZ3MvY3JlYXRlLXJlc3VsdGF0LWNvcGVvLWV2YWx1YXRpb24tb2ZmcmVzL2NyZWF0ZS1yZXN1bHRhdC1jb3Blby1ldmFsdWF0aW9uLW9mZnJlcy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmV4YW1wbGUtZm9ybSB7XHJcbiAgICBtaW4td2lkdGg6IDE1MHB4O1xyXG4gICAgbWF4LXdpZHRoOiA1MDBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuICBcclxuLmV4YW1wbGUtZnVsbC13aWR0aCB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxudGFibGUge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component.ts":
+/*!**********************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component.ts ***!
+  \**********************************************************************************************************************/
+/*! exports provided: CreateResultatCopeoEvaluationOffresComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateResultatCopeoEvaluationOffresComponent", function() { return CreateResultatCopeoEvaluationOffresComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/collections */ "./node_modules/@angular/cdk/esm2015/collections.js");
+
+
+
+
+
+const ELEMENT_DATA = [
+    { position: 1, name: 'mobilis', note: '1/5' },
+    { position: 2, name: 'sntf', note: '4/5' },
+    { position: 3, name: 'cosider', note: 'NA' },
+];
+let CreateResultatCopeoEvaluationOffresComponent = class CreateResultatCopeoEvaluationOffresComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        this.nonCandidatChecked = false;
+        this.displayedColumns = ['select', 'position', 'name', 'note'];
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"](ELEMENT_DATA);
+        this.selection = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_4__["SelectionModel"](true, []);
+        console.log(serviceContractant);
+    }
+    createAdditif() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    ngOnInit() {
+    }
+    /** Whether the number of selected elements matches the total number of rows. */
+    isAllSelected() {
+        const numSelected = this.selection.selected.length;
+        const numRows = this.dataSource.data.length;
+        return numSelected === numRows;
+    }
+    /** Selects all rows if they are not all selected; otherwise clear selection. */
+    masterToggle() {
+        this.isAllSelected() ?
+            this.selection.clear() :
+            this.dataSource.data.forEach(row => this.selection.select(row));
+    }
+    /** The label for the checkbox on the passed row */
+    checkboxLabel(row) {
+        if (!row) {
+            return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
+        }
+        return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+    }
+};
+CreateResultatCopeoEvaluationOffresComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateResultatCopeoEvaluationOffresComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-resultat-copeo-evaluation-offres',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-resultat-copeo-evaluation-offres.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-resultat-copeo-evaluation-offres.component.css */ "./src/app/dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateResultatCopeoEvaluationOffresComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component.css":
+/*!*****************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component.css ***!
+  \*****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n.example-full-width {\r\n  width: 100%;\r\n}\r\n  \r\ntable {\r\n  width: 100%;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtcmVzdWx0YXQtY29wZW8tb3V2ZXJ0dXJlLXBsaXMvY3JlYXRlLXJlc3VsdGF0LWNvcGVvLW91dmVydHVyZS1wbGlzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLFdBQVc7RUFDYjs7QUFFRjtFQUNFLFdBQVc7QUFDYjs7QUFDQTtFQUNFLFdBQVc7QUFDYiIsImZpbGUiOiJzcmMvYXBwL2RpYWxvZ3MvY3JlYXRlLXJlc3VsdGF0LWNvcGVvLW91dmVydHVyZS1wbGlzL2NyZWF0ZS1yZXN1bHRhdC1jb3Blby1vdXZlcnR1cmUtcGxpcy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmV4YW1wbGUtZm9ybSB7XHJcbiAgICBtaW4td2lkdGg6IDE1MHB4O1xyXG4gICAgbWF4LXdpZHRoOiA1MDBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuICBcclxuLmV4YW1wbGUtZnVsbC13aWR0aCB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxudGFibGUge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component.ts":
+/*!****************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component.ts ***!
+  \****************************************************************************************************************/
+/*! exports provided: CreateResultatCopeoOuverturePlisComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateResultatCopeoOuverturePlisComponent", function() { return CreateResultatCopeoOuverturePlisComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/collections */ "./node_modules/@angular/cdk/esm2015/collections.js");
+
+
+
+
+
+const ELEMENT_DATA = [
+    { position: 1, name: 'mobilis' },
+    { position: 2, name: 'sntf' },
+    { position: 3, name: 'cosider' },
+];
+let CreateResultatCopeoOuverturePlisComponent = class CreateResultatCopeoOuverturePlisComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        this.nonCandidatChecked = false;
+        this.displayedColumns = ['select', 'position', 'name'];
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"](ELEMENT_DATA);
+        this.selection = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_4__["SelectionModel"](true, []);
+        console.log(serviceContractant);
+    }
+    createAdditif() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    ngOnInit() {
+    }
+    /** Whether the number of selected elements matches the total number of rows. */
+    isAllSelected() {
+        const numSelected = this.selection.selected.length;
+        const numRows = this.dataSource.data.length;
+        return numSelected === numRows;
+    }
+    /** Selects all rows if they are not all selected; otherwise clear selection. */
+    masterToggle() {
+        this.isAllSelected() ?
+            this.selection.clear() :
+            this.dataSource.data.forEach(row => this.selection.select(row));
+    }
+    /** The label for the checkbox on the passed row */
+    checkboxLabel(row) {
+        if (!row) {
+            return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
+        }
+        return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+    }
+};
+CreateResultatCopeoOuverturePlisComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateResultatCopeoOuverturePlisComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-resultat-copeo-ouverture-plis',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-resultat-copeo-ouverture-plis.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-resultat-copeo-ouverture-plis.component.css */ "./src/app/dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateResultatCopeoOuverturePlisComponent);
 
 
 
@@ -2390,6 +4057,73 @@ CreateSoumissionnaireComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
 ], CreateSoumissionnaireComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-sous-traitant/create-sous-traitant.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/dialogs/create-sous-traitant/create-sous-traitant.component.css ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtc291cy10cmFpdGFudC9jcmVhdGUtc291cy10cmFpdGFudC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixXQUFXO0VBQ2I7O0VBRUE7SUFDRSxXQUFXO0VBQ2IiLCJmaWxlIjoic3JjL2FwcC9kaWFsb2dzL2NyZWF0ZS1zb3VzLXRyYWl0YW50L2NyZWF0ZS1zb3VzLXRyYWl0YW50LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhhbXBsZS1mb3JtIHtcclxuICAgIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG4gIFxyXG4gIC5leGFtcGxlLWZ1bGwtd2lkdGgge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-sous-traitant/create-sous-traitant.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/dialogs/create-sous-traitant/create-sous-traitant.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: CreateSousTraitantComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateSousTraitantComponent", function() { return CreateSousTraitantComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+
+
+
+let CreateSousTraitantComponent = class CreateSousTraitantComponent {
+    constructor(dialogRef, serviceContractant) {
+        this.dialogRef = dialogRef;
+        this.serviceContractant = serviceContractant;
+        this.disabled = false;
+        this.checkedIntituleProjetDifferent = false;
+        console.log(serviceContractant);
+    }
+    createLitige() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    onNoClick() {
+        this.dialogRef.close({
+            intituleOperation: "this.name"
+        });
+    }
+    ngOnInit() {
+    }
+};
+CreateSousTraitantComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateSousTraitantComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-sous-traitant',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-sous-traitant.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-sous-traitant/create-sous-traitant.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-sous-traitant.component.css */ "./src/app/dialogs/create-sous-traitant/create-sous-traitant.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateSousTraitantComponent);
 
 
 
@@ -2688,6 +4422,34 @@ class Additif {
 
 /***/ }),
 
+/***/ "./src/app/models/annulation.attribution.model.ts":
+/*!********************************************************!*\
+  !*** ./src/app/models/annulation.attribution.model.ts ***!
+  \********************************************************/
+/*! exports provided: AnnulationAttribution */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnnulationAttribution", function() { return AnnulationAttribution; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class AnnulationAttribution {
+    constructor(attributaire, dateAnnulation, moyenNotification, dateNotification, justificatifPath) {
+        this.attributaire = attributaire;
+        this.dateAnnulation = dateAnnulation;
+        this.moyenNotification = moyenNotification;
+        this.dateNotification = dateNotification;
+        this.justificatifPath = justificatifPath;
+    }
+    static getDummy() {
+        return new AnnulationAttribution("attributaire", new Date(), "moyenNotification", new Date(), "justificatifPath");
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/models/candidat.model.ts":
 /*!******************************************!*\
   !*** ./src/app/models/candidat.model.ts ***!
@@ -2714,6 +4476,68 @@ class Candidat {
     }
     static getDummy() {
         return new Candidat("denominationEntreprise", "nom", "prenom", "qualite", "email@test.dz", ["0555999000", "0566666666"], ["0555999000", "0566666666"], ["0555999000", "0566666666"], new Date());
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/models/complement.offre.model.ts":
+/*!**************************************************!*\
+  !*** ./src/app/models/complement.offre.model.ts ***!
+  \**************************************************/
+/*! exports provided: ComplementOffre */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComplementOffre", function() { return ComplementOffre; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class ComplementOffre {
+    constructor(soumissionnaire, demandePath, dateNotification, moyenNotification, isAnswered, reponse, reponsePath, dateReponse) {
+        this.soumissionnaire = soumissionnaire,
+            this.demandePath = demandePath,
+            this.dateNotification = dateNotification,
+            this.moyenNotification = moyenNotification,
+            this.isAnswered = isAnswered,
+            this.reponse = reponse,
+            this.reponsePath = reponsePath,
+            this.dateReponse = dateReponse;
+    }
+    static getDummy() {
+        const rand = Math.random();
+        if (rand < 0.5)
+            return new ComplementOffre("soumissionnaire", "demandePath", new Date(), "moyenNotification", false, null, null, null);
+        else
+            return new ComplementOffre("soumissionnaire", "demandePath", new Date(), "moyenNotification", true, "reponse", "reponsePath", new Date());
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/models/declaration.attribution.model.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/models/declaration.attribution.model.ts ***!
+  \*********************************************************/
+/*! exports provided: DeclarationAttribution */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DeclarationAttribution", function() { return DeclarationAttribution; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class DeclarationAttribution {
+    constructor(attributaire, avisAttributionPath, intitulePublication, dateParution) {
+        this.attributaire = attributaire,
+            this.avisAttributionPath = avisAttributionPath,
+            this.intitulePublication = intitulePublication,
+            this.dateParution = dateParution;
+    }
+    static getDummy() {
+        return new DeclarationAttribution("attributaire", "avisAttributionPath", "intitulePublication", new Date());
     }
 }
 
@@ -2751,6 +4575,61 @@ class DemandeEclaircissement {
 
 /***/ }),
 
+/***/ "./src/app/models/desistement.attribution.model.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/models/desistement.attribution.model.ts ***!
+  \*********************************************************/
+/*! exports provided: DesistementAttribution */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DesistementAttribution", function() { return DesistementAttribution; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class DesistementAttribution {
+    constructor(attributaire, dateDesistement, raison, justificatifPath) {
+        this.attributaire = attributaire,
+            this.dateDesistement = dateDesistement,
+            this.raison = raison,
+            this.justificatifPath = justificatifPath;
+    }
+    static getDummy() {
+        return new DesistementAttribution("attributaire", new Date(), "raison desistement", "justificatifPath");
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/models/facture.model.ts":
+/*!*****************************************!*\
+  !*** ./src/app/models/facture.model.ts ***!
+  \*****************************************/
+/*! exports provided: Facture */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Facture", function() { return Facture; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class Facture {
+    constructor(hasPenaliteRetard, numFacture, dateReception, montant, facturePath) {
+        this.hasPenaliteRetard = hasPenaliteRetard,
+            this.numFacture = numFacture,
+            this.dateReception = dateReception,
+            this.montant = montant,
+            this.facturePath = facturePath;
+    }
+    static getDummy() {
+        return new Facture(true, "numFacture", new Date(), 5000, "facturePath");
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/models/litige.model.ts":
 /*!****************************************!*\
   !*** ./src/app/models/litige.model.ts ***!
@@ -2781,6 +4660,94 @@ class Litige {
     }
     static getDummy() {
         return new Litige("introduitPar", "partieAdverse", "comment", new Date(), new Date(), new Date(), new Date(), "litigePath", "reponsePath", new Date(), "decisionCommission", "PVPathFile", "decisionPathFile");
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/models/mise.au.point.model.ts":
+/*!***********************************************!*\
+  !*** ./src/app/models/mise.au.point.model.ts ***!
+  \***********************************************/
+/*! exports provided: MiseAuPoint */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MiseAuPoint", function() { return MiseAuPoint; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class MiseAuPoint {
+    constructor(dateDemande, dateMiseAuPoint, PVPath, resume) {
+        this.dateDemande = dateDemande,
+            this.dateMiseAuPoint = dateMiseAuPoint,
+            this.PVPath = PVPath,
+            this.resume = resume;
+    }
+    static getDummy() {
+        return new MiseAuPoint(new Date(), new Date(), "PVPath", "resume");
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/models/mise.en.demeure.model.ts":
+/*!*************************************************!*\
+  !*** ./src/app/models/mise.en.demeure.model.ts ***!
+  \*************************************************/
+/*! exports provided: MiseEnDemeure */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MiseEnDemeure", function() { return MiseEnDemeure; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class MiseEnDemeure {
+    constructor(numMiseEnDemeure, objet, dateNotif, moyenNotif, delaiPriseEnCharge, //jours 
+    miseEnDemeurePath, resultat) {
+        this.numMiseEnDemeure = numMiseEnDemeure;
+        this.objet = objet;
+        this.dateNotif = dateNotif;
+        this.moyenNotif = moyenNotif;
+        this.delaiPriseEnCharge = delaiPriseEnCharge;
+        this.miseEnDemeurePath = miseEnDemeurePath;
+        this.resultat = resultat;
+    }
+    static getDummy() {
+        return new MiseEnDemeure("numMiseEnDemeure", "objet", new Date(), "moyenNotif", 50, "miseEnDemeurePath", "resultat");
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/models/ods.model.ts":
+/*!*************************************!*\
+  !*** ./src/app/models/ods.model.ts ***!
+  \*************************************/
+/*! exports provided: ODS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ODS", function() { return ODS; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class ODS {
+    constructor(numeroODS, type, objet, jours, dateEtablissement, dateEffet, ODSPath) {
+        this.numeroODS = numeroODS,
+            this.type = type,
+            this.objet = objet,
+            this.jours = jours,
+            this.dateEtablissement = dateEtablissement,
+            this.dateEffet = dateEffet,
+            this.ODSPath = ODSPath;
+    }
+    static getDummy() {
+        return new ODS("numeroODS", "type", "objet", 15, new Date(), new Date(), "ODS Path");
     }
 }
 
@@ -2867,6 +4834,40 @@ class OrganePresse {
 
 /***/ }),
 
+/***/ "./src/app/models/passage.comite.technique.model.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/models/passage.comite.technique.model.ts ***!
+  \**********************************************************/
+/*! exports provided: PassageComiteTechnique */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PassageComiteTechnique", function() { return PassageComiteTechnique; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class PassageComiteTechnique {
+    constructor(comiteTechnique, dateSaisie, demandePath, isAnswered, reponse, reponsePath, dateReponse) {
+        this.comiteTechnique = comiteTechnique,
+            this.dateSaisie = dateSaisie,
+            this.demandePath = demandePath,
+            this.isAnswered = isAnswered,
+            this.reponse = reponse,
+            this.reponsePath = reponsePath,
+            this.dateReponse = dateReponse;
+    }
+    static getDummy() {
+        const rand = Math.random();
+        if (rand < 0.5)
+            return new PassageComiteTechnique("CT#", new Date(), "demandePath", false, null, null, null);
+        else
+            return new PassageComiteTechnique("CT#", new Date(), "demandePath", true, "reponse", "reponsePath", new Date());
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/models/passage.commission.competente.model.ts":
 /*!***************************************************************!*\
   !*** ./src/app/models/passage.commission.competente.model.ts ***!
@@ -2944,6 +4945,44 @@ class Prolongation {
     }
     static getDummy() {
         return new Prolongation(Math.random().toString(), 14);
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/models/rallonge.financiere.model.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/models/rallonge.financiere.model.ts ***!
+  \*****************************************************/
+/*! exports provided: RallongeFinanciere */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RallongeFinanciere", function() { return RallongeFinanciere; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class RallongeFinanciere {
+    constructor(serviceContractant, dateDemande, montantDemande, demandePath, isAnswered, // if true, the three below fields are used
+    reponse, //positive ou negative, ou aucun.
+    montantAccorde, reponsePath, dateReponse) {
+        this.serviceContractant = serviceContractant,
+            this.dateDemande = dateDemande,
+            this.montantDemande = montantDemande,
+            this.demandePath = demandePath,
+            this.isAnswered = isAnswered,
+            this.reponse = reponse,
+            this.montantAccorde = montantAccorde,
+            this.reponsePath = reponsePath,
+            this.dateReponse = dateReponse;
+    }
+    static getDummy() {
+        const rand = Math.random();
+        if (rand < 0.5)
+            return new RallongeFinanciere("serviceContractant", new Date(), 500, "demandePath", false, null, null, null, null);
+        else
+            return new RallongeFinanciere("serviceContractant", new Date(), 500, "demandePath", true, "reponse", 200, "reponsePath", new Date());
     }
 }
 
@@ -3060,6 +5099,35 @@ class Soumissionnaire {
 
 /***/ }),
 
+/***/ "./src/app/models/sous.traitant.model.ts":
+/*!***********************************************!*\
+  !*** ./src/app/models/sous.traitant.model.ts ***!
+  \***********************************************/
+/*! exports provided: SousTraitant */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SousTraitant", function() { return SousTraitant; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class SousTraitant {
+    constructor(sousTraitant, objetSoustraitance, dateDebutIntervention, dateFinIntervention, declarationSoustraitantPath, tauxIntervention) {
+        this.sousTraitant = sousTraitant,
+            this.objetSoustraitance = objetSoustraitance,
+            this.dateDebutIntervention = dateDebutIntervention,
+            this.dateFinIntervention = dateFinIntervention,
+            this.declarationSoustraitantPath = declarationSoustraitantPath,
+            this.tauxIntervention = tauxIntervention;
+    }
+    static getDummy() {
+        return new SousTraitant("sousTraitant", "objetSoustraitance", new Date(), new Date(), "declarationSoustraitantPath", 30);
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/page-not-found/page-not-found.component.css":
 /*!*************************************************************!*\
   !*** ./src/app/page-not-found/page-not-found.component.css ***!
@@ -3155,6 +5223,64 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dialogs_create_response_demande_eclaircissement_create_response_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../dialogs/create-response-demande-eclaircissement/create-response-demande-eclaircissement.component */ "./src/app/dialogs/create-response-demande-eclaircissement/create-response-demande-eclaircissement.component.ts");
 /* harmony import */ var _dialogs_create_soumissionnaire_create_soumissionnaire_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../dialogs/create-soumissionnaire/create-soumissionnaire.component */ "./src/app/dialogs/create-soumissionnaire/create-soumissionnaire.component.ts");
 /* harmony import */ var _models_soumissionnaire_model__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../models/soumissionnaire.model */ "./src/app/models/soumissionnaire.model.ts");
+/* harmony import */ var _models_complement_offre_model__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../models/complement.offre.model */ "./src/app/models/complement.offre.model.ts");
+/* harmony import */ var _dialogs_create_passage_copeo_ouverture_plis_create_passage_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component */ "./src/app/dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component.ts");
+/* harmony import */ var _dialogs_create_resultat_copeo_ouverture_plis_create_resultat_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component */ "./src/app/dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component.ts");
+/* harmony import */ var _dialogs_create_demande_complement_create_demande_complement_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../dialogs/create-demande-complement/create-demande-complement.component */ "./src/app/dialogs/create-demande-complement/create-demande-complement.component.ts");
+/* harmony import */ var _dialogs_create_passage_copeo_evaluation_offres_create_passage_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component */ "./src/app/dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component.ts");
+/* harmony import */ var _dialogs_create_demande_clarification_create_demande_clarification_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../dialogs/create-demande-clarification/create-demande-clarification.component */ "./src/app/dialogs/create-demande-clarification/create-demande-clarification.component.ts");
+/* harmony import */ var _models_passage_comite_technique_model__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../models/passage.comite.technique.model */ "./src/app/models/passage.comite.technique.model.ts");
+/* harmony import */ var _dialogs_create_passage_comite_technique_create_passage_comite_technique_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../dialogs/create-passage-comite-technique/create-passage-comite-technique.component */ "./src/app/dialogs/create-passage-comite-technique/create-passage-comite-technique.component.ts");
+/* harmony import */ var _dialogs_create_resultat_copeo_evaluation_offres_create_resultat_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component */ "./src/app/dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component.ts");
+/* harmony import */ var _models_rallonge_financiere_model__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../models/rallonge.financiere.model */ "./src/app/models/rallonge.financiere.model.ts");
+/* harmony import */ var _dialogs_create_demande_rallonge_financiere_create_demande_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component */ "./src/app/dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component.ts");
+/* harmony import */ var _dialogs_create_reponse_rallonge_financiere_create_reponse_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component */ "./src/app/dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component.ts");
+/* harmony import */ var _models_declaration_attribution_model__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ../models/declaration.attribution.model */ "./src/app/models/declaration.attribution.model.ts");
+/* harmony import */ var _dialogs_create_declaration_attribution_provisoire_create_declaration_attribution_provisoire_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ../dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component */ "./src/app/dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component.ts");
+/* harmony import */ var _models_annulation_attribution_model__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ../models/annulation.attribution.model */ "./src/app/models/annulation.attribution.model.ts");
+/* harmony import */ var _models_desistement_attribution_model__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ../models/desistement.attribution.model */ "./src/app/models/desistement.attribution.model.ts");
+/* harmony import */ var _models_mise_au_point_model__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ../models/mise.au.point.model */ "./src/app/models/mise.au.point.model.ts");
+/* harmony import */ var _dialogs_create_mise_au_point_create_mise_au_point_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ../dialogs/create-mise-au-point/create-mise-au-point.component */ "./src/app/dialogs/create-mise-au-point/create-mise-au-point.component.ts");
+/* harmony import */ var _models_ods_model__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ../models/ods.model */ "./src/app/models/ods.model.ts");
+/* harmony import */ var _dialogs_create_ods_create_ods_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ../dialogs/create-ods/create-ods.component */ "./src/app/dialogs/create-ods/create-ods.component.ts");
+/* harmony import */ var _models_sous_traitant_model__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ../models/sous.traitant.model */ "./src/app/models/sous.traitant.model.ts");
+/* harmony import */ var _dialogs_create_sous_traitant_create_sous_traitant_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ../dialogs/create-sous-traitant/create-sous-traitant.component */ "./src/app/dialogs/create-sous-traitant/create-sous-traitant.component.ts");
+/* harmony import */ var _models_facture_model__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ../models/facture.model */ "./src/app/models/facture.model.ts");
+/* harmony import */ var _dialogs_create_facture_create_facture_component__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ../dialogs/create-facture/create-facture.component */ "./src/app/dialogs/create-facture/create-facture.component.ts");
+/* harmony import */ var _dialogs_create_resiliation_create_resiliation_component__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ../dialogs/create-resiliation/create-resiliation.component */ "./src/app/dialogs/create-resiliation/create-resiliation.component.ts");
+/* harmony import */ var _models_mise_en_demeure_model__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ../models/mise.en.demeure.model */ "./src/app/models/mise.en.demeure.model.ts");
+/* harmony import */ var _dialogs_create_mise_en_demeure_create_mise_en_demeure_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ../dialogs/create-mise-en-demeure/create-mise-en-demeure.component */ "./src/app/dialogs/create-mise-en-demeure/create-mise-en-demeure.component.ts");
+/* harmony import */ var _dialogs_create_cloture_create_cloture_component__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ../dialogs/create-cloture/create-cloture.component */ "./src/app/dialogs/create-cloture/create-cloture.component.ts");
+/* harmony import */ var _dialogs_create_reception_create_reception_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ../dialogs/create-reception/create-reception.component */ "./src/app/dialogs/create-reception/create-reception.component.ts");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3195,6 +5321,85 @@ let ProjectComponent = class ProjectComponent {
         this.dureeValidite3Mois = 90;
         this.dureeValiditeOffres = this.dureeTotalePreparationDesOffres + this.dureeValidite3Mois;
         this.deadlineValiditeOffres = new Date();
+        this.dataSourceMisesEnDemeure = [];
+        this.displayedColumnsMisesEnDemeure = [
+            "numMiseEnDemeure",
+            "objet",
+            "dateNotif",
+            "moyenNotif",
+            "delaiPriseEnCharge",
+            "miseEnDemeurePath",
+            "resultat"
+        ];
+        this.dataSourceFactures = [];
+        this.displayedColumnsFactures = [
+            "hasPenaliteRetard",
+            "numFacture",
+            "dateReception",
+            "montant",
+            "facturePath"
+        ];
+        this.dataSourceSousTraitants = [];
+        this.displayedColumnsSousTraitants = [
+            "sousTraitant",
+            "objetSoustraitance",
+            "dateDebutIntervention",
+            "dateFinIntervention",
+            "declarationSoustraitantPath",
+            "tauxIntervention"
+        ];
+        this.dataSourceODS = [];
+        this.displayedColumnsODS = [
+            "numeroODS",
+            "type",
+            "objet",
+            "jours",
+            "dateEtablissement",
+            "dateEffet",
+            "ODSPath"
+        ];
+        this.dataSourceMisesAuPoint = [];
+        this.displayedColumnsMisesAuPoint = [
+            "dateDemande",
+            "dateMiseAuPoint",
+            "PVPath",
+            "resume"
+        ];
+        this.annulationsAttributionsProvisoires = null;
+        this.desistementsAttributionsProvisoires = null;
+        this.attributionsProvisoires = [];
+        this.dataSourceRallongesFinancieresExecution = [];
+        this.dataSourceRallongesFinancieres = [];
+        this.displayedColumnsRallongesFinancieres = [
+            "serviceContractant",
+            "dateDemande",
+            "montantDemande",
+            "demandePath",
+            "reponse"
+        ];
+        this.dataSourcePassagesComitesTechniques = [];
+        this.displayedColumnsPassagesComitesTechniques = [
+            "comiteTechnique",
+            "dateSaisie",
+            "demandePath",
+            "reponse"
+        ];
+        this.dataSourceClarificationsOffres = [];
+        this.displayedColumnsClarificationsOffres = [
+            "soumissionnaire",
+            "demande",
+            "dateNotification",
+            "moyenNotification",
+            "reponse"
+        ];
+        this.dataSourceComplementsOffres = [];
+        this.displayedColumnsComplementsOffres = [
+            "soumissionnaire",
+            "demande",
+            "dateNotification",
+            "moyenNotification",
+            "reponse"
+        ];
         this.dataSourceSoumissionnaires = [];
         this.displayedColumnsSoumissionnaires = [
             'position',
@@ -3284,6 +5489,7 @@ let ProjectComponent = class ProjectComponent {
         this.additifsChecked = false;
         this.passagesCommissionCompetenteAdditifs = new Map();
         this.passagesCommissionCompetenteCDC = [];
+        this.passagesCommissionCompetenteContrat = [];
         this.displayedColumnsPassagesCommissionCompetente = [
             'dateDepotSecretariatCommission',
             'datePassageCommission',
@@ -3346,6 +5552,20 @@ let ProjectComponent = class ProjectComponent {
                 }
             });
         }
+    }
+    openDialogCreatePassageCommissionCompetenteContrat() {
+        const dialogRef = this.dialog.open(_dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_10__["CreatePassageCommissionCompetenteComponent"], {
+            width: '800px',
+            data: "nouveauPassageCommComp"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+        this.passagesCommissionCompetenteContrat.push(_models_passage_commission_competente_model__WEBPACK_IMPORTED_MODULE_11__["PassageCommissionCompetente"].getDummy());
+        //console.log(this.litiges);
+        this.tablePassagesCommissionCompetenteContrat.renderRows();
     }
     openDialogCreatePassageCommissionCompetenteCDC() {
         const dialogRef = this.dialog.open(_dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_10__["CreatePassageCommissionCompetenteComponent"], {
@@ -3523,6 +5743,261 @@ let ProjectComponent = class ProjectComponent {
         //console.log(this.recours);
         this.tableSoumissionnaires.renderRows();
     }
+    openDialogSelectPassageCOPEOOuverturePlis() {
+        const dialogRef = this.dialog.open(_dialogs_create_passage_copeo_ouverture_plis_create_passage_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_29__["CreatePassageCopeoOuverturePlisComponent"], {
+            width: '800px',
+            data: "passage commission ouverture plis"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+    }
+    openDialogCreateResultatPassageOuverturePlisCOPEO() {
+        const dialogRef = this.dialog.open(_dialogs_create_resultat_copeo_ouverture_plis_create_resultat_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_30__["CreateResultatCopeoOuverturePlisComponent"], {
+            width: '800px',
+            data: "resultat commission ouverture plis"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+    }
+    openDialogCreateReponseComplementOffre() {
+    }
+    openDialogCreateDemandeComplement() {
+        const dialogRef = this.dialog.open(_dialogs_create_demande_complement_create_demande_complement_component__WEBPACK_IMPORTED_MODULE_31__["CreateDemandeComplementComponent"], {
+            width: '800px',
+            data: "resultat commission ouverture plis"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+        this.dataSourceComplementsOffres.push(_models_complement_offre_model__WEBPACK_IMPORTED_MODULE_28__["ComplementOffre"].getDummy());
+        //console.log(this.recours);
+        this.tableComplementsOffres.renderRows();
+    }
+    openDialogCreateDemandeClarification() {
+        const dialogRef = this.dialog.open(_dialogs_create_demande_clarification_create_demande_clarification_component__WEBPACK_IMPORTED_MODULE_33__["CreateDemandeClarificationComponent"], {
+            width: '800px',
+            data: "resultat commission ouverture plis"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+        this.dataSourceClarificationsOffres.push(_models_complement_offre_model__WEBPACK_IMPORTED_MODULE_28__["ComplementOffre"].getDummy());
+        //console.log(this.recours);
+        this.tableClarificationsOffres.renderRows();
+    }
+    openDialogCreatePassageComiteTechnique() {
+        const dialogRef = this.dialog.open(_dialogs_create_passage_comite_technique_create_passage_comite_technique_component__WEBPACK_IMPORTED_MODULE_35__["CreatePassageComiteTechniqueComponent"], {
+            width: '800px',
+            data: "ajouter passage CT"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+        this.dataSourcePassagesComitesTechniques.push(_models_passage_comite_technique_model__WEBPACK_IMPORTED_MODULE_34__["PassageComiteTechnique"].getDummy());
+        //console.log(this.recours);
+        this.tablePassagesComitesTechniques.renderRows();
+    }
+    openDialogSelectPassageCOPEOEvaluationOffres() {
+        const dialogRef = this.dialog.open(_dialogs_create_passage_copeo_evaluation_offres_create_passage_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_32__["CreatePassageCopeoEvaluationOffresComponent"], {
+            width: '800px',
+            data: "passage commission ouverture plis"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+    }
+    openDialogCreateResultatCOPEOEvalutionOffres() {
+        const dialogRef = this.dialog.open(_dialogs_create_resultat_copeo_evaluation_offres_create_resultat_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_36__["CreateResultatCopeoEvaluationOffresComponent"], {
+            width: '800px',
+            data: "passage commission ouverture plis"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+    }
+    openDialogCreateDemandeRallongeFinanciere() {
+        const dialogRef = this.dialog.open(_dialogs_create_demande_rallonge_financiere_create_demande_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_38__["CreateDemandeRallongeFinanciereComponent"], {
+            width: '800px',
+            data: "passage commission ouverture plis"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+        this.dataSourceRallongesFinancieres.push(_models_rallonge_financiere_model__WEBPACK_IMPORTED_MODULE_37__["RallongeFinanciere"].getDummy());
+        //console.log(this.recours);
+        this.tableRallongesFinancieres.renderRows();
+    }
+    openDialogCreateDemandeRallongeFinanciereExecution() {
+        const dialogRef = this.dialog.open(_dialogs_create_demande_rallonge_financiere_create_demande_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_38__["CreateDemandeRallongeFinanciereComponent"], {
+            width: '800px',
+            data: "passage commission ouverture plis"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+        this.dataSourceRallongesFinancieresExecution.push(_models_rallonge_financiere_model__WEBPACK_IMPORTED_MODULE_37__["RallongeFinanciere"].getDummy());
+        //console.log(this.recours);
+        this.tableRallongesFinancieresExecution.renderRows();
+    }
+    openDialogCreateReponseRallongeFinanciere() {
+        const dialogRef = this.dialog.open(_dialogs_create_reponse_rallonge_financiere_create_reponse_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_39__["CreateReponseRallongeFinanciereComponent"], {
+            width: '800px',
+            data: "reponse rallonge financiere"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+    }
+    openDialogCreateDeclarationAttribution() {
+        const dialogRef = this.dialog.open(_dialogs_create_declaration_attribution_provisoire_create_declaration_attribution_provisoire_component__WEBPACK_IMPORTED_MODULE_41__["CreateDeclarationAttributionProvisoireComponent"], {
+            width: '800px',
+            data: "declaration attribution provisoire"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+        this.attributionsProvisoires.push(_models_declaration_attribution_model__WEBPACK_IMPORTED_MODULE_40__["DeclarationAttribution"].getDummy());
+    }
+    openDialogCreateMiseAuPoint() {
+        const dialogRef = this.dialog.open(_dialogs_create_mise_au_point_create_mise_au_point_component__WEBPACK_IMPORTED_MODULE_45__["CreateMiseAuPointComponent"], {
+            width: '800px',
+            data: "ajouter une mise ua point"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+        this.dataSourceMisesAuPoint.push(_models_mise_au_point_model__WEBPACK_IMPORTED_MODULE_44__["MiseAuPoint"].getDummy());
+        this.tableMisesAuPoint.renderRows();
+    }
+    openDialogCreateAnnulerAttribution() {
+        /*
+        const dialogRef = this.dialog.open(CreateAnnulerDeclarationAttributionProvisoireComponent, {
+          width: '800px',
+          data: "annuler la declaration d'attribution provisoire"
+        });
+    
+        dialogRef.afterClosed().subscribe(result => {
+          console.log('The dialog was closed');
+          console.log(result);
+          //this.operations.push(result);
+        })
+        */
+        this.annulationsAttributionsProvisoires = _models_annulation_attribution_model__WEBPACK_IMPORTED_MODULE_42__["AnnulationAttribution"].getDummy();
+    }
+    openDialogCreateDesistementAttribution() {
+        this.desistementsAttributionsProvisoires = _models_desistement_attribution_model__WEBPACK_IMPORTED_MODULE_43__["DesistementAttribution"].getDummy();
+    }
+    openDialogCreateODS() {
+        const dialogRef = this.dialog.open(_dialogs_create_ods_create_ods_component__WEBPACK_IMPORTED_MODULE_47__["CreateODSComponent"], {
+            width: '800px',
+            data: "ajouter ODS"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+        this.dataSourceODS.push(_models_ods_model__WEBPACK_IMPORTED_MODULE_46__["ODS"].getDummy());
+        this.tableODS.renderRows();
+    }
+    openDialogCreateSousTraitant() {
+        const dialogRef = this.dialog.open(_dialogs_create_sous_traitant_create_sous_traitant_component__WEBPACK_IMPORTED_MODULE_49__["CreateSousTraitantComponent"], {
+            width: '800px',
+            data: "ajouter ODS"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+        this.dataSourceSousTraitants.push(_models_sous_traitant_model__WEBPACK_IMPORTED_MODULE_48__["SousTraitant"].getDummy());
+        this.tableSousTraitants.renderRows();
+    }
+    openDialogCreateMiseEnDemeure() {
+        const dialogRef = this.dialog.open(_dialogs_create_mise_en_demeure_create_mise_en_demeure_component__WEBPACK_IMPORTED_MODULE_54__["CreateMiseEnDemeureComponent"], {
+            width: '800px',
+            data: "ajouter ODS"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+        this.dataSourceMisesEnDemeure.push(_models_mise_en_demeure_model__WEBPACK_IMPORTED_MODULE_53__["MiseEnDemeure"].getDummy());
+        this.tableMisesEnDemeure.renderRows();
+    }
+    openDialogCreateCloture() {
+        const dialogRef = this.dialog.open(_dialogs_create_cloture_create_cloture_component__WEBPACK_IMPORTED_MODULE_55__["CreateClotureComponent"], {
+            width: '800px',
+            data: "cloture"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+    }
+    openDialogCreateReception() {
+        const dialogRef = this.dialog.open(_dialogs_create_reception_create_reception_component__WEBPACK_IMPORTED_MODULE_56__["CreateReceptionComponent"], {
+            width: '800px',
+            data: "reception"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+    }
+    openDialogCreateFacture() {
+        const dialogRef = this.dialog.open(_dialogs_create_facture_create_facture_component__WEBPACK_IMPORTED_MODULE_51__["CreateFactureComponent"], {
+            width: '800px',
+            data: "ajouter ODS"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+        this.dataSourceFactures.push(_models_facture_model__WEBPACK_IMPORTED_MODULE_50__["Facture"].getDummy());
+        this.tableFactures.renderRows();
+    }
+    openDialogCreateResiliation() {
+        const dialogRef = this.dialog.open(_dialogs_create_resiliation_create_resiliation_component__WEBPACK_IMPORTED_MODULE_52__["CreateResiliationComponent"], {
+            width: '800px',
+            data: "Resilitaion"
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+            //this.operations.push(result);
+        });
+    }
 };
 ProjectComponent.ctorParameters = () => [
     { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] }
@@ -3557,6 +6032,39 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tableSoumissionnaires", null)
 ], ProjectComponent.prototype, "tableSoumissionnaires", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tableComplementsOffres", null)
+], ProjectComponent.prototype, "tableComplementsOffres", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tableClarificationsOffres", null)
+], ProjectComponent.prototype, "tableClarificationsOffres", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tablePassagesComitesTechniques", null)
+], ProjectComponent.prototype, "tablePassagesComitesTechniques", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tableRallongesFinancieres", null)
+], ProjectComponent.prototype, "tableRallongesFinancieres", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tableMisesAuPoint", null)
+], ProjectComponent.prototype, "tableMisesAuPoint", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tablePassagesCommissionCompetenteContrat", null)
+], ProjectComponent.prototype, "tablePassagesCommissionCompetenteContrat", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tableODS", null)
+], ProjectComponent.prototype, "tableODS", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tableSousTraitants", null)
+], ProjectComponent.prototype, "tableSousTraitants", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tableFactures", null)
+], ProjectComponent.prototype, "tableFactures", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tableRallongesFinancieresExecution", null)
+], ProjectComponent.prototype, "tableRallongesFinancieresExecution", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tableMisesEnDemeure", null)
+], ProjectComponent.prototype, "tableMisesEnDemeure", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tablePassagesCommissionCompetenteCDC", null)
 ], ProjectComponent.prototype, "tablePassagesCommissionCompetenteCDC", void 0);

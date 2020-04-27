@@ -1953,8 +1953,8 @@ var __spread = (this && this.__spread) || function () {
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "apiEndpoint", function () { return apiEndpoint; });
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fileUploadUrl", function () { return fileUploadUrl; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-            var apiEndpoint = "http://localhost:5000/api";
-            var fileUploadUrl = "http://localhost:3000";
+            var apiEndpoint = "https://serene-thicket-9103.herokuapp.com/api";
+            var fileUploadUrl = "https://damp-taiga-2895.herokuapp.com";
             /***/ 
         }),
         /***/ "./src/app/dashboard/dashboard.component.css": 

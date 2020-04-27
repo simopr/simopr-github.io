@@ -2122,8 +2122,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fileUploadUrl", function() { return fileUploadUrl; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
-const apiEndpoint = "http://localhost:5000/api";
-const fileUploadUrl = "http://localhost:3000";
+const apiEndpoint = "https://serene-thicket-9103.herokuapp.com/api";
+const fileUploadUrl = "https://damp-taiga-2895.herokuapp.com";
 
 
 /***/ }),

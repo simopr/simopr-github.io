@@ -331,7 +331,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>commissions works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<button class=\"m-3\" mat-raised-button color=\"primary\" (click)=\"openDialogCreateCommissionCompetente()\">\n  Créer Commission Compétente\n</button>\n\n\n<div *ngIf=\"loadingData\" align=\"center\">\n  <mat-spinner diameter=\"30\"></mat-spinner>\n</div>\n<div *ngIf=\"commissionsCompetentes==null\" class=\"alert alert-danger m-3\" role=\"alert\">\n  une erreur s'est produite\n</div>\n<div>\n  <mat-card class=\"m-3\" *ngIf=\"!loadingData && commissionsCompetentes && commissionsCompetentes.length==0\">\n    <mat-card-content>\n      Aucun résultat trouvé\n    </mat-card-content>\n  </mat-card>\n  <!--Afficher les commissions-->\n  <mat-card class=\"m-3\" *ngFor=\"let commissionCompetente of commissionsCompetentes\">\n\n    <mat-card-title>Commission compétente: {{ commissionCompetente.designation }}</mat-card-title>\n    <mat-card-subtitle>Date création: {{ commissionCompetente.dateCreationCommissionCompetente | date}}</mat-card-subtitle>\n    <mat-card-subtitle>Numéro: {{ commissionCompetente.numero }} DZD</mat-card-subtitle>\n    <mat-card-subtitle>Type commission: {{ commissionCompetente.typeCommission  }}</mat-card-subtitle>\n    <mat-card-subtitle><a href=\"{{getPathFile(commissionCompetente.pathJustificatifDecision)}}\" target=\"_blank\">Voir justificatif</a></mat-card-subtitle>\n    \n    <table mat-table [dataSource]=\"commissionCompetente.membresCommissionCompetente\" class=\"mat-elevation-z2\">\n      <ng-container matColumnDef=\"role\">\n        <th mat-header-cell *matHeaderCellDef> Rôle </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.role}} </td>\n      </ng-container>\n      <ng-container matColumnDef=\"nom\">\n        <th mat-header-cell *matHeaderCellDef> Nom </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.nom}} </td>\n      </ng-container>\n      <ng-container matColumnDef=\"prenom\">\n        <th mat-header-cell *matHeaderCellDef> Prénom </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.prenom}} </td>\n      </ng-container>\n      <ng-container matColumnDef=\"qualite\">\n        <th mat-header-cell *matHeaderCellDef> Qualité </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.qualite}} </td>\n      </ng-container>      \n      <ng-container matColumnDef=\"matricule\">\n        <th mat-header-cell *matHeaderCellDef> Matricule </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.matricule}} </td>\n      </ng-container>\n      <ng-container matColumnDef=\"email\">\n        <th mat-header-cell *matHeaderCellDef> Email </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.email}} </td>\n      </ng-container>      \n      <ng-container matColumnDef=\"telephone\">\n        <th mat-header-cell *matHeaderCellDef> Téléphone </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.matricule}} </td>\n      </ng-container>      \n      <ng-container matColumnDef=\"penta\">\n        <th mat-header-cell *matHeaderCellDef> Penta </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.penta}} </td>\n      </ng-container>            \n      <tr mat-header-row *matHeaderRowDef=\"displayedColumnsMembres\"></tr>\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumnsMembres;\"></tr>\n    </table>\n    \n    \n    <!--Start add projects here-->\n    <mat-card-content>\n      <mat-card class=\"m-3\" *ngFor=\"let modificationCommissionCompetente of commissionCompetente.modificationsCommissionCompetente\">\n        <mat-card-subtitle>N° Modification: {{modificationCommissionCompetente.numModification}}</mat-card-subtitle>\n        <mat-card-subtitle>N° Décision: {{modificationCommissionCompetente.numDecision}}</mat-card-subtitle>\n        <mat-card-subtitle><a href=\"{{getPathFile(modificationCommissionCompetente.pathJustificatifDecision)}}\" target=\"_blank\">Voir justificatif</a></mat-card-subtitle>        \n        <mat-card-subtitle>Date Création: {{ modificationCommissionCompetente.dateCreationModificationCommissionCompetente | date }}</mat-card-subtitle>\n        <table mat-table [dataSource]=\"modificationCommissionCompetente.membresCommissionCompetente\" class=\"mat-elevation-z2\">\n          <ng-container matColumnDef=\"role\">\n            <th mat-header-cell *matHeaderCellDef> Rôle </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.role}} </td>\n          </ng-container>\n          <ng-container matColumnDef=\"nom\">\n            <th mat-header-cell *matHeaderCellDef> Nom </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.nom}} </td>\n          </ng-container>\n          <ng-container matColumnDef=\"prenom\">\n            <th mat-header-cell *matHeaderCellDef> Prénom </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.prenom}} </td>\n          </ng-container>\n          <ng-container matColumnDef=\"qualite\">\n            <th mat-header-cell *matHeaderCellDef> Qualité </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.qualite}} </td>\n          </ng-container>      \n          <ng-container matColumnDef=\"matricule\">\n            <th mat-header-cell *matHeaderCellDef> Matricule </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.matricule}} </td>\n          </ng-container>\n          <ng-container matColumnDef=\"email\">\n            <th mat-header-cell *matHeaderCellDef> Email </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.email}} </td>\n          </ng-container>      \n          <ng-container matColumnDef=\"telephone\">\n            <th mat-header-cell *matHeaderCellDef> Téléphone </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.matricule}} </td>\n          </ng-container>      \n          <ng-container matColumnDef=\"penta\">\n            <th mat-header-cell *matHeaderCellDef> Penta </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.penta}} </td>\n          </ng-container>            \n          <tr mat-header-row *matHeaderRowDef=\"displayedColumnsMembres\"></tr>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumnsMembres;\"></tr>\n        </table>\n        <mat-card-actions>\n          <button mat-raised-button color=\"secondary\" (click)=\"openDialogUpdateModificationCommissionCompetente(commissionCompetente, modificationCommissionCompetente)\">Modifier</button>\n          <button mat-button color=\"warn\" (click)=\"openDialogDeleteModificationCommissionCompetente(commissionCompetente, modificationCommissionCompetente)\">Supprimer</button>\n        </mat-card-actions>\n      </mat-card>\n    </mat-card-content>\n    <!--End add projects here-->\n\n\n    <mat-card-actions>\n      <button mat-raised-button color=\"primary\" (click)=\"openDialogCreateModificationCommissionCompetente(commissionCompetente)\">Ajouter modification</button>\n      <button mat-raised-button color=\"secondary\" (click)=\"openDialogUpdateCommissionCompetente(commissionCompetente)\">Modifier</button>\n      <button mat-button color=\"warn\" (click)=\"openDialogDeleteCommissionCompetente(commissionCompetente)\">Supprimer</button>\n    </mat-card-actions>\n\n\n  </mat-card>\n  <!-- END - Affichage de la liste des operations avec leurs projets-->\n</div>");
 
 /***/ }),
 
@@ -413,6 +413,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-commission-competente/create-commission-competente.component.html":
+/*!****************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-commission-competente/create-commission-competente.component.html ***!
+  \****************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n<form [formGroup]=\"commissionCompetenteForm\" (ngSubmit)=\"onSubmit()\">\n\n    <p *ngIf=\"isCreate\" mat-dialog-title>Créer une nouvelle commission compétente</p>\n    <p *ngIf=\"isModify\" mat-dialog-title>Modifier la commission compétente</p>\n    <p *ngIf=\"isDelete\" mat-dialog-title>Voulez-vous vraiment supprimer cette commission compétente?</p>\n  \n    <mat-dialog-content>\n  \n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput [matDatepicker]=\"pickerDateCreation\"\n          placeholder=\"Date création\"\n          [value]=\"date.value\"\n          id=\"dateCreationCommissionCompetente\"\n          formControlName=\"dateCreationCommissionCompetente\">\n          <mat-datepicker-toggle matSuffix [for]=\"pickerDateCreation\"></mat-datepicker-toggle>\n          <mat-datepicker #pickerDateCreation></mat-datepicker>\n        </mat-form-field>\n      </div>\n  \n\n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <mat-label>Type Commission Compétente</mat-label>\n          <mat-select name=\"typeCommission\" id=\"typeCommission\" formControlName=\"typeCommission\">\n            <mat-option *ngFor=\"let typeCommissionCompetente of typesCommissionsCompetentes\" [value]=\"typeCommissionCompetente\">{{parseValueTypeCommissionCompetente(typeCommissionCompetente)}}</mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>      \n\n\n\n  \n  \n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Numéro de la décision\"\n          name=\"numero\"\n          id=\"numero\" \n          formControlName=\"numero\"\n          >\n        </mat-form-field>\n      </div>\n  \n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Désignation\" \n          name=\"designation\"\n          id=\"designation\" \n          formControlName=\"designation\"\n          >\n        </mat-form-field>\n      </div>\n  \n  \n\n      <div class=\"card p-3\">\n        Les membres de la commission<hr>\n            \n            <div>\n                <mat-form-field>\n                  <input matInput placeholder=\"Nombre des membres\" \n                  name=\"membresCommissionCompetente\"\n                  id=\"membresCommissionCompetente\" \n                  formControlName=\"membresCommissionCompetente\"\n                  readonly\n                  >\n                  <mat-error *ngIf=\"commissionCompetenteForm.get('membresCommissionCompetente').errors && commissionCompetenteForm.get('membresCommissionCompetente').errors['wrongMinMembres']\">Ajouter au moins un membre</mat-error>\n                </mat-form-field>\n              </div>\n\n              <table mat-table #tableMembresCommissionCompetente [dataSource]=\"membresCommissionCompetente\" class=\"mat-elevation-z2\">\n                <ng-container matColumnDef=\"role\">\n                  <th mat-header-cell *matHeaderCellDef> Rôle </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.role}} </td>\n                </ng-container>\n                <ng-container matColumnDef=\"nom\">\n                  <th mat-header-cell *matHeaderCellDef> Nom </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.nom}} </td>\n                </ng-container>\n                <ng-container matColumnDef=\"prenom\">\n                  <th mat-header-cell *matHeaderCellDef> Prénom </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.prenom}} </td>\n                </ng-container>\n                <ng-container matColumnDef=\"qualite\">\n                  <th mat-header-cell *matHeaderCellDef> Qualité </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.qualite}} </td>\n                </ng-container>      \n                <ng-container matColumnDef=\"matricule\">\n                  <th mat-header-cell *matHeaderCellDef> Matricule </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.matricule}} </td>\n                </ng-container>\n                <ng-container matColumnDef=\"email\">\n                  <th mat-header-cell *matHeaderCellDef> Email </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.email}} </td>\n                </ng-container>      \n                <ng-container matColumnDef=\"telephone\">\n                  <th mat-header-cell *matHeaderCellDef> Téléphone </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.matricule}} </td>\n                </ng-container>      \n                <ng-container matColumnDef=\"penta\">\n                  <th mat-header-cell *matHeaderCellDef> Penta </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.penta}} </td>\n                </ng-container>\n                <tr mat-header-row *matHeaderRowDef=\"displayedColumnsMembres\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: displayedColumnsMembres;\"></tr>\n              </table>\n\n              <br><br>\n\n              <a *ngIf=\"!isDelete\" mat-button (click)=toggleAjouterMembre()>\n                Afficher/Masquer (Ajouter un membre)\n              </a>   \n            \n        <form [formGroup]=\"membreCommissionCompetenteForm\" (ngSubmit)=\"onSubmitMembre()\">\n         \n        <div *ngIf=\"isAjouterMembre\" class=\"m-3 p-3\">\n            \n            <div>\n                <mat-form-field class=\"example-full-width\">\n                    <mat-label>Rôle du membre</mat-label>\n                    <mat-select \n                    name=\"role\" \n                    id=\"role\" \n                    formControlName=\"role\">\n                    <mat-option *ngFor=\"let roleMembreCommissionCompetente of rolesMembresCommissionCompetente\" \n                    [value]=\"roleMembreCommissionCompetente\">{{parseValueRoleMembreCommissionCompetente(roleMembreCommissionCompetente)}}\n                    </mat-option>\n                    </mat-select>\n                </mat-form-field>\n            </div>\n\n            <div>\n                <mat-form-field class=\"example-full-width\">\n                  <input matInput placeholder=\"Nom\" \n                  name=\"nom\"\n                  id=\"nom\" \n                  formControlName=\"nom\"\n                  >\n                </mat-form-field>\n              </div>\n            \n              <div>\n                <mat-form-field class=\"example-full-width\">\n                  <input matInput placeholder=\"Prénom\" \n                  name=\"prenom\"\n                  id=\"prenom\" \n                  formControlName=\"prenom\"\n                  >\n                </mat-form-field>\n              </div>\n\n              <div>\n                <mat-form-field class=\"example-full-width\">\n                  <input matInput placeholder=\"Qualite\" \n                  name=\"qualite\"\n                  id=\"qualite\" \n                  formControlName=\"qualite\"\n                  >\n                </mat-form-field>\n              </div>\n\n              <div>\n                <mat-form-field class=\"example-full-width\">\n                  <input matInput placeholder=\"Matricule\" \n                  name=\"matricule\"\n                  id=\"matricule\" \n                  formControlName=\"matricule\"\n                  >\n                </mat-form-field>\n              </div>\n            \n              <div>\n                <mat-form-field class=\"example-full-width\">\n                  <input matInput placeholder=\"Email\" \n                  name=\"email\"\n                  id=\"email\" \n                  formControlName=\"email\"\n                  >\n                </mat-form-field>\n              </div>\n\n              <div>\n                <mat-form-field class=\"example-full-width\">\n                  <input matInput placeholder=\"Telephone\" \n                  name=\"telephone\"\n                  id=\"telephone\" \n                  formControlName=\"telephone\"\n                  >\n                </mat-form-field>\n              </div>\n\n              <div>\n                <mat-form-field class=\"example-full-width\">\n                  <input matInput placeholder=\"Penta\" \n                  name=\"penta\"\n                  id=\"penta\" \n                  formControlName=\"penta\"\n                  >\n                </mat-form-field>\n              </div>\n            \n              <button mat-button color=\"primary\" class=\"example-full-width\"\n              [disabled]=\"membreCommissionCompetenteForm.invalid || membreCommissionCompetenteForm.pending\">\n                Ajouter\n            </button>\n        </div>\n\n        </form>\n\n\n\n    </div>\n\n    \n    <br><br>\n\n      <div class=\"alert alert-info\" role=\"alert\">\n        <div *ngIf=\"!isDelete\" >\n        <label>Joindre le Justificatif (Seulement les fichiers PDF sont acceptés)</label>\n          <input \n            class=\"p-3\"\n            type=\"file\"\n            accept=\"application/pdf\"\n            (change)=\"onFileChange($event)\"\n          />\n        </div>\n        <mat-form-field class=\"example-full-width\" matTooltip=\"Veuillez joindre un fichier pdf\">\n          <input matInput placeholder=\"Justificatif\"\n            name=\"pathJustificatifDecision\"\n            id=\"pathJustificatifDecision\" \n            formControlName=\"pathJustificatifDecision\"\n            readonly\n          >\n          <mat-hint *ngIf=\"uploadingFile\">Veuillez patienter, téléchargement du fichier ...  </mat-hint>\n          <mat-hint *ngIf=\"onlyPdfAllowed\"><strong>Seulement les fichiers PDF sont acceptés</strong></mat-hint>\n          <mat-hint *ngIf=\"failedUploadFile\"><strong>Erreur lors du téléchargement du fichier</strong>(réessayer)</mat-hint>\n          \n        </mat-form-field>\n      </div>\n    </mat-dialog-content>\n  \n    <mat-dialog-actions>\n        <button mat-button mat-dialog-close>Fermer</button>\n        <button mat-raised-button color=\"primary\" \n        [disabled]=\"commissionCompetenteForm.invalid || commissionCompetenteForm.pending || loadingData\">\n            <span *ngIf=\"!loadingData\">\n                <span *ngIf=\"isCreate\">Créer</span>\n                <span *ngIf=\"isModify\">Modifier</span>\n                <span *ngIf=\"isDelete\">Supprimer</span>\n            </span>\n  \n            <span *ngIf=\"loadingData\" >\n                <mat-spinner diameter=\"25\" color=\"warn\" class=\"m-1\"></mat-spinner>\n            </span>\n        </button>\n    </mat-dialog-actions>\n  \n  </form>\n  \n  ");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component.html":
 /*!******************************************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component.html ***!
@@ -487,7 +500,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Créer une nouvelle élaboration d'un CDC</p>\n<mat-dialog-content>\n\n  <form class=\"example-container\">\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput [matDatepicker]=\"pickerDateCreation\" placeholder=\"Date création\" [value]=\"date.value\" disabled>\n        <mat-datepicker-toggle matSuffix [for]=\"pickerDateCreation\"></mat-datepicker-toggle>\n        <mat-datepicker #pickerDateCreation></mat-datepicker>\n      </mat-form-field>\n    </div>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <mat-label>Type de la procédure</mat-label>\n        <mat-select>\n          <mat-option *ngFor=\"let type of typesProcedure\" [value]=\"type\">{{parseValueTypeProcedure(type)}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <mat-label>Mode de passation</mat-label>\n        <mat-select>\n          <mat-option *ngFor=\"let mode of modesPassation\" [value]=\"mode\">{{parseValueModePassation(mode)}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <mat-label>Forme du marché</mat-label>\n        <mat-select>\n          <mat-option *ngFor=\"let forme of formesMarche\" [value]=\"forme\">{{parseValueFormeMarche(forme)}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <mat-label>Caractère du marché</mat-label>\n        <mat-select>\n          <mat-option *ngFor=\"let caractere of caracteresMarche\" [value]=\"caractere\">\n            {{parseValueCaractereMarche(caractere)}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n\n\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"elaborationCDCForm\" (ngSubmit)=\"onSubmit()\">\n\n  <p *ngIf=\"isCreate\" mat-dialog-title>Créer une nouvelle élaboration d'un CDC</p>\n  <p *ngIf=\"isModify\" mat-dialog-title>Modifier l'élaboration du CDC</p>\n  <p *ngIf=\"isDelete\" mat-dialog-title>Voulez-vous vraiment supprimer cette élaboration du CDC?</p>\n\n  <mat-dialog-content>\n\n\n      <div>\n          <mat-form-field class=\"example-full-width\">\n            <input matInput [matDatepicker]=\"pickerDateCreation\"\n            placeholder=\"Date création\"\n            [value]=\"date.value\"\n            id=\"dateCreationElaborationCDC\"\n            formControlName=\"dateCreationElaborationCDC\">\n            <mat-datepicker-toggle matSuffix [for]=\"pickerDateCreation\"></mat-datepicker-toggle>\n            <mat-datepicker #pickerDateCreation></mat-datepicker>\n          </mat-form-field>\n        </div>\n\n        <div class=\"alert alert-primary\" role=\"alert\">\n          Nature du projet: {{ data.sousPrj.naturePrestation}}\n          - Niveau: {{data.prj.serviceContractant.niveau}}\n          - Estimation administrative: {{data.sousPrj.estimationAdministrative}} DZD\n          <br><strong>Procédure à suivre: {{getAuthorizesTypeProcedure()}}</strong>\n        </div>\n\n        <div>\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Type de la procédure</mat-label>\n            <mat-select\n            name=\"typeProcedure\"\n            id=\"typeProcedure\"\n            formControlName=\"typeProcedure\">\n              <mat-option *ngFor=\"let type of typesProcedure\" [value]=\"type\">{{parseValueTypeProcedure(type)}}</mat-option>\n            </mat-select>\n            <mat-error *ngIf=\"elaborationCDCForm.get('typeProcedure').errors && elaborationCDCForm.get('typeProcedure').errors['wrongTypeProcedure']\">Vérifiez le type de la procédure</mat-error>\n          </mat-form-field>\n        </div>\n    \n        <div>\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Mode de passation</mat-label>\n            <mat-select\n            name=\"modePassation\"\n            id=\"modePassation\"\n            formControlName=\"modePassation\">\n              <mat-option *ngFor=\"let mode of modesPassation\" [value]=\"mode\">{{parseValueModePassation(mode)}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n        </div>\n    \n        <div>\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Forme du marché</mat-label>\n            <mat-select\n            name=\"formeMarche\"\n            id=\"formeMarche\"\n            formControlName=\"formeMarche\">\n              <mat-option *ngFor=\"let forme of formesMarche\" [value]=\"forme\">{{parseValueFormeMarche(forme)}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n        </div>\n    \n    \n        <div>\n          <mat-form-field class=\"example-full-width\">\n            <mat-label>Caractère du marché</mat-label>\n            <mat-select\n            name=\"caractereMarche\"\n            id=\"caractereMarche\"\n            formControlName=\"caractereMarche\">\n              <mat-option *ngFor=\"let caractere of caracteresMarche\" [value]=\"caractere\">\n                {{parseValueCaractereMarche(caractere)}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n        </div>        \n        \n\n\n      <div *ngIf=\"errorLoadingData\">\n          <div class=\"alert alert-danger\" role=\"alert\">\n              Une erreur s'est produitre. Réessayer\n            </div>\n      </div>\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n      <button mat-button mat-dialog-close>Fermer</button>\n      <button mat-raised-button color=\"primary\" \n      [disabled]=\"elaborationCDCForm.invalid || elaborationCDCForm.pending || loadingData\">\n          <span *ngIf=\"!loadingData\">\n              <span *ngIf=\"isCreate\">Créer</span>\n              <span *ngIf=\"isModify\">Modifier</span>\n              <span *ngIf=\"isDelete\">Supprimer</span>\n          </span>\n\n          <span *ngIf=\"loadingData\" >\n              <mat-spinner diameter=\"25\" color=\"warn\" class=\"m-1\"></mat-spinner>\n          </span>\n      </button>\n  </mat-dialog-actions>\n\n</form>");
 
 /***/ }),
 
@@ -540,6 +553,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<p mat-dialog-title>Créer une nouvelle mise en demeure</p>\n<mat-dialog-content>\n\n  <form class=\"example-container\">\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Numéro de la mise en demeure\">\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Objet\">\n    </mat-form-field>\n\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput [matDatepicker]=\"pickerDateNotif\" placeholder=\"Date de notification\">\n      <mat-datepicker-toggle matSuffix [for]=\"pickerDateNotif\"></mat-datepicker-toggle>\n      <mat-datepicker #pickerDateNotif></mat-datepicker>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Moyen de notification\">\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput placeholder=\"Delai de prise en charge\">\n    </mat-form-field>\n\n    <div>\n      Joindre la mise en demeure\n      <input type=\"file\">\n    </div>\n\n    <mat-form-field class=\"example-full-width\">\n      <textarea matInput placeholder=\"Résultat\"></textarea>\n    </mat-form-field>\n\n\n  </form>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-raised-button color=\"basic\" mat-dialog-close>Fermer</button>\n  <button mat-raised-button color=\"primary\" (click)=\"createOperation()\" cdkFocusInitial>Créer</button>\n</mat-dialog-actions>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-modification-commission-competente/create-modification-commission-competente.component.html":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-modification-commission-competente/create-modification-commission-competente.component.html ***!
+  \******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"modificationCommissionCompetenteForm\" (ngSubmit)=\"onSubmit()\">\n\n    <p *ngIf=\"isCreate\" mat-dialog-title>Créer une modification d'une commission compétente</p>\n    <p *ngIf=\"isModify\" mat-dialog-title>Modifier la modification d'une commission compétente</p>\n    <p *ngIf=\"isDelete\" mat-dialog-title>Voulez-vous vraiment cette modification de la commission compétente?</p>\n\n    <mat-dialog-content>\n\n\n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput [matDatepicker]=\"pickerDateCreation\"\n          placeholder=\"Date création\"\n          [value]=\"date.value\"\n          id=\"dateCreationModificationCommissionCompetente\"\n          formControlName=\"dateCreationModificationCommissionCompetente\">\n          <mat-datepicker-toggle matSuffix [for]=\"pickerDateCreation\"></mat-datepicker-toggle>\n          <mat-datepicker #pickerDateCreation></mat-datepicker>\n        </mat-form-field>\n      </div>\n\n  \n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Numéro de la modification\"\n          name=\"numModification\"\n          id=\"numModification\" \n          formControlName=\"numModification\"\n          >\n        </mat-form-field>\n      </div>\n  \n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Numéro de la décision\" \n          name=\"numDecision\"\n          id=\"numDecision\" \n          formControlName=\"numDecision\"\n          >\n        </mat-form-field>\n      </div>\n  \n  \n  \n      <div class=\"card p-3\">\n        Les membres de la commission<hr>\n            \n            <div>\n                <mat-form-field>\n                  <input matInput placeholder=\"Nombre des membres\" \n                  name=\"membresCommissionCompetente\"\n                  id=\"membresCommissionCompetente\" \n                  formControlName=\"membresCommissionCompetente\"\n                  readonly\n                  >\n                  <mat-error *ngIf=\"modificationCommissionCompetenteForm.get('membresCommissionCompetente').errors && modificationCommissionCompetenteForm.get('membresCommissionCompetente').errors['wrongMinMembres']\">Ajouter au moins un membre</mat-error>\n                </mat-form-field>\n              </div>\n  \n              <table mat-table #tableMembresCommissionCompetente [dataSource]=\"membresCommissionCompetente\" class=\"mat-elevation-z2\">\n                <ng-container matColumnDef=\"role\">\n                  <th mat-header-cell *matHeaderCellDef> Rôle </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.role}} </td>\n                </ng-container>\n                <ng-container matColumnDef=\"nom\">\n                  <th mat-header-cell *matHeaderCellDef> Nom </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.nom}} </td>\n                </ng-container>\n                <ng-container matColumnDef=\"prenom\">\n                  <th mat-header-cell *matHeaderCellDef> Prénom </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.prenom}} </td>\n                </ng-container>\n                <ng-container matColumnDef=\"qualite\">\n                  <th mat-header-cell *matHeaderCellDef> Qualité </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.qualite}} </td>\n                </ng-container>      \n                <ng-container matColumnDef=\"matricule\">\n                  <th mat-header-cell *matHeaderCellDef> Matricule </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.matricule}} </td>\n                </ng-container>\n                <ng-container matColumnDef=\"email\">\n                  <th mat-header-cell *matHeaderCellDef> Email </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.email}} </td>\n                </ng-container>      \n                <ng-container matColumnDef=\"telephone\">\n                  <th mat-header-cell *matHeaderCellDef> Téléphone </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.matricule}} </td>\n                </ng-container>      \n                <ng-container matColumnDef=\"penta\">\n                  <th mat-header-cell *matHeaderCellDef> Penta </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.penta}} </td>\n                </ng-container>\n                <tr mat-header-row *matHeaderRowDef=\"displayedColumnsMembres\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: displayedColumnsMembres;\"></tr>\n              </table>\n  \n              <br><br>\n  \n              <a *ngIf=\"!isDelete\" mat-button (click)=toggleAjouterMembre()>\n                Afficher/Masquer (Ajouter un membre)\n              </a>   \n            \n        <form [formGroup]=\"membreCommissionCompetenteForm\" (ngSubmit)=\"onSubmitMembre()\">\n         \n        <div *ngIf=\"isAjouterMembre\" class=\"m-3 p-3\">\n            \n            <div>\n                <mat-form-field class=\"example-full-width\">\n                    <mat-label>Rôle du membre</mat-label>\n                    <mat-select \n                    name=\"role\" \n                    id=\"role\" \n                    formControlName=\"role\">\n                    <mat-option *ngFor=\"let roleMembreCommissionCompetente of rolesMembresCommissionCompetente\" \n                    [value]=\"roleMembreCommissionCompetente\">{{parseValueRoleMembreCommissionCompetente(roleMembreCommissionCompetente)}}\n                    </mat-option>\n                    </mat-select>\n                </mat-form-field>\n            </div>\n  \n            <div>\n                <mat-form-field class=\"example-full-width\">\n                  <input matInput placeholder=\"Nom\" \n                  name=\"nom\"\n                  id=\"nom\" \n                  formControlName=\"nom\"\n                  >\n                </mat-form-field>\n              </div>\n            \n              <div>\n                <mat-form-field class=\"example-full-width\">\n                  <input matInput placeholder=\"Prénom\" \n                  name=\"prenom\"\n                  id=\"prenom\" \n                  formControlName=\"prenom\"\n                  >\n                </mat-form-field>\n              </div>\n  \n              <div>\n                <mat-form-field class=\"example-full-width\">\n                  <input matInput placeholder=\"Qualite\" \n                  name=\"qualite\"\n                  id=\"qualite\" \n                  formControlName=\"qualite\"\n                  >\n                </mat-form-field>\n              </div>\n  \n              <div>\n                <mat-form-field class=\"example-full-width\">\n                  <input matInput placeholder=\"Matricule\" \n                  name=\"matricule\"\n                  id=\"matricule\" \n                  formControlName=\"matricule\"\n                  >\n                </mat-form-field>\n              </div>\n            \n              <div>\n                <mat-form-field class=\"example-full-width\">\n                  <input matInput placeholder=\"Email\" \n                  name=\"email\"\n                  id=\"email\" \n                  formControlName=\"email\"\n                  >\n                </mat-form-field>\n              </div>\n  \n              <div>\n                <mat-form-field class=\"example-full-width\">\n                  <input matInput placeholder=\"Telephone\" \n                  name=\"telephone\"\n                  id=\"telephone\" \n                  formControlName=\"telephone\"\n                  >\n                </mat-form-field>\n              </div>\n  \n              <div>\n                <mat-form-field class=\"example-full-width\">\n                  <input matInput placeholder=\"Penta\" \n                  name=\"penta\"\n                  id=\"penta\" \n                  formControlName=\"penta\"\n                  >\n                </mat-form-field>\n              </div>\n            \n              <button mat-button color=\"primary\" class=\"example-full-width\"\n              [disabled]=\"membreCommissionCompetenteForm.invalid || membreCommissionCompetenteForm.pending\">\n                Ajouter\n            </button>\n        </div>\n  \n        </form>\n  \n  \n  \n    </div>\n  \n    \n    <br><br>\n  \n      <div class=\"alert alert-info\" role=\"alert\">\n        <div *ngIf=\"!isDelete\" >\n        <label>Joindre le Justificatif (Seulement les fichiers PDF sont acceptés)</label>\n          <input \n            class=\"p-3\"\n            type=\"file\"\n            accept=\"application/pdf\"\n            (change)=\"onFileChange($event)\"\n          />\n        </div>\n        <mat-form-field class=\"example-full-width\" matTooltip=\"Veuillez joindre un fichier pdf\">\n          <input matInput placeholder=\"Justificatif\"\n            name=\"pathJustificatifDecision\"\n            id=\"pathJustificatifDecision\" \n            formControlName=\"pathJustificatifDecision\"\n            readonly\n          >\n          <mat-hint *ngIf=\"uploadingFile\">Veuillez patienter, téléchargement du fichier ...  </mat-hint>\n          <mat-hint *ngIf=\"onlyPdfAllowed\"><strong>Seulement les fichiers PDF sont acceptés</strong></mat-hint>\n          <mat-hint *ngIf=\"failedUploadFile\"><strong>Erreur lors du téléchargement du fichier</strong>(réessayer)</mat-hint>\n          \n        </mat-form-field>\n      </div>\n\n\n    </mat-dialog-content>\n\n    <mat-dialog-actions>\n        <button mat-button mat-dialog-close>Fermer</button>\n        <button mat-raised-button color=\"primary\" \n        [disabled]=\"modificationCommissionCompetenteForm.invalid || modificationCommissionCompetenteForm.pending || loadingData\">\n            <span *ngIf=\"!loadingData\">\n                <span *ngIf=\"isCreate\">Créer</span>\n                <span *ngIf=\"isModify\">Modifier</span>\n                <span *ngIf=\"isDelete\">Supprimer</span>\n            </span>\n\n            <span *ngIf=\"loadingData\" >\n                <mat-spinner diameter=\"25\" color=\"warn\" class=\"m-1\"></mat-spinner>\n            </span>\n        </button>\n    </mat-dialog-actions>\n\n</form>\n\n\n\n\n");
 
 /***/ }),
 
@@ -643,7 +669,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<form [formGroup]=\"projetForm\" (ngSubmit)=\"onSubmit()\">\n\n  <p *ngIf=\"isCreate\" mat-dialog-title>Créer un nouveau Projet</p>\n  <p *ngIf=\"isModify\" mat-dialog-title>Modifier le Projet</p>\n  <p *ngIf=\"isDelete\" mat-dialog-title>Voulez-vous vraiment supprimer ce Projet?</p>\n\n  <mat-dialog-content>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput [matDatepicker]=\"pickerDateCreation\"\n        placeholder=\"Date création\"\n        [value]=\"date.value\"\n        id=\"dateCreationProjet\"\n        formControlName=\"dateCreationProjet\">\n        <mat-datepicker-toggle matSuffix [for]=\"pickerDateCreation\"></mat-datepicker-toggle>\n        <mat-datepicker #pickerDateCreation></mat-datepicker>\n      </mat-form-field>\n    </div>\n\n \n    <div class=\"alert alert-info\" role=\"alert\">\n      <div *ngIf=\"!isDelete\" >\n      <label>Joindre le Justificatif du projet (Seulement les fichiers PDF sont acceptés)</label>\n        <input \n          class=\"p-3\"\n          type=\"file\"\n          accept=\"application/pdf\"\n          (change)=\"onFileChange($event)\"\n        />\n      </div>\n      <mat-form-field class=\"example-full-width\" matTooltip=\"Veuillez joindre un fichier pdf\">\n        <input matInput placeholder=\"Justificatif du projet\"\n          name=\"pathJustificatifProjet\"\n          id=\"pathJustificatifProjet\" \n          formControlName=\"pathJustificatifProjet\"\n          readonly\n        >\n        <mat-hint *ngIf=\"uploadingFile\">Veuillez patienter, téléchargement du fichier ...  </mat-hint>\n        <mat-hint *ngIf=\"onlyPdfAllowed\"><strong>Seulement les fichiers PDF sont acceptés</strong></mat-hint>\n        <mat-hint *ngIf=\"failedUploadFile\"><strong>Erreur lors du téléchargement du fichier</strong>(réessayer)</mat-hint>\n        \n      </mat-form-field>\n    </div>\n\n    <div class=\"card\">\n    <form formGroupName=\"serviceContractant\" class=\"card-body\">\n      <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput \n          placeholder=\"Service Contractant\"\n          id=\"_id\"\n          formControlName=\"_id\"\n          [matAutocomplete]=\"auto\">\n        <mat-autocomplete #auto=\"matAutocomplete\">\n          <mat-option *ngFor=\"let serviceContractant of filteredOptionsSC | async\" [value]=\"serviceContractant._id\">\n            {{serviceContractant.nomStructure}} ({{serviceContractant.identifiant}})\n          </mat-option>\n        </mat-autocomplete>\n        <mat-hint *ngIf=\"loadingSC\">chargement des services contractants ...</mat-hint>\n        <mat-error *ngIf=\"!this.optionsSC\">Erreur du chargement des S/Cs.</mat-error>\n        <mat-error *ngIf=\"this.optionsSC && this.optionsSC.length == 0\">Aucun S/C trouvé (créer d'abord un S/C)</mat-error>\n        <mat-error *ngIf=\"projetForm.get('serviceContractant._id').errors && projetForm.get('serviceContractant._id').errors['serviceContractantInvalid']\">S/C est <strong>invalid</strong></mat-error>\n      </mat-form-field>\n      </div>\n\n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Identifiant\"\n            name=\"identifiant\"\n            id=\"identifiant\" \n            formControlName=\"identifiant\"\n            [value]=\"getSelectedSCIdentifiant()\"\n          >\n        </mat-form-field>\n      </div>\n\n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Nom de la structure\"\n            name=\"nomStructure\"\n            id=\"nomStructure\" \n            formControlName=\"nomStructure\"\n            [value]=\"getSelectedSCNomStructure()\"\n          >\n        </mat-form-field>\n      </div>\n\n    </form>\n    </div>\n\n    <hr>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"Intitulé du projet\"\n        name=\"intituleProjet\"\n        id=\"intituleProjet\" \n        formControlName=\"intituleProjet\"\n        >\n      </mat-form-field>\n    </div>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"Code du projet\" \n        name=\"codeProjet\"\n        id=\"codeProjet\" \n        formControlName=\"codeProjet\"\n        >\n\n        <mat-hint *ngIf=\"projetForm.get('codeProjet').pending\">Checking ...</mat-hint>\n        <mat-error *ngIf=\"projetForm.get('codeProjet').errors && projetForm.get('codeProjet').errors['codeProjetExist']\">Ce code projet existe</mat-error>\n      </mat-form-field>\n    </div>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput type=\"number\" placeholder=\"Montant du projet\" \n        name=\"montantProjet\"\n        id=\"montantProjet\" \n        formControlName=\"montantProjet\"\n        >\n        <span matPrefix>DZD-</span>\n      </mat-form-field>\n    </div>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"Plan d’action (année)\" \n        name=\"yearPlanAction\"\n        id=\"yearPlanAction\" \n        formControlName=\"yearPlanAction\"\n        >\n      </mat-form-field>\n    </div>\n\n\n    <div>\n      <mat-form-field class=\"example-full-width\" matTooltip=\"La structure pour laquelle ce projet est destiné.\">\n        <input matInput placeholder=\"Pour la structure de rattachement (le cas échéant) :\" \n        name=\"pourLaStructureRattachement\"\n        id=\"pourLaStructureRattachement\" \n        formControlName=\"pourLaStructureRattachement\"\n        >\n      </mat-form-field>\n    </div>\n\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <mat-label>Source de financement</mat-label>\n        <mat-select \n          id=\"sourcesFinancement\" \n          formControlName=\"sourcesFinancement\"\n          multiple>\n          <mat-option *ngFor=\"let sourceFinancement of sourcesFinancement\" [value]=\"sourceFinancement\">\n            {{parseValueSourceFinancement(sourceFinancement)}}\n          </mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n\n    <div *ngIf=\"siAutreSourceFinancement()\">\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"Mentionner l'autre source de financement\" \n        name=\"siAutreSourceFinancement\"\n        id=\"siAutreSourceFinancement\" \n        formControlName=\"siAutreSourceFinancement\"        \n        >\n      </mat-form-field>\n    </div>\n\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <mat-label>Budget</mat-label>\n        <mat-select name=\"budget\" id=\"budget\" formControlName=\"budget\">\n          <mat-option *ngFor=\"let budget of budgets\" [value]=\"budget\">{{parseValueBudget(budget)}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n\n    \n    <div>\n        <mat-checkbox class=\"example-full-width\"\n        matTooltip=\"Cochez si hors plan.\"\n        name=\"isHorsPlan\"\n        id=\"isHorsPlan\" \n        formControlName=\"isHorsPlan\"\n        >Hors plan?\n      </mat-checkbox>\n    </div>\n\n\n\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n      <button mat-button mat-dialog-close>Fermer</button>\n      <button mat-raised-button color=\"primary\" \n      [disabled]=\"projetForm.invalid || projetForm.pending || loadingData\">\n          <span *ngIf=\"!loadingData\">\n              <span *ngIf=\"isCreate\">Créer</span>\n              <span *ngIf=\"isModify\">Modifier</span>\n              <span *ngIf=\"isDelete\">Supprimer</span>\n          </span>\n\n          <span *ngIf=\"loadingData\" >\n              <mat-spinner diameter=\"25\" color=\"warn\" class=\"m-1\"></mat-spinner>\n          </span>\n      </button>\n  </mat-dialog-actions>\n\n</form>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<form [formGroup]=\"projetForm\" (ngSubmit)=\"onSubmit()\">\n\n  <p *ngIf=\"isCreate\" mat-dialog-title>Créer un nouveau Projet</p>\n  <p *ngIf=\"isModify\" mat-dialog-title>Modifier le Projet</p>\n  <p *ngIf=\"isDelete\" mat-dialog-title>Voulez-vous vraiment supprimer ce Projet?</p>\n\n  <mat-dialog-content>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput [matDatepicker]=\"pickerDateCreation\"\n        placeholder=\"Date création\"\n        [value]=\"date.value\"\n        id=\"dateCreationProjet\"\n        formControlName=\"dateCreationProjet\">\n        <mat-datepicker-toggle matSuffix [for]=\"pickerDateCreation\"></mat-datepicker-toggle>\n        <mat-datepicker #pickerDateCreation></mat-datepicker>\n      </mat-form-field>\n    </div>\n\n \n    <div class=\"alert alert-info\" role=\"alert\">\n      <div *ngIf=\"!isDelete\" >\n      <label>Joindre le Justificatif de l'inscription (Seulement les fichiers PDF sont acceptés)</label>\n        <input \n          class=\"p-3\"\n          type=\"file\"\n          accept=\"application/pdf\"\n          (change)=\"onFileChange($event)\"\n        />\n      </div>\n      <mat-form-field class=\"example-full-width\" matTooltip=\"Veuillez joindre un fichier pdf\">\n        <input matInput placeholder=\"Justificatif de l'inscription\"\n          name=\"pathJustificatifProjet\"\n          id=\"pathJustificatifProjet\" \n          formControlName=\"pathJustificatifProjet\"\n          readonly\n        >\n        <mat-hint *ngIf=\"uploadingFile\">Veuillez patienter, téléchargement du fichier ...  </mat-hint>\n        <mat-hint *ngIf=\"onlyPdfAllowed\"><strong>Seulement les fichiers PDF sont acceptés</strong></mat-hint>\n        <mat-hint *ngIf=\"failedUploadFile\"><strong>Erreur lors du téléchargement du fichier</strong>(réessayer)</mat-hint>\n        \n      </mat-form-field>\n    </div>\n\n    <div class=\"card\">\n    <form formGroupName=\"serviceContractant\" class=\"card-body\">\n      <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput \n          placeholder=\"Service Contractant\"\n          id=\"_id\"\n          formControlName=\"_id\"\n          [matAutocomplete]=\"auto\">\n        <mat-autocomplete #auto=\"matAutocomplete\">\n          <mat-option *ngFor=\"let serviceContractant of filteredOptionsSC | async\" [value]=\"serviceContractant._id\">\n            {{serviceContractant.nomStructure}} ({{serviceContractant.identifiant}})\n          </mat-option>\n        </mat-autocomplete>\n        <mat-hint *ngIf=\"loadingSC\">chargement des services contractants ...</mat-hint>\n        <mat-error *ngIf=\"!this.optionsSC\">Erreur du chargement des S/Cs.</mat-error>\n        <mat-error *ngIf=\"this.optionsSC && this.optionsSC.length == 0\">Aucun S/C trouvé (créer d'abord un S/C)</mat-error>\n        <mat-error *ngIf=\"projetForm.get('serviceContractant._id').errors && projetForm.get('serviceContractant._id').errors['serviceContractantInvalid']\">S/C est <strong>invalid</strong></mat-error>\n      </mat-form-field>\n      </div>\n\n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Identifiant\"\n            name=\"identifiant\"\n            id=\"identifiant\" \n            formControlName=\"identifiant\"\n            [value]=\"getSelectedSCIdentifiant()\"\n          >\n        </mat-form-field>\n      </div>\n\n      <div>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Nom de la structure\"\n            name=\"nomStructure\"\n            id=\"nomStructure\" \n            formControlName=\"nomStructure\"\n            [value]=\"getSelectedSCNomStructure()\"\n          >\n        </mat-form-field>\n      </div>\n\n    </form>\n    </div>\n\n    <hr>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"Intitulé du projet\"\n        name=\"intituleProjet\"\n        id=\"intituleProjet\" \n        formControlName=\"intituleProjet\"\n        >\n      </mat-form-field>\n    </div>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"Code du projet\" \n        name=\"codeProjet\"\n        id=\"codeProjet\" \n        formControlName=\"codeProjet\"\n        >\n\n        <mat-hint *ngIf=\"projetForm.get('codeProjet').pending\">Checking ...</mat-hint>\n        <mat-error *ngIf=\"projetForm.get('codeProjet').errors && projetForm.get('codeProjet').errors['codeProjetExist']\">Ce code projet existe</mat-error>\n      </mat-form-field>\n    </div>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput type=\"number\" placeholder=\"Montant du projet\" \n        name=\"montantProjet\"\n        id=\"montantProjet\" \n        formControlName=\"montantProjet\"\n        >\n        <span matPrefix>DZD-</span>\n      </mat-form-field>\n    </div>\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"Plan d’action (année)\" \n        name=\"yearPlanAction\"\n        id=\"yearPlanAction\" \n        formControlName=\"yearPlanAction\"\n        >\n      </mat-form-field>\n    </div>\n\n\n    <div>\n      <mat-form-field class=\"example-full-width\" matTooltip=\"La structure pour laquelle ce projet est destiné.\">\n        <input matInput placeholder=\"Pour la structure de rattachement\" \n        name=\"pourLaStructureRattachement\"\n        id=\"pourLaStructureRattachement\" \n        formControlName=\"pourLaStructureRattachement\"\n        >\n      </mat-form-field>\n    </div>\n\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <mat-label>Source de financement</mat-label>\n        <mat-select \n          id=\"sourcesFinancement\" \n          formControlName=\"sourcesFinancement\"\n          multiple>\n          <mat-option *ngFor=\"let sourceFinancement of sourcesFinancement\" [value]=\"sourceFinancement\">\n            {{parseValueSourceFinancement(sourceFinancement)}}\n          </mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n\n    <div *ngIf=\"siAutreSourceFinancement()\">\n      <mat-form-field class=\"example-full-width\">\n        <input matInput placeholder=\"Mentionner l'autre source de financement\" \n        name=\"siAutreSourceFinancement\"\n        id=\"siAutreSourceFinancement\"\n        formControlName=\"siAutreSourceFinancement\"        \n        >\n      </mat-form-field>\n    </div>\n\n\n    <div>\n      <mat-form-field class=\"example-full-width\">\n        <mat-label>Budget</mat-label>\n        <mat-select name=\"budget\" id=\"budget\" formControlName=\"budget\">\n          <mat-option *ngFor=\"let budget of budgets\" [value]=\"budget\">{{parseValueBudget(budget)}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n\n    \n    <div>\n        <mat-checkbox class=\"example-full-width\"\n        matTooltip=\"Cochez si hors plan.\"\n        name=\"isHorsPlan\"\n        id=\"isHorsPlan\" \n        formControlName=\"isHorsPlan\"\n        >Hors plan?\n      </mat-checkbox>\n    </div>\n\n\n\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n      <button mat-button mat-dialog-close>Fermer</button>\n      <button mat-raised-button color=\"primary\" \n      [disabled]=\"projetForm.invalid || projetForm.pending || loadingData\">\n          <span *ngIf=\"!loadingData\">\n              <span *ngIf=\"isCreate\">Créer</span>\n              <span *ngIf=\"isModify\">Modifier</span>\n              <span *ngIf=\"isDelete\">Supprimer</span>\n          </span>\n\n          <span *ngIf=\"loadingData\" >\n              <mat-spinner diameter=\"25\" color=\"warn\" class=\"m-1\"></mat-spinner>\n          </span>\n      </button>\n  </mat-dialog-actions>\n\n</form>\n\n");
 
 /***/ }),
 
@@ -916,7 +942,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-expansion-panel>\r\n    <mat-expansion-panel-header>\r\n        <mat-panel-title>\r\n            Inscription\r\n        </mat-panel-title>\r\n        <mat-panel-description>\r\n            (Code Operation)\r\n        </mat-panel-description>\r\n        <mat-panel-description>\r\n            (Code Projet)\r\n        </mat-panel-description>\r\n    </mat-expansion-panel-header>\r\n\r\n    *Récupérer ces informations de l'opération et fiche projet\r\n</mat-expansion-panel>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"loadingDataProjet\" align=\"center\">\r\n    <mat-spinner diameter=\"30\"></mat-spinner>\r\n</div>\r\n\r\n<div *ngIf=\"!loadingDataProjet && projet==null\" class=\"alert alert-danger m-3\" role=\"alert\">\r\n    une erreur s'est produite\r\n</div>\r\n\r\n<div *ngIf=\"projet!=null\">\r\n    <table>\r\n    <tr><td>Projet:</td><td>{{ projet.intituleProjet }}</td></tr>\r\n    <tr><td>Service contractant:</td><td>{{ projet.serviceContractant.nomStructure }} ({{ projet.serviceContractant.identifiant }})</td></tr>\r\n    <tr><td>Code:</td><td>{{ projet.codeProjet }}</td></tr>\r\n    <tr><td>Montant:</td><td>{{ projet.montantProjet }} DZD</td></tr>\r\n    <tr><td>Date Création:</td><td>{{ projet.dateCreationProjet | date }}</td></tr>\r\n    <tr><td>Pour la structure:</td><td>{{ projet.pourLaStructureRattachement }}</td></tr>\r\n    <tr><td>Année du plan d'action:</td><td>{{ projet.yearPlanAction}}</td></tr>\r\n    <tr><td>Sources de financments:</td><td>{{projet.sourcesFinancement}}</td></tr>\r\n    <tr><td>Sources de financments(Autre):</td><td>{{projet.siAutreSourceFinancement}}</td></tr>\r\n    </table>\r\n\r\n    <div class=\"card m-3\" *ngFor=\"let sousProjet of projet.sousProjets\">\r\n        <div class=\"card-body\" [ngStyle]=\"sousProjet._id===idSousProjet && {'background-color': '#eeeeee'}\">\r\n            <table>\r\n                <tr><td>Sous Projet:</td><td>{{ sousProjet.intituleSousProjet }}</td></tr>\r\n                <tr><td>Nature:</td><td>{{sousProjet.naturePrestation}}</td></tr>\r\n                <tr><td>Seuil (Est. Admin.):</td><td>{{sousProjet.estimationAdministrative}} DZD</td></tr>\r\n                <tr><td>Date Création:</td><td>{{ sousProjet.dateCreationSousProjet | date }}</td></tr>                                                \r\n            </table>\r\n        </div>\r\n    </div>    \r\n</div>\r\n\r\n<!-- <button mat-button matStepperNext [disabled]=\"loadingDataProjet || projet==null\">Next</button>-->\r\n\r\n");
 
 /***/ }),
 
@@ -929,7 +955,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-card class=\"m-3\">\r\n    <mat-card-title>Elaboration du CDC, {{elaborationCDC.dateCreation| date}}</mat-card-title>\r\n    <mat-card-content>\r\n\r\n        <mat-form-field class=\"example-full-width\">\r\n            <input matInput placeholder=\"Type de la procédure\" value=\"{{elaborationCDC.typeProcedure}}\" disabled>\r\n        </mat-form-field>\r\n\r\n        <mat-form-field class=\"example-full-width\">\r\n            <input matInput placeholder=\"Mode de passation\" value=\"{{elaborationCDC.modePassation}}\" disabled>\r\n        </mat-form-field>\r\n\r\n        <mat-form-field class=\"example-full-width\">\r\n            <input matInput placeholder=\"Forme du marché\" value=\"{{elaborationCDC.formeMarche}}\" disabled>\r\n        </mat-form-field>\r\n  \r\n        <mat-form-field class=\"example-full-width\">\r\n            <input matInput placeholder=\"Caractère\" value=\"{{elaborationCDC.caractere}}\" disabled>\r\n        </mat-form-field>\r\n\r\n        <div *ngIf=\"isInternational()\" class=\"alert alert-primary\" role=\"alert\">\r\n            Pour les marchés à caractère international, il faut joindre l'accord du premier ministre et publier l'avis en anglais.\r\n        </div>\r\n\r\n\r\n        <div>\r\n            Projet de CDC (Draft) <input type=\"file\">\r\n            <button  mat-button (click)=\"uploadProjetCDC()\" \r\n            matTooltip=\"Vous pouvez re-enregistrer ce fichier. Mais une fois la DCM le valide, vous ne pouvez plus le re-enregistrer.\">\r\n            Enregistrer</button>\r\n            <button *ngIf=\"isProjetCDCUploaded()\" mat-button (click)=\"seeProjetCDC()\" matTooltip=\"Voir si déjà enregistrer\">Voir</button>\r\n        </div>\r\n\r\n        <mat-slide-toggle [(ngModel)]=\"passageCommissionChecked\"\r\n        disabled = \"{{this.isPassageCommissionDisabled()}}\"\r\n            matTooltip=\"PF: tjrs pass. comm.; PA: avc ou sans pass. comm.\">Passage par la commission des marchés\r\n        </mat-slide-toggle>\r\n        <div [ngStyle]=\"{display: passageCommissionChecked? 'block' : 'none'}\" class=\"border border-secondary p-3\">\r\n\r\n            <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreatePassageCommissionCompetenteCDC()\">Ajouter\r\n                Passage Com. Comp.</button>\r\n\r\n            <table mat-table #tablePassagesCommissionCompetenteCDC [dataSource]=\"passagesCommissionCompetenteCDC\"\r\n                class=\"mat-elevation-z2\">\r\n\r\n                <ng-container matColumnDef=\"dateDepotSecretariatCommission\">\r\n                    <th mat-header-cell *matHeaderCellDef\r\n                        matTooltip='Date de dépôt au niveau du secrétariat de la commission'> Date de dépôt </th>\r\n                    <td mat-cell *matCellDef=\"let element\"> {{ element.dateDepotSecretariatCommission| date }}\r\n                    </td>\r\n                </ng-container>\r\n\r\n                <ng-container matColumnDef=\"datePassageCommission\">\r\n                    <th mat-header-cell *matHeaderCellDef matTooltip='Date de passage dans la commission'> Date\r\n                        commission\r\n                    </th>\r\n                    <td mat-cell *matCellDef=\"let element\"> {{ element.datePassageCommission| date }} </td>\r\n                </ng-container>\r\n\r\n                <ng-container matColumnDef=\"decision\">\r\n                    <th mat-header-cell *matHeaderCellDef> Décision </th>\r\n                    <td mat-cell *matCellDef=\"let element\"> {{element.decision}} </td>\r\n                </ng-container>\r\n\r\n                <ng-container matColumnDef=\"dateLeveeReserves\">\r\n                    <th mat-header-cell *matHeaderCellDef matTooltip> Date Levée Réserves </th>\r\n                    <td mat-cell *matCellDef=\"let element\"> {{ element.dateLeveeReserves| date }} </td>\r\n                </ng-container>\r\n\r\n                <ng-container matColumnDef=\"PVPath\">\r\n                    <th mat-header-cell *matHeaderCellDef> PV </th>\r\n                    <td mat-cell *matCellDef=\"let element\">\r\n                        <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n                    </td>\r\n                </ng-container>\r\n\r\n                <ng-container matColumnDef=\"dateDecision\">\r\n                    <th mat-header-cell *matHeaderCellDef> Date décision </th>\r\n                    <td mat-cell *matCellDef=\"let element\"> {{ element.dateDecision| date }} </td>\r\n                </ng-container>\r\n\r\n                <ng-container matColumnDef=\"numero\">\r\n                    <th mat-header-cell *matHeaderCellDef> Numéro </th>\r\n                    <td mat-cell *matCellDef=\"let element\"> {{element.numero}} </td>\r\n                </ng-container>\r\n\r\n                <ng-container matColumnDef=\"decisionPath\">\r\n                    <th mat-header-cell *matHeaderCellDef> Décision </th>\r\n                    <td mat-cell *matCellDef=\"let element\">\r\n                        <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n                    </td>\r\n                </ng-container>\r\n\r\n\r\n                <tr mat-header-row *matHeaderRowDef=\"displayedColumnsPassagesCommissionCompetente\"></tr>\r\n                <tr mat-row *matRowDef=\"let row; columns: displayedColumnsPassagesCommissionCompetente;\"></tr>\r\n            </table>\r\n        </div>\r\n        <br>\r\n\r\n        <!--<mat-checkbox [(ngModel)]=\"additifsChecked\">Additifs</mat-checkbox>-->\r\n        <mat-slide-toggle [(ngModel)]=\"additifsChecked\">Additifs</mat-slide-toggle>\r\n        <div [ngStyle]=\"{display: additifsChecked? 'block' : 'none'}\" class=\"border border-secondary p-3\">\r\n            <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateAdditif()\">Ajouter Additif</button>\r\n            <div *ngFor=\"let additif of additifs\" class=\"bg-light\">\r\n                <div class=\"m-2 p-2\">Additif : {{additif.numero}}</div>\r\n                <button class=\"m-3\" mat-raised-button\r\n                    (click)=\"openDialogCreatePassageCommissionCompetenteAdditifs(additif.numero)\">Ajouter Passage Com.\r\n                    Comp.</button>\r\n                <div\r\n                    [ngStyle]=\"{display: passagesCommissionCompetenteAdditifs.get(additif.numero) && passagesCommissionCompetenteAdditifs.get(additif.numero).length > 0 ? 'block' : 'none'}\">\r\n                    <table mat-table #tablePassagesCommissionCompetenteAdditif\r\n                        [dataSource]=\"passagesCommissionCompetenteAdditifs.get(additif.numero)\"\r\n                        class=\"mat-elevation-z2\">\r\n\r\n                        <ng-container matColumnDef=\"dateDepotSecretariatCommission\">\r\n                            <th mat-header-cell *matHeaderCellDef\r\n                                matTooltip='Date de dépôt au niveau du secrétariat de la commission'> Date de dépôt\r\n                            </th>\r\n                            <td mat-cell *matCellDef=\"let element\">\r\n                                {{ formatDate(element.dateDepotSecretariatCommission) }}\r\n                            </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"datePassageCommission\">\r\n                            <th mat-header-cell *matHeaderCellDef matTooltip='Date de passage dans la commission'> Date\r\n                                commission </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{ element.datePassageCommission| date }}\r\n                            </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"decision\">\r\n                            <th mat-header-cell *matHeaderCellDef> Décision </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{element.decision}} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"dateLeveeReserves\">\r\n                            <th mat-header-cell *matHeaderCellDef matTooltip> Date Levée Réserves </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{ element.dateLeveeReserves|date }} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"PVPath\">\r\n                            <th mat-header-cell *matHeaderCellDef> PV </th>\r\n                            <td mat-cell *matCellDef=\"let element\">\r\n                                <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n                            </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"dateDecision\">\r\n                            <th mat-header-cell *matHeaderCellDef> Date décision </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{ element.dateDecision| date }} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"numero\">\r\n                            <th mat-header-cell *matHeaderCellDef> Numéro </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{element.numero}} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"decisionPath\">\r\n                            <th mat-header-cell *matHeaderCellDef> Recours </th>\r\n                            <td mat-cell *matCellDef=\"let element\">\r\n                                <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n                            </td>\r\n                        </ng-container>\r\n\r\n\r\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsPassagesCommissionCompetente\"></tr>\r\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsPassagesCommissionCompetente;\"></tr>\r\n                    </table>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"p-3\">\r\n            joindre CDC finalisé/visé (si après pass. comm. comp.)\r\n            <input type=\"file\">\r\n        </div>\r\n\r\n\r\n\r\n        <app-lancement></app-lancement>\r\n\r\n\r\n        <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateElborerMarche()\">\r\n            Nouveau Lancement\r\n        </button>\r\n    </mat-card-content>\r\n</mat-card>");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-card class=\"m-3\">\r\n    <mat-card-subtitle>Elaboration du CDC ({{elaborationCDC.dateCreationElaborationCDC| date}})</mat-card-subtitle>\r\n    <mat-card-content>\r\n\r\n        <mat-form-field class=\"example-full-width\">\r\n            <input matInput placeholder=\"Type de la procédure\" value=\"{{getTypeProcedure()}}\" disabled>\r\n        </mat-form-field>\r\n\r\n        <mat-form-field class=\"example-full-width\">\r\n            <input matInput placeholder=\"Mode de passation\" value=\"{{getModePassation()}}\" disabled>\r\n        </mat-form-field>\r\n\r\n        <mat-form-field class=\"example-full-width\">\r\n            <input matInput placeholder=\"Forme du marché\" value=\"{{getFormeMarche()}}\" disabled>\r\n        </mat-form-field>\r\n  \r\n        <mat-form-field class=\"example-full-width\">\r\n            <input matInput placeholder=\"Caractère du marché\" value=\"{{getCaractereMarche()}}\" disabled>\r\n        </mat-form-field>\r\n\r\n        <button mat-raised-button color=\"secondary\" (click)=\"openDialogUpdateElaborationCDC()\">Modifier</button>\r\n        <button mat-button color=\"warn\" (click)=\"openDialogDeleteElaborationCDC()\">Supprimer</button>\r\n\r\n        <div *ngIf=\"isInternational()\" class=\"alert alert-primary m-3\" role=\"alert\">\r\n            Pour les marchés à caractère international, il faut joindre l'accord du premier ministre et publier l'avis en anglais.\r\n        </div>\r\n\r\n        <br>\r\n        <br>\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <label>Projet de CDC (Draft)</label>\r\n\r\n                <input \r\n                class=\"p-3\"\r\n                type=\"file\"\r\n                accept=\"application/pdf\"\r\n                (change)=\"onFileChange($event)\"\r\n                />\r\n                \r\n                <mat-form-field class=\"example-full-width\" matTooltip=\"Veuillez joindre un fichier pdf\">\r\n                    <input matInput placeholder=\"Projet de CDC\" value = \"{{pathJustificatifProjetCDC}}\" readonly>\r\n                    <mat-hint *ngIf=\"uploadingFile\">Veuillez patienter, téléchargement du fichier ...  </mat-hint>\r\n                    <mat-hint *ngIf=\"onlyPdfAllowed\"><strong>Seulement les fichiers PDF sont acceptés</strong></mat-hint>\r\n                    <mat-hint *ngIf=\"failedUploadFile\"><strong>Erreur lors du téléchargement du fichier</strong>(réessayer)</mat-hint>\r\n                </mat-form-field>\r\n\r\n                <div *ngIf=\"isNewProjetCDCUploaded()\">\r\n                    <button mat-raised-button color=\"primary\" (click)=\"uploadProjetCDC()\"\r\n                    matTooltip=\"Vous pouvez re-enregistrer ce fichier. Mais une fois la DCM le valide, vous ne pouvez plus le re-enregistrer.\">\r\n                        <span *ngIf=\"!loadingDataUploadProjetCDC\">Enregistrer</span>              \r\n                        <span *ngIf=\"loadingDataUploadProjetCDC\" >\r\n                            <mat-spinner diameter=\"25\" color=\"warn\" class=\"m-1\"></mat-spinner>\r\n                        </span>\r\n                    </button>\r\n                    <div *ngIf=\"errorLoadingDataUploadProjetCDC\" class=\"alert alert-danger\" role=\"alert\">\r\n                        Une erreur s'est produite, réessayer\r\n                    </div>\r\n                    <button  mat-button  (click)=\"annulerUploadProjetCDC()\">Annuler</button>\r\n                </div>\r\n\r\n                <div *ngIf=\"isProjetCDCUploaded()\">\r\n                    <a  href=\"{{getPathFile(elaborationCDC.projetCDC.pathProjetCDC)}}\" target=\"_blank\">Voir</a>\r\n                    <button  mat-button color=\"warn\" (click)=\"deleteProjetCDC()\">\r\n                        <span *ngIf=\"!loadingDataDeleteProjetCDC\">Supprimer</span>              \r\n                        <span *ngIf=\"loadingDataDeleteProjetCDC\" >\r\n                            <mat-spinner diameter=\"25\" color=\"warn\" class=\"m-1\"></mat-spinner>\r\n                        </span>                        \r\n                    </button>\r\n                </div>\r\n                \r\n                <hr>\r\n\r\n                <mat-slide-toggle [(ngModel)]=\"passageCommissionChecked\"\r\n                disabled = \"{{this.isPassageCommissionDisabled()}}\"\r\n                    matTooltip=\"PF: tjrs pass. comm.; PA: avc ou sans pass. comm.\">Passage par la commission des marchés\r\n                </mat-slide-toggle>\r\n                <div [ngStyle]=\"{display: passageCommissionChecked? 'block' : 'none'}\" class=\"border border-secondary p-3\">\r\n\r\n                    <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreatePassageCommissionCompetenteCDC()\">Ajouter\r\n                        Passage Com. Comp.</button>\r\n\r\n                    <table mat-table #tablePassagesCommissionCompetenteCDC [dataSource]=\"passagesCommissionCompetenteCDC\"\r\n                        class=\"mat-elevation-z2\">\r\n\r\n                        <ng-container matColumnDef=\"dateDepotSecretariatCommission\">\r\n                            <th mat-header-cell *matHeaderCellDef\r\n                                matTooltip='Date de dépôt au niveau du secrétariat de la commission'> Date de dépôt </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{ element.dateDepotSecretariatCommission| date }}\r\n                            </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"datePassageCommission\">\r\n                            <th mat-header-cell *matHeaderCellDef matTooltip='Date de passage dans la commission'> Date\r\n                                commission\r\n                            </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{ element.datePassageCommission| date }} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"decision\">\r\n                            <th mat-header-cell *matHeaderCellDef> Décision </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{element.decision}} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"dateLeveeReserves\">\r\n                            <th mat-header-cell *matHeaderCellDef matTooltip> Date Levée Réserves </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{ element.dateLeveeReserves| date }} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"PVPath\">\r\n                            <th mat-header-cell *matHeaderCellDef> PV </th>\r\n                            <td mat-cell *matCellDef=\"let element\">\r\n                                <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n                            </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"dateDecision\">\r\n                            <th mat-header-cell *matHeaderCellDef> Date décision </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{ element.dateDecision| date }} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"numero\">\r\n                            <th mat-header-cell *matHeaderCellDef> Numéro </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{element.numero}} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"decisionPath\">\r\n                            <th mat-header-cell *matHeaderCellDef> Décision </th>\r\n                            <td mat-cell *matCellDef=\"let element\">\r\n                                <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n                            </td>\r\n                        </ng-container>\r\n\r\n\r\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsPassagesCommissionCompetente\"></tr>\r\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsPassagesCommissionCompetente;\"></tr>\r\n                    </table>\r\n\r\n\r\n                    <br>\r\n                    <div class=\"card\">\r\n                        <div class=\"card-body\">\r\n                            joindre CDC finalisé/visé (si après pass. comm. comp.)\r\n                            <input type=\"file\">\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n        </div>\r\n\r\n\r\n        <br>\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n            \r\n        <!--<mat-checkbox [(ngModel)]=\"additifsChecked\">Additifs</mat-checkbox>-->\r\n        <mat-slide-toggle [(ngModel)]=\"additifsChecked\">Additifs</mat-slide-toggle>\r\n        <div [ngStyle]=\"{display: additifsChecked? 'block' : 'none'}\" >\r\n            <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateAdditif()\">Ajouter Additif</button>\r\n            <div *ngFor=\"let additif of additifs\" class=\"bg-light\">\r\n                <div class=\"m-2 p-2\">Additif : {{additif.numero}}</div>\r\n                <button class=\"m-3\" mat-raised-button\r\n                    (click)=\"openDialogCreatePassageCommissionCompetenteAdditifs(additif.numero)\">Ajouter Passage Com.\r\n                    Comp.</button>\r\n                <div\r\n                    [ngStyle]=\"{display: passagesCommissionCompetenteAdditifs.get(additif.numero) && passagesCommissionCompetenteAdditifs.get(additif.numero).length > 0 ? 'block' : 'none'}\">\r\n                    <table mat-table #tablePassagesCommissionCompetenteAdditif\r\n                        [dataSource]=\"passagesCommissionCompetenteAdditifs.get(additif.numero)\"\r\n                        class=\"mat-elevation-z2\">\r\n\r\n                        <ng-container matColumnDef=\"dateDepotSecretariatCommission\">\r\n                            <th mat-header-cell *matHeaderCellDef\r\n                                matTooltip='Date de dépôt au niveau du secrétariat de la commission'> Date de dépôt\r\n                            </th>\r\n                            <td mat-cell *matCellDef=\"let element\">\r\n                                {{ formatDate(element.dateDepotSecretariatCommission) }}\r\n                            </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"datePassageCommission\">\r\n                            <th mat-header-cell *matHeaderCellDef matTooltip='Date de passage dans la commission'> Date\r\n                                commission </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{ element.datePassageCommission| date }}\r\n                            </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"decision\">\r\n                            <th mat-header-cell *matHeaderCellDef> Décision </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{element.decision}} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"dateLeveeReserves\">\r\n                            <th mat-header-cell *matHeaderCellDef matTooltip> Date Levée Réserves </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{ element.dateLeveeReserves|date }} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"PVPath\">\r\n                            <th mat-header-cell *matHeaderCellDef> PV </th>\r\n                            <td mat-cell *matCellDef=\"let element\">\r\n                                <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n                            </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"dateDecision\">\r\n                            <th mat-header-cell *matHeaderCellDef> Date décision </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{ element.dateDecision| date }} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"numero\">\r\n                            <th mat-header-cell *matHeaderCellDef> Numéro </th>\r\n                            <td mat-cell *matCellDef=\"let element\"> {{element.numero}} </td>\r\n                        </ng-container>\r\n\r\n                        <ng-container matColumnDef=\"decisionPath\">\r\n                            <th mat-header-cell *matHeaderCellDef> Recours </th>\r\n                            <td mat-cell *matCellDef=\"let element\">\r\n                                <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n                            </td>\r\n                        </ng-container>\r\n\r\n\r\n                        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsPassagesCommissionCompetente\"></tr>\r\n                        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsPassagesCommissionCompetente;\"></tr>\r\n                    </table>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    </div>\r\n\r\n\r\n\r\n\r\n\r\n        <!--\r\n        <app-lancement></app-lancement>\r\n        -->\r\n        <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateElborerMarche()\">\r\n            Nouveau Lancement\r\n        </button>\r\n\r\n\r\n    </mat-card-content>\r\n</mat-card>");
 
 /***/ }),
 
@@ -1046,7 +1072,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-expansion-panel (opened)=\"panelOpenState = true\" (closed)=\"panelOpenState = false\">\r\n  <mat-expansion-panel-header>\r\n    <mat-panel-title>\r\n      Passation\r\n    </mat-panel-title>\r\n  </mat-expansion-panel-header>\r\n\r\n  <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateElaborerMarche()\">\r\n    Créer Elaboration CDC\r\n  </button>\r\n\r\n  <app-elaboration-cdc *ngFor = \"let elaboration of elaborationsCDC\" [elaborationCDC]=elaboration></app-elaboration-cdc>\r\n\r\n\r\n\r\n</mat-expansion-panel>");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<div *ngIf=\"sousProjet!=null\">\r\n  <div class=\"card m-3\">\r\n    <div class=\"card-body\">\r\n      <table>\r\n        <tr><td>Sous Projet:</td><td>{{ sousProjet.intituleSousProjet }}</td></tr>\r\n        <tr><td>Nature:</td><td>{{sousProjet.naturePrestation}}</td></tr>\r\n        <tr><td>Seuil (Est. Admin.):</td><td>{{sousProjet.estimationAdministrative}} DZD</td></tr>\r\n        <tr><td>Date Création:</td><td>{{ sousProjet.dateCreationSousProjet | date }}</td></tr>\r\n      </table>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateElaborerMarche()\">\r\n    Créer Elaboration CDC\r\n  </button>\r\n  <app-elaboration-cdc *ngFor = \"let elaboration of sousProjet.elaborationsCDC\" [elaborationCDC]=elaboration [projet]=projet [sousProjet]=sousProjet></app-elaboration-cdc>\r\n</div>\r\n\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -1059,7 +1085,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-expansion-panel>\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        Execution\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n\r\n    <p>Gestion des délais</p>\r\n\r\n    <table mat-table #tableODS [dataSource]=\"dataSourceODS\" class=\"mat-elevation-z2\">\r\n\r\n      <ng-container matColumnDef=\"numeroODS\">\r\n        <th mat-header-cell *matHeaderCellDef> ODS N. </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.numeroODS}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"type\">\r\n        <th mat-header-cell *matHeaderCellDef> Type </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.type}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"objet\">\r\n        <th mat-header-cell *matHeaderCellDef> Objet </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.objet}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"jours\">\r\n        <th mat-header-cell *matHeaderCellDef> Jours </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.jours}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateEtablissement\">\r\n        <th mat-header-cell *matHeaderCellDef> Etabli le </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ element.dateEtablissement|date }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateEffet\">\r\n        <th mat-header-cell *matHeaderCellDef> Date d'effet </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ element.dateEffet|date }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"ODSPath\">\r\n        <th mat-header-cell *matHeaderCellDef> ODS </th>\r\n        <td mat-cell *matCellDef=\"let element\"> \r\n          <mat-icon matTooltip={{element.ODSPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n         </td>\r\n      </ng-container>\r\n\r\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumnsODS\"></tr>\r\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumnsODS;\"></tr>\r\n    </table>\r\n    <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateODS()\" matTooltip=\"Ordre de service\">Créer ODS</button>\r\n\r\n\r\n    <div class=\"alert alert-primary\" role=\"alert\">\r\n      Délais contractuels:<br>\r\n      délais initial: 52J, 02/02/2020<br>\r\n      délais glissement: 53J 03/02/2020<br>\r\n      délais augmentation: 60J 10/02/2020<br>\r\n      délais dimunition: 55J 05/02/2020<br>\r\n      (afficher ces informations dans un graphe)\r\n    </div>\r\n\r\n\r\n    <!--START ajouter sous-traitant-->\r\n    <table mat-table #tableSousTraitants [dataSource]=\"dataSourceSousTraitants\" class=\"mat-elevation-z2\">\r\n\r\n\r\n      <ng-container matColumnDef=\"sousTraitant\">\r\n        <th mat-header-cell *matHeaderCellDef> Sous-traitant </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.sousTraitant}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"objetSoustraitance\">\r\n        <th mat-header-cell *matHeaderCellDef> Objet de la soutraitance </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.objetSoustraitance}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateDebutIntervention\">\r\n        <th mat-header-cell *matHeaderCellDef matTooltip=\"Date de début de l'intervention\"> De </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ element.dateDebutIntervention|date }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateFinIntervention\">\r\n        <th mat-header-cell *matHeaderCellDef matTooltip=\"Date de fin de l'intervention\"> A </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ element.dateFinIntervention|date }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"declarationSoustraitantPath\">\r\n        <th mat-header-cell *matHeaderCellDef matTooltip=\"Déclaration du sous traitant\"> Déclaration </th>\r\n        <td mat-cell *matCellDef=\"let element\"> \r\n          <mat-icon matTooltip={{element.declarationSoustraitantPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n         </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"tauxIntervention\">\r\n        <th mat-header-cell *matHeaderCellDef> Taux d'intervention </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.tauxIntervention}}%</td>\r\n      </ng-container>\r\n\r\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumnsSousTraitants\"></tr>\r\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumnsSousTraitants;\"></tr>\r\n    </table>      \r\n    <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateSousTraitant()\">Créer Sous-traitant</button>\r\n    <!--END ajouter sous-traitant-->\r\n\r\n    <!--START Gestion financiere-->\r\n    <p>Gestion des financière</p>\r\n    <div>\r\n      <mat-form-field class=\"example-full-width\">\r\n        <mat-label>Modalités de rémunération</mat-label>\r\n        <mat-select>\r\n          <mat-option value=pgf>à prix global et forfaitaire</mat-option>\r\n          <mat-option value=bpu>sur bordereau de prix unitaire</mat-option>\r\n          <mat-option value=pm>à prix mixte</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <textarea matInput placeholder=\"Ajouter un commentaire\"></textarea>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <p>\r\n      <mat-checkbox [(ngModel)]=\"actualisationPrixChecked\">Actualisation des prix</mat-checkbox>\r\n    </p>\r\n    <div [ngStyle]=\"{display: actualisationPrixChecked? 'block' : 'none'}\">\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Commentaire\">\r\n      </mat-form-field>\r\n\r\n      <button mat-button>Enregistrer</button>\r\n    </div>\r\n\r\n    <p>\r\n      <mat-checkbox [(ngModel)]=\"revisionPrixChecked\">Révision des prix</mat-checkbox>\r\n    </p>\r\n    <div [ngStyle]=\"{display: revisionPrixChecked? 'block' : 'none'}\">\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Commentaire\">\r\n      </mat-form-field>\r\n\r\n      <button mat-button>Enregistrer</button>\r\n    </div>\r\n\r\n    <p>\r\n      <mat-checkbox [(ngModel)]=\"cautionSoumissionChecked\">Caution de soumission (%  , …DA)</mat-checkbox>\r\n    </p>\r\n    <div [ngStyle]=\"{display: cautionSoumissionChecked? 'block' : 'none'}\">\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Banque\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Commentaire\">\r\n      </mat-form-field>\r\n\r\n      <div>\r\n        Justificatif <input type=\"file\">\r\n      </div>\r\n      <button mat-button>Enregistrer</button>\r\n    </div>\r\n\r\n    \r\n    <p>\r\n      <mat-checkbox [(ngModel)]=\"cautionBonneExecutionChecked\">Caution ou retenue de bonne exécution</mat-checkbox>\r\n    </p>\r\n    <div [ngStyle]=\"{display: cautionBonneExecutionChecked? 'block' : 'none'}\">\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Banque\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Commentaire\">\r\n      </mat-form-field>\r\n\r\n      <div>\r\n        Justificatif <input type=\"file\">\r\n      </div>\r\n      <button mat-button>Enregistrer</button>\r\n    </div>\r\n\r\n    <p>\r\n      <mat-checkbox [(ngModel)]=\"cautionGarantieChecked\">Caution de Garantie</mat-checkbox>\r\n    </p>\r\n    <div [ngStyle]=\"{display: cautionGarantieChecked? 'block' : 'none'}\">\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Banque\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Commentaire\">\r\n      </mat-form-field>\r\n\r\n      <div>\r\n        Justificatif <input type=\"file\">\r\n      </div>\r\n      <button mat-button>Enregistrer</button>\r\n    </div>\r\n\r\n    <p>\r\n      <mat-checkbox [(ngModel)]=\"garantieAvanceApprovisionnementChecked\">Garantie de l'Avance sur approvisionnement</mat-checkbox>\r\n    </p>\r\n    <div [ngStyle]=\"{display: garantieAvanceApprovisionnementChecked? 'block' : 'none'}\">\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Banque\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Commentaire\">\r\n      </mat-form-field>\r\n\r\n      <div>\r\n        Justificatif <input type=\"file\">\r\n      </div>\r\n      <button mat-button>Enregistrer</button>\r\n    </div>\r\n\r\n    <p>\r\n      <mat-checkbox [(ngModel)]=\"garantieAvanceForfaitaireChecked\">Garantie sur l'Avance forfaitaire</mat-checkbox>\r\n    </p>\r\n    <div [ngStyle]=\"{display: garantieAvanceForfaitaireChecked? 'block' : 'none'}\">\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Banque\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Commentaire\">\r\n      </mat-form-field>\r\n\r\n      <div>\r\n        Justificatif <input type=\"file\">\r\n      </div>\r\n      <button mat-button>Enregistrer</button>\r\n    </div>\r\n\r\n\r\n    <mat-slide-toggle>Avance forfaitaire</mat-slide-toggle>\r\n\r\n    <mat-slide-toggle>Avance sur approvisionnement</mat-slide-toggle>\r\n\r\n      <!--START Facture-->\r\n      <table mat-table #tableFactures [dataSource]=\"dataSourceFactures\" class=\"mat-elevation-z2\">\r\n\r\n\r\n        <ng-container matColumnDef=\"hasPenaliteRetard\">\r\n          <th mat-header-cell *matHeaderCellDef> Pénalités de retard </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.hasPenaliteRetard}} </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"numFacture\">\r\n          <th mat-header-cell *matHeaderCellDef> N. Facture </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.numFacture}} </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"dateReception\">\r\n          <th mat-header-cell *matHeaderCellDef matTooltip=\"Date de réception de la facture\"> Date </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{ element.dateReception|date }} </td>\r\n        </ng-container>\r\n\r\n\r\n        <ng-container matColumnDef=\"facturePath\">\r\n          <th mat-header-cell *matHeaderCellDef > Facture </th>\r\n          <td mat-cell *matCellDef=\"let element\"> \r\n            <mat-icon matTooltip={{element.facturePath}} mat-list-icon>insert_drive_file</mat-icon>\r\n           </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"montant\">\r\n          <th mat-header-cell *matHeaderCellDef> Montant </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.montant}}</td>\r\n        </ng-container>\r\n\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsFactures\"></tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsFactures;\"></tr>\r\n      </table>      \r\n      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateFacture()\">Ajouter Facture</button>\r\n              \r\n      <!--END Facture-->\r\n\r\n      <!--Start- DFC -->\r\n      <div>\r\n      *Visualiser Etat financier du projet (crédits, débits, soldes) (revoir cette partie avec Rachida-DFC? Interet moratoire?)\r\n      </div>\r\n      <!--End - DFC -->\r\n    <!--END Gestion financiere-->\r\n\r\n      <!--DEBUT Litige-->\r\n    <p class=\"small\">Litiges</p>\r\n\r\n    <table mat-table #tableLitiges [dataSource]=\"dataSourceLitiges\" class=\"mat-elevation-z2\">\r\n\r\n      <ng-container matColumnDef=\"introduitPar\">\r\n        <th mat-header-cell *matHeaderCellDef> Introduit par </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.introduitPar}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"partieAdverse\">\r\n        <th mat-header-cell *matHeaderCellDef> Partie adverse </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.partieAdverse}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"comment\">\r\n        <th mat-header-cell *matHeaderCellDef> Info </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.comment}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateDeSaisie\">\r\n        <th mat-header-cell *matHeaderCellDef> Date de saisie </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDeSaisie) }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateLimite\">\r\n        <th mat-header-cell *matHeaderCellDef> Date Limite </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLimite) }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateLitige\">\r\n        <th mat-header-cell *matHeaderCellDef> Date Litige </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLitige) }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateReponse\">\r\n        <th mat-header-cell *matHeaderCellDef> Date réponse </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateReponse) }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"litigePath\">\r\n        <th mat-header-cell *matHeaderCellDef> Litige </th>\r\n        <td mat-cell *matCellDef=\"let element\">\r\n          <mat-icon matTooltip={{element.litigePath}} mat-list-icon>insert_drive_file</mat-icon>\r\n        </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"reponsePath\">\r\n        <th mat-header-cell *matHeaderCellDef> Réponse </th>\r\n        <td mat-cell *matCellDef=\"let element\">\r\n          <mat-icon matTooltip={{element.reponsePath}} mat-list-icon>insert_drive_file</mat-icon>\r\n        </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"datePassageCommission\">\r\n        <th mat-header-cell *matHeaderCellDef> Date Commission </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{formatDate(element.datePassageCommission)}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"decisionCommission\">\r\n        <th mat-header-cell *matHeaderCellDef> Décision </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.decisionCommission}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"PVPath\">\r\n        <th mat-header-cell *matHeaderCellDef> PV </th>\r\n        <td mat-cell *matCellDef=\"let element\">\r\n          <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n        </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"decisionPath\">\r\n        <th mat-header-cell *matHeaderCellDef> Decision </th>\r\n        <td mat-cell *matCellDef=\"let element\">\r\n          <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n        </td>\r\n      </ng-container>\r\n\r\n\r\n\r\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumnsLitige\"></tr>\r\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumnsLitige;\"></tr>\r\n    </table>\r\n    <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateLitige()\">Créer litige</button>\r\n    <!-- END Litige-->\r\n\r\n    <!--START mise en demeure-->\r\n    <p class=\"small\">Mises en demeure</p>\r\n\r\n    <table mat-table #tableMisesEnDemeure [dataSource]=\"dataSourceMisesEnDemeure\" class=\"mat-elevation-z2\">\r\n\r\n      \r\n    \r\n      <ng-container matColumnDef=\"numMiseEnDemeure\">\r\n        <th mat-header-cell *matHeaderCellDef> Num. Mise en demeure </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.numMiseEnDemeure}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"objet\">\r\n        <th mat-header-cell *matHeaderCellDef> Objet </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.objet}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateNotif\">\r\n        <th mat-header-cell *matHeaderCellDef> Date de notification </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.dateNotif|date }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"moyenNotif\">\r\n        <th mat-header-cell *matHeaderCellDef> Moyen de notification </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.moyenNotif}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"delaiPriseEnCharge\">\r\n        <th mat-header-cell *matHeaderCellDef> Delai de prise en charge </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.delaiPriseEnCharge}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"miseEnDemeurePath\">\r\n        <th mat-header-cell *matHeaderCellDef> Litige </th>\r\n        <td mat-cell *matCellDef=\"let element\">\r\n          <mat-icon matTooltip={{element.miseEnDemeurePath}} mat-list-icon>insert_drive_file</mat-icon>\r\n        </td>\r\n      </ng-container>\r\n      \r\n      <ng-container matColumnDef=\"resultat\">\r\n        <th mat-header-cell *matHeaderCellDef> Resultat </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.resultat}} </td>\r\n      </ng-container>\r\n\r\n\r\n\r\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumnsMisesEnDemeure\"></tr>\r\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumnsMisesEnDemeure;\"></tr>\r\n    </table>\r\n    <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateMiseEnDemeure()\">Créer Mise en demeure</button>      \r\n    <!--END mise en demeure-->\r\n\r\n    <!--Debut Rallonge financiere-->\r\n    <div>\r\n    <mat-slide-toggle [(ngModel)]=\"demandeRallongeExecutionChecked\">Demande de rallonge financière\r\n    </mat-slide-toggle>\r\n    <div [ngStyle]=\"{display: demandeRallongeExecutionChecked? 'block' : 'none'}\"\r\n      class=\"border border-secondary p-3\">\r\n\r\n      <table #tableRallongesFinancieresExecution mat-table [dataSource]=\"dataSourceRallongesFinancieresExecution\"\r\n        class=\"mat-elevation-z8\">\r\n\r\n\r\n\r\n        <ng-container matColumnDef=\"serviceContractant\">\r\n          <th mat-header-cell *matHeaderCellDef> S/C </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.serviceContractant}} </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"dateDemande\">\r\n          <th mat-header-cell *matHeaderCellDef> Date de la demande </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.dateDemande|date}} </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"montantDemande\">\r\n          <th mat-header-cell *matHeaderCellDef> Montant demandé </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.montantDemande}} </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"demandePath\">\r\n          <th mat-header-cell *matHeaderCellDef> Demande </th>\r\n          <td mat-cell *matCellDef=\"let element\">\r\n            <mat-icon matTooltip={{element.demandePath}} mat-list-icon>insert_drive_file</mat-icon>\r\n          </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"reponse\">\r\n          <th mat-header-cell *matHeaderCellDef> Réponse </th>\r\n          <td mat-cell *matCellDef=\"let element\">\r\n            <button mat-button class=\"text-primary\" *ngIf=\"!element.isAnswered\"\r\n              (click)=\"openDialogCreateReponseRallongeFinanciere()\">Ajouter Réponse</button>\r\n            <button mat-button class=\"text-primary\" *ngIf=\"element.isAnswered\">Voir\r\n              {{element.reponse}}</button>\r\n            <button mat-button class=\"text-primary\" *ngIf=\"element.isAnswered\">montant accordé\r\n              {{element.montantAccorde}}</button>\r\n            <mat-icon *ngIf=\"element.isAnswered\" matTooltip={{element.reponsePath}} mat-list-icon>\r\n              insert_drive_file</mat-icon>\r\n            <span *ngIf=\"element.isAnswered\" matTooltip=\"Date Réponse\">\r\n              {{element.dateReponse|date}}</span>\r\n          </td>\r\n        </ng-container>\r\n\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsRallongesFinancieres\"></tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsRallongesFinancieres;\"></tr>\r\n      </table>\r\n\r\n      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateDemandeRallongeFinanciereExecution()\">\r\n        Ajouter rallonge financière\r\n      </button>\r\n    </div>\r\n\r\n  </div>      \r\n    <!-- FIN Rallonge financiere-->\r\n\r\n    <!--START Avenant-->\r\n    <div>\r\n      Avenants\r\n\r\n      <table #tableAvenants mat-table [dataSource]=\"dataSourceAvenants\"\r\n        class=\"mat-elevation-z8\">\r\n\r\n        <ng-container matColumnDef=\"num\">\r\n          <th mat-header-cell *matHeaderCellDef> N° </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.num}} </td>\r\n          <td mat-footer-cell *matFooterCellDef> Total </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"nature\">\r\n          <th mat-header-cell *matHeaderCellDef> Nature </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.nature}} </td>\r\n          <td mat-footer-cell *matFooterCellDef> - </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"objet\">\r\n          <th mat-header-cell *matHeaderCellDef> Objet</th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.objet}} </td>\r\n          <td mat-footer-cell *matFooterCellDef> - </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"montant\">\r\n          <th mat-header-cell *matHeaderCellDef> Montant </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.montant}}DZD </td>\r\n          <td mat-footer-cell *matFooterCellDef> 50DZD </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"taux\">\r\n          <th mat-header-cell *matHeaderCellDef> taux </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.getTauxSelonMontant(0)}}% </td>\r\n          <td mat-footer-cell *matFooterCellDef> 5% </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"delai\">\r\n          <th mat-header-cell *matHeaderCellDef> Délai </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.delai}}J </td>\r\n          <td mat-footer-cell *matFooterCellDef> 5J </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"negociation\">\r\n          <th mat-header-cell *matHeaderCellDef> Négociation </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.negociation}} </td>\r\n          <td mat-footer-cell *matFooterCellDef> - </td>\r\n        </ng-container>\r\n        \r\n\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsAvenants\"></tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsAvenants;\"></tr>\r\n        <tr mat-footer-row *matFooterRowDef=\"displayedColumnsAvenants\"></tr>\r\n      </table>\r\n\r\n      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateAvenant()\">\r\n        Ajouter Avenant\r\n      </button>\r\n    \r\n    </div>\r\n    <!--START Avenant-->\r\n\r\n    <mat-action-row>\r\n      <button mat-button (click)=\"openDialogCreateResiliation()\">Résilier</button>\r\n    </mat-action-row>\r\n\r\n\r\n  </mat-expansion-panel>");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n        Execution\r\n\r\n\r\n\r\n    <p>Gestion des délais</p>\r\n\r\n    <table mat-table #tableODS [dataSource]=\"dataSourceODS\" class=\"mat-elevation-z2\">\r\n\r\n      <ng-container matColumnDef=\"numeroODS\">\r\n        <th mat-header-cell *matHeaderCellDef> ODS N. </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.numeroODS}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"type\">\r\n        <th mat-header-cell *matHeaderCellDef> Type </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.type}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"objet\">\r\n        <th mat-header-cell *matHeaderCellDef> Objet </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.objet}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"jours\">\r\n        <th mat-header-cell *matHeaderCellDef> Jours </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.jours}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateEtablissement\">\r\n        <th mat-header-cell *matHeaderCellDef> Etabli le </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ element.dateEtablissement|date }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateEffet\">\r\n        <th mat-header-cell *matHeaderCellDef> Date d'effet </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ element.dateEffet|date }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"ODSPath\">\r\n        <th mat-header-cell *matHeaderCellDef> ODS </th>\r\n        <td mat-cell *matCellDef=\"let element\"> \r\n          <mat-icon matTooltip={{element.ODSPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n         </td>\r\n      </ng-container>\r\n\r\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumnsODS\"></tr>\r\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumnsODS;\"></tr>\r\n    </table>\r\n    <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateODS()\" matTooltip=\"Ordre de service\">Créer ODS</button>\r\n\r\n\r\n    <div class=\"alert alert-primary\" role=\"alert\">\r\n      Délais contractuels:<br>\r\n      délais initial: 52J, 02/02/2020<br>\r\n      délais glissement: 53J 03/02/2020<br>\r\n      délais augmentation: 60J 10/02/2020<br>\r\n      délais dimunition: 55J 05/02/2020<br>\r\n      (afficher ces informations dans un graphe)\r\n    </div>\r\n\r\n\r\n    <!--START ajouter sous-traitant-->\r\n    <table mat-table #tableSousTraitants [dataSource]=\"dataSourceSousTraitants\" class=\"mat-elevation-z2\">\r\n\r\n\r\n      <ng-container matColumnDef=\"sousTraitant\">\r\n        <th mat-header-cell *matHeaderCellDef> Sous-traitant </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.sousTraitant}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"objetSoustraitance\">\r\n        <th mat-header-cell *matHeaderCellDef> Objet de la soutraitance </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.objetSoustraitance}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateDebutIntervention\">\r\n        <th mat-header-cell *matHeaderCellDef matTooltip=\"Date de début de l'intervention\"> De </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ element.dateDebutIntervention|date }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateFinIntervention\">\r\n        <th mat-header-cell *matHeaderCellDef matTooltip=\"Date de fin de l'intervention\"> A </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ element.dateFinIntervention|date }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"declarationSoustraitantPath\">\r\n        <th mat-header-cell *matHeaderCellDef matTooltip=\"Déclaration du sous traitant\"> Déclaration </th>\r\n        <td mat-cell *matCellDef=\"let element\"> \r\n          <mat-icon matTooltip={{element.declarationSoustraitantPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n         </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"tauxIntervention\">\r\n        <th mat-header-cell *matHeaderCellDef> Taux d'intervention </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.tauxIntervention}}%</td>\r\n      </ng-container>\r\n\r\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumnsSousTraitants\"></tr>\r\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumnsSousTraitants;\"></tr>\r\n    </table>      \r\n    <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateSousTraitant()\">Créer Sous-traitant</button>\r\n    <!--END ajouter sous-traitant-->\r\n\r\n    <!--START Gestion financiere-->\r\n    <p>Gestion des financière</p>\r\n    <div>\r\n      <mat-form-field class=\"example-full-width\">\r\n        <mat-label>Modalités de rémunération</mat-label>\r\n        <mat-select>\r\n          <mat-option value=pgf>à prix global et forfaitaire</mat-option>\r\n          <mat-option value=bpu>sur bordereau de prix unitaire</mat-option>\r\n          <mat-option value=pm>à prix mixte</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <textarea matInput placeholder=\"Ajouter un commentaire\"></textarea>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <p>\r\n      <mat-checkbox [(ngModel)]=\"actualisationPrixChecked\">Actualisation des prix</mat-checkbox>\r\n    </p>\r\n    <div [ngStyle]=\"{display: actualisationPrixChecked? 'block' : 'none'}\">\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Commentaire\">\r\n      </mat-form-field>\r\n\r\n      <button mat-button>Enregistrer</button>\r\n    </div>\r\n\r\n    <p>\r\n      <mat-checkbox [(ngModel)]=\"revisionPrixChecked\">Révision des prix</mat-checkbox>\r\n    </p>\r\n    <div [ngStyle]=\"{display: revisionPrixChecked? 'block' : 'none'}\">\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Commentaire\">\r\n      </mat-form-field>\r\n\r\n      <button mat-button>Enregistrer</button>\r\n    </div>\r\n\r\n    <p>\r\n      <mat-checkbox [(ngModel)]=\"cautionSoumissionChecked\">Caution de soumission (%  , …DA)</mat-checkbox>\r\n    </p>\r\n    <div [ngStyle]=\"{display: cautionSoumissionChecked? 'block' : 'none'}\">\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Banque\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Commentaire\">\r\n      </mat-form-field>\r\n\r\n      <div>\r\n        Justificatif <input type=\"file\">\r\n      </div>\r\n      <button mat-button>Enregistrer</button>\r\n    </div>\r\n\r\n    \r\n    <p>\r\n      <mat-checkbox [(ngModel)]=\"cautionBonneExecutionChecked\">Caution ou retenue de bonne exécution</mat-checkbox>\r\n    </p>\r\n    <div [ngStyle]=\"{display: cautionBonneExecutionChecked? 'block' : 'none'}\">\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Banque\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Commentaire\">\r\n      </mat-form-field>\r\n\r\n      <div>\r\n        Justificatif <input type=\"file\">\r\n      </div>\r\n      <button mat-button>Enregistrer</button>\r\n    </div>\r\n\r\n    <p>\r\n      <mat-checkbox [(ngModel)]=\"cautionGarantieChecked\">Caution de Garantie</mat-checkbox>\r\n    </p>\r\n    <div [ngStyle]=\"{display: cautionGarantieChecked? 'block' : 'none'}\">\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Banque\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Commentaire\">\r\n      </mat-form-field>\r\n\r\n      <div>\r\n        Justificatif <input type=\"file\">\r\n      </div>\r\n      <button mat-button>Enregistrer</button>\r\n    </div>\r\n\r\n    <p>\r\n      <mat-checkbox [(ngModel)]=\"garantieAvanceApprovisionnementChecked\">Garantie de l'Avance sur approvisionnement</mat-checkbox>\r\n    </p>\r\n    <div [ngStyle]=\"{display: garantieAvanceApprovisionnementChecked? 'block' : 'none'}\">\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Banque\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Commentaire\">\r\n      </mat-form-field>\r\n\r\n      <div>\r\n        Justificatif <input type=\"file\">\r\n      </div>\r\n      <button mat-button>Enregistrer</button>\r\n    </div>\r\n\r\n    <p>\r\n      <mat-checkbox [(ngModel)]=\"garantieAvanceForfaitaireChecked\">Garantie sur l'Avance forfaitaire</mat-checkbox>\r\n    </p>\r\n    <div [ngStyle]=\"{display: garantieAvanceForfaitaireChecked? 'block' : 'none'}\">\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Banque\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"example-full-width\">\r\n        <input matInput placeholder=\"Commentaire\">\r\n      </mat-form-field>\r\n\r\n      <div>\r\n        Justificatif <input type=\"file\">\r\n      </div>\r\n      <button mat-button>Enregistrer</button>\r\n    </div>\r\n\r\n\r\n    <mat-slide-toggle>Avance forfaitaire</mat-slide-toggle>\r\n\r\n    <mat-slide-toggle>Avance sur approvisionnement</mat-slide-toggle>\r\n\r\n      <!--START Facture-->\r\n      <table mat-table #tableFactures [dataSource]=\"dataSourceFactures\" class=\"mat-elevation-z2\">\r\n\r\n\r\n        <ng-container matColumnDef=\"hasPenaliteRetard\">\r\n          <th mat-header-cell *matHeaderCellDef> Pénalités de retard </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.hasPenaliteRetard}} </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"numFacture\">\r\n          <th mat-header-cell *matHeaderCellDef> N. Facture </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.numFacture}} </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"dateReception\">\r\n          <th mat-header-cell *matHeaderCellDef matTooltip=\"Date de réception de la facture\"> Date </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{ element.dateReception|date }} </td>\r\n        </ng-container>\r\n\r\n\r\n        <ng-container matColumnDef=\"facturePath\">\r\n          <th mat-header-cell *matHeaderCellDef > Facture </th>\r\n          <td mat-cell *matCellDef=\"let element\"> \r\n            <mat-icon matTooltip={{element.facturePath}} mat-list-icon>insert_drive_file</mat-icon>\r\n           </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"montant\">\r\n          <th mat-header-cell *matHeaderCellDef> Montant </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.montant}}</td>\r\n        </ng-container>\r\n\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsFactures\"></tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsFactures;\"></tr>\r\n      </table>      \r\n      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateFacture()\">Ajouter Facture</button>\r\n              \r\n      <!--END Facture-->\r\n\r\n      <!--Start- DFC -->\r\n      <div>\r\n      *Visualiser Etat financier du projet (crédits, débits, soldes) (revoir cette partie avec Rachida-DFC? Interet moratoire?)\r\n      </div>\r\n      <!--End - DFC -->\r\n    <!--END Gestion financiere-->\r\n\r\n      <!--DEBUT Litige-->\r\n    <p class=\"small\">Litiges</p>\r\n\r\n    <table mat-table #tableLitiges [dataSource]=\"dataSourceLitiges\" class=\"mat-elevation-z2\">\r\n\r\n      <ng-container matColumnDef=\"introduitPar\">\r\n        <th mat-header-cell *matHeaderCellDef> Introduit par </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.introduitPar}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"partieAdverse\">\r\n        <th mat-header-cell *matHeaderCellDef> Partie adverse </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.partieAdverse}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"comment\">\r\n        <th mat-header-cell *matHeaderCellDef> Info </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.comment}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateDeSaisie\">\r\n        <th mat-header-cell *matHeaderCellDef> Date de saisie </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateDeSaisie) }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateLimite\">\r\n        <th mat-header-cell *matHeaderCellDef> Date Limite </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLimite) }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateLitige\">\r\n        <th mat-header-cell *matHeaderCellDef> Date Litige </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateLitige) }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateReponse\">\r\n        <th mat-header-cell *matHeaderCellDef> Date réponse </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{ formatDate(element.dateReponse) }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"litigePath\">\r\n        <th mat-header-cell *matHeaderCellDef> Litige </th>\r\n        <td mat-cell *matCellDef=\"let element\">\r\n          <mat-icon matTooltip={{element.litigePath}} mat-list-icon>insert_drive_file</mat-icon>\r\n        </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"reponsePath\">\r\n        <th mat-header-cell *matHeaderCellDef> Réponse </th>\r\n        <td mat-cell *matCellDef=\"let element\">\r\n          <mat-icon matTooltip={{element.reponsePath}} mat-list-icon>insert_drive_file</mat-icon>\r\n        </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"datePassageCommission\">\r\n        <th mat-header-cell *matHeaderCellDef> Date Commission </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{formatDate(element.datePassageCommission)}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"decisionCommission\">\r\n        <th mat-header-cell *matHeaderCellDef> Décision </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.decisionCommission}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"PVPath\">\r\n        <th mat-header-cell *matHeaderCellDef> PV </th>\r\n        <td mat-cell *matCellDef=\"let element\">\r\n          <mat-icon matTooltip={{element.PVPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n        </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"decisionPath\">\r\n        <th mat-header-cell *matHeaderCellDef> Decision </th>\r\n        <td mat-cell *matCellDef=\"let element\">\r\n          <mat-icon matTooltip={{element.decisionPath}} mat-list-icon>insert_drive_file</mat-icon>\r\n        </td>\r\n      </ng-container>\r\n\r\n\r\n\r\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumnsLitige\"></tr>\r\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumnsLitige;\"></tr>\r\n    </table>\r\n    <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateLitige()\">Créer litige</button>\r\n    <!-- END Litige-->\r\n\r\n    <!--START mise en demeure-->\r\n    <p class=\"small\">Mises en demeure</p>\r\n\r\n    <table mat-table #tableMisesEnDemeure [dataSource]=\"dataSourceMisesEnDemeure\" class=\"mat-elevation-z2\">\r\n\r\n      \r\n    \r\n      <ng-container matColumnDef=\"numMiseEnDemeure\">\r\n        <th mat-header-cell *matHeaderCellDef> Num. Mise en demeure </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.numMiseEnDemeure}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"objet\">\r\n        <th mat-header-cell *matHeaderCellDef> Objet </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.objet}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"dateNotif\">\r\n        <th mat-header-cell *matHeaderCellDef> Date de notification </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.dateNotif|date }} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"moyenNotif\">\r\n        <th mat-header-cell *matHeaderCellDef> Moyen de notification </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.moyenNotif}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"delaiPriseEnCharge\">\r\n        <th mat-header-cell *matHeaderCellDef> Delai de prise en charge </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.delaiPriseEnCharge}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"miseEnDemeurePath\">\r\n        <th mat-header-cell *matHeaderCellDef> Litige </th>\r\n        <td mat-cell *matCellDef=\"let element\">\r\n          <mat-icon matTooltip={{element.miseEnDemeurePath}} mat-list-icon>insert_drive_file</mat-icon>\r\n        </td>\r\n      </ng-container>\r\n      \r\n      <ng-container matColumnDef=\"resultat\">\r\n        <th mat-header-cell *matHeaderCellDef> Resultat </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.resultat}} </td>\r\n      </ng-container>\r\n\r\n\r\n\r\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumnsMisesEnDemeure\"></tr>\r\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumnsMisesEnDemeure;\"></tr>\r\n    </table>\r\n    <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateMiseEnDemeure()\">Créer Mise en demeure</button>      \r\n    <!--END mise en demeure-->\r\n\r\n    <!--Debut Rallonge financiere-->\r\n    <div>\r\n    <mat-slide-toggle [(ngModel)]=\"demandeRallongeExecutionChecked\">Demande de rallonge financière\r\n    </mat-slide-toggle>\r\n    <div [ngStyle]=\"{display: demandeRallongeExecutionChecked? 'block' : 'none'}\"\r\n      class=\"border border-secondary p-3\">\r\n\r\n      <table #tableRallongesFinancieresExecution mat-table [dataSource]=\"dataSourceRallongesFinancieresExecution\"\r\n        class=\"mat-elevation-z8\">\r\n\r\n\r\n\r\n        <ng-container matColumnDef=\"serviceContractant\">\r\n          <th mat-header-cell *matHeaderCellDef> S/C </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.serviceContractant}} </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"dateDemande\">\r\n          <th mat-header-cell *matHeaderCellDef> Date de la demande </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.dateDemande|date}} </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"montantDemande\">\r\n          <th mat-header-cell *matHeaderCellDef> Montant demandé </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.montantDemande}} </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"demandePath\">\r\n          <th mat-header-cell *matHeaderCellDef> Demande </th>\r\n          <td mat-cell *matCellDef=\"let element\">\r\n            <mat-icon matTooltip={{element.demandePath}} mat-list-icon>insert_drive_file</mat-icon>\r\n          </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"reponse\">\r\n          <th mat-header-cell *matHeaderCellDef> Réponse </th>\r\n          <td mat-cell *matCellDef=\"let element\">\r\n            <button mat-button class=\"text-primary\" *ngIf=\"!element.isAnswered\"\r\n              (click)=\"openDialogCreateReponseRallongeFinanciere()\">Ajouter Réponse</button>\r\n            <button mat-button class=\"text-primary\" *ngIf=\"element.isAnswered\">Voir\r\n              {{element.reponse}}</button>\r\n            <button mat-button class=\"text-primary\" *ngIf=\"element.isAnswered\">montant accordé\r\n              {{element.montantAccorde}}</button>\r\n            <mat-icon *ngIf=\"element.isAnswered\" matTooltip={{element.reponsePath}} mat-list-icon>\r\n              insert_drive_file</mat-icon>\r\n            <span *ngIf=\"element.isAnswered\" matTooltip=\"Date Réponse\">\r\n              {{element.dateReponse|date}}</span>\r\n          </td>\r\n        </ng-container>\r\n\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsRallongesFinancieres\"></tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsRallongesFinancieres;\"></tr>\r\n      </table>\r\n\r\n      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateDemandeRallongeFinanciereExecution()\">\r\n        Ajouter rallonge financière\r\n      </button>\r\n    </div>\r\n\r\n  </div>      \r\n    <!-- FIN Rallonge financiere-->\r\n\r\n    <!--START Avenant-->\r\n    <div>\r\n      Avenants\r\n\r\n      <table #tableAvenants mat-table [dataSource]=\"dataSourceAvenants\"\r\n        class=\"mat-elevation-z8\">\r\n\r\n        <ng-container matColumnDef=\"num\">\r\n          <th mat-header-cell *matHeaderCellDef> N° </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.num}} </td>\r\n          <td mat-footer-cell *matFooterCellDef> Total </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"nature\">\r\n          <th mat-header-cell *matHeaderCellDef> Nature </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.nature}} </td>\r\n          <td mat-footer-cell *matFooterCellDef> - </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"objet\">\r\n          <th mat-header-cell *matHeaderCellDef> Objet</th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.objet}} </td>\r\n          <td mat-footer-cell *matFooterCellDef> - </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"montant\">\r\n          <th mat-header-cell *matHeaderCellDef> Montant </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.montant}}DZD </td>\r\n          <td mat-footer-cell *matFooterCellDef> 50DZD </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"taux\">\r\n          <th mat-header-cell *matHeaderCellDef> taux </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.getTauxSelonMontant(0)}}% </td>\r\n          <td mat-footer-cell *matFooterCellDef> 5% </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"delai\">\r\n          <th mat-header-cell *matHeaderCellDef> Délai </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.delai}}J </td>\r\n          <td mat-footer-cell *matFooterCellDef> 5J </td>\r\n        </ng-container>\r\n\r\n        <ng-container matColumnDef=\"negociation\">\r\n          <th mat-header-cell *matHeaderCellDef> Négociation </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element.negociation}} </td>\r\n          <td mat-footer-cell *matFooterCellDef> - </td>\r\n        </ng-container>\r\n        \r\n\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsAvenants\"></tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumnsAvenants;\"></tr>\r\n        <tr mat-footer-row *matFooterRowDef=\"displayedColumnsAvenants\"></tr>\r\n      </table>\r\n\r\n      <button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateAvenant()\">\r\n        Ajouter Avenant\r\n      </button>\r\n    \r\n    </div>\r\n    <!--START Avenant-->\r\n\r\n\r\n      <button mat-button (click)=\"openDialogCreateResiliation()\">Résilier</button>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -1072,7 +1098,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-expansion-panel>\r\n  <mat-expansion-panel-header>\r\n    <mat-panel-title>\r\n      Clôture\r\n    </mat-panel-title>\r\n  </mat-expansion-panel-header>\r\n\r\n  <p>Réception/Clôture</p>\r\n\r\n  <mat-action-row>\r\n    <button mat-button (click)=\"openDialogCreateReception()\">Réceptionner</button>\r\n    <button mat-button (click)=\"openDialogCreateCloture()\">Clôturer</button>\r\n  </mat-action-row>\r\n</mat-expansion-panel>");
+/* harmony default export */ __webpack_exports__["default"] = ("  <p>Réception/Clôture</p>\r\n\r\n\r\n    <button mat-button (click)=\"openDialogCreateReception()\">Réceptionner</button>\r\n    <button mat-button (click)=\"openDialogCreateCloture()\">Clôturer</button>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -1085,7 +1111,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"m-3\">\n  <mat-accordion>\n\n    \n    <app-inscription></app-inscription>\n    <app-passation></app-passation>\n    <app-execution></app-execution>\n    <app-cloture></app-cloture>\n  </mat-accordion>\n</div>\n\n\n<!--\n<mat-list>\n  <h3 mat-subheader>Recours</h3>\n  <mat-list-item *ngFor=\"let recour of recours; last as last\">\n      <mat-icon mat-list-icon>insert_drive_file</mat-icon>\n      <h4 mat-line>{{recour}}</h4>\n      <p mat-line> depassement des delais </p>\n      <mat-divider [inset]=\"true\" *ngIf=\"!last\"></mat-divider>\n  </mat-list-item>\n</mat-list>\n<button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateRecours()\">Créer Recours</button>\n-->");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"loadingDataProjet\" align=\"center\">\n  <mat-spinner diameter=\"30\"></mat-spinner>\n</div>\n\n<div *ngIf=\"!loadingDataProjet && projet==null\" class=\"alert alert-danger m-3\" role=\"alert\">\n  une erreur s'est produite\n</div>\n\n\n<div *ngIf=\"projet!=null\">\n\n  <mat-horizontal-stepper [linear]=\"isLinearStepper\" #stepper>\n\n    <mat-step [completed]=\"isInscriptionComplete\" [editable]=true>\n      <ng-template matStepLabel>Inscription</ng-template>\n\n      <app-inscription [projet]=\"projet\" [idSousProjet]=\"idSousProjet\"></app-inscription>\n      \n      <div>\n          <button mat-button matStepperNext>Next</button>\n      </div>   \n    </mat-step>\n\n    <mat-step [stepControl]=\"passationFormGroup\">\n      <ng-template matStepLabel>Passation</ng-template>\n\n      <app-passation [projet]=\"projet\" [idSousProjet]=\"idSousProjet\" ></app-passation>\n\n      <div>\n        <button mat-button matStepperPrevious>Back</button>\n        <button mat-button matStepperNext>Next</button>\n      </div>\n    </mat-step>\n\n    <mat-step [stepControl]=\"executionFormGroup\">\n      <ng-template matStepLabel>Execution</ng-template>\n      <app-execution></app-execution>\n      <div>\n        <button mat-button matStepperPrevious>Back</button>\n        <button mat-button matStepperNext>Next</button>\n      </div>\n    </mat-step>\n\n    <mat-step [stepControl]=\"clotureFormGroup\">\n      <ng-template matStepLabel>Clôture</ng-template>\n      <app-cloture></app-cloture>\n      <div>\n        <button mat-button matStepperPrevious>Back</button>\n      </div>\n    </mat-step>\n\n\n  </mat-horizontal-stepper>\n</div>\n\n\n\n\n<!--\n<mat-list>\n  <h3 mat-subheader>Recours</h3>\n  <mat-list-item *ngFor=\"let recour of recours; last as last\">\n      <mat-icon mat-list-icon>insert_drive_file</mat-icon>\n      <h4 mat-line>{{recour}}</h4>\n      <p mat-line> depassement des delais </p>\n      <mat-divider [inset]=\"true\" *ngIf=\"!last\"></mat-divider>\n  </mat-list-item>\n</mat-list>\n<button class=\"m-3\" mat-raised-button (click)=\"openDialogCreateRecours()\">Créer Recours</button>\n-->");
 
 /***/ }),
 
@@ -1111,7 +1137,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-projets-filtre (filterApplied)=\"onFilterApplied($event)\"></app-projets-filtre>\n\n\n\n<button class=\"m-3\" mat-raised-button color=\"primary\" (click)=\"openDialogCreateProjet()\">Créer Projet</button>\n\n\n<div *ngIf=\"loadingData\" align=\"center\">\n  <mat-spinner diameter=\"30\"></mat-spinner>\n</div>\n<div *ngIf=\"projets==null\" class=\"alert alert-danger m-3\" role=\"alert\">\n  une erreur s'est produite\n</div>\n<div>\n  <!-- START - Affichage de la liste des projets avec leurs sous-projets-->\n  <mat-card class=\"m-3\" *ngIf=\"!loadingData && projets && projets.length==0\">\n    <mat-card-content>\n      Aucun résultat trouvé\n    </mat-card-content>\n  </mat-card>\n  <mat-card class=\"m-3\" *ngFor=\"let projet of projets\">\n\n    <mat-card-title>Projet: {{ projet.intituleProjet }}</mat-card-title>\n    <mat-card-subtitle>Service contractant: {{ projet.serviceContractant.nomStructure }} ({{ projet.serviceContractant.identifiant }})</mat-card-subtitle>\n    <mat-card-subtitle>Code: {{ projet.codeProjet }}</mat-card-subtitle>\n    <mat-card-subtitle>Montant: {{ projet.montantProjet }} DZD</mat-card-subtitle>\n    <mat-card-subtitle>Date Création: {{ projet.dateCreationProjet | date }}</mat-card-subtitle>\n    <mat-card-subtitle>Pour la structure: {{ projet.pourLaStructureRattachement }}</mat-card-subtitle>\n    <mat-card-subtitle>Année du plan d'action: {{ projet.yearPlanAction}}</mat-card-subtitle>\n    <mat-card-subtitle>Sources de financments: {{projet.sourcesFinancement}}</mat-card-subtitle>\n    <mat-card-subtitle>Sources de financments(Autre): {{projet.siAutreSourceFinancement}}</mat-card-subtitle>\n    <mat-card-subtitle>\n      <a href=\"{{getPathFile(projet.pathJustificatifProjet)}}\" target=\"_blank\">Voir justificatif</a>\n    </mat-card-subtitle>\n    <!--Start add projects here-->\n    <mat-card-content>\n      <mat-card class=\"m-3\" *ngFor=\"let sousProjet of projet.sousProjets\">\n        <mat-card-title>Sous Projet: {{ sousProjet.intituleSousProjet }}</mat-card-title>\n        <mat-card-subtitle>Nature: {{sousProjet.naturePrestation}}</mat-card-subtitle>\n        <mat-card-subtitle>Seuil (Est. Admin.): {{sousProjet.estimationAdministrative}}</mat-card-subtitle>\n        <mat-card-subtitle>Date Création: {{ sousProjet.dateCreationSousProjet | date }}</mat-card-subtitle>\n        <mat-card-actions>\n          <button mat-raised-button color=\"accent\" routerLink=\"/projet\">Voir</button>\n          <button mat-raised-button color=\"secondary\" (click)=\"openDialogUpdateSousProjet(projet, sousProjet)\">Modifier</button>\n          <button mat-button color=\"warn\" (click)=\"openDialogDeleteSousProjet(projet, sousProjet)\">Supprimer</button>\n        </mat-card-actions>\n      </mat-card>\n    </mat-card-content>\n    <!--End add projects here-->\n\n\n    <mat-card-actions>\n      <button mat-raised-button color=\"primary\" (click)=\"openDialogCreateSousProjet(projet)\">Créer Sous Projet</button>\n      <button mat-raised-button color=\"secondary\" (click)=\"openDialogUpdateProjet(projet)\">Modifier</button>\n      <button mat-button color=\"warn\" (click)=\"openDialogDeleteProjet(projet)\">Supprimer</button>\n    </mat-card-actions>\n\n\n  </mat-card>\n  <!-- END - Affichage de la liste des operations avec leurs projets-->\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-projets-filtre (filterApplied)=\"onFilterApplied($event)\"></app-projets-filtre>\n\n\n\n<button class=\"m-3\" mat-raised-button color=\"primary\" (click)=\"openDialogCreateProjet()\">Créer Projet</button>\n\n\n<div *ngIf=\"loadingData\" align=\"center\">\n  <mat-spinner diameter=\"30\"></mat-spinner>\n</div>\n<div *ngIf=\"projets==null\" class=\"alert alert-danger m-3\" role=\"alert\">\n  une erreur s'est produite\n</div>\n<div>\n  <!-- START - Affichage de la liste des projets avec leurs sous-projets-->\n  <mat-card class=\"m-3\" *ngIf=\"!loadingData && projets && projets.length==0\">\n    <mat-card-content>\n      Aucun résultat trouvé\n    </mat-card-content>\n  </mat-card>\n  <mat-card class=\"m-3\" *ngFor=\"let projet of projets\">\n\n    <mat-card-title>Projet: {{ projet.intituleProjet }}</mat-card-title>\n    <mat-card-subtitle>Service contractant: {{ projet.serviceContractant.nomStructure }} ({{ projet.serviceContractant.identifiant }})</mat-card-subtitle>\n    <mat-card-subtitle>Code: {{ projet.codeProjet }}</mat-card-subtitle>\n    <mat-card-subtitle>Montant: {{ projet.montantProjet }} DZD</mat-card-subtitle>\n    <mat-card-subtitle>Date Création: {{ projet.dateCreationProjet | date }}</mat-card-subtitle>\n    <mat-card-subtitle>Pour la structure: {{ projet.pourLaStructureRattachement }}</mat-card-subtitle>\n    <mat-card-subtitle>Année du plan d'action: {{ projet.yearPlanAction}}</mat-card-subtitle>\n    <mat-card-subtitle>Sources de financments: {{projet.sourcesFinancement}}</mat-card-subtitle>\n    <mat-card-subtitle>Sources de financments(Autre): {{projet.siAutreSourceFinancement}}</mat-card-subtitle>\n    <mat-card-subtitle>\n      <a href=\"{{getPathFile(projet.pathJustificatifProjet)}}\" target=\"_blank\">Voir justificatif</a>\n    </mat-card-subtitle>\n    <!--Start add projects here-->\n    <mat-card-content>\n      <mat-card class=\"m-3\" *ngFor=\"let sousProjet of projet.sousProjets\">\n        <mat-card-title>Sous Projet: {{ sousProjet.intituleSousProjet }}</mat-card-title>\n        <mat-card-subtitle>Nature: {{sousProjet.naturePrestation}}</mat-card-subtitle>\n        <mat-card-subtitle>Seuil (Est. Admin.): {{sousProjet.estimationAdministrative}}</mat-card-subtitle>\n        <mat-card-subtitle>Date Création: {{ sousProjet.dateCreationSousProjet | date }}</mat-card-subtitle>\n        <mat-card-actions>\n          <button mat-raised-button color=\"accent\" routerLink=\"/projet/{{projet._id}}/{{sousProjet._id}}\">Voir</button>\n          <button mat-raised-button color=\"secondary\" (click)=\"openDialogUpdateSousProjet(projet, sousProjet)\">Modifier</button>\n          <button mat-button color=\"warn\" (click)=\"openDialogDeleteSousProjet(projet, sousProjet)\">Supprimer</button>\n        </mat-card-actions>\n      </mat-card>\n    </mat-card-content>\n    <!--End add projects here-->\n\n\n    <mat-card-actions>\n      <button mat-raised-button color=\"primary\" (click)=\"openDialogCreateSousProjet(projet)\">Créer Sous Projet</button>\n      <button mat-raised-button color=\"secondary\" (click)=\"openDialogUpdateProjet(projet)\">Modifier</button>\n      <button mat-button color=\"warn\" (click)=\"openDialogDeleteProjet(projet)\">Supprimer</button>\n    </mat-card-actions>\n\n\n  </mat-card>\n  <!-- END - Affichage de la liste des operations avec leurs projets-->\n</div>");
 
 /***/ }),
 
@@ -1137,7 +1163,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-nav-list>\n  <div class=\"profile-card\">\n\n    <a class=\"navbar-brand\" href=\"/home\">\n      <img\n      style=\"background: white; padding: 4px; border-radius: 50%; \"\n      src=\"assets/img/logo-short.png\" \n      width=\"40\" \n      height=\"40\" \n      class=\"d-inline-block align-top\" alt=\"AP Logo\">\n    </a>  \n  </div>\n\n  <mat-divider></mat-divider>  \n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/home\"><mat-icon>home</mat-icon>Home</a>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/dashboard\"><mat-icon>dashboard</mat-icon>Dashboard</a>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/projets\"><mat-icon>all_inbox</mat-icon>Projets</a>\n\n  <mat-divider></mat-divider>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/services-contractants\"><mat-icon>business_center</mat-icon>Services contractants</a>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/operateurs-economiques\"><mat-icon>build</mat-icon>Opérateurs économiques</a>\n\n  <mat-divider></mat-divider>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/users\"><mat-icon>people</mat-icon>Utilisateurs</a>\n\n  <mat-divider></mat-divider>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/documentation\"><mat-icon>school</mat-icon>Documentation</a>\n\n  <mat-divider></mat-divider>\n  <h2 matSubheader>Contrôle des marchés</h2>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/commissions\"><mat-icon>supervised_user_circle</mat-icon>Commissions</a>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/committees\"><mat-icon>supervised_user_circle</mat-icon>Comités</a>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/copeos\"><mat-icon>supervised_user_circle</mat-icon>COPEOs</a>\n\n  <mat-divider></mat-divider>\n  <h1 matSubheader>© 2020 Algérie Poste</h1>\n</mat-nav-list>");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-nav-list>\n \n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/home\"><mat-icon>home</mat-icon>Home</a>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/dashboard\"><mat-icon>dashboard</mat-icon>Dashboard</a>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/projets\"><mat-icon>all_inbox</mat-icon>Projets</a>\n\n  <mat-divider></mat-divider>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/services-contractants\"><mat-icon>business_center</mat-icon>Services contractants</a>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/operateurs-economiques\"><mat-icon>build</mat-icon>Opérateurs économiques</a>\n\n  <mat-divider></mat-divider>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/users\"><mat-icon>people</mat-icon>Utilisateurs</a>\n\n  <mat-divider></mat-divider>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/documentation\"><mat-icon>school</mat-icon>Documentation</a>\n\n  <mat-divider></mat-divider>\n  <h2 matSubheader>Contrôle des marchés</h2>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/commissions\"><mat-icon>supervised_user_circle</mat-icon>Commissions</a>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/committees\"><mat-icon>supervised_user_circle</mat-icon>Comités</a>\n  <a mat-list-item routerLinkActive=\"active\" routerLink=\"/copeos\"><mat-icon>supervised_user_circle</mat-icon>COPEOs</a>\n\n  <mat-divider></mat-divider>\n\n    <div class=\"profile-card\">\n      <small>© 2020 Algérie Poste</small>\n      <br>\n      <a class=\"navbar-brand\" href=\"https://www.poste.dz\" target=\"_blank\">\n        <img\n        style=\"background: white; padding: 4px; border-radius: 50%; \"\n        src=\"assets/img/logo-short.png\" \n        width=\"40\" \n        height=\"40\" \n        class=\"d-inline-block align-top\" alt=\"AP Logo\">\n      </a>        \n    </div>\n  \n\n</mat-nav-list>");
 
 /***/ }),
 
@@ -1537,16 +1563,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _projets_projets_component__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(/*! ./projets/projets.component */ "./src/app/projets/projets.component.ts");
 /* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_94__ = __webpack_require__(/*! @angular/material/progress-spinner */ "./node_modules/@angular/material/esm2015/progress-spinner.js");
 /* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_95__ = __webpack_require__(/*! @angular/material/autocomplete */ "./node_modules/@angular/material/esm2015/autocomplete.js");
-/* harmony import */ var _domaine_business_logic_services_contractants_service__WEBPACK_IMPORTED_MODULE_96__ = __webpack_require__(/*! ./domaine/business-logic/services-contractants.service */ "./src/app/domaine/business-logic/services-contractants.service.ts");
-/* harmony import */ var _domaine_business_logic_utilisateurs_service__WEBPACK_IMPORTED_MODULE_97__ = __webpack_require__(/*! ./domaine/business-logic/utilisateurs.service */ "./src/app/domaine/business-logic/utilisateurs.service.ts");
-/* harmony import */ var _domaine_data_access_utilisateur_access__WEBPACK_IMPORTED_MODULE_98__ = __webpack_require__(/*! ./domaine/data-access/utilisateur.access */ "./src/app/domaine/data-access/utilisateur.access.ts");
-/* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_99__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/sidebar/sidebar.component.ts");
-/* harmony import */ var _dialogs_create_sous_projet_create_sous_projet_component__WEBPACK_IMPORTED_MODULE_100__ = __webpack_require__(/*! ./dialogs/create-sous-projet/create-sous-projet.component */ "./src/app/dialogs/create-sous-projet/create-sous-projet.component.ts");
-/* harmony import */ var _domaine_business_logic_projets_service__WEBPACK_IMPORTED_MODULE_101__ = __webpack_require__(/*! ./domaine/business-logic/projets.service */ "./src/app/domaine/business-logic/projets.service.ts");
-/* harmony import */ var _domaine_data_access_projet_access__WEBPACK_IMPORTED_MODULE_102__ = __webpack_require__(/*! ./domaine/data-access/projet.access */ "./src/app/domaine/data-access/projet.access.ts");
-/* harmony import */ var _dialogs_create_projet_create_projet_component__WEBPACK_IMPORTED_MODULE_103__ = __webpack_require__(/*! ./dialogs/create-projet/create-projet.component */ "./src/app/dialogs/create-projet/create-projet.component.ts");
-/* harmony import */ var _domaine_business_logic_sous_projets_service__WEBPACK_IMPORTED_MODULE_104__ = __webpack_require__(/*! ./domaine/business-logic/sous-projets.service */ "./src/app/domaine/business-logic/sous-projets.service.ts");
-/* harmony import */ var _domaine_data_access_sous_projet_access__WEBPACK_IMPORTED_MODULE_105__ = __webpack_require__(/*! ./domaine/data-access/sous-projet.access */ "./src/app/domaine/data-access/sous-projet.access.ts");
+/* harmony import */ var _angular_material_stepper__WEBPACK_IMPORTED_MODULE_96__ = __webpack_require__(/*! @angular/material/stepper */ "./node_modules/@angular/material/esm2015/stepper.js");
+/* harmony import */ var _domaine_business_logic_services_contractants_service__WEBPACK_IMPORTED_MODULE_97__ = __webpack_require__(/*! ./domaine/business-logic/services-contractants.service */ "./src/app/domaine/business-logic/services-contractants.service.ts");
+/* harmony import */ var _domaine_business_logic_utilisateurs_service__WEBPACK_IMPORTED_MODULE_98__ = __webpack_require__(/*! ./domaine/business-logic/utilisateurs.service */ "./src/app/domaine/business-logic/utilisateurs.service.ts");
+/* harmony import */ var _domaine_data_access_utilisateur_access__WEBPACK_IMPORTED_MODULE_99__ = __webpack_require__(/*! ./domaine/data-access/utilisateur.access */ "./src/app/domaine/data-access/utilisateur.access.ts");
+/* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_100__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/sidebar/sidebar.component.ts");
+/* harmony import */ var _dialogs_create_sous_projet_create_sous_projet_component__WEBPACK_IMPORTED_MODULE_101__ = __webpack_require__(/*! ./dialogs/create-sous-projet/create-sous-projet.component */ "./src/app/dialogs/create-sous-projet/create-sous-projet.component.ts");
+/* harmony import */ var _domaine_business_logic_projets_service__WEBPACK_IMPORTED_MODULE_102__ = __webpack_require__(/*! ./domaine/business-logic/projets.service */ "./src/app/domaine/business-logic/projets.service.ts");
+/* harmony import */ var _domaine_data_access_projet_access__WEBPACK_IMPORTED_MODULE_103__ = __webpack_require__(/*! ./domaine/data-access/projet.access */ "./src/app/domaine/data-access/projet.access.ts");
+/* harmony import */ var _dialogs_create_projet_create_projet_component__WEBPACK_IMPORTED_MODULE_104__ = __webpack_require__(/*! ./dialogs/create-projet/create-projet.component */ "./src/app/dialogs/create-projet/create-projet.component.ts");
+/* harmony import */ var _domaine_business_logic_sous_projets_service__WEBPACK_IMPORTED_MODULE_105__ = __webpack_require__(/*! ./domaine/business-logic/sous-projets.service */ "./src/app/domaine/business-logic/sous-projets.service.ts");
+/* harmony import */ var _domaine_data_access_sous_projet_access__WEBPACK_IMPORTED_MODULE_106__ = __webpack_require__(/*! ./domaine/data-access/sous-projet.access */ "./src/app/domaine/data-access/sous-projet.access.ts");
+/* harmony import */ var _domaine_data_access_elaboration_cdc_access__WEBPACK_IMPORTED_MODULE_107__ = __webpack_require__(/*! ./domaine/data-access/elaboration-cdc.access */ "./src/app/domaine/data-access/elaboration-cdc.access.ts");
+/* harmony import */ var _domaine_business_logic_elaborations_cdc_service__WEBPACK_IMPORTED_MODULE_108__ = __webpack_require__(/*! ./domaine/business-logic/elaborations-cdc.service */ "./src/app/domaine/business-logic/elaborations-cdc.service.ts");
+/* harmony import */ var _domaine_business_logic_projets_cdc_service__WEBPACK_IMPORTED_MODULE_109__ = __webpack_require__(/*! ./domaine/business-logic/projets-cdc.service */ "./src/app/domaine/business-logic/projets-cdc.service.ts");
+/* harmony import */ var _domaine_data_access_projet_cdc_access__WEBPACK_IMPORTED_MODULE_110__ = __webpack_require__(/*! ./domaine/data-access/projet-cdc.access */ "./src/app/domaine/data-access/projet-cdc.access.ts");
+/* harmony import */ var _dialogs_create_commission_competente_create_commission_competente_component__WEBPACK_IMPORTED_MODULE_111__ = __webpack_require__(/*! ./dialogs/create-commission-competente/create-commission-competente.component */ "./src/app/dialogs/create-commission-competente/create-commission-competente.component.ts");
+/* harmony import */ var _domaine_data_access_commission_competente_access__WEBPACK_IMPORTED_MODULE_112__ = __webpack_require__(/*! ./domaine/data-access/commission-competente.access */ "./src/app/domaine/data-access/commission-competente.access.ts");
+/* harmony import */ var _domaine_business_logic_commissions_competentes_service__WEBPACK_IMPORTED_MODULE_113__ = __webpack_require__(/*! ./domaine/business-logic/commissions-competentes.service */ "./src/app/domaine/business-logic/commissions-competentes.service.ts");
+/* harmony import */ var _dialogs_create_modification_commission_competente_create_modification_commission_competente_component__WEBPACK_IMPORTED_MODULE_114__ = __webpack_require__(/*! ./dialogs/create-modification-commission-competente/create-modification-commission-competente.component */ "./src/app/dialogs/create-modification-commission-competente/create-modification-commission-competente.component.ts");
+/* harmony import */ var _domaine_data_access_modification_commission_competente_access__WEBPACK_IMPORTED_MODULE_115__ = __webpack_require__(/*! ./domaine/data-access/modification-commission-competente.access */ "./src/app/domaine/data-access/modification-commission-competente.access.ts");
+/* harmony import */ var _domaine_business_logic_modification_commissions_competentes_service__WEBPACK_IMPORTED_MODULE_116__ = __webpack_require__(/*! ./domaine/business-logic/modification-commissions-competentes.service */ "./src/app/domaine/business-logic/modification-commissions-competentes.service.ts");
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1659,7 +1707,7 @@ const appRoutes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_32__["HomeComponent"] },
     { path: 'projets', component: _projets_projets_component__WEBPACK_IMPORTED_MODULE_93__["ProjetsComponent"] },
-    { path: 'projet', component: _projet_projet_component__WEBPACK_IMPORTED_MODULE_39__["ProjetComponent"] },
+    { path: 'projet/:idProjet/:idSousProjet', component: _projet_projet_component__WEBPACK_IMPORTED_MODULE_39__["ProjetComponent"] },
     { path: 'users', component: _users_users_component__WEBPACK_IMPORTED_MODULE_35__["UsersComponent"] },
     { path: 'services-contractants', component: _services_contractants_services_contractants_component__WEBPACK_IMPORTED_MODULE_31__["ServicesContractantsComponent"] },
     { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_33__["DashboardComponent"] },
@@ -1677,8 +1725,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
             _header_header_component__WEBPACK_IMPORTED_MODULE_7__["HeaderComponent"],
             _footer_footer_component__WEBPACK_IMPORTED_MODULE_8__["FooterComponent"],
-            _dialogs_create_sous_projet_create_sous_projet_component__WEBPACK_IMPORTED_MODULE_100__["CreateSousProjetComponent"],
-            _dialogs_create_projet_create_projet_component__WEBPACK_IMPORTED_MODULE_103__["CreateProjetComponent"],
+            _dialogs_create_sous_projet_create_sous_projet_component__WEBPACK_IMPORTED_MODULE_101__["CreateSousProjetComponent"],
+            _dialogs_create_projet_create_projet_component__WEBPACK_IMPORTED_MODULE_104__["CreateProjetComponent"],
             _dialogs_create_service_contractant_create_service_contractant_component__WEBPACK_IMPORTED_MODULE_28__["CreateServiceContractantComponent"],
             _dialogs_create_user_create_user_component__WEBPACK_IMPORTED_MODULE_29__["CreateUserComponent"],
             _home_home_component__WEBPACK_IMPORTED_MODULE_32__["HomeComponent"],
@@ -1723,6 +1771,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _dialogs_create_reception_create_reception_component__WEBPACK_IMPORTED_MODULE_74__["CreateReceptionComponent"],
             _dialogs_create_avenant_create_avenant_component__WEBPACK_IMPORTED_MODULE_75__["CreateAvenantComponent"],
             _dialogs_create_elaboration_cdc_create_elaboration_cdc_component__WEBPACK_IMPORTED_MODULE_90__["CreateElaborationCDCComponent"],
+            _dialogs_create_commission_competente_create_commission_competente_component__WEBPACK_IMPORTED_MODULE_111__["CreateCommissionCompetenteComponent"],
+            _dialogs_create_modification_commission_competente_create_modification_commission_competente_component__WEBPACK_IMPORTED_MODULE_114__["CreateModificationCommissionCompetenteComponent"],
             _projet_1inscription_inscription_component__WEBPACK_IMPORTED_MODULE_76__["InscriptionComponent"],
             _projet_2passation_passation_component__WEBPACK_IMPORTED_MODULE_79__["PassationComponent"],
             _projet_2passation_elaboration_cdc_lancement_1retrait_cdc_retrait_cdc_component__WEBPACK_IMPORTED_MODULE_80__["RetraitCDCComponent"],
@@ -1738,11 +1788,11 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _projet_4cloture_cloture_component__WEBPACK_IMPORTED_MODULE_78__["ClotureComponent"],
             _operateurs_economiques_operateurs_economiques_component__WEBPACK_IMPORTED_MODULE_89__["OperateursEconomiquesComponent"],
             _projets_projets_filtre_projets_filtre_component__WEBPACK_IMPORTED_MODULE_91__["ProjetsFiltreComponent"],
-            _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_99__["SidebarComponent"],
+            _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_100__["SidebarComponent"],
         ],
         entryComponents: [
-            _dialogs_create_sous_projet_create_sous_projet_component__WEBPACK_IMPORTED_MODULE_100__["CreateSousProjetComponent"],
-            _dialogs_create_projet_create_projet_component__WEBPACK_IMPORTED_MODULE_103__["CreateProjetComponent"],
+            _dialogs_create_sous_projet_create_sous_projet_component__WEBPACK_IMPORTED_MODULE_101__["CreateSousProjetComponent"],
+            _dialogs_create_projet_create_projet_component__WEBPACK_IMPORTED_MODULE_104__["CreateProjetComponent"],
             _dialogs_create_service_contractant_create_service_contractant_component__WEBPACK_IMPORTED_MODULE_28__["CreateServiceContractantComponent"],
             _dialogs_create_user_create_user_component__WEBPACK_IMPORTED_MODULE_29__["CreateUserComponent"],
             _dialogs_create_litige_create_litige_component__WEBPACK_IMPORTED_MODULE_40__["CreateLitigeComponent"],
@@ -1776,7 +1826,9 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _dialogs_create_cloture_create_cloture_component__WEBPACK_IMPORTED_MODULE_73__["CreateClotureComponent"],
             _dialogs_create_reception_create_reception_component__WEBPACK_IMPORTED_MODULE_74__["CreateReceptionComponent"],
             _dialogs_create_avenant_create_avenant_component__WEBPACK_IMPORTED_MODULE_75__["CreateAvenantComponent"],
-            _dialogs_create_elaboration_cdc_create_elaboration_cdc_component__WEBPACK_IMPORTED_MODULE_90__["CreateElaborationCDCComponent"]
+            _dialogs_create_elaboration_cdc_create_elaboration_cdc_component__WEBPACK_IMPORTED_MODULE_90__["CreateElaborationCDCComponent"],
+            _dialogs_create_commission_competente_create_commission_competente_component__WEBPACK_IMPORTED_MODULE_111__["CreateCommissionCompetenteComponent"],
+            _dialogs_create_modification_commission_competente_create_modification_commission_competente_component__WEBPACK_IMPORTED_MODULE_114__["CreateModificationCommissionCompetenteComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1809,18 +1861,27 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_material_radio__WEBPACK_IMPORTED_MODULE_53__["MatRadioModule"],
             _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_94__["MatProgressSpinnerModule"],
             _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_95__["MatAutocompleteModule"],
+            _angular_material_stepper__WEBPACK_IMPORTED_MODULE_96__["MatStepperModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(appRoutes),
             angular_calendar__WEBPACK_IMPORTED_MODULE_50__["CalendarModule"].forRoot({ provide: angular_calendar__WEBPACK_IMPORTED_MODULE_50__["DateAdapter"], useFactory: angular_calendar_date_adapters_date_fns__WEBPACK_IMPORTED_MODULE_51__["adapterFactory"] })
         ],
         providers: [
-            _domaine_business_logic_services_contractants_service__WEBPACK_IMPORTED_MODULE_96__["ServiceContractantService"],
+            _domaine_business_logic_services_contractants_service__WEBPACK_IMPORTED_MODULE_97__["ServiceContractantService"],
             _domaine_data_access_service_contractant_access__WEBPACK_IMPORTED_MODULE_92__["ServiceContractantAccess"],
-            _domaine_business_logic_utilisateurs_service__WEBPACK_IMPORTED_MODULE_97__["UtilisateurService"],
-            _domaine_data_access_utilisateur_access__WEBPACK_IMPORTED_MODULE_98__["UtilisateurAccess"],
-            _domaine_business_logic_projets_service__WEBPACK_IMPORTED_MODULE_101__["ProjetService"],
-            _domaine_data_access_projet_access__WEBPACK_IMPORTED_MODULE_102__["ProjetAccess"],
-            _domaine_business_logic_sous_projets_service__WEBPACK_IMPORTED_MODULE_104__["SousProjetService"],
-            _domaine_data_access_sous_projet_access__WEBPACK_IMPORTED_MODULE_105__["SousProjetAccess"]
+            _domaine_business_logic_utilisateurs_service__WEBPACK_IMPORTED_MODULE_98__["UtilisateurService"],
+            _domaine_data_access_utilisateur_access__WEBPACK_IMPORTED_MODULE_99__["UtilisateurAccess"],
+            _domaine_business_logic_projets_service__WEBPACK_IMPORTED_MODULE_102__["ProjetService"],
+            _domaine_data_access_projet_access__WEBPACK_IMPORTED_MODULE_103__["ProjetAccess"],
+            _domaine_business_logic_sous_projets_service__WEBPACK_IMPORTED_MODULE_105__["SousProjetService"],
+            _domaine_data_access_sous_projet_access__WEBPACK_IMPORTED_MODULE_106__["SousProjetAccess"],
+            _domaine_business_logic_elaborations_cdc_service__WEBPACK_IMPORTED_MODULE_108__["ElaborationCDCService"],
+            _domaine_data_access_elaboration_cdc_access__WEBPACK_IMPORTED_MODULE_107__["ElaborationCDCAccess"],
+            _domaine_business_logic_projets_cdc_service__WEBPACK_IMPORTED_MODULE_109__["ProjetCDCService"],
+            _domaine_data_access_projet_cdc_access__WEBPACK_IMPORTED_MODULE_110__["ProjetCDCAccess"],
+            _domaine_business_logic_commissions_competentes_service__WEBPACK_IMPORTED_MODULE_113__["CommissionCompetenteService"],
+            _domaine_data_access_commission_competente_access__WEBPACK_IMPORTED_MODULE_112__["CommissionCompetenteAccess"],
+            _domaine_business_logic_modification_commissions_competentes_service__WEBPACK_IMPORTED_MODULE_116__["ModificationCommissionCompetenteService"],
+            _domaine_data_access_modification_commission_competente_access__WEBPACK_IMPORTED_MODULE_115__["ModificationCommissionCompetenteAccess"]
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
     })
@@ -1839,7 +1900,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbW1pc3Npb25zL2NvbW1pc3Npb25zLmNvbXBvbmVudC5jc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("table {\r\n  width: 100%;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbWlzc2lvbnMvY29tbWlzc2lvbnMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVc7QUFDYiIsImZpbGUiOiJzcmMvYXBwL2NvbW1pc3Npb25zL2NvbW1pc3Npb25zLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ0YWJsZSB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn0iXX0= */");
 
 /***/ }),
 
@@ -1855,13 +1916,143 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommissionsComponent", function() { return CommissionsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _models_repertoire_projet_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/repertoire/projet.model */ "./src/app/models/repertoire/projet.model.ts");
+/* harmony import */ var _enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../enums/dialog-action.enum */ "./src/app/enums/dialog-action.enum.ts");
+/* harmony import */ var _upload_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../upload.service */ "./src/app/upload.service.ts");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../config */ "./src/app/config.ts");
+/* harmony import */ var _dialogs_create_commission_competente_create_commission_competente_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../dialogs/create-commission-competente/create-commission-competente.component */ "./src/app/dialogs/create-commission-competente/create-commission-competente.component.ts");
+/* harmony import */ var _domaine_business_logic_commissions_competentes_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../domaine/business-logic/commissions-competentes.service */ "./src/app/domaine/business-logic/commissions-competentes.service.ts");
+/* harmony import */ var _dialogs_create_modification_commission_competente_create_modification_commission_competente_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../dialogs/create-modification-commission-competente/create-modification-commission-competente.component */ "./src/app/dialogs/create-modification-commission-competente/create-modification-commission-competente.component.ts");
+
+
+
+
+
+
+
+
 
 
 let CommissionsComponent = class CommissionsComponent {
-    constructor() { }
+    constructor(dialog, serviceCommissionCompetente, uploadService) {
+        this.dialog = dialog;
+        this.serviceCommissionCompetente = serviceCommissionCompetente;
+        this.uploadService = uploadService;
+        this.loadingData = false;
+        this.displayedColumnsMembres = ['role', 'nom', 'prenom', 'qualite', 'matricule', 'email', 'telephone', 'penta'];
+        this.commissionsCompetentes = [];
+    }
+    ;
     ngOnInit() {
+        this.loadingData = true;
+        const result = this.serviceCommissionCompetente.getAllCommissionsCompetentes();
+        result
+            .then((value) => {
+            this.loadingData = false;
+            return this.commissionsCompetentes = value;
+        })
+            .catch(() => {
+            this.loadingData = false;
+            return this.commissionsCompetentes = null;
+        });
+    }
+    openDialogCreateCommissionCompetente() {
+        const dialogRef = this.dialog.open(_dialogs_create_commission_competente_create_commission_competente_component__WEBPACK_IMPORTED_MODULE_7__["CreateCommissionCompetenteComponent"], {
+            width: '800px',
+            data: { action: _enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].CREATE, comm_compt: null }
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log("Return result", result);
+            if (this.commissionsCompetentes && result) {
+                this.commissionsCompetentes.push(result);
+            }
+        });
+    }
+    openDialogUpdateCommissionCompetente(commissionCompetente) {
+        const dialogRef = this.dialog.open(_dialogs_create_commission_competente_create_commission_competente_component__WEBPACK_IMPORTED_MODULE_7__["CreateCommissionCompetenteComponent"], {
+            width: '800px',
+            data: { action: _enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].MODIFY, comm_compt: commissionCompetente }
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            if (this.commissionsCompetentes && result) {
+                let comm_compt = this.commissionsCompetentes.find(e => e._id === result._id);
+                for (var k in result) {
+                    comm_compt[k] = result[k];
+                }
+            }
+        });
+    }
+    ;
+    openDialogDeleteCommissionCompetente(commissionCompetente) {
+        const dialogRef = this.dialog.open(_dialogs_create_commission_competente_create_commission_competente_component__WEBPACK_IMPORTED_MODULE_7__["CreateCommissionCompetenteComponent"], {
+            width: '800px',
+            data: { action: _enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].DELETE, comm_compt: commissionCompetente }
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            if (this.commissionsCompetentes && result) {
+                let sc = this.commissionsCompetentes.find(e => e._id === result._id);
+                const index = this.commissionsCompetentes.indexOf(sc);
+                this.commissionsCompetentes.splice(index, 1);
+            }
+        });
+    }
+    ;
+    openDialogCreateModificationCommissionCompetente(commissionCompetente) {
+        const dialogRef = this.dialog.open(_dialogs_create_modification_commission_competente_create_modification_commission_competente_component__WEBPACK_IMPORTED_MODULE_9__["CreateModificationCommissionCompetenteComponent"], {
+            width: '800px',
+            data: { action: _enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].CREATE, comm_compt: commissionCompetente, modif_comm_compt: null }
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            if (commissionCompetente && result) {
+                commissionCompetente.modificationsCommissionCompetente.push(result);
+            }
+        });
+    }
+    openDialogDeleteModificationCommissionCompetente(commissionCompetente, modificationCommissionCompetente) {
+        console.log("prj:", commissionCompetente);
+        console.log("sousPrj", modificationCommissionCompetente);
+        const dialogRef = this.dialog.open(_dialogs_create_modification_commission_competente_create_modification_commission_competente_component__WEBPACK_IMPORTED_MODULE_9__["CreateModificationCommissionCompetenteComponent"], {
+            width: '800px',
+            data: { action: _enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].DELETE, comm_compt: commissionCompetente, modif_comm_compt: modificationCommissionCompetente }
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            if (commissionCompetente && result) {
+                let modif = commissionCompetente.modificationsCommissionCompetente.find(e => e._id === result._id);
+                const index = commissionCompetente.modificationsCommissionCompetente.indexOf(modif);
+                commissionCompetente.modificationsCommissionCompetente.splice(index, 1);
+            }
+        });
+    }
+    ;
+    openDialogUpdateModificationCommissionCompetente(commissionCompetente, modificationCommissionCompetente) {
+        const dialogRef = this.dialog.open(_dialogs_create_modification_commission_competente_create_modification_commission_competente_component__WEBPACK_IMPORTED_MODULE_9__["CreateModificationCommissionCompetenteComponent"], {
+            width: '800px',
+            data: { action: _enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].MODIFY, comm_compt: commissionCompetente, modif_comm_compt: modificationCommissionCompetente }
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            if (_models_repertoire_projet_model__WEBPACK_IMPORTED_MODULE_3__["Projet"] && result) {
+                let modif = commissionCompetente.modificationsCommissionCompetente.find(e => e._id === result._id);
+                for (var k in result)
+                    modif[k] = result[k];
+            }
+        });
+    }
+    ;
+    /*
+      downloadJustificatif(filename : string) : void {
+        this.uploadService.get(filename);
+      }
+      */
+    getPathFile(filename) {
+        return `${_config__WEBPACK_IMPORTED_MODULE_6__["fileUploadUrl"]}/sendMePDF/${filename}`;
     }
 };
+CommissionsComponent.ctorParameters = () => [
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] },
+    { type: _domaine_business_logic_commissions_competentes_service__WEBPACK_IMPORTED_MODULE_8__["CommissionCompetenteService"] },
+    { type: _upload_service__WEBPACK_IMPORTED_MODULE_5__["UploadService"] }
+];
 CommissionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-commissions',
@@ -1931,8 +2122,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fileUploadUrl", function() { return fileUploadUrl; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
-const apiEndpoint = "https://serene-thicket-9103.herokuapp.com/api";
-const fileUploadUrl = "https://damp-taiga-2895.herokuapp.com";
+const apiEndpoint = "http://localhost:5000/api";
+const fileUploadUrl = "http://localhost:3000";
 
 
 /***/ }),
@@ -2246,6 +2437,225 @@ CreateClotureComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
 ], CreateClotureComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-commission-competente/create-commission-competente.component.css":
+/*!*************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-commission-competente/create-commission-competente.component.css ***!
+  \*************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtY29tbWlzc2lvbi1jb21wZXRlbnRlL2NyZWF0ZS1jb21taXNzaW9uLWNvbXBldGVudGUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtJQUNoQixnQkFBZ0I7SUFDaEIsV0FBVztFQUNiOztFQUVBO0lBQ0UsV0FBVztFQUNiIiwiZmlsZSI6InNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtY29tbWlzc2lvbi1jb21wZXRlbnRlL2NyZWF0ZS1jb21taXNzaW9uLWNvbXBldGVudGUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWZvcm0ge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogNTAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbiAgLmV4YW1wbGUtZnVsbC13aWR0aCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-commission-competente/create-commission-competente.component.ts":
+/*!************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-commission-competente/create-commission-competente.component.ts ***!
+  \************************************************************************************************/
+/*! exports provided: CreateCommissionCompetenteComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateCommissionCompetenteComponent", function() { return CreateCommissionCompetenteComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/enums/dialog-action.enum */ "./src/app/enums/dialog-action.enum.ts");
+/* harmony import */ var src_app_upload_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/upload.service */ "./src/app/upload.service.ts");
+/* harmony import */ var src_app_domaine_business_logic_services_contractants_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/domaine/business-logic/services-contractants.service */ "./src/app/domaine/business-logic/services-contractants.service.ts");
+/* harmony import */ var src_app_enums_type_commission_competente_enum__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/enums/type-commission-competente.enum */ "./src/app/enums/type-commission-competente.enum.ts");
+/* harmony import */ var src_app_enums_role_membre_commission_competente_enum__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/enums/role-membre-commission-competente.enum */ "./src/app/enums/role-membre-commission-competente.enum.ts");
+/* harmony import */ var src_app_models_commission_competente_membre_commission_competente_model__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/models/commission-competente/membre-commission-competente.model */ "./src/app/models/commission-competente/membre-commission-competente.model.ts");
+/* harmony import */ var src_app_requests_commission_competente_post_request__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/requests/commission-competente-post.request */ "./src/app/requests/commission-competente-post.request.ts");
+/* harmony import */ var src_app_domaine_business_logic_commissions_competentes_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/domaine/business-logic/commissions-competentes.service */ "./src/app/domaine/business-logic/commissions-competentes.service.ts");
+/* harmony import */ var src_app_requests_commission_competente_put_request__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! src/app/requests/commission-competente-put.request */ "./src/app/requests/commission-competente-put.request.ts");
+
+
+
+
+
+
+
+
+
+
+
+
+
+let CreateCommissionCompetenteComponent = class CreateCommissionCompetenteComponent {
+    constructor(dialogRef, commissionCompetenteService, data, uploadService, serviceContractantService) {
+        this.dialogRef = dialogRef;
+        this.commissionCompetenteService = commissionCompetenteService;
+        this.data = data;
+        this.uploadService = uploadService;
+        this.serviceContractantService = serviceContractantService;
+        this.membresCommissionCompetente = [];
+        this.displayedColumnsMembres = ['role', 'nom', 'prenom', 'qualite', 'matricule', 'email', 'telephone', 'penta'];
+        this.isAjouterMembre = false;
+        //Type Commissions competentes
+        this.typesCommissionsCompetentes = Object.keys(src_app_enums_type_commission_competente_enum__WEBPACK_IMPORTED_MODULE_7__["TypeCommissionCompetente"]).slice(0);
+        //Roles des membres
+        this.rolesMembresCommissionCompetente = Object.keys(src_app_enums_role_membre_commission_competente_enum__WEBPACK_IMPORTED_MODULE_8__["RoleMembreCommissionCompetente"]).slice(0);
+        this.loadingData = false;
+        this.errorLoadingData = false;
+        this.uploadingFile = false;
+        this.onlyPdfAllowed = false;
+        this.failedUploadFile = false;
+    }
+    ;
+    toggleAjouterMembre() {
+        this.isAjouterMembre = !this.isAjouterMembre;
+    }
+    ngOnInit() {
+        this.isCreate = this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].CREATE;
+        this.isModify = this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].MODIFY;
+        this.isDelete = this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].DELETE;
+        //set the date of creation
+        if (this.isCreate) {
+            this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](new Date());
+            this.membresCommissionCompetente = [];
+        }
+        else {
+            this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](this.data.comm_compt.dateCreationCommissionCompetente);
+            this.membresCommissionCompetente = [...this.data.comm_compt.membresCommissionCompetente];
+        }
+        console.log(this.data.comm_compt);
+        this.commissionCompetenteForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroup"]({
+            'dateCreationCommissionCompetente': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: true }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
+            'typeCommission': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
+            'membresCommissionCompetente': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: 0, disabled: false }, [this.checkNombreMembres.bind(this)]),
+            'numero': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
+            'designation': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
+            'pathJustificatifDecision': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: false }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required])
+        });
+        if (this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].MODIFY ||
+            this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].DELETE) {
+            this.commissionCompetenteForm.patchValue(this.data.comm_compt);
+            this.commissionCompetenteForm.patchValue({ "membresCommissionCompetente": this.membresCommissionCompetente.length });
+        }
+        this.membreCommissionCompetenteForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroup"]({
+            'role': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: false }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
+            'nom': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: false }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
+            'prenom': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
+            'qualite': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
+            'matricule': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
+            'email': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].email]),
+            'telephone': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
+            'penta': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required])
+        });
+    }
+    ;
+    parseValueTypeCommissionCompetente(value) {
+        return src_app_enums_type_commission_competente_enum__WEBPACK_IMPORTED_MODULE_7__["TypeCommissionCompetente"][value].toString();
+    }
+    parseValueRoleMembreCommissionCompetente(value) {
+        return src_app_enums_role_membre_commission_competente_enum__WEBPACK_IMPORTED_MODULE_8__["RoleMembreCommissionCompetente"][value].toString();
+    }
+    checkNombreMembres(control) {
+        const value = control.value;
+        console.log("value", value);
+        if (!value || parseInt(value) == 0) {
+            return { "wrongMinMembres": true };
+        }
+        return null;
+    }
+    onSubmitMembre() {
+        this.membresCommissionCompetente.push(new src_app_models_commission_competente_membre_commission_competente_model__WEBPACK_IMPORTED_MODULE_9__["MembreCommissionCompetente"](this.membreCommissionCompetenteForm.value.role, this.membreCommissionCompetenteForm.value.nom, this.membreCommissionCompetenteForm.value.prenom, this.membreCommissionCompetenteForm.value.qualite, this.membreCommissionCompetenteForm.value.matricule, this.membreCommissionCompetenteForm.value.email, this.membreCommissionCompetenteForm.value.telephone, this.membreCommissionCompetenteForm.value.penta));
+        this.membresCommissionCompetente = [...this.membresCommissionCompetente];
+        //this.tableMembresCommissionCompetente.renderRows();
+        this.commissionCompetenteForm.patchValue({ "membresCommissionCompetente": this.membresCommissionCompetente.length });
+        this.membreCommissionCompetenteForm.reset();
+        this.isAjouterMembre = false;
+    }
+    onSubmit() {
+        this.loadingData = true;
+        this.errorLoadingData = false;
+        console.log("Submitted", this.commissionCompetenteForm);
+        // save the data into the database
+        let result;
+        if (this.isCreate) {
+            this.commissionCompetentePostRequest = new src_app_requests_commission_competente_post_request__WEBPACK_IMPORTED_MODULE_10__["CommissionCompetentePostRequest"](this.commissionCompetenteForm.value.numero, this.commissionCompetenteForm.value.designation, this.commissionCompetenteForm.value.typeCommission, this.membresCommissionCompetente, this.commissionCompetenteForm.value.pathJustificatifDecision);
+            result = this.commissionCompetenteService.postCommissionCompetente(this.commissionCompetentePostRequest);
+        }
+        ;
+        // update the data in the database
+        if (this.isModify) {
+            this.commissionCompetentePutRequest = new src_app_requests_commission_competente_put_request__WEBPACK_IMPORTED_MODULE_12__["CommissionCompetentePutRequest"](this.commissionCompetenteForm.value.numero, this.commissionCompetenteForm.value.designation, this.commissionCompetenteForm.value.typeCommission, this.membresCommissionCompetente.map(function (e) { delete e._id; return e; }), this.commissionCompetenteForm.value.pathJustificatifDecision);
+            result = this.commissionCompetenteService.putCommissionCompetente(this.commissionCompetentePutRequest, this.data.comm_compt._id);
+        }
+        ;
+        // delete le S/C data from the database
+        if (this.isDelete) {
+            result = this.commissionCompetenteService.deleteCommissionCompetente(this.data.comm_compt._id);
+        }
+        ;
+        console.log("Result", result);
+        result
+            .then((value) => {
+            this.loadingData = false;
+            this.dialogRef.close({
+                _id: value._id,
+                numero: value.numero,
+                designation: value.designation,
+                typeCommission: value.typeCommission,
+                dateCreationCommissionCompetente: value.dateCreationCommissionCompetente,
+                modificationsCommissionCompetente: value.modificationsCommissionCompetente,
+                membresCommissionCompetente: value.membresCommissionCompetente,
+                pathJustificatifDecision: value.pathJustificatifDecision
+            });
+        })
+            .catch(() => {
+            this.loadingData = false;
+            return this.errorLoadingData = true;
+        });
+    }
+    onFileChange(event) {
+        this.uploadingFile = true;
+        this.failedUploadFile = false;
+        this.onlyPdfAllowed = false;
+        const files = event.target.files;
+        if (files[0].type != 'application/pdf') {
+            this.onlyPdfAllowed = true;
+            this.uploadingFile = false;
+        }
+        else {
+            const resultUploadFile = this.uploadService.upload(files[0]).toPromise();
+            resultUploadFile.then((val) => {
+                if (val.hasOwnProperty("filename")) {
+                    this.commissionCompetenteForm.patchValue({ 'pathJustificatifDecision': val.filename });
+                }
+                this.uploadingFile = false;
+            }).catch((err => {
+                this.failedUploadFile = true;
+                this.uploadingFile = false;
+            }));
+        }
+    }
+};
+CreateCommissionCompetenteComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: src_app_domaine_business_logic_commissions_competentes_service__WEBPACK_IMPORTED_MODULE_11__["CommissionCompetenteService"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] },
+    { type: src_app_upload_service__WEBPACK_IMPORTED_MODULE_5__["UploadService"] },
+    { type: src_app_domaine_business_logic_services_contractants_service__WEBPACK_IMPORTED_MODULE_6__["ServiceContractantService"] }
+];
+CreateCommissionCompetenteComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-commission-competente',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-commission-competente.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-commission-competente/create-commission-competente.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-commission-competente.component.css */ "./src/app/dialogs/create-commission-competente/create-commission-competente.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateCommissionCompetenteComponent);
 
 
 
@@ -2713,8 +3123,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_enums_mode_passation_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/enums/mode.passation.enum */ "./src/app/enums/mode.passation.enum.ts");
 /* harmony import */ var src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/enums/type.procedure.enum */ "./src/app/enums/type.procedure.enum.ts");
 /* harmony import */ var src_app_enums_forme_marche_enum__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/enums/forme.marche.enum */ "./src/app/enums/forme.marche.enum.ts");
-/* harmony import */ var src_app_enums_caractere_enum__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/enums/caractere.enum */ "./src/app/enums/caractere.enum.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var src_app_enums_caractere_marche_enum__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/enums/caractere.marche.enum */ "./src/app/enums/caractere.marche.enum.ts");
+/* harmony import */ var src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/enums/dialog-action.enum */ "./src/app/enums/dialog-action.enum.ts");
+/* harmony import */ var src_app_requests_elaboration_cdc_post_request__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/requests/elaboration-cdc-post.request */ "./src/app/requests/elaboration-cdc-post.request.ts");
+/* harmony import */ var src_app_requests_elaboration_cdc_put_request__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/requests/elaboration-cdc-put.request */ "./src/app/requests/elaboration-cdc-put.request.ts");
+/* harmony import */ var src_app_domaine_business_logic_elaborations_cdc_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/domaine/business-logic/elaborations-cdc.service */ "./src/app/domaine/business-logic/elaborations-cdc.service.ts");
+/* harmony import */ var src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! src/app/enums/nature.prestation.enum */ "./src/app/enums/nature.prestation.enum.ts");
+/* harmony import */ var src_app_enums_niveau_enum__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! src/app/enums/niveau.enum */ "./src/app/enums/niveau.enum.ts");
+
+
+
+
+
+
 
 
 
@@ -2724,13 +3146,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let CreateElaborationCDCComponent = class CreateElaborationCDCComponent {
-    constructor(dialogRef, serviceContractant) {
+    constructor(dialogRef, elaborationCDCService, data) {
         this.dialogRef = dialogRef;
-        this.serviceContractant = serviceContractant;
+        this.elaborationCDCService = elaborationCDCService;
+        this.data = data;
         this.disabled = false;
         this.checkedIntituleProjetDifferent = false;
         //current date
-        this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormControl"](new Date());
+        this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"](new Date());
         //ModesPassation
         this.modesPassation = Object.keys(src_app_enums_mode_passation_enum__WEBPACK_IMPORTED_MODULE_3__["ModePassation"]).slice(0);
         //TypesProcedure
@@ -2738,8 +3161,9 @@ let CreateElaborationCDCComponent = class CreateElaborationCDCComponent {
         //FormesMarches
         this.formesMarche = Object.keys(src_app_enums_forme_marche_enum__WEBPACK_IMPORTED_MODULE_5__["FormeMarche"]).slice(0);
         //caracteresMarches
-        this.caracteresMarche = Object.keys(src_app_enums_caractere_enum__WEBPACK_IMPORTED_MODULE_6__["Caractere"]).slice(0);
-        console.log(serviceContractant);
+        this.caracteresMarche = Object.keys(src_app_enums_caractere_marche_enum__WEBPACK_IMPORTED_MODULE_7__["CaractereMarche"]).slice(0);
+        this.loadingData = false;
+        this.errorLoadingData = false;
     }
     parseValueModePassation(value) {
         return src_app_enums_mode_passation_enum__WEBPACK_IMPORTED_MODULE_3__["ModePassation"][value].toString();
@@ -2751,7 +3175,7 @@ let CreateElaborationCDCComponent = class CreateElaborationCDCComponent {
         return src_app_enums_forme_marche_enum__WEBPACK_IMPORTED_MODULE_5__["FormeMarche"][value].toString();
     }
     parseValueCaractereMarche(value) {
-        return src_app_enums_caractere_enum__WEBPACK_IMPORTED_MODULE_6__["Caractere"][value].toString();
+        return src_app_enums_caractere_marche_enum__WEBPACK_IMPORTED_MODULE_7__["CaractereMarche"][value].toString();
     }
     createAdditif() {
         this.dialogRef.close({
@@ -2764,11 +3188,130 @@ let CreateElaborationCDCComponent = class CreateElaborationCDCComponent {
         });
     }
     ngOnInit() {
+        this.isCreate = this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_8__["DialogAction"].CREATE;
+        this.isModify = this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_8__["DialogAction"].MODIFY;
+        this.isDelete = this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_8__["DialogAction"].DELETE;
+        //set the date of creation
+        if (this.isCreate) {
+            this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"](new Date());
+        }
+        else {
+            this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"](this.data.elbCDC.dateCreationElaborationCDC);
+        }
+        this.elaborationCDCForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormGroup"]({
+            'dateCreationElaborationCDC': new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"]({ value: null, disabled: true }, [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required]),
+            'typeProcedure': new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required, this.isAuthorizedTypeProcedure.bind(this)]),
+            'modePassation': new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required]),
+            'formeMarche': new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required]),
+            'caractereMarche': new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required])
+        });
+        if (this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_8__["DialogAction"].MODIFY ||
+            this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_8__["DialogAction"].DELETE) {
+            this.elaborationCDCForm.patchValue(this.data.elbCDC);
+        }
+    }
+    isAuthorizedTypeProcedure(control) {
+        const value = control.value;
+        if (!value) {
+            return null;
+        }
+        if (src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_4__["TypeProcedure"][value] !== this.getAuthorizesTypeProcedure()) {
+            return { "wrongTypeProcedure": true };
+        }
+        return null;
+    }
+    getAuthorizesTypeProcedure() {
+        switch (src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_12__["NaturePrestation"][this.data.sousPrj.naturePrestation]) {
+            case src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_12__["NaturePrestation"].TRAVAUX:
+            case src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_12__["NaturePrestation"].FOURNITURES:
+                switch (src_app_enums_niveau_enum__WEBPACK_IMPORTED_MODULE_13__["Niveau"][this.data.prj.serviceContractant.niveau]) {
+                    case src_app_enums_niveau_enum__WEBPACK_IMPORTED_MODULE_13__["Niveau"].CENTRAL:
+                        if (this.data.sousPrj.estimationAdministrative >= 20000000)
+                            return src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_4__["TypeProcedure"].PF;
+                        else if (this.data.sousPrj.estimationAdministrative <= 2000000)
+                            return src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_4__["TypeProcedure"].PABC;
+                        else
+                            return src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_4__["TypeProcedure"].PAC;
+                        break;
+                    case src_app_enums_niveau_enum__WEBPACK_IMPORTED_MODULE_13__["Niveau"].REGIONAL:
+                    case src_app_enums_niveau_enum__WEBPACK_IMPORTED_MODULE_13__["Niveau"].UNITE:
+                        if (this.data.sousPrj.estimationAdministrative >= 12000000)
+                            return src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_4__["TypeProcedure"].PF;
+                        else if (this.data.sousPrj.estimationAdministrative <= 1000000)
+                            return src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_4__["TypeProcedure"].PABC;
+                        else
+                            return src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_4__["TypeProcedure"].PAC;
+                        break;
+                }
+                break;
+            case src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_12__["NaturePrestation"].ETUDES:
+            case src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_12__["NaturePrestation"].SERVICES:
+                switch (src_app_enums_niveau_enum__WEBPACK_IMPORTED_MODULE_13__["Niveau"][this.data.prj.serviceContractant.niveau]) {
+                    case src_app_enums_niveau_enum__WEBPACK_IMPORTED_MODULE_13__["Niveau"].CENTRAL:
+                        if (this.data.sousPrj.estimationAdministrative >= 12000000)
+                            return src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_4__["TypeProcedure"].PF;
+                        else if (this.data.sousPrj.estimationAdministrative <= 1000000)
+                            return src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_4__["TypeProcedure"].PABC;
+                        else
+                            return src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_4__["TypeProcedure"].PAC;
+                        break;
+                    case src_app_enums_niveau_enum__WEBPACK_IMPORTED_MODULE_13__["Niveau"].REGIONAL:
+                    case src_app_enums_niveau_enum__WEBPACK_IMPORTED_MODULE_13__["Niveau"].UNITE:
+                        if (this.data.sousPrj.estimationAdministrative >= 6000000)
+                            return src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_4__["TypeProcedure"].PF;
+                        else if (this.data.sousPrj.estimationAdministrative <= 500000)
+                            return src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_4__["TypeProcedure"].PABC;
+                        else
+                            return src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_4__["TypeProcedure"].PAC;
+                        break;
+                }
+                break;
+        }
+    }
+    onSubmit() {
+        this.loadingData = true;
+        this.errorLoadingData = false;
+        console.log("Submitted", this.elaborationCDCForm);
+        // save the data into the database
+        let result;
+        if (this.isCreate) {
+            this.elaborationCDCPostRequest = new src_app_requests_elaboration_cdc_post_request__WEBPACK_IMPORTED_MODULE_9__["ElaborationCDCPostRequest"](this.elaborationCDCForm.value.typeProcedure, this.elaborationCDCForm.value.modePassation, this.elaborationCDCForm.value.formeMarche, this.elaborationCDCForm.value.caractereMarche);
+            result = this.elaborationCDCService.postElaborationCDC(this.elaborationCDCPostRequest, this.data.sousPrj._id);
+        }
+        ;
+        // update the data in the database
+        if (this.isModify) {
+            this.elaborationCDCPutRequest = new src_app_requests_elaboration_cdc_put_request__WEBPACK_IMPORTED_MODULE_10__["ElaborationCDCPutRequest"](this.elaborationCDCForm.value.typeProcedure, this.elaborationCDCForm.value.modePassation, this.elaborationCDCForm.value.formeMarche, this.elaborationCDCForm.value.caractereMarche);
+            result = this.elaborationCDCService.putElaborationCDC(this.elaborationCDCPutRequest, this.data.elbCDC._id);
+        }
+        ;
+        // delete le S/C data from the database
+        if (this.isDelete) {
+            result = this.elaborationCDCService.deleteElaborationCDC(this.data.sousPrj._id, this.data.elbCDC._id);
+        }
+        ;
+        result
+            .then((value) => {
+            this.loadingData = false;
+            this.dialogRef.close({
+                _id: value._id,
+                dateCreationElaborationCDC: value.dateCreationElaborationCDC,
+                typeProcedure: value.typeProcedure,
+                modePassation: value.modePassation,
+                formeMarche: value.formeMarche,
+                caractereMarche: value.caractereMarche
+            });
+        })
+            .catch(() => {
+            this.loadingData = false;
+            return this.errorLoadingData = true;
+        });
     }
 };
 CreateElaborationCDCComponent.ctorParameters = () => [
     { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
-    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+    { type: src_app_domaine_business_logic_elaborations_cdc_service__WEBPACK_IMPORTED_MODULE_11__["ElaborationCDCService"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
 ];
 CreateElaborationCDCComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2776,7 +3319,7 @@ CreateElaborationCDCComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-elaboration-cdc.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-elaboration-cdc/create-elaboration-cdc.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-elaboration-cdc.component.css */ "./src/app/dialogs/create-elaboration-cdc/create-elaboration-cdc.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
 ], CreateElaborationCDCComponent);
 
 
@@ -3056,6 +3599,217 @@ CreateMiseEnDemeureComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"](
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
 ], CreateMiseEnDemeureComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-modification-commission-competente/create-modification-commission-competente.component.css":
+/*!***************************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-modification-commission-competente/create-modification-commission-competente.component.css ***!
+  \***************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".example-form {\r\n    min-width: 150px;\r\n    max-width: 500px;\r\n    width: 100%;\r\n  }\r\n  \r\n  .example-full-width {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlhbG9ncy9jcmVhdGUtbW9kaWZpY2F0aW9uLWNvbW1pc3Npb24tY29tcGV0ZW50ZS9jcmVhdGUtbW9kaWZpY2F0aW9uLWNvbW1pc3Npb24tY29tcGV0ZW50ZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixXQUFXO0VBQ2I7O0VBRUE7SUFDRSxXQUFXO0VBQ2IiLCJmaWxlIjoic3JjL2FwcC9kaWFsb2dzL2NyZWF0ZS1tb2RpZmljYXRpb24tY29tbWlzc2lvbi1jb21wZXRlbnRlL2NyZWF0ZS1tb2RpZmljYXRpb24tY29tbWlzc2lvbi1jb21wZXRlbnRlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhhbXBsZS1mb3JtIHtcclxuICAgIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG4gIFxyXG4gIC5leGFtcGxlLWZ1bGwtd2lkdGgge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/dialogs/create-modification-commission-competente/create-modification-commission-competente.component.ts":
+/*!**************************************************************************************************************************!*\
+  !*** ./src/app/dialogs/create-modification-commission-competente/create-modification-commission-competente.component.ts ***!
+  \**************************************************************************************************************************/
+/*! exports provided: CreateModificationCommissionCompetenteComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateModificationCommissionCompetenteComponent", function() { return CreateModificationCommissionCompetenteComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+/* harmony import */ var src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/enums/nature.prestation.enum */ "./src/app/enums/nature.prestation.enum.ts");
+/* harmony import */ var src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/enums/dialog-action.enum */ "./src/app/enums/dialog-action.enum.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var src_app_requests_modification_commission_competente_post_request__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/requests/modification-commission-competente-post.request */ "./src/app/requests/modification-commission-competente-post.request.ts");
+/* harmony import */ var src_app_requests_modification_commission_competente_put_request__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/requests/modification-commission-competente-put.request */ "./src/app/requests/modification-commission-competente-put.request.ts");
+/* harmony import */ var src_app_domaine_business_logic_modification_commissions_competentes_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/domaine/business-logic/modification-commissions-competentes.service */ "./src/app/domaine/business-logic/modification-commissions-competentes.service.ts");
+/* harmony import */ var src_app_models_commission_competente_membre_commission_competente_model__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/models/commission-competente/membre-commission-competente.model */ "./src/app/models/commission-competente/membre-commission-competente.model.ts");
+/* harmony import */ var src_app_enums_role_membre_commission_competente_enum__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/enums/role-membre-commission-competente.enum */ "./src/app/enums/role-membre-commission-competente.enum.ts");
+/* harmony import */ var src_app_upload_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/upload.service */ "./src/app/upload.service.ts");
+
+
+
+
+
+
+
+
+
+
+
+
+let CreateModificationCommissionCompetenteComponent = class CreateModificationCommissionCompetenteComponent {
+    constructor(dialogRef, modificationCommissionCompetenteService, uploadService, data) {
+        this.dialogRef = dialogRef;
+        this.modificationCommissionCompetenteService = modificationCommissionCompetenteService;
+        this.uploadService = uploadService;
+        this.data = data;
+        //NaturePrestation
+        this.naturePrestation = Object.keys(src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_3__["NaturePrestation"]).slice(0);
+        //Roles des membres
+        this.rolesMembresCommissionCompetente = Object.keys(src_app_enums_role_membre_commission_competente_enum__WEBPACK_IMPORTED_MODULE_10__["RoleMembreCommissionCompetente"]).slice(0);
+        this.membresCommissionCompetente = [];
+        this.displayedColumnsMembres = ['role', 'nom', 'prenom', 'qualite', 'matricule', 'email', 'telephone', 'penta'];
+        this.isAjouterMembre = false;
+        this.loadingData = false;
+        this.errorLoadingData = false;
+        this.uploadingFile = false;
+        this.onlyPdfAllowed = false;
+        this.failedUploadFile = false;
+    }
+    parseValueNaturePrestation(value) {
+        return src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_3__["NaturePrestation"][value].toString();
+    }
+    parseValueRoleMembreCommissionCompetente(value) {
+        return src_app_enums_role_membre_commission_competente_enum__WEBPACK_IMPORTED_MODULE_10__["RoleMembreCommissionCompetente"][value].toString();
+    }
+    toggleAjouterMembre() {
+        this.isAjouterMembre = !this.isAjouterMembre;
+    }
+    ngOnInit() {
+        this.isCreate = this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].CREATE;
+        this.isModify = this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].MODIFY;
+        this.isDelete = this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].DELETE;
+        //set the date of creation
+        if (this.isCreate) {
+            this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](new Date());
+            this.membresCommissionCompetente = [];
+        }
+        else {
+            this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](this.data.modif_comm_compt.dateCreationModificationCommissionCompetente);
+            this.membresCommissionCompetente = [...this.data.modif_comm_compt.membresCommissionCompetente];
+        }
+        this.modificationCommissionCompetenteForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
+            'dateCreationModificationCommissionCompetente': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: null, disabled: true }, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            'numModification': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            'numDecision': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            'pathJustificatifDecision': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            'membresCommissionCompetente': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: 0, disabled: false }, [this.checkNombreMembres.bind(this)])
+        });
+        if (this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].MODIFY ||
+            this.data.action === src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].DELETE) {
+            this.modificationCommissionCompetenteForm.patchValue(this.data.modif_comm_compt);
+            this.modificationCommissionCompetenteForm.patchValue({ "membresCommissionCompetente": this.membresCommissionCompetente.length });
+        }
+        this.membreCommissionCompetenteForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
+            'role': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: null, disabled: false }, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            'nom': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: null, disabled: false }, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            'prenom': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            'qualite': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            'matricule': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            'email': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].email]),
+            'telephone': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            'penta': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required])
+        });
+    }
+    checkNombreMembres(control) {
+        const value = control.value;
+        console.log("value", value);
+        if (!value || parseInt(value) == 0) {
+            return { "wrongMinMembres": true };
+        }
+        return null;
+    }
+    onSubmitMembre() {
+        this.membresCommissionCompetente.push(new src_app_models_commission_competente_membre_commission_competente_model__WEBPACK_IMPORTED_MODULE_9__["MembreCommissionCompetente"](this.membreCommissionCompetenteForm.value.role, this.membreCommissionCompetenteForm.value.nom, this.membreCommissionCompetenteForm.value.prenom, this.membreCommissionCompetenteForm.value.qualite, this.membreCommissionCompetenteForm.value.matricule, this.membreCommissionCompetenteForm.value.email, this.membreCommissionCompetenteForm.value.telephone, this.membreCommissionCompetenteForm.value.penta));
+        this.membresCommissionCompetente = [...this.membresCommissionCompetente];
+        //this.tableMembresCommissionCompetente.renderRows();
+        this.modificationCommissionCompetenteForm.patchValue({ "membresCommissionCompetente": this.membresCommissionCompetente.length });
+        this.membreCommissionCompetenteForm.reset();
+        this.isAjouterMembre = false;
+    }
+    onSubmit() {
+        this.loadingData = true;
+        this.errorLoadingData = false;
+        console.log("Submitted", this.modificationCommissionCompetenteForm);
+        // save the data into the database
+        let result;
+        if (this.isCreate) {
+            this.modificationCommissionCompetentePostRequest = new src_app_requests_modification_commission_competente_post_request__WEBPACK_IMPORTED_MODULE_6__["ModificationCommissionCompetentePostRequest"](this.modificationCommissionCompetenteForm.value.numModification, this.modificationCommissionCompetenteForm.value.numDecision, this.membresCommissionCompetente, this.modificationCommissionCompetenteForm.value.pathJustificatifDecision);
+            result = this.modificationCommissionCompetenteService
+                .postModificationCommissionCompetente(this.modificationCommissionCompetentePostRequest, this.data.comm_compt._id);
+        }
+        ;
+        // update the data in the database
+        if (this.isModify) {
+            this.modificationCommissionCompetentePutRequest = new src_app_requests_modification_commission_competente_put_request__WEBPACK_IMPORTED_MODULE_7__["ModificationCommissionCompetentePutRequest"](this.modificationCommissionCompetenteForm.value.numModification, this.modificationCommissionCompetenteForm.value.numDecision, this.membresCommissionCompetente.map(function (e) { delete e._id; return e; }), this.modificationCommissionCompetenteForm.value.pathJustificatifDecision);
+            result = this.modificationCommissionCompetenteService
+                .putModificationCommissionCompetente(this.modificationCommissionCompetentePutRequest, this.data.modif_comm_compt._id);
+        }
+        ;
+        // delete le S/C data from the database
+        if (this.isDelete) {
+            result = this.modificationCommissionCompetenteService
+                .deleteModificationCommissionCompetente(this.data.comm_compt._id, this.data.modif_comm_compt._id);
+        }
+        ;
+        result
+            .then((value) => {
+            this.loadingData = false;
+            this.dialogRef.close({
+                _id: value._id,
+                numModification: value.numModification,
+                numDecision: value.numDecision,
+                dateCreationModificationCommissionCompetente: value.dateCreationModificationCommissionCompetente,
+                membresCommissionCompetente: value.membresCommissionCompetente,
+                pathJustificatifDecision: value.pathJustificatifDecision
+            });
+        })
+            .catch(() => {
+            this.loadingData = false;
+            return this.errorLoadingData = true;
+        });
+    }
+    onFileChange(event) {
+        this.uploadingFile = true;
+        this.failedUploadFile = false;
+        this.onlyPdfAllowed = false;
+        const files = event.target.files;
+        if (files[0].type != 'application/pdf') {
+            this.onlyPdfAllowed = true;
+            this.uploadingFile = false;
+        }
+        else {
+            const resultUploadFile = this.uploadService.upload(files[0]).toPromise();
+            resultUploadFile.then((val) => {
+                if (val.hasOwnProperty("filename")) {
+                    this.modificationCommissionCompetenteForm.patchValue({ 'pathJustificatifDecision': val.filename });
+                }
+                this.uploadingFile = false;
+            }).catch((err => {
+                this.failedUploadFile = true;
+                this.uploadingFile = false;
+            }));
+        }
+    }
+};
+CreateModificationCommissionCompetenteComponent.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: src_app_domaine_business_logic_modification_commissions_competentes_service__WEBPACK_IMPORTED_MODULE_8__["ModificationCommissionCompetenteService"] },
+    { type: src_app_upload_service__WEBPACK_IMPORTED_MODULE_11__["UploadService"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+CreateModificationCommissionCompetenteComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-modification-commission-competente',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-modification-commission-competente.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dialogs/create-modification-commission-competente/create-modification-commission-competente.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-modification-commission-competente.component.css */ "./src/app/dialogs/create-modification-commission-competente/create-modification-commission-competente.component.css")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](3, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], CreateModificationCommissionCompetenteComponent);
 
 
 
@@ -3685,7 +4439,7 @@ let CreateProjetComponent = class CreateProjetComponent {
             'yearPlanAction': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
             'pourLaStructureRattachement': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
             'sourcesFinancement': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
-            'siAutreSourceFinancement': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
+            'siAutreSourceFinancement': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: '', disabled: this.isDelete }, [this.isRequiredAutreSourceFinancement.bind(this)]),
             'budget': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
             'isHorsPlan': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: false, disabled: this.isDelete }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
             'pathJustificatifProjet': new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: null, disabled: false }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required])
@@ -3739,6 +4493,31 @@ let CreateProjetComponent = class CreateProjetComponent {
             return true;
         }
         return false;
+    }
+    isRequiredAutreSourceFinancement(control) {
+        //console.log("control.parent", control.parent);
+        console.log("control.value", control.value);
+        console.log("control", control);
+        if (!control.parent)
+            return null;
+        const parentControl = control.parent.get('sourcesFinancement');
+        if (!parentControl)
+            return null;
+        //https://stackoverflow.com/questions/31788681/angular2-validator-which-relies-on-multiple-form-fields
+        parentControl.valueChanges.subscribe(() => {
+            control.updateValueAndValidity();
+        });
+        if (!parentControl.value)
+            return null;
+        if (parentControl.value.indexOf("AUTRE") < 0)
+            return null;
+        const value = control.value;
+        if (!value || value.length == 0) {
+            return { "siAutreSourceFinancement": { required: true } };
+        }
+        else {
+            return null;
+        }
     }
     codeProjetExists(control) {
         const codeProjet = control.value;
@@ -5298,6 +6077,188 @@ DocumentationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/domaine/business-logic/commissions-competentes.service.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/domaine/business-logic/commissions-competentes.service.ts ***!
+  \***************************************************************************/
+/*! exports provided: CommissionCompetenteService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommissionCompetenteService", function() { return CommissionCompetenteService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _data_access_commission_competente_access__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data-access/commission-competente.access */ "./src/app/domaine/data-access/commission-competente.access.ts");
+
+
+
+let CommissionCompetenteService = class CommissionCompetenteService {
+    constructor(commissionCompetenteAccess) {
+        this.commissionCompetenteAccess = commissionCompetenteAccess;
+    }
+    getAllCommissionsCompetentes() {
+        return this.commissionCompetenteAccess.getAllCommissionsCompetentes();
+    }
+    postCommissionCompetente(commissionCompetente) {
+        return this.commissionCompetenteAccess.postCommissionCompetente(commissionCompetente);
+    }
+    putCommissionCompetente(commissionCompetente, id) {
+        return this.commissionCompetenteAccess.putCommissionCompetente(commissionCompetente, id);
+    }
+    deleteCommissionCompetente(id) {
+        return this.commissionCompetenteAccess.deleteCommissionCompetente(id);
+    }
+};
+CommissionCompetenteService.ctorParameters = () => [
+    { type: _data_access_commission_competente_access__WEBPACK_IMPORTED_MODULE_2__["CommissionCompetenteAccess"] }
+];
+CommissionCompetenteService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+], CommissionCompetenteService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/domaine/business-logic/elaborations-cdc.service.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/domaine/business-logic/elaborations-cdc.service.ts ***!
+  \********************************************************************/
+/*! exports provided: ElaborationCDCService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ElaborationCDCService", function() { return ElaborationCDCService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _data_access_elaboration_cdc_access__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data-access/elaboration-cdc.access */ "./src/app/domaine/data-access/elaboration-cdc.access.ts");
+
+
+
+let ElaborationCDCService = class ElaborationCDCService {
+    constructor(elaborationCDCAccess) {
+        this.elaborationCDCAccess = elaborationCDCAccess;
+    }
+    getElaborationCDC(idElaborationCDC) {
+        return this.elaborationCDCAccess.getElaborationCDC(idElaborationCDC);
+    }
+    getAllElaborationsCDC() {
+        return this.elaborationCDCAccess.getAllElaborationsCDC();
+    }
+    postElaborationCDC(elaborationCDC, idSousProjet) {
+        return this.elaborationCDCAccess.postElaborationCDC(elaborationCDC, idSousProjet);
+    }
+    putElaborationCDC(elaborationCDC, idElaborationCDC) {
+        return this.elaborationCDCAccess.putElaborationCDC(elaborationCDC, idElaborationCDC);
+    }
+    deleteElaborationCDC(idSousProjet, idElaborationCDC) {
+        return this.elaborationCDCAccess.deleteElaborationCDC(idSousProjet, idElaborationCDC);
+    }
+};
+ElaborationCDCService.ctorParameters = () => [
+    { type: _data_access_elaboration_cdc_access__WEBPACK_IMPORTED_MODULE_2__["ElaborationCDCAccess"] }
+];
+ElaborationCDCService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+], ElaborationCDCService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/domaine/business-logic/modification-commissions-competentes.service.ts":
+/*!****************************************************************************************!*\
+  !*** ./src/app/domaine/business-logic/modification-commissions-competentes.service.ts ***!
+  \****************************************************************************************/
+/*! exports provided: ModificationCommissionCompetenteService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModificationCommissionCompetenteService", function() { return ModificationCommissionCompetenteService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _data_access_modification_commission_competente_access__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data-access/modification-commission-competente.access */ "./src/app/domaine/data-access/modification-commission-competente.access.ts");
+
+
+
+let ModificationCommissionCompetenteService = class ModificationCommissionCompetenteService {
+    constructor(modificationCommissionCompetenteAccess) {
+        this.modificationCommissionCompetenteAccess = modificationCommissionCompetenteAccess;
+    }
+    getAllModificationsCommissionsCompetentes() {
+        return this.modificationCommissionCompetenteAccess.getAllModificationsCommissionsCompetentes();
+    }
+    postModificationCommissionCompetente(modificationCommissionCompetente, idCommissionCompetente) {
+        return this.modificationCommissionCompetenteAccess.postModificationCommissionCompetente(modificationCommissionCompetente, idCommissionCompetente);
+    }
+    putModificationCommissionCompetente(modificationCommissionCompetente, idModificationCommissionCompetente) {
+        return this.modificationCommissionCompetenteAccess.putModificationCommissionCompetente(modificationCommissionCompetente, idModificationCommissionCompetente);
+    }
+    deleteModificationCommissionCompetente(idCommissionCompetente, idModificationCommissionCompetente) {
+        return this.modificationCommissionCompetenteAccess.deleteModificationCommissionCompetente(idCommissionCompetente, idModificationCommissionCompetente);
+    }
+};
+ModificationCommissionCompetenteService.ctorParameters = () => [
+    { type: _data_access_modification_commission_competente_access__WEBPACK_IMPORTED_MODULE_2__["ModificationCommissionCompetenteAccess"] }
+];
+ModificationCommissionCompetenteService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+], ModificationCommissionCompetenteService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/domaine/business-logic/projets-cdc.service.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/domaine/business-logic/projets-cdc.service.ts ***!
+  \***************************************************************/
+/*! exports provided: ProjetCDCService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjetCDCService", function() { return ProjetCDCService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _data_access_projet_cdc_access__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data-access/projet-cdc.access */ "./src/app/domaine/data-access/projet-cdc.access.ts");
+
+
+
+let ProjetCDCService = class ProjetCDCService {
+    constructor(projetCDCAccess) {
+        this.projetCDCAccess = projetCDCAccess;
+    }
+    getProjetCDC(idProjetCDC) {
+        return this.projetCDCAccess.getProjetCDC(idProjetCDC);
+    }
+    getAllProjetsCDC() {
+        return this.projetCDCAccess.getAllProjetsCDC();
+    }
+    postProjetCDC(projetCDC, idElaborationCDC) {
+        return this.projetCDCAccess.postProjetCDC(projetCDC, idElaborationCDC);
+    }
+    putProjetCDC(projetCDC, idProjetCDC) {
+        return this.projetCDCAccess.putProjetCDC(projetCDC, idProjetCDC);
+    }
+    deleteProjetCDC(idElaborationCDC, idProjetCDC) {
+        return this.projetCDCAccess.deleteProjetCDC(idElaborationCDC, idProjetCDC);
+    }
+};
+ProjetCDCService.ctorParameters = () => [
+    { type: _data_access_projet_cdc_access__WEBPACK_IMPORTED_MODULE_2__["ProjetCDCAccess"] }
+];
+ProjetCDCService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+], ProjetCDCService);
+
+
+
+/***/ }),
+
 /***/ "./src/app/domaine/business-logic/projets.service.ts":
 /*!***********************************************************!*\
   !*** ./src/app/domaine/business-logic/projets.service.ts ***!
@@ -5320,6 +6281,9 @@ let ProjetService = class ProjetService {
     }
     getAllProjets() {
         return this.projetAccess.getAllProjets();
+    }
+    getProjet(idProjet) {
+        return this.projetAccess.getProjet(idProjet);
     }
     getProjetByCode(codeProjet) {
         return this.projetAccess.getProjetByCode(codeProjet);
@@ -5415,6 +6379,9 @@ let SousProjetService = class SousProjetService {
     constructor(sousProjetAccess) {
         this.sousProjetAccess = sousProjetAccess;
     }
+    getSousProjet(idSousProjet) {
+        return this.sousProjetAccess.getSousProjet(idSousProjet);
+    }
     getAllSousProjets() {
         return this.sousProjetAccess.getAllSousProjets();
     }
@@ -5492,6 +6459,368 @@ UtilisateurService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/domaine/data-access/commission-competente.access.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/domaine/data-access/commission-competente.access.ts ***!
+  \*********************************************************************/
+/*! exports provided: CommissionCompetenteAccess */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommissionCompetenteAccess", function() { return CommissionCompetenteAccess; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var src_app_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/config */ "./src/app/config.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+
+
+let CommissionCompetenteAccess = class CommissionCompetenteAccess {
+    constructor(http) {
+        this.http = http;
+    }
+    getAllCommissionsCompetentes() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                // envoyer une requete API
+                this.http.get(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/commissions-competentes`)
+                    .subscribe(commissionsCompetentes => { resolve(commissionsCompetentes); }, error => reject(error));
+            });
+        });
+    }
+    ;
+    postCommissionCompetente(commissionCompetente) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const httpOptions = {
+                headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                //'Content-Type':  'application/x-www-form-urlencoded',
+                //'Authorization': `Bearer ${this.auth.getIdToken()}`,
+                })
+            };
+            return new Promise((resolve, reject) => {
+                //send the post query
+                this.http.post(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/commissions-competentes`, commissionCompetente, httpOptions)
+                    .subscribe(commissionCompetente => { resolve(commissionCompetente); }, error => reject(error));
+            });
+        });
+    }
+    ;
+    putCommissionCompetente(commissionCompetente, id) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const httpOptions = {
+                headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                //'Content-Type':  'application/x-www-form-urlencoded',
+                //'Authorization': `Bearer ${this.auth.getIdToken()}`,
+                })
+            };
+            return new Promise((resolve, reject) => {
+                //send the post query
+                this.http.put(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/commissions-competentes/${id}`, commissionCompetente, httpOptions)
+                    .subscribe(commissionCompetente => { resolve(commissionCompetente); }, error => reject(error));
+            });
+        });
+    }
+    ;
+    deleteCommissionCompetente(id) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                //send the post query
+                this.http.delete(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/commissions-competentes/${id}`)
+                    .subscribe(commissionCompetente => { resolve(commissionCompetente); }, error => reject(error));
+            });
+        });
+    }
+};
+CommissionCompetenteAccess.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+CommissionCompetenteAccess = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Injectable"])()
+], CommissionCompetenteAccess);
+
+;
+
+
+/***/ }),
+
+/***/ "./src/app/domaine/data-access/elaboration-cdc.access.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/domaine/data-access/elaboration-cdc.access.ts ***!
+  \***************************************************************/
+/*! exports provided: ElaborationCDCAccess */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ElaborationCDCAccess", function() { return ElaborationCDCAccess; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var src_app_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/config */ "./src/app/config.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+
+
+let ElaborationCDCAccess = class ElaborationCDCAccess {
+    constructor(http) {
+        this.http = http;
+    }
+    getElaborationCDC(idElaborationCDC) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                // envoyer une requete API
+                this.http.get(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/elaborations-cdc/${idElaborationCDC}`)
+                    .subscribe(elaborationCDC => { resolve(elaborationCDC); }, error => reject(error));
+            });
+        });
+    }
+    getAllElaborationsCDC() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                // envoyer une requete API
+                this.http.get(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/elaborations-cdc`)
+                    .subscribe(elaborationsCDC => { resolve(elaborationsCDC); }, error => reject(error));
+            });
+        });
+    }
+    ;
+    postElaborationCDC(elaborationCDC, idSousProjet) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const httpOptions = {
+                headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                //'Content-Type':  'application/x-www-form-urlencoded',
+                //'Authorization': `Bearer ${this.auth.getIdToken()}`,
+                })
+            };
+            return new Promise((resolve, reject) => {
+                //send the post query
+                this.http.post(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/elaborations-cdc/${idSousProjet}`, elaborationCDC, httpOptions)
+                    .subscribe(elaborationCDC => { resolve(elaborationCDC); }, error => reject(error));
+            });
+        });
+    }
+    ;
+    putElaborationCDC(elaborationCDC, idSousProjet) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const httpOptions = {
+                headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                //'Content-Type':  'application/x-www-form-urlencoded',
+                //'Authorization': `Bearer ${this.auth.getIdToken()}`,
+                })
+            };
+            return new Promise((resolve, reject) => {
+                //send the post query
+                this.http.put(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/elaborations-cdc/${idSousProjet}`, elaborationCDC, httpOptions)
+                    .subscribe(elaborationCDC => { resolve(elaborationCDC); }, error => reject(error));
+            });
+        });
+    }
+    ;
+    deleteElaborationCDC(idSousProjet, idElaborationCDC) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                //send the post query
+                this.http.delete(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/elaborations-cdc/${idSousProjet}/${idElaborationCDC}`)
+                    .subscribe(elaborationCDC => { resolve(elaborationCDC); }, error => reject(error));
+            });
+        });
+    }
+};
+ElaborationCDCAccess.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+ElaborationCDCAccess = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Injectable"])()
+], ElaborationCDCAccess);
+
+;
+
+
+/***/ }),
+
+/***/ "./src/app/domaine/data-access/modification-commission-competente.access.ts":
+/*!**********************************************************************************!*\
+  !*** ./src/app/domaine/data-access/modification-commission-competente.access.ts ***!
+  \**********************************************************************************/
+/*! exports provided: ModificationCommissionCompetenteAccess */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModificationCommissionCompetenteAccess", function() { return ModificationCommissionCompetenteAccess; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var src_app_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/config */ "./src/app/config.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+
+
+let ModificationCommissionCompetenteAccess = class ModificationCommissionCompetenteAccess {
+    constructor(http) {
+        this.http = http;
+    }
+    getAllModificationsCommissionsCompetentes() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                // envoyer une requete API
+                this.http.get(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/modifications-commissions-competentes`)
+                    .subscribe(modificationsCommissionsCompetentes => { resolve(modificationsCommissionsCompetentes); }, error => reject(error));
+            });
+        });
+    }
+    ;
+    postModificationCommissionCompetente(modificationCommissionCompetente, idCommissionCompetente) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const httpOptions = {
+                headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                //'Content-Type':  'application/x-www-form-urlencoded',
+                //'Authorization': `Bearer ${this.auth.getIdToken()}`,
+                })
+            };
+            return new Promise((resolve, reject) => {
+                //send the post query
+                this.http.post(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/modifications-commissions-competentes/${idCommissionCompetente}`, modificationCommissionCompetente, httpOptions)
+                    .subscribe(commissionCompetente => { resolve(commissionCompetente); }, error => reject(error));
+            });
+        });
+    }
+    ;
+    putModificationCommissionCompetente(modificationCommissionCompetente, idModificationCommissionCompetente) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const httpOptions = {
+                headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                //'Content-Type':  'application/x-www-form-urlencoded',
+                //'Authorization': `Bearer ${this.auth.getIdToken()}`,
+                })
+            };
+            return new Promise((resolve, reject) => {
+                //send the post query
+                this.http.put(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/modifications-commissions-competentes/${idModificationCommissionCompetente}`, modificationCommissionCompetente, httpOptions)
+                    .subscribe(commissionCompetente => { resolve(commissionCompetente); }, error => reject(error));
+            });
+        });
+    }
+    ;
+    deleteModificationCommissionCompetente(idCommissionCompetente, idModificationCommissionCompetente) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                //send the post query
+                this.http.delete(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/modifications-commissions-competentes/${idCommissionCompetente}/${idModificationCommissionCompetente}`)
+                    .subscribe(modificationCommissionCompetente => { resolve(modificationCommissionCompetente); }, error => reject(error));
+            });
+        });
+    }
+};
+ModificationCommissionCompetenteAccess.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+ModificationCommissionCompetenteAccess = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Injectable"])()
+], ModificationCommissionCompetenteAccess);
+
+;
+
+
+/***/ }),
+
+/***/ "./src/app/domaine/data-access/projet-cdc.access.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/domaine/data-access/projet-cdc.access.ts ***!
+  \**********************************************************/
+/*! exports provided: ProjetCDCAccess */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjetCDCAccess", function() { return ProjetCDCAccess; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var src_app_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/config */ "./src/app/config.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+
+
+let ProjetCDCAccess = class ProjetCDCAccess {
+    constructor(http) {
+        this.http = http;
+    }
+    getProjetCDC(idProjetCDC) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                // envoyer une requete API
+                this.http.get(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/projets-cdc/${idProjetCDC}`)
+                    .subscribe(projetCDC => { resolve(projetCDC); }, error => reject(error));
+            });
+        });
+    }
+    getAllProjetsCDC() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                // envoyer une requete API
+                this.http.get(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/projets-cdc`)
+                    .subscribe(projetsCDC => { resolve(projetsCDC); }, error => reject(error));
+            });
+        });
+    }
+    ;
+    postProjetCDC(projetCDC, idElaborationCDC) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const httpOptions = {
+                headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                //'Content-Type':  'application/x-www-form-urlencoded',
+                //'Authorization': `Bearer ${this.auth.getIdToken()}`,
+                })
+            };
+            return new Promise((resolve, reject) => {
+                //send the post query
+                this.http.post(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/projets-cdc/${idElaborationCDC}`, projetCDC, httpOptions)
+                    .subscribe(projetCDC => { resolve(projetCDC); }, error => reject(error));
+            });
+        });
+    }
+    ;
+    putProjetCDC(projetCDC, idProjetCDC) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const httpOptions = {
+                headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                //'Content-Type':  'application/x-www-form-urlencoded',
+                //'Authorization': `Bearer ${this.auth.getIdToken()}`,
+                })
+            };
+            return new Promise((resolve, reject) => {
+                //send the post query
+                this.http.put(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/projets-cdc/${idProjetCDC}`, projetCDC, httpOptions)
+                    .subscribe(projetCDC => { resolve(projetCDC); }, error => reject(error));
+            });
+        });
+    }
+    ;
+    deleteProjetCDC(idElaborationCDC, idProjetCDC) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                //send the post query
+                this.http.delete(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/projets-cdc/${idElaborationCDC}/${idProjetCDC}`)
+                    .subscribe(projetCDC => { resolve(projetCDC); }, error => reject(error));
+            });
+        });
+    }
+};
+ProjetCDCAccess.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+ProjetCDCAccess = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Injectable"])()
+], ProjetCDCAccess);
+
+;
+
+
+/***/ }),
+
 /***/ "./src/app/domaine/data-access/projet.access.ts":
 /*!******************************************************!*\
   !*** ./src/app/domaine/data-access/projet.access.ts ***!
@@ -5524,6 +6853,15 @@ let ProjetAccess = class ProjetAccess {
         });
     }
     ;
+    getProjet(idProjet) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                // envoyer une requete API
+                this.http.get(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/projets/${idProjet}`)
+                    .subscribe(projet => { resolve(projet); }, error => reject(error));
+            });
+        });
+    }
     getProjetByCode(codeProjet) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             return new Promise((resolve, reject) => {
@@ -5729,6 +7067,15 @@ __webpack_require__.r(__webpack_exports__);
 let SousProjetAccess = class SousProjetAccess {
     constructor(http) {
         this.http = http;
+    }
+    getSousProjet(idSousProjet) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                // envoyer une requete API
+                this.http.get(`${src_app_config__WEBPACK_IMPORTED_MODULE_1__["apiEndpoint"]}/sous-projets/${idSousProjet}`)
+                    .subscribe(sousProjet => { resolve(sousProjet); }, error => reject(error));
+            });
+        });
     }
     getAllSousProjets() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
@@ -5937,23 +7284,23 @@ var Budget;
 
 /***/ }),
 
-/***/ "./src/app/enums/caractere.enum.ts":
-/*!*****************************************!*\
-  !*** ./src/app/enums/caractere.enum.ts ***!
-  \*****************************************/
-/*! exports provided: Caractere */
+/***/ "./src/app/enums/caractere.marche.enum.ts":
+/*!************************************************!*\
+  !*** ./src/app/enums/caractere.marche.enum.ts ***!
+  \************************************************/
+/*! exports provided: CaractereMarche */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Caractere", function() { return Caractere; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CaractereMarche", function() { return CaractereMarche; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
-var Caractere;
-(function (Caractere) {
-    Caractere["NATIONAL"] = "National";
-    Caractere["INTERNATIONAL"] = "International";
-})(Caractere || (Caractere = {}));
+var CaractereMarche;
+(function (CaractereMarche) {
+    CaractereMarche["NATIONAL"] = "National";
+    CaractereMarche["INTERNATIONAL"] = "International";
+})(CaractereMarche || (CaractereMarche = {}));
 
 
 /***/ }),
@@ -6099,6 +7446,28 @@ var Niveau;
 
 /***/ }),
 
+/***/ "./src/app/enums/role-membre-commission-competente.enum.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/enums/role-membre-commission-competente.enum.ts ***!
+  \*****************************************************************/
+/*! exports provided: RoleMembreCommissionCompetente */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RoleMembreCommissionCompetente", function() { return RoleMembreCommissionCompetente; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var RoleMembreCommissionCompetente;
+(function (RoleMembreCommissionCompetente) {
+    RoleMembreCommissionCompetente["PRESIDENT"] = "Pr\u00E9sident";
+    RoleMembreCommissionCompetente["VICE_PRESIDENT"] = "Vice-pr\u00E9sident";
+    RoleMembreCommissionCompetente["MEMBRE"] = "Membre";
+})(RoleMembreCommissionCompetente || (RoleMembreCommissionCompetente = {}));
+
+
+/***/ }),
+
 /***/ "./src/app/enums/source.financement.enum.ts":
 /*!**************************************************!*\
   !*** ./src/app/enums/source.financement.enum.ts ***!
@@ -6119,6 +7488,27 @@ var SourceFinancement;
     SourceFinancement["BUDGET_ETAT"] = "Budget d'Etat";
     SourceFinancement["AUTRE"] = "Autre";
 })(SourceFinancement || (SourceFinancement = {}));
+
+
+/***/ }),
+
+/***/ "./src/app/enums/type-commission-competente.enum.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/enums/type-commission-competente.enum.ts ***!
+  \**********************************************************/
+/*! exports provided: TypeCommissionCompetente */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TypeCommissionCompetente", function() { return TypeCommissionCompetente; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var TypeCommissionCompetente;
+(function (TypeCommissionCompetente) {
+    TypeCommissionCompetente["CCME"] = "Commission Centrale des March\u00E9s de l\u2019Etablissement";
+    TypeCommissionCompetente["CMU"] = "Commission des March\u00E9s de l\u2019Unit\u00E9";
+})(TypeCommissionCompetente || (TypeCommissionCompetente = {}));
 
 
 /***/ }),
@@ -6325,24 +7715,25 @@ HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/models/additif.model.ts":
-/*!*****************************************!*\
-  !*** ./src/app/models/additif.model.ts ***!
-  \*****************************************/
-/*! exports provided: Additif */
+/***/ "./src/app/models/additif-cdc.model.ts":
+/*!*********************************************!*\
+  !*** ./src/app/models/additif-cdc.model.ts ***!
+  \*********************************************/
+/*! exports provided: AdditifCDC */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Additif", function() { return Additif; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdditifCDC", function() { return AdditifCDC; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
-class Additif {
-    constructor(numero) {
-        this.numero = numero;
+class AdditifCDC {
+    constructor(pathAdditifCDC) {
+        this.pathAdditifCDC = pathAdditifCDC;
+        this.passageComissionMarches = [];
     }
     static getDummy() {
-        return new Additif("N: " + Math.random().toString());
+        return new AdditifCDC("N: " + Math.random().toString());
     }
 }
 
@@ -6476,6 +7867,39 @@ class ClarificationOffre {
 
 /***/ }),
 
+/***/ "./src/app/models/commission-competente/membre-commission-competente.model.ts":
+/*!************************************************************************************!*\
+  !*** ./src/app/models/commission-competente/membre-commission-competente.model.ts ***!
+  \************************************************************************************/
+/*! exports provided: MembreCommissionCompetente */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MembreCommissionCompetente", function() { return MembreCommissionCompetente; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var src_app_enums_role_membre_commission_competente_enum__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/enums/role-membre-commission-competente.enum */ "./src/app/enums/role-membre-commission-competente.enum.ts");
+
+
+class MembreCommissionCompetente {
+    constructor(role, nom, prenom, qualite, matricule, email, telephone, penta) {
+        this.role = role;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.qualite = qualite;
+        this.matricule = matricule;
+        this.email = email;
+        this.telephone = telephone;
+        this.penta = penta;
+    }
+    static getDummy() {
+        return new MembreCommissionCompetente(src_app_enums_role_membre_commission_competente_enum__WEBPACK_IMPORTED_MODULE_1__["RoleMembreCommissionCompetente"].PRESIDENT, "nom", "prenom", "qualite", "matricule", "test@test.dz", "026226262", "85202");
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/models/complement.offre.model.ts":
 /*!**************************************************!*\
   !*** ./src/app/models/complement.offre.model.ts ***!
@@ -6592,46 +8016,6 @@ class DesistementAttribution {
     }
     static getDummy() {
         return new DesistementAttribution("attributaire", new Date(), "raison desistement", "justificatifPath");
-    }
-}
-
-
-/***/ }),
-
-/***/ "./src/app/models/elaboration.cdc.model.ts":
-/*!*************************************************!*\
-  !*** ./src/app/models/elaboration.cdc.model.ts ***!
-  \*************************************************/
-/*! exports provided: ElaborationCDC */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ElaborationCDC", function() { return ElaborationCDC; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _enums_mode_passation_enum__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../enums/mode.passation.enum */ "./src/app/enums/mode.passation.enum.ts");
-/* harmony import */ var _enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../enums/type.procedure.enum */ "./src/app/enums/type.procedure.enum.ts");
-/* harmony import */ var _enums_forme_marche_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/forme.marche.enum */ "./src/app/enums/forme.marche.enum.ts");
-/* harmony import */ var _enums_caractere_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../enums/caractere.enum */ "./src/app/enums/caractere.enum.ts");
-/* harmony import */ var _passage_commission_competente_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./passage.commission.competente.model */ "./src/app/models/passage.commission.competente.model.ts");
-
-
-
-
-
-
-class ElaborationCDC {
-    constructor(modePassation, typeProcedure, formeMarche, caractere, dateCreation) {
-        this.modePassation = modePassation,
-            this.typeProcedure = typeProcedure,
-            this.formeMarche = formeMarche,
-            this.caractere = caractere;
-        this.dateCreation = dateCreation;
-        this.passagesCommissionProjetCDC = [];
-        this.passagesCommissionProjetCDC.push(_passage_commission_competente_model__WEBPACK_IMPORTED_MODULE_5__["PassageCommissionCompetente"].getDummy());
-    }
-    static getDummy() {
-        return new ElaborationCDC(_enums_mode_passation_enum__WEBPACK_IMPORTED_MODULE_1__["ModePassation"].AO, _enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_2__["TypeProcedure"].PAC, _enums_forme_marche_enum__WEBPACK_IMPORTED_MODULE_3__["FormeMarche"].MA, _enums_caractere_enum__WEBPACK_IMPORTED_MODULE_4__["Caractere"].INTERNATIONAL, new Date());
     }
 }
 
@@ -7402,7 +8786,14 @@ __webpack_require__.r(__webpack_exports__);
 
 let InscriptionComponent = class InscriptionComponent {
     constructor() { }
+    ngOnInit() { }
 };
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], InscriptionComponent.prototype, "projet", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], InscriptionComponent.prototype, "idSousProjet", void 0);
 InscriptionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-inscription',
@@ -7442,11 +8833,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
 /* harmony import */ var src_app_models_passage_commission_competente_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/models/passage.commission.competente.model */ "./src/app/models/passage.commission.competente.model.ts");
-/* harmony import */ var src_app_models_additif_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/models/additif.model */ "./src/app/models/additif.model.ts");
-/* harmony import */ var src_app_dialogs_create_additif_create_additif_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/dialogs/create-additif/create-additif.component */ "./src/app/dialogs/create-additif/create-additif.component.ts");
-/* harmony import */ var src_app_dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/dialogs/create-passage-commission-competente/create-commission-passage-competente.component */ "./src/app/dialogs/create-passage-commission-competente/create-commission-passage-competente.component.ts");
-/* harmony import */ var src_app_enums_caractere_enum__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/enums/caractere.enum */ "./src/app/enums/caractere.enum.ts");
-/* harmony import */ var src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/enums/type.procedure.enum */ "./src/app/enums/type.procedure.enum.ts");
+/* harmony import */ var src_app_dialogs_create_additif_create_additif_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/dialogs/create-additif/create-additif.component */ "./src/app/dialogs/create-additif/create-additif.component.ts");
+/* harmony import */ var src_app_dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/dialogs/create-passage-commission-competente/create-commission-passage-competente.component */ "./src/app/dialogs/create-passage-commission-competente/create-commission-passage-competente.component.ts");
+/* harmony import */ var src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/enums/type.procedure.enum */ "./src/app/enums/type.procedure.enum.ts");
+/* harmony import */ var src_app_enums_caractere_marche_enum__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/enums/caractere.marche.enum */ "./src/app/enums/caractere.marche.enum.ts");
+/* harmony import */ var src_app_dialogs_create_elaboration_cdc_create_elaboration_cdc_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/dialogs/create-elaboration-cdc/create-elaboration-cdc.component */ "./src/app/dialogs/create-elaboration-cdc/create-elaboration-cdc.component.ts");
+/* harmony import */ var src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/enums/dialog-action.enum */ "./src/app/enums/dialog-action.enum.ts");
+/* harmony import */ var src_app_enums_mode_passation_enum__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/enums/mode.passation.enum */ "./src/app/enums/mode.passation.enum.ts");
+/* harmony import */ var src_app_enums_forme_marche_enum__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/enums/forme.marche.enum */ "./src/app/enums/forme.marche.enum.ts");
+/* harmony import */ var src_app_models_additif_cdc_model__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! src/app/models/additif-cdc.model */ "./src/app/models/additif-cdc.model.ts");
+/* harmony import */ var src_app_upload_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! src/app/upload.service */ "./src/app/upload.service.ts");
+/* harmony import */ var src_app_config__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! src/app/config */ "./src/app/config.ts");
+/* harmony import */ var src_app_domaine_business_logic_projets_cdc_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! src/app/domaine/business-logic/projets-cdc.service */ "./src/app/domaine/business-logic/projets-cdc.service.ts");
+/* harmony import */ var src_app_requests_projet_cdc_post_request__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! src/app/requests/projet-cdc-post.request */ "./src/app/requests/projet-cdc-post.request.ts");
+/* harmony import */ var src_app_requests_projet_cdc_put_request__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! src/app/requests/projet-cdc-put.request */ "./src/app/requests/projet-cdc-put.request.ts");
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7457,8 +8866,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ElaborationCDCComponent = class ElaborationCDCComponent {
-    constructor(dialog) {
+    constructor(dialog, uploadService, projetCDCService) {
         this.dialog = dialog;
+        this.uploadService = uploadService;
+        this.projetCDCService = projetCDCService;
         this.additifsChecked = false;
         this.passagesCommissionCompetenteAdditifs = new Map();
         this.passagesCommissionCompetenteCDC = [];
@@ -7472,16 +8883,101 @@ let ElaborationCDCComponent = class ElaborationCDCComponent {
             'numero',
             'decisionPath'
         ];
+        this.uploadingFile = false;
+        this.onlyPdfAllowed = false;
+        this.failedUploadFile = false;
         this.additifs = [];
     }
     isPassageCommissionMandatory() {
-        return this.elaborationCDC.typeProcedure == src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_8__["TypeProcedure"].PF;
+        return this.elaborationCDC.typeProcedure == src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_6__["TypeProcedure"].PF;
+    }
+    isNewProjetCDCUploaded() {
+        if (this.elaborationCDC.projetCDC && this.elaborationCDC.projetCDC.pathProjetCDC == this.pathJustificatifProjetCDC)
+            return false;
+        return this.pathJustificatifProjetCDC != null;
+        ;
     }
     isProjetCDCUploaded() {
-        return this.elaborationCDC.pathProjetCDC != null;
+        return this.elaborationCDC.projetCDC && this.elaborationCDC.projetCDC.pathProjetCDC != null;
+    }
+    annulerUploadProjetCDC() {
+        if (this.elaborationCDC.projetCDC) {
+            this.pathJustificatifProjetCDC = this.elaborationCDC.projetCDC.pathProjetCDC;
+        }
+        else {
+            this.pathJustificatifProjetCDC = null;
+        }
+    }
+    uploadProjetCDC() {
+        this.loadingDataUploadProjetCDC = true;
+        this.errorLoadingUploadProjetCDC = false;
+        // save the data into the database
+        let result;
+        if (this.elaborationCDC.projetCDC) {
+            const projetCDCPutRequest = new src_app_requests_projet_cdc_put_request__WEBPACK_IMPORTED_MODULE_17__["ProjetCDCPutRequest"](this.pathJustificatifProjetCDC);
+            result = this.projetCDCService.postProjetCDC(projetCDCPutRequest, this.elaborationCDC._id);
+        }
+        else {
+            const projetCDCPostRequest = new src_app_requests_projet_cdc_post_request__WEBPACK_IMPORTED_MODULE_16__["ProjetCDCPostRequest"](this.pathJustificatifProjetCDC);
+            result = this.projetCDCService.postProjetCDC(projetCDCPostRequest, this.elaborationCDC._id);
+        }
+        result
+            .then((value) => {
+            this.loadingDataUploadProjetCDC = false;
+            console.log("posted", value);
+            this.elaborationCDC.projetCDC = value;
+            this.pathJustificatifProjetCDC = value.pathProjetCDC;
+        })
+            .catch(() => {
+            this.loadingDataUploadProjetCDC = false;
+            return this.errorLoadingUploadProjetCDC = true;
+        });
+    }
+    deleteProjetCDC() {
+        this.loadingDataDeleteProjetCDC = true;
+        this.errorLoadingDataDeleteProjetCDC = false;
+        let result;
+        // delete le S/C data from the database
+        result = this.projetCDCService.deleteProjetCDC(this.elaborationCDC._id, this.elaborationCDC.projetCDC._id);
+        result
+            .then((value) => {
+            this.loadingDataDeleteProjetCDC = false;
+            console.log("cleared", value);
+            this.elaborationCDC.projetCDC.pathProjetCDC = null;
+            this.pathJustificatifProjetCDC = null;
+        })
+            .catch(() => {
+            this.loadingDataDeleteProjetCDC = false;
+            return this.errorLoadingDataDeleteProjetCDC = true;
+        });
+    }
+    onFileChange(event) {
+        this.uploadingFile = true;
+        this.failedUploadFile = false;
+        this.onlyPdfAllowed = false;
+        const files = event.target.files;
+        if (files[0].type != 'application/pdf') {
+            this.onlyPdfAllowed = true;
+            this.uploadingFile = false;
+        }
+        else {
+            const resultUploadFile = this.uploadService.upload(files[0]).toPromise();
+            resultUploadFile.then((val) => {
+                if (val.hasOwnProperty("filename")) {
+                    this.pathJustificatifProjetCDC = val.filename;
+                    console.log(this.pathJustificatifProjetCDC);
+                }
+                this.uploadingFile = false;
+            }).catch((err => {
+                this.failedUploadFile = true;
+                this.uploadingFile = false;
+            }));
+        }
     }
     isPassageCommissionInProgress() {
-        return this.elaborationCDC.passagesCommissionProjetCDC && this.elaborationCDC.passagesCommissionProjetCDC.length > 0;
+        return this.elaborationCDC.projetCDC &&
+            this.elaborationCDC.projetCDC.passagesCommissionMarches &&
+            this.elaborationCDC.projetCDC.passagesCommissionMarches.length > 0;
     }
     isPassageCommissionDisabled() {
         // disabled if
@@ -7489,12 +8985,50 @@ let ElaborationCDCComponent = class ElaborationCDCComponent {
         // - ou il y a deja des passage commission en cours.
         return this.isPassageCommissionMandatory() || this.isPassageCommissionInProgress();
     }
+    getPathFile(filename) {
+        return `${src_app_config__WEBPACK_IMPORTED_MODULE_14__["fileUploadUrl"]}/sendMePDF/${filename}`;
+    }
     ngOnInit() {
+        console.log("Elaboration:", this.elaborationCDC);
         this.passageCommissionChecked = this.isPassageCommissionDisabled();
         this.additifsChecked = false;
+        if (this.elaborationCDC.projetCDC) {
+            this.pathJustificatifProjetCDC = this.elaborationCDC.projetCDC.pathProjetCDC;
+        }
+        else {
+            this.pathJustificatifProjetCDC = null;
+        }
     }
+    openDialogDeleteElaborationCDC() {
+        const dialogRef = this.dialog.open(src_app_dialogs_create_elaboration_cdc_create_elaboration_cdc_component__WEBPACK_IMPORTED_MODULE_8__["CreateElaborationCDCComponent"], {
+            width: '800px',
+            data: { action: src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_9__["DialogAction"].DELETE, elbCDC: this.elaborationCDC, sousPrj: this.sousProjet, prj: this.projet }
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            if (this.sousProjet && result) {
+                let elm = this.sousProjet.elaborationsCDC.find(e => e._id === result._id);
+                const index = this.sousProjet.elaborationsCDC.indexOf(elm);
+                this.sousProjet.elaborationsCDC.splice(index, 1);
+            }
+        });
+    }
+    ;
+    openDialogUpdateElaborationCDC() {
+        const dialogRef = this.dialog.open(src_app_dialogs_create_elaboration_cdc_create_elaboration_cdc_component__WEBPACK_IMPORTED_MODULE_8__["CreateElaborationCDCComponent"], {
+            width: '800px',
+            data: { action: src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_9__["DialogAction"].MODIFY, elbCDC: this.elaborationCDC, sousPrj: this.sousProjet, prj: this.projet }
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            if (this.sousProjet && result) {
+                let elm = this.sousProjet.elaborationsCDC.find(e => e._id === result._id);
+                for (var k in result)
+                    elm[k] = result[k];
+            }
+        });
+    }
+    ;
     openDialogCreateAdditif() {
-        const dialogRef = this.dialog.open(src_app_dialogs_create_additif_create_additif_component__WEBPACK_IMPORTED_MODULE_5__["CreateAdditifComponent"], {
+        const dialogRef = this.dialog.open(src_app_dialogs_create_additif_create_additif_component__WEBPACK_IMPORTED_MODULE_4__["CreateAdditifComponent"], {
             width: '800px',
             data: "nouveauAdditif"
         });
@@ -7503,10 +9037,10 @@ let ElaborationCDCComponent = class ElaborationCDCComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.additifs.push(src_app_models_additif_model__WEBPACK_IMPORTED_MODULE_4__["Additif"].getDummy());
+        this.additifs.push(src_app_models_additif_cdc_model__WEBPACK_IMPORTED_MODULE_12__["AdditifCDC"].getDummy());
     }
     openDialogCreatePassageCommissionCompetenteAdditifs(numero) {
-        const dialogRef = this.dialog.open(src_app_dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_6__["CreatePassageCommissionCompetenteComponent"], {
+        const dialogRef = this.dialog.open(src_app_dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_5__["CreatePassageCommissionCompetenteComponent"], {
             width: '800px',
             data: "nouveauAdditif"
         });
@@ -7536,7 +9070,7 @@ let ElaborationCDCComponent = class ElaborationCDCComponent {
         }
     }
     openDialogCreatePassageCommissionCompetenteCDC() {
-        const dialogRef = this.dialog.open(src_app_dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_6__["CreatePassageCommissionCompetenteComponent"], {
+        const dialogRef = this.dialog.open(src_app_dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_5__["CreatePassageCommissionCompetenteComponent"], {
             width: '800px',
             data: "nouveauPassageCommComp"
         });
@@ -7550,11 +9084,25 @@ let ElaborationCDCComponent = class ElaborationCDCComponent {
         this.tablePassagesCommissionCompetenteCDC.renderRows();
     }
     isInternational() {
-        return this.elaborationCDC.caractere == src_app_enums_caractere_enum__WEBPACK_IMPORTED_MODULE_7__["Caractere"].INTERNATIONAL;
+        return src_app_enums_caractere_marche_enum__WEBPACK_IMPORTED_MODULE_7__["CaractereMarche"][this.elaborationCDC.caractereMarche] === src_app_enums_caractere_marche_enum__WEBPACK_IMPORTED_MODULE_7__["CaractereMarche"].INTERNATIONAL;
+    }
+    getTypeProcedure() {
+        return src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_6__["TypeProcedure"][this.elaborationCDC.typeProcedure];
+    }
+    getModePassation() {
+        return src_app_enums_mode_passation_enum__WEBPACK_IMPORTED_MODULE_10__["ModePassation"][this.elaborationCDC.modePassation];
+    }
+    getFormeMarche() {
+        return src_app_enums_forme_marche_enum__WEBPACK_IMPORTED_MODULE_11__["FormeMarche"][this.elaborationCDC.formeMarche];
+    }
+    getCaractereMarche() {
+        return src_app_enums_caractere_marche_enum__WEBPACK_IMPORTED_MODULE_7__["CaractereMarche"][this.elaborationCDC.caractereMarche];
     }
 };
 ElaborationCDCComponent.ctorParameters = () => [
-    { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] }
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] },
+    { type: src_app_upload_service__WEBPACK_IMPORTED_MODULE_13__["UploadService"] },
+    { type: src_app_domaine_business_logic_projets_cdc_service__WEBPACK_IMPORTED_MODULE_15__["ProjetCDCService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tablePassagesCommissionCompetenteCDC", { static: true })
@@ -7565,6 +9113,12 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], ElaborationCDCComponent.prototype, "elaborationCDC", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ElaborationCDCComponent.prototype, "sousProjet", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ElaborationCDCComponent.prototype, "projet", void 0);
 ElaborationCDCComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-elaboration-cdc',
@@ -8655,7 +10209,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
 /* harmony import */ var src_app_dialogs_create_elaboration_cdc_create_elaboration_cdc_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/dialogs/create-elaboration-cdc/create-elaboration-cdc.component */ "./src/app/dialogs/create-elaboration-cdc/create-elaboration-cdc.component.ts");
-/* harmony import */ var src_app_models_elaboration_cdc_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/models/elaboration.cdc.model */ "./src/app/models/elaboration.cdc.model.ts");
+/* harmony import */ var src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/enums/dialog-action.enum */ "./src/app/enums/dialog-action.enum.ts");
 
 
 
@@ -8664,23 +10218,33 @@ __webpack_require__.r(__webpack_exports__);
 let PassationComponent = class PassationComponent {
     constructor(dialog) {
         this.dialog = dialog;
-        this.elaborationsCDC = [];
+        console.log("constructor Passation ran");
+    }
+    ngOnInit() {
+        this.sousProjet = this.projet.sousProjets.find(e => e._id === this.idSousProjet);
+        console.log("Niveau", this.projet.serviceContractant.niveau);
     }
     openDialogCreateElaborerMarche() {
         const dialogRef = this.dialog.open(src_app_dialogs_create_elaboration_cdc_create_elaboration_cdc_component__WEBPACK_IMPORTED_MODULE_3__["CreateElaborationCDCComponent"], {
             width: '800px',
-            data: "elaboration CDC"
+            data: { action: src_app_enums_dialog_action_enum__WEBPACK_IMPORTED_MODULE_4__["DialogAction"].CREATE, elbCDC: null, sousPrj: this.sousProjet, prj: this.projet }
         });
         dialogRef.afterClosed().subscribe(result => {
-            console.log('The dialog was closed');
-            console.log(result);
-            this.elaborationsCDC.push(src_app_models_elaboration_cdc_model__WEBPACK_IMPORTED_MODULE_4__["ElaborationCDC"].getDummy());
+            if (this.sousProjet && result) {
+                this.sousProjet.elaborationsCDC.push(result);
+            }
         });
     }
 };
 PassationComponent.ctorParameters = () => [
     { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], PassationComponent.prototype, "projet", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], PassationComponent.prototype, "idSousProjet", void 0);
 PassationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-passation',
@@ -8826,6 +10390,7 @@ let ExecutionComponent = class ExecutionComponent {
             "demandePath",
             "reponse"
         ];
+        console.log("constructor exec ran");
     }
     ngOnInit() {
         this.demandeRallongeExecutionChecked = false;
@@ -9013,6 +10578,7 @@ __webpack_require__.r(__webpack_exports__);
 let ClotureComponent = class ClotureComponent {
     constructor(dialog) {
         this.dialog = dialog;
+        console.log("constructor cloture ran");
     }
     openDialogCreateReception() {
         const dialogRef = this.dialog.open(src_app_dialogs_create_reception_create_reception_component__WEBPACK_IMPORTED_MODULE_3__["CreateReceptionComponent"], {
@@ -9078,60 +10644,64 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
 /* harmony import */ var _dialogs_create_litige_create_litige_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dialogs/create-litige/create-litige.component */ "./src/app/dialogs/create-litige/create-litige.component.ts");
 /* harmony import */ var _models_litige_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../models/litige.model */ "./src/app/models/litige.model.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
-/* harmony import */ var _dialogs_create_recours_create_recours_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../dialogs/create-recours/create-recours.component */ "./src/app/dialogs/create-recours/create-recours.component.ts");
-/* harmony import */ var _models_recours_model__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../models/recours.model */ "./src/app/models/recours.model.ts");
-/* harmony import */ var _models_additif_model__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../models/additif.model */ "./src/app/models/additif.model.ts");
-/* harmony import */ var _dialogs_create_additif_create_additif_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../dialogs/create-additif/create-additif.component */ "./src/app/dialogs/create-additif/create-additif.component.ts");
-/* harmony import */ var _dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../dialogs/create-passage-commission-competente/create-commission-passage-competente.component */ "./src/app/dialogs/create-passage-commission-competente/create-commission-passage-competente.component.ts");
-/* harmony import */ var _models_passage_commission_competente_model__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../models/passage.commission.competente.model */ "./src/app/models/passage.commission.competente.model.ts");
-/* harmony import */ var _models_organe_presse_model__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../models/organe.presse.model */ "./src/app/models/organe.presse.model.ts");
-/* harmony import */ var _dialogs_create_organe_presse_create_organe_presse_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../dialogs/create-organe-presse/create-organe-presse.component */ "./src/app/dialogs/create-organe-presse/create-organe-presse.component.ts");
-/* harmony import */ var _models_siteweb_model__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../models/siteweb.model */ "./src/app/models/siteweb.model.ts");
-/* harmony import */ var _dialogs_create_siteweb_create_siteweb_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../dialogs/create-siteweb/create-siteweb.component */ "./src/app/dialogs/create-siteweb/create-siteweb.component.ts");
-/* harmony import */ var _models_operateur_economique_model__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../models/operateur.economique.model */ "./src/app/models/operateur.economique.model.ts");
-/* harmony import */ var _dialogs_create_operateur_economique_create_operateur_economique_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../dialogs/create-operateur-economique/create-operateur-economique.component */ "./src/app/dialogs/create-operateur-economique/create-operateur-economique.component.ts");
-/* harmony import */ var _models_prolongation_model__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../models/prolongation.model */ "./src/app/models/prolongation.model.ts");
-/* harmony import */ var _dialogs_create_prolongation_create_prolongation_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../dialogs/create-prolongation/create-prolongation.component */ "./src/app/dialogs/create-prolongation/create-prolongation.component.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _dialogs_create_candidat_create_candidat_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../dialogs/create-candidat/create-candidat.component */ "./src/app/dialogs/create-candidat/create-candidat.component.ts");
-/* harmony import */ var _models_candidat_model__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../models/candidat.model */ "./src/app/models/candidat.model.ts");
-/* harmony import */ var _models_demande_eclaircissement_model__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../models/demande.eclaircissement.model */ "./src/app/models/demande.eclaircissement.model.ts");
-/* harmony import */ var _dialogs_create_demande_eclaircissement_create_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../dialogs/create-demande-eclaircissement/create-demande-eclaircissement.component */ "./src/app/dialogs/create-demande-eclaircissement/create-demande-eclaircissement.component.ts");
-/* harmony import */ var _dialogs_create_response_demande_eclaircissement_create_response_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../dialogs/create-response-demande-eclaircissement/create-response-demande-eclaircissement.component */ "./src/app/dialogs/create-response-demande-eclaircissement/create-response-demande-eclaircissement.component.ts");
-/* harmony import */ var _dialogs_create_soumissionnaire_create_soumissionnaire_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../dialogs/create-soumissionnaire/create-soumissionnaire.component */ "./src/app/dialogs/create-soumissionnaire/create-soumissionnaire.component.ts");
-/* harmony import */ var _models_soumissionnaire_model__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../models/soumissionnaire.model */ "./src/app/models/soumissionnaire.model.ts");
-/* harmony import */ var _models_complement_offre_model__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../models/complement.offre.model */ "./src/app/models/complement.offre.model.ts");
-/* harmony import */ var _dialogs_create_passage_copeo_ouverture_plis_create_passage_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component */ "./src/app/dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component.ts");
-/* harmony import */ var _dialogs_create_resultat_copeo_ouverture_plis_create_resultat_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component */ "./src/app/dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component.ts");
-/* harmony import */ var _dialogs_create_demande_complement_create_demande_complement_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../dialogs/create-demande-complement/create-demande-complement.component */ "./src/app/dialogs/create-demande-complement/create-demande-complement.component.ts");
-/* harmony import */ var _dialogs_create_passage_copeo_evaluation_offres_create_passage_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component */ "./src/app/dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component.ts");
-/* harmony import */ var _dialogs_create_demande_clarification_create_demande_clarification_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../dialogs/create-demande-clarification/create-demande-clarification.component */ "./src/app/dialogs/create-demande-clarification/create-demande-clarification.component.ts");
-/* harmony import */ var _models_passage_comite_technique_model__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../models/passage.comite.technique.model */ "./src/app/models/passage.comite.technique.model.ts");
-/* harmony import */ var _dialogs_create_passage_comite_technique_create_passage_comite_technique_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../dialogs/create-passage-comite-technique/create-passage-comite-technique.component */ "./src/app/dialogs/create-passage-comite-technique/create-passage-comite-technique.component.ts");
-/* harmony import */ var _dialogs_create_resultat_copeo_evaluation_offres_create_resultat_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component */ "./src/app/dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component.ts");
-/* harmony import */ var _models_rallonge_financiere_model__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../models/rallonge.financiere.model */ "./src/app/models/rallonge.financiere.model.ts");
-/* harmony import */ var _dialogs_create_demande_rallonge_financiere_create_demande_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component */ "./src/app/dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component.ts");
-/* harmony import */ var _dialogs_create_reponse_rallonge_financiere_create_reponse_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component */ "./src/app/dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component.ts");
-/* harmony import */ var _models_declaration_attribution_model__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ../models/declaration.attribution.model */ "./src/app/models/declaration.attribution.model.ts");
-/* harmony import */ var _dialogs_create_declaration_attribution_provisoire_create_declaration_attribution_provisoire_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ../dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component */ "./src/app/dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component.ts");
-/* harmony import */ var _models_annulation_attribution_model__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ../models/annulation.attribution.model */ "./src/app/models/annulation.attribution.model.ts");
-/* harmony import */ var _models_desistement_attribution_model__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ../models/desistement.attribution.model */ "./src/app/models/desistement.attribution.model.ts");
-/* harmony import */ var _models_mise_au_point_model__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ../models/mise.au.point.model */ "./src/app/models/mise.au.point.model.ts");
-/* harmony import */ var _dialogs_create_mise_au_point_create_mise_au_point_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ../dialogs/create-mise-au-point/create-mise-au-point.component */ "./src/app/dialogs/create-mise-au-point/create-mise-au-point.component.ts");
-/* harmony import */ var _models_ods_model__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ../models/ods.model */ "./src/app/models/ods.model.ts");
-/* harmony import */ var _dialogs_create_ods_create_ods_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ../dialogs/create-ods/create-ods.component */ "./src/app/dialogs/create-ods/create-ods.component.ts");
-/* harmony import */ var _models_sous_traitant_model__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ../models/sous.traitant.model */ "./src/app/models/sous.traitant.model.ts");
-/* harmony import */ var _dialogs_create_sous_traitant_create_sous_traitant_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ../dialogs/create-sous-traitant/create-sous-traitant.component */ "./src/app/dialogs/create-sous-traitant/create-sous-traitant.component.ts");
-/* harmony import */ var _models_facture_model__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ../models/facture.model */ "./src/app/models/facture.model.ts");
-/* harmony import */ var _dialogs_create_facture_create_facture_component__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ../dialogs/create-facture/create-facture.component */ "./src/app/dialogs/create-facture/create-facture.component.ts");
-/* harmony import */ var _dialogs_create_resiliation_create_resiliation_component__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ../dialogs/create-resiliation/create-resiliation.component */ "./src/app/dialogs/create-resiliation/create-resiliation.component.ts");
-/* harmony import */ var _models_mise_en_demeure_model__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ../models/mise.en.demeure.model */ "./src/app/models/mise.en.demeure.model.ts");
-/* harmony import */ var _dialogs_create_mise_en_demeure_create_mise_en_demeure_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ../dialogs/create-mise-en-demeure/create-mise-en-demeure.component */ "./src/app/dialogs/create-mise-en-demeure/create-mise-en-demeure.component.ts");
-/* harmony import */ var _dialogs_create_cloture_create_cloture_component__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ../dialogs/create-cloture/create-cloture.component */ "./src/app/dialogs/create-cloture/create-cloture.component.ts");
-/* harmony import */ var _dialogs_create_reception_create_reception_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ../dialogs/create-reception/create-reception.component */ "./src/app/dialogs/create-reception/create-reception.component.ts");
-/* harmony import */ var _models_avenant_model__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ../models/avenant.model */ "./src/app/models/avenant.model.ts");
-/* harmony import */ var _dialogs_create_avenant_create_avenant_component__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ../dialogs/create-avenant/create-avenant.component */ "./src/app/dialogs/create-avenant/create-avenant.component.ts");
+/* harmony import */ var _dialogs_create_recours_create_recours_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../dialogs/create-recours/create-recours.component */ "./src/app/dialogs/create-recours/create-recours.component.ts");
+/* harmony import */ var _models_recours_model__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../models/recours.model */ "./src/app/models/recours.model.ts");
+/* harmony import */ var _dialogs_create_additif_create_additif_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../dialogs/create-additif/create-additif.component */ "./src/app/dialogs/create-additif/create-additif.component.ts");
+/* harmony import */ var _dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../dialogs/create-passage-commission-competente/create-commission-passage-competente.component */ "./src/app/dialogs/create-passage-commission-competente/create-commission-passage-competente.component.ts");
+/* harmony import */ var _models_passage_commission_competente_model__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../models/passage.commission.competente.model */ "./src/app/models/passage.commission.competente.model.ts");
+/* harmony import */ var _models_organe_presse_model__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../models/organe.presse.model */ "./src/app/models/organe.presse.model.ts");
+/* harmony import */ var _dialogs_create_organe_presse_create_organe_presse_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../dialogs/create-organe-presse/create-organe-presse.component */ "./src/app/dialogs/create-organe-presse/create-organe-presse.component.ts");
+/* harmony import */ var _models_siteweb_model__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../models/siteweb.model */ "./src/app/models/siteweb.model.ts");
+/* harmony import */ var _dialogs_create_siteweb_create_siteweb_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../dialogs/create-siteweb/create-siteweb.component */ "./src/app/dialogs/create-siteweb/create-siteweb.component.ts");
+/* harmony import */ var _models_operateur_economique_model__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../models/operateur.economique.model */ "./src/app/models/operateur.economique.model.ts");
+/* harmony import */ var _dialogs_create_operateur_economique_create_operateur_economique_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../dialogs/create-operateur-economique/create-operateur-economique.component */ "./src/app/dialogs/create-operateur-economique/create-operateur-economique.component.ts");
+/* harmony import */ var _models_prolongation_model__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../models/prolongation.model */ "./src/app/models/prolongation.model.ts");
+/* harmony import */ var _dialogs_create_prolongation_create_prolongation_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../dialogs/create-prolongation/create-prolongation.component */ "./src/app/dialogs/create-prolongation/create-prolongation.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _dialogs_create_candidat_create_candidat_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../dialogs/create-candidat/create-candidat.component */ "./src/app/dialogs/create-candidat/create-candidat.component.ts");
+/* harmony import */ var _models_candidat_model__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../models/candidat.model */ "./src/app/models/candidat.model.ts");
+/* harmony import */ var _models_demande_eclaircissement_model__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../models/demande.eclaircissement.model */ "./src/app/models/demande.eclaircissement.model.ts");
+/* harmony import */ var _dialogs_create_demande_eclaircissement_create_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../dialogs/create-demande-eclaircissement/create-demande-eclaircissement.component */ "./src/app/dialogs/create-demande-eclaircissement/create-demande-eclaircissement.component.ts");
+/* harmony import */ var _dialogs_create_response_demande_eclaircissement_create_response_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../dialogs/create-response-demande-eclaircissement/create-response-demande-eclaircissement.component */ "./src/app/dialogs/create-response-demande-eclaircissement/create-response-demande-eclaircissement.component.ts");
+/* harmony import */ var _dialogs_create_soumissionnaire_create_soumissionnaire_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../dialogs/create-soumissionnaire/create-soumissionnaire.component */ "./src/app/dialogs/create-soumissionnaire/create-soumissionnaire.component.ts");
+/* harmony import */ var _models_soumissionnaire_model__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../models/soumissionnaire.model */ "./src/app/models/soumissionnaire.model.ts");
+/* harmony import */ var _models_complement_offre_model__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../models/complement.offre.model */ "./src/app/models/complement.offre.model.ts");
+/* harmony import */ var _dialogs_create_passage_copeo_ouverture_plis_create_passage_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component */ "./src/app/dialogs/create-passage-copeo-ouverture-plis/create-passage-copeo-ouverture-plis.component.ts");
+/* harmony import */ var _dialogs_create_resultat_copeo_ouverture_plis_create_resultat_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component */ "./src/app/dialogs/create-resultat-copeo-ouverture-plis/create-resultat-copeo-ouverture-plis.component.ts");
+/* harmony import */ var _dialogs_create_demande_complement_create_demande_complement_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../dialogs/create-demande-complement/create-demande-complement.component */ "./src/app/dialogs/create-demande-complement/create-demande-complement.component.ts");
+/* harmony import */ var _dialogs_create_passage_copeo_evaluation_offres_create_passage_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component */ "./src/app/dialogs/create-passage-copeo-evaluation-offres/create-passage-copeo-evaluation-offres.component.ts");
+/* harmony import */ var _dialogs_create_demande_clarification_create_demande_clarification_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../dialogs/create-demande-clarification/create-demande-clarification.component */ "./src/app/dialogs/create-demande-clarification/create-demande-clarification.component.ts");
+/* harmony import */ var _models_passage_comite_technique_model__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../models/passage.comite.technique.model */ "./src/app/models/passage.comite.technique.model.ts");
+/* harmony import */ var _dialogs_create_passage_comite_technique_create_passage_comite_technique_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../dialogs/create-passage-comite-technique/create-passage-comite-technique.component */ "./src/app/dialogs/create-passage-comite-technique/create-passage-comite-technique.component.ts");
+/* harmony import */ var _dialogs_create_resultat_copeo_evaluation_offres_create_resultat_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component */ "./src/app/dialogs/create-resultat-copeo-evaluation-offres/create-resultat-copeo-evaluation-offres.component.ts");
+/* harmony import */ var _models_rallonge_financiere_model__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../models/rallonge.financiere.model */ "./src/app/models/rallonge.financiere.model.ts");
+/* harmony import */ var _dialogs_create_demande_rallonge_financiere_create_demande_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component */ "./src/app/dialogs/create-demande-rallonge-financiere/create-demande-rallonge-financiere.component.ts");
+/* harmony import */ var _dialogs_create_reponse_rallonge_financiere_create_reponse_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component */ "./src/app/dialogs/create-reponse-rallonge-financiere/create-reponse-rallonge-financiere.component.ts");
+/* harmony import */ var _models_declaration_attribution_model__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../models/declaration.attribution.model */ "./src/app/models/declaration.attribution.model.ts");
+/* harmony import */ var _dialogs_create_declaration_attribution_provisoire_create_declaration_attribution_provisoire_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component */ "./src/app/dialogs/create-declaration-attribution-provisoire/create-declaration-attribution-provisoire.component.ts");
+/* harmony import */ var _models_annulation_attribution_model__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ../models/annulation.attribution.model */ "./src/app/models/annulation.attribution.model.ts");
+/* harmony import */ var _models_desistement_attribution_model__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ../models/desistement.attribution.model */ "./src/app/models/desistement.attribution.model.ts");
+/* harmony import */ var _models_mise_au_point_model__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ../models/mise.au.point.model */ "./src/app/models/mise.au.point.model.ts");
+/* harmony import */ var _dialogs_create_mise_au_point_create_mise_au_point_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ../dialogs/create-mise-au-point/create-mise-au-point.component */ "./src/app/dialogs/create-mise-au-point/create-mise-au-point.component.ts");
+/* harmony import */ var _models_ods_model__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ../models/ods.model */ "./src/app/models/ods.model.ts");
+/* harmony import */ var _dialogs_create_ods_create_ods_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ../dialogs/create-ods/create-ods.component */ "./src/app/dialogs/create-ods/create-ods.component.ts");
+/* harmony import */ var _models_sous_traitant_model__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ../models/sous.traitant.model */ "./src/app/models/sous.traitant.model.ts");
+/* harmony import */ var _dialogs_create_sous_traitant_create_sous_traitant_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ../dialogs/create-sous-traitant/create-sous-traitant.component */ "./src/app/dialogs/create-sous-traitant/create-sous-traitant.component.ts");
+/* harmony import */ var _models_facture_model__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ../models/facture.model */ "./src/app/models/facture.model.ts");
+/* harmony import */ var _dialogs_create_facture_create_facture_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ../dialogs/create-facture/create-facture.component */ "./src/app/dialogs/create-facture/create-facture.component.ts");
+/* harmony import */ var _dialogs_create_resiliation_create_resiliation_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ../dialogs/create-resiliation/create-resiliation.component */ "./src/app/dialogs/create-resiliation/create-resiliation.component.ts");
+/* harmony import */ var _models_mise_en_demeure_model__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ../models/mise.en.demeure.model */ "./src/app/models/mise.en.demeure.model.ts");
+/* harmony import */ var _dialogs_create_mise_en_demeure_create_mise_en_demeure_component__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ../dialogs/create-mise-en-demeure/create-mise-en-demeure.component */ "./src/app/dialogs/create-mise-en-demeure/create-mise-en-demeure.component.ts");
+/* harmony import */ var _dialogs_create_cloture_create_cloture_component__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ../dialogs/create-cloture/create-cloture.component */ "./src/app/dialogs/create-cloture/create-cloture.component.ts");
+/* harmony import */ var _dialogs_create_reception_create_reception_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ../dialogs/create-reception/create-reception.component */ "./src/app/dialogs/create-reception/create-reception.component.ts");
+/* harmony import */ var _models_avenant_model__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ../models/avenant.model */ "./src/app/models/avenant.model.ts");
+/* harmony import */ var _dialogs_create_avenant_create_avenant_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ../dialogs/create-avenant/create-avenant.component */ "./src/app/dialogs/create-avenant/create-avenant.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _domaine_business_logic_projets_service__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ../domaine/business-logic/projets.service */ "./src/app/domaine/business-logic/projets.service.ts");
+/* harmony import */ var _domaine_business_logic_sous_projets_service__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! ../domaine/business-logic/sous-projets.service */ "./src/app/domaine/business-logic/sous-projets.service.ts");
+/* harmony import */ var _models_additif_cdc_model__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! ../models/additif-cdc.model */ "./src/app/models/additif-cdc.model.ts");
+
+
 
 
 
@@ -9192,11 +10762,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ProjetComponent = class ProjetComponent {
-    constructor(dialog) {
+    constructor(dialog, route, serviceProjet, serviceSousProjet) {
         this.dialog = dialog;
+        this.route = route;
+        this.serviceProjet = serviceProjet;
+        this.serviceSousProjet = serviceSousProjet;
         this.panelOpenState = false;
         this.currentDay = new Date();
-        this.today = new _angular_forms__WEBPACK_IMPORTED_MODULE_20__["FormControl"](this.currentDay); //test purpose (duree preparation des offres)
+        this.today = new _angular_forms__WEBPACK_IMPORTED_MODULE_18__["FormControl"](this.currentDay); //test purpose (duree preparation des offres)
         this.appelOffreOuConsultation = "ao";
         this.dureePreparationDesOffres = 15;
         this.dureeTotalePreparationDesOffres = this.dureePreparationDesOffres;
@@ -9394,19 +10967,32 @@ let ProjetComponent = class ProjetComponent {
             'numero',
             'decisionPath'
         ];
-        this.additifs = [];
+        this.isLinearStepper = true; // block the passage to the next step if not complete
+        this.additifsCDC = [];
+        this.idProjet = route.snapshot.paramMap.get('idProjet');
+        this.idSousProjet = route.snapshot.paramMap.get('idSousProjet');
     }
     ngOnInit() {
+        //recuperer les inforamtions du projet 
+        this.loadingDataProjet = true;
+        const resultProjet = this.serviceProjet.getProjet(this.idProjet);
+        resultProjet
+            .then((value) => {
+            this.loadingDataProjet = false;
+            return this.projet = value;
+        })
+            .catch(() => {
+            this.loadingDataProjet = false;
+            return this.projet = null;
+        });
+        this.isInscriptionComplete = true;
         this.passageCommissionChecked = false;
         this.additifsChecked = false;
         this.deadlineValiditeOffres = new Date();
         this.deadlineValiditeOffres.setDate(this.currentDay.getDate() + this.dureeValiditeOffres);
     }
-    formatDate(date) {
-        return Object(_angular_common__WEBPACK_IMPORTED_MODULE_5__["formatDate"])(date, "dd/mm/yy", "en");
-    }
     openDialogCreateAdditif() {
-        const dialogRef = this.dialog.open(_dialogs_create_additif_create_additif_component__WEBPACK_IMPORTED_MODULE_9__["CreateAdditifComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_additif_create_additif_component__WEBPACK_IMPORTED_MODULE_7__["CreateAdditifComponent"], {
             width: '800px',
             data: "nouveauAdditif"
         });
@@ -9415,10 +11001,10 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.additifs.push(_models_additif_model__WEBPACK_IMPORTED_MODULE_8__["Additif"].getDummy());
+        this.additifsCDC.push(_models_additif_cdc_model__WEBPACK_IMPORTED_MODULE_60__["AdditifCDC"].getDummy());
     }
     openDialogCreatePassageCommissionCompetenteAdditifs(numero) {
-        const dialogRef = this.dialog.open(_dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_10__["CreatePassageCommissionCompetenteComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_8__["CreatePassageCommissionCompetenteComponent"], {
             width: '800px',
             data: "nouveauAdditif"
         });
@@ -9430,11 +11016,11 @@ let ProjetComponent = class ProjetComponent {
         //this.passagesCommissionCompetenteAdditifs.get(numero).push(PassageCommissionCompetente.getDummy())
         if (this.passagesCommissionCompetenteAdditifs.has(numero)) {
             const passages = this.passagesCommissionCompetenteAdditifs.get(numero);
-            passages.push(_models_passage_commission_competente_model__WEBPACK_IMPORTED_MODULE_11__["PassageCommissionCompetente"].getDummy());
+            passages.push(_models_passage_commission_competente_model__WEBPACK_IMPORTED_MODULE_9__["PassageCommissionCompetente"].getDummy());
         }
         else {
             const passages = [];
-            passages.push(_models_passage_commission_competente_model__WEBPACK_IMPORTED_MODULE_11__["PassageCommissionCompetente"].getDummy());
+            passages.push(_models_passage_commission_competente_model__WEBPACK_IMPORTED_MODULE_9__["PassageCommissionCompetente"].getDummy());
             this.passagesCommissionCompetenteAdditifs.set(numero, passages);
         }
         //console.log(this.passagesCommissionCompetenteAdditifs)
@@ -9448,7 +11034,7 @@ let ProjetComponent = class ProjetComponent {
         }
     }
     openDialogCreatePassageCommissionCompetenteContrat() {
-        const dialogRef = this.dialog.open(_dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_10__["CreatePassageCommissionCompetenteComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_8__["CreatePassageCommissionCompetenteComponent"], {
             width: '800px',
             data: "nouveauPassageCommComp"
         });
@@ -9457,12 +11043,12 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.passagesCommissionCompetenteContrat.push(_models_passage_commission_competente_model__WEBPACK_IMPORTED_MODULE_11__["PassageCommissionCompetente"].getDummy());
+        this.passagesCommissionCompetenteContrat.push(_models_passage_commission_competente_model__WEBPACK_IMPORTED_MODULE_9__["PassageCommissionCompetente"].getDummy());
         //console.log(this.litiges);
         this.tablePassagesCommissionCompetenteContrat.renderRows();
     }
     openDialogCreatePassageCommissionCompetenteCDC() {
-        const dialogRef = this.dialog.open(_dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_10__["CreatePassageCommissionCompetenteComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_passage_commission_competente_create_commission_passage_competente_component__WEBPACK_IMPORTED_MODULE_8__["CreatePassageCommissionCompetenteComponent"], {
             width: '800px',
             data: "nouveauPassageCommComp"
         });
@@ -9471,12 +11057,12 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.passagesCommissionCompetenteCDC.push(_models_passage_commission_competente_model__WEBPACK_IMPORTED_MODULE_11__["PassageCommissionCompetente"].getDummy());
+        this.passagesCommissionCompetenteCDC.push(_models_passage_commission_competente_model__WEBPACK_IMPORTED_MODULE_9__["PassageCommissionCompetente"].getDummy());
         //console.log(this.litiges);
         this.tablePassagesCommissionCompetenteCDC.renderRows();
     }
     openDialogCreateOrganePresse() {
-        const dialogRef = this.dialog.open(_dialogs_create_organe_presse_create_organe_presse_component__WEBPACK_IMPORTED_MODULE_13__["CreateOrganePresseComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_organe_presse_create_organe_presse_component__WEBPACK_IMPORTED_MODULE_11__["CreateOrganePresseComponent"], {
             width: '800px',
             data: "nouveauOrganePresse"
         });
@@ -9486,11 +11072,11 @@ let ProjetComponent = class ProjetComponent {
             //this.operations.push(result);
         });
         console.log();
-        this.dataSourceOrganesPresse.push(_models_organe_presse_model__WEBPACK_IMPORTED_MODULE_12__["OrganePresse"].getDummy());
+        this.dataSourceOrganesPresse.push(_models_organe_presse_model__WEBPACK_IMPORTED_MODULE_10__["OrganePresse"].getDummy());
         this.tableOrganesPresse.renderRows();
     }
     openDialogCreateOperateurEconomique() {
-        const dialogRef = this.dialog.open(_dialogs_create_operateur_economique_create_operateur_economique_component__WEBPACK_IMPORTED_MODULE_17__["CreateOperateurEconomiqueComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_operateur_economique_create_operateur_economique_component__WEBPACK_IMPORTED_MODULE_15__["CreateOperateurEconomiqueComponent"], {
             width: '800px',
             data: "nouveauOp.Ecno."
         });
@@ -9500,11 +11086,11 @@ let ProjetComponent = class ProjetComponent {
             //this.operations.push(result);
         });
         console.log();
-        this.dataSourceOperateursEconomiques.push(_models_operateur_economique_model__WEBPACK_IMPORTED_MODULE_16__["OperateurEconomique"].getDummy());
+        this.dataSourceOperateursEconomiques.push(_models_operateur_economique_model__WEBPACK_IMPORTED_MODULE_14__["OperateurEconomique"].getDummy());
         this.tableOperateursEconomiques.renderRows();
     }
     openDialogCreateSitewebAppelOffres() {
-        const dialogRef = this.dialog.open(_dialogs_create_siteweb_create_siteweb_component__WEBPACK_IMPORTED_MODULE_15__["CreateSitewebComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_siteweb_create_siteweb_component__WEBPACK_IMPORTED_MODULE_13__["CreateSitewebComponent"], {
             width: '800px',
             data: "nouveauOrganePresse"
         });
@@ -9514,11 +11100,11 @@ let ProjetComponent = class ProjetComponent {
             //this.operations.push(result);
         });
         console.log();
-        this.dataSourceSitewebsAO.push(_models_siteweb_model__WEBPACK_IMPORTED_MODULE_14__["Siteweb"].getDummy());
+        this.dataSourceSitewebsAO.push(_models_siteweb_model__WEBPACK_IMPORTED_MODULE_12__["Siteweb"].getDummy());
         this.tableSitewebsAO.renderRows();
     }
     openDialogCreateSitewebConsultation() {
-        const dialogRef = this.dialog.open(_dialogs_create_siteweb_create_siteweb_component__WEBPACK_IMPORTED_MODULE_15__["CreateSitewebComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_siteweb_create_siteweb_component__WEBPACK_IMPORTED_MODULE_13__["CreateSitewebComponent"], {
             width: '800px',
             data: "nouveauOrganePresse"
         });
@@ -9528,11 +11114,11 @@ let ProjetComponent = class ProjetComponent {
             //this.operations.push(result);
         });
         console.log();
-        this.dataSourceSitewebsC.push(_models_siteweb_model__WEBPACK_IMPORTED_MODULE_14__["Siteweb"].getDummy());
+        this.dataSourceSitewebsC.push(_models_siteweb_model__WEBPACK_IMPORTED_MODULE_12__["Siteweb"].getDummy());
         this.tableSitewebsC.renderRows();
     }
     openDialogCreateProlongation() {
-        const dialogRef = this.dialog.open(_dialogs_create_prolongation_create_prolongation_component__WEBPACK_IMPORTED_MODULE_19__["CreateProlongationComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_prolongation_create_prolongation_component__WEBPACK_IMPORTED_MODULE_17__["CreateProlongationComponent"], {
             width: '800px',
             data: "nouveauOrganePresse"
         });
@@ -9542,7 +11128,7 @@ let ProjetComponent = class ProjetComponent {
             //this.operations.push(result);
         });
         console.log();
-        this.dataSourceProlongations.push(_models_prolongation_model__WEBPACK_IMPORTED_MODULE_18__["Prolongation"].getDummy());
+        this.dataSourceProlongations.push(_models_prolongation_model__WEBPACK_IMPORTED_MODULE_16__["Prolongation"].getDummy());
         this.dureeTotalePreparationDesOffres = this.dureePreparationDesOffres + this.getTotalProlongations();
         this.dureeValiditeOffres = this.dureeTotalePreparationDesOffres + this.dureeValidite3Mois;
         this.deadlineValiditeOffres = new Date();
@@ -9568,7 +11154,7 @@ let ProjetComponent = class ProjetComponent {
         this.tableLitiges.renderRows();
     }
     openDialogCreateRecours() {
-        const dialogRef = this.dialog.open(_dialogs_create_recours_create_recours_component__WEBPACK_IMPORTED_MODULE_6__["CreateRecoursComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_recours_create_recours_component__WEBPACK_IMPORTED_MODULE_5__["CreateRecoursComponent"], {
             width: '800px',
             data: "nouveauLitige"
         });
@@ -9577,12 +11163,12 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.recours.push(_models_recours_model__WEBPACK_IMPORTED_MODULE_7__["Recours"].getDummy());
+        this.recours.push(_models_recours_model__WEBPACK_IMPORTED_MODULE_6__["Recours"].getDummy());
         console.log(this.recours);
         this.tableRecours.renderRows();
     }
     openDialogCreateCandidat() {
-        const dialogRef = this.dialog.open(_dialogs_create_candidat_create_candidat_component__WEBPACK_IMPORTED_MODULE_21__["CreateCandidatComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_candidat_create_candidat_component__WEBPACK_IMPORTED_MODULE_19__["CreateCandidatComponent"], {
             width: '800px',
             data: "nouveauLitige"
         });
@@ -9591,12 +11177,12 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.dataSourceCandidats.push(_models_candidat_model__WEBPACK_IMPORTED_MODULE_22__["Candidat"].getDummy());
+        this.dataSourceCandidats.push(_models_candidat_model__WEBPACK_IMPORTED_MODULE_20__["Candidat"].getDummy());
         //console.log(this.recours);
         this.tableCandidats.renderRows();
     }
     openDialogCreateDemandeEclaircissement() {
-        const dialogRef = this.dialog.open(_dialogs_create_demande_eclaircissement_create_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_24__["CreateDemandeEclaircissementComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_demande_eclaircissement_create_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_22__["CreateDemandeEclaircissementComponent"], {
             width: '800px',
             data: "nouvelleDem.Eclai"
         });
@@ -9605,12 +11191,12 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.dataSourceDemandesEclaircissement.push(_models_demande_eclaircissement_model__WEBPACK_IMPORTED_MODULE_23__["DemandeEclaircissement"].getDummy());
+        this.dataSourceDemandesEclaircissement.push(_models_demande_eclaircissement_model__WEBPACK_IMPORTED_MODULE_21__["DemandeEclaircissement"].getDummy());
         //console.log(this.recours);
         this.tableDemandesEclaircissement.renderRows();
     }
     openDialogCreateReponseDemandeEclaircissement() {
-        const dialogRef = this.dialog.open(_dialogs_create_response_demande_eclaircissement_create_response_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_25__["CreateReponseDemandeEclaircissementComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_response_demande_eclaircissement_create_response_demande_eclaircissement_component__WEBPACK_IMPORTED_MODULE_23__["CreateReponseDemandeEclaircissementComponent"], {
             width: '800px',
             data: "nouvelleDem.Eclai"
         });
@@ -9624,7 +11210,7 @@ let ProjetComponent = class ProjetComponent {
         //this.tableDemandesEclaircissement.renderRows();
     }
     openDialogCreateSoumissionnaire() {
-        const dialogRef = this.dialog.open(_dialogs_create_soumissionnaire_create_soumissionnaire_component__WEBPACK_IMPORTED_MODULE_26__["CreateSoumissionnaireComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_soumissionnaire_create_soumissionnaire_component__WEBPACK_IMPORTED_MODULE_24__["CreateSoumissionnaireComponent"], {
             width: '800px',
             data: "nouveau Soumissionnaire"
         });
@@ -9633,12 +11219,12 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.dataSourceSoumissionnaires.push(_models_soumissionnaire_model__WEBPACK_IMPORTED_MODULE_27__["Soumissionnaire"].getDummy());
+        this.dataSourceSoumissionnaires.push(_models_soumissionnaire_model__WEBPACK_IMPORTED_MODULE_25__["Soumissionnaire"].getDummy());
         //console.log(this.recours);
         this.tableSoumissionnaires.renderRows();
     }
     openDialogSelectPassageCOPEOOuverturePlis() {
-        const dialogRef = this.dialog.open(_dialogs_create_passage_copeo_ouverture_plis_create_passage_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_29__["CreatePassageCopeoOuverturePlisComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_passage_copeo_ouverture_plis_create_passage_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_27__["CreatePassageCopeoOuverturePlisComponent"], {
             width: '800px',
             data: "passage commission ouverture plis"
         });
@@ -9649,7 +11235,7 @@ let ProjetComponent = class ProjetComponent {
         });
     }
     openDialogCreateResultatPassageOuverturePlisCOPEO() {
-        const dialogRef = this.dialog.open(_dialogs_create_resultat_copeo_ouverture_plis_create_resultat_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_30__["CreateResultatCopeoOuverturePlisComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_resultat_copeo_ouverture_plis_create_resultat_copeo_ouverture_plis_component__WEBPACK_IMPORTED_MODULE_28__["CreateResultatCopeoOuverturePlisComponent"], {
             width: '800px',
             data: "resultat commission ouverture plis"
         });
@@ -9662,7 +11248,7 @@ let ProjetComponent = class ProjetComponent {
     openDialogCreateReponseComplementOffre() {
     }
     openDialogCreateDemandeComplement() {
-        const dialogRef = this.dialog.open(_dialogs_create_demande_complement_create_demande_complement_component__WEBPACK_IMPORTED_MODULE_31__["CreateDemandeComplementComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_demande_complement_create_demande_complement_component__WEBPACK_IMPORTED_MODULE_29__["CreateDemandeComplementComponent"], {
             width: '800px',
             data: "resultat commission ouverture plis"
         });
@@ -9671,12 +11257,12 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.dataSourceComplementsOffres.push(_models_complement_offre_model__WEBPACK_IMPORTED_MODULE_28__["ComplementOffre"].getDummy());
+        this.dataSourceComplementsOffres.push(_models_complement_offre_model__WEBPACK_IMPORTED_MODULE_26__["ComplementOffre"].getDummy());
         //console.log(this.recours);
         this.tableComplementsOffres.renderRows();
     }
     openDialogCreateDemandeClarification() {
-        const dialogRef = this.dialog.open(_dialogs_create_demande_clarification_create_demande_clarification_component__WEBPACK_IMPORTED_MODULE_33__["CreateDemandeClarificationComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_demande_clarification_create_demande_clarification_component__WEBPACK_IMPORTED_MODULE_31__["CreateDemandeClarificationComponent"], {
             width: '800px',
             data: "resultat commission ouverture plis"
         });
@@ -9685,12 +11271,12 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.dataSourceClarificationsOffres.push(_models_complement_offre_model__WEBPACK_IMPORTED_MODULE_28__["ComplementOffre"].getDummy());
+        this.dataSourceClarificationsOffres.push(_models_complement_offre_model__WEBPACK_IMPORTED_MODULE_26__["ComplementOffre"].getDummy());
         //console.log(this.recours);
         this.tableClarificationsOffres.renderRows();
     }
     openDialogCreatePassageComiteTechnique() {
-        const dialogRef = this.dialog.open(_dialogs_create_passage_comite_technique_create_passage_comite_technique_component__WEBPACK_IMPORTED_MODULE_35__["CreatePassageComiteTechniqueComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_passage_comite_technique_create_passage_comite_technique_component__WEBPACK_IMPORTED_MODULE_33__["CreatePassageComiteTechniqueComponent"], {
             width: '800px',
             data: "ajouter passage CT"
         });
@@ -9699,12 +11285,12 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.dataSourcePassagesComitesTechniques.push(_models_passage_comite_technique_model__WEBPACK_IMPORTED_MODULE_34__["PassageComiteTechnique"].getDummy());
+        this.dataSourcePassagesComitesTechniques.push(_models_passage_comite_technique_model__WEBPACK_IMPORTED_MODULE_32__["PassageComiteTechnique"].getDummy());
         //console.log(this.recours);
         this.tablePassagesComitesTechniques.renderRows();
     }
     openDialogSelectPassageCOPEOEvaluationOffres() {
-        const dialogRef = this.dialog.open(_dialogs_create_passage_copeo_evaluation_offres_create_passage_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_32__["CreatePassageCopeoEvaluationOffresComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_passage_copeo_evaluation_offres_create_passage_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_30__["CreatePassageCopeoEvaluationOffresComponent"], {
             width: '800px',
             data: "passage commission ouverture plis"
         });
@@ -9715,7 +11301,7 @@ let ProjetComponent = class ProjetComponent {
         });
     }
     openDialogCreateResultatCOPEOEvalutionOffres() {
-        const dialogRef = this.dialog.open(_dialogs_create_resultat_copeo_evaluation_offres_create_resultat_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_36__["CreateResultatCopeoEvaluationOffresComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_resultat_copeo_evaluation_offres_create_resultat_copeo_evaluation_offres_component__WEBPACK_IMPORTED_MODULE_34__["CreateResultatCopeoEvaluationOffresComponent"], {
             width: '800px',
             data: "passage commission ouverture plis"
         });
@@ -9726,7 +11312,7 @@ let ProjetComponent = class ProjetComponent {
         });
     }
     openDialogCreateDemandeRallongeFinanciere() {
-        const dialogRef = this.dialog.open(_dialogs_create_demande_rallonge_financiere_create_demande_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_38__["CreateDemandeRallongeFinanciereComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_demande_rallonge_financiere_create_demande_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_36__["CreateDemandeRallongeFinanciereComponent"], {
             width: '800px',
             data: "passage commission ouverture plis"
         });
@@ -9735,12 +11321,12 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.dataSourceRallongesFinancieres.push(_models_rallonge_financiere_model__WEBPACK_IMPORTED_MODULE_37__["RallongeFinanciere"].getDummy());
+        this.dataSourceRallongesFinancieres.push(_models_rallonge_financiere_model__WEBPACK_IMPORTED_MODULE_35__["RallongeFinanciere"].getDummy());
         //console.log(this.recours);
         this.tableRallongesFinancieres.renderRows();
     }
     openDialogCreateDemandeRallongeFinanciereExecution() {
-        const dialogRef = this.dialog.open(_dialogs_create_demande_rallonge_financiere_create_demande_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_38__["CreateDemandeRallongeFinanciereComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_demande_rallonge_financiere_create_demande_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_36__["CreateDemandeRallongeFinanciereComponent"], {
             width: '800px',
             data: "passage commission ouverture plis"
         });
@@ -9749,12 +11335,12 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.dataSourceRallongesFinancieresExecution.push(_models_rallonge_financiere_model__WEBPACK_IMPORTED_MODULE_37__["RallongeFinanciere"].getDummy());
+        this.dataSourceRallongesFinancieresExecution.push(_models_rallonge_financiere_model__WEBPACK_IMPORTED_MODULE_35__["RallongeFinanciere"].getDummy());
         //console.log(this.recours);
         this.tableRallongesFinancieresExecution.renderRows();
     }
     openDialogCreateReponseRallongeFinanciere() {
-        const dialogRef = this.dialog.open(_dialogs_create_reponse_rallonge_financiere_create_reponse_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_39__["CreateReponseRallongeFinanciereComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_reponse_rallonge_financiere_create_reponse_rallonge_financiere_component__WEBPACK_IMPORTED_MODULE_37__["CreateReponseRallongeFinanciereComponent"], {
             width: '800px',
             data: "reponse rallonge financiere"
         });
@@ -9765,7 +11351,7 @@ let ProjetComponent = class ProjetComponent {
         });
     }
     openDialogCreateDeclarationAttribution() {
-        const dialogRef = this.dialog.open(_dialogs_create_declaration_attribution_provisoire_create_declaration_attribution_provisoire_component__WEBPACK_IMPORTED_MODULE_41__["CreateDeclarationAttributionProvisoireComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_declaration_attribution_provisoire_create_declaration_attribution_provisoire_component__WEBPACK_IMPORTED_MODULE_39__["CreateDeclarationAttributionProvisoireComponent"], {
             width: '800px',
             data: "declaration attribution provisoire"
         });
@@ -9774,10 +11360,10 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.attributionsProvisoires.push(_models_declaration_attribution_model__WEBPACK_IMPORTED_MODULE_40__["DeclarationAttribution"].getDummy());
+        this.attributionsProvisoires.push(_models_declaration_attribution_model__WEBPACK_IMPORTED_MODULE_38__["DeclarationAttribution"].getDummy());
     }
     openDialogCreateMiseAuPoint() {
-        const dialogRef = this.dialog.open(_dialogs_create_mise_au_point_create_mise_au_point_component__WEBPACK_IMPORTED_MODULE_45__["CreateMiseAuPointComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_mise_au_point_create_mise_au_point_component__WEBPACK_IMPORTED_MODULE_43__["CreateMiseAuPointComponent"], {
             width: '800px',
             data: "ajouter une mise ua point"
         });
@@ -9786,7 +11372,7 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.dataSourceMisesAuPoint.push(_models_mise_au_point_model__WEBPACK_IMPORTED_MODULE_44__["MiseAuPoint"].getDummy());
+        this.dataSourceMisesAuPoint.push(_models_mise_au_point_model__WEBPACK_IMPORTED_MODULE_42__["MiseAuPoint"].getDummy());
         this.tableMisesAuPoint.renderRows();
     }
     openDialogCreateAnnulerAttribution() {
@@ -9802,13 +11388,13 @@ let ProjetComponent = class ProjetComponent {
           //this.operations.push(result);
         })
         */
-        this.annulationsAttributionsProvisoires = _models_annulation_attribution_model__WEBPACK_IMPORTED_MODULE_42__["AnnulationAttribution"].getDummy();
+        this.annulationsAttributionsProvisoires = _models_annulation_attribution_model__WEBPACK_IMPORTED_MODULE_40__["AnnulationAttribution"].getDummy();
     }
     openDialogCreateDesistementAttribution() {
-        this.desistementsAttributionsProvisoires = _models_desistement_attribution_model__WEBPACK_IMPORTED_MODULE_43__["DesistementAttribution"].getDummy();
+        this.desistementsAttributionsProvisoires = _models_desistement_attribution_model__WEBPACK_IMPORTED_MODULE_41__["DesistementAttribution"].getDummy();
     }
     openDialogCreateODS() {
-        const dialogRef = this.dialog.open(_dialogs_create_ods_create_ods_component__WEBPACK_IMPORTED_MODULE_47__["CreateODSComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_ods_create_ods_component__WEBPACK_IMPORTED_MODULE_45__["CreateODSComponent"], {
             width: '800px',
             data: "ajouter ODS"
         });
@@ -9817,11 +11403,11 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.dataSourceODS.push(_models_ods_model__WEBPACK_IMPORTED_MODULE_46__["ODS"].getDummy());
+        this.dataSourceODS.push(_models_ods_model__WEBPACK_IMPORTED_MODULE_44__["ODS"].getDummy());
         this.tableODS.renderRows();
     }
     openDialogCreateSousTraitant() {
-        const dialogRef = this.dialog.open(_dialogs_create_sous_traitant_create_sous_traitant_component__WEBPACK_IMPORTED_MODULE_49__["CreateSousTraitantComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_sous_traitant_create_sous_traitant_component__WEBPACK_IMPORTED_MODULE_47__["CreateSousTraitantComponent"], {
             width: '800px',
             data: "ajouter ODS"
         });
@@ -9830,11 +11416,11 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.dataSourceSousTraitants.push(_models_sous_traitant_model__WEBPACK_IMPORTED_MODULE_48__["SousTraitant"].getDummy());
+        this.dataSourceSousTraitants.push(_models_sous_traitant_model__WEBPACK_IMPORTED_MODULE_46__["SousTraitant"].getDummy());
         this.tableSousTraitants.renderRows();
     }
     openDialogCreateMiseEnDemeure() {
-        const dialogRef = this.dialog.open(_dialogs_create_mise_en_demeure_create_mise_en_demeure_component__WEBPACK_IMPORTED_MODULE_54__["CreateMiseEnDemeureComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_mise_en_demeure_create_mise_en_demeure_component__WEBPACK_IMPORTED_MODULE_52__["CreateMiseEnDemeureComponent"], {
             width: '800px',
             data: "ajouter ODS"
         });
@@ -9843,11 +11429,11 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.dataSourceMisesEnDemeure.push(_models_mise_en_demeure_model__WEBPACK_IMPORTED_MODULE_53__["MiseEnDemeure"].getDummy());
+        this.dataSourceMisesEnDemeure.push(_models_mise_en_demeure_model__WEBPACK_IMPORTED_MODULE_51__["MiseEnDemeure"].getDummy());
         this.tableMisesEnDemeure.renderRows();
     }
     openDialogCreateCloture() {
-        const dialogRef = this.dialog.open(_dialogs_create_cloture_create_cloture_component__WEBPACK_IMPORTED_MODULE_55__["CreateClotureComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_cloture_create_cloture_component__WEBPACK_IMPORTED_MODULE_53__["CreateClotureComponent"], {
             width: '800px',
             data: "cloture"
         });
@@ -9858,7 +11444,7 @@ let ProjetComponent = class ProjetComponent {
         });
     }
     openDialogCreateReception() {
-        const dialogRef = this.dialog.open(_dialogs_create_reception_create_reception_component__WEBPACK_IMPORTED_MODULE_56__["CreateReceptionComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_reception_create_reception_component__WEBPACK_IMPORTED_MODULE_54__["CreateReceptionComponent"], {
             width: '800px',
             data: "reception"
         });
@@ -9869,7 +11455,7 @@ let ProjetComponent = class ProjetComponent {
         });
     }
     openDialogCreateFacture() {
-        const dialogRef = this.dialog.open(_dialogs_create_facture_create_facture_component__WEBPACK_IMPORTED_MODULE_51__["CreateFactureComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_facture_create_facture_component__WEBPACK_IMPORTED_MODULE_49__["CreateFactureComponent"], {
             width: '800px',
             data: "ajouter ODS"
         });
@@ -9878,11 +11464,11 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.dataSourceFactures.push(_models_facture_model__WEBPACK_IMPORTED_MODULE_50__["Facture"].getDummy());
+        this.dataSourceFactures.push(_models_facture_model__WEBPACK_IMPORTED_MODULE_48__["Facture"].getDummy());
         this.tableFactures.renderRows();
     }
     openDialogCreateResiliation() {
-        const dialogRef = this.dialog.open(_dialogs_create_resiliation_create_resiliation_component__WEBPACK_IMPORTED_MODULE_52__["CreateResiliationComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_resiliation_create_resiliation_component__WEBPACK_IMPORTED_MODULE_50__["CreateResiliationComponent"], {
             width: '800px',
             data: "Resilitaion"
         });
@@ -9893,7 +11479,7 @@ let ProjetComponent = class ProjetComponent {
         });
     }
     openDialogCreateAvenant() {
-        const dialogRef = this.dialog.open(_dialogs_create_avenant_create_avenant_component__WEBPACK_IMPORTED_MODULE_58__["CreateAvenantComponent"], {
+        const dialogRef = this.dialog.open(_dialogs_create_avenant_create_avenant_component__WEBPACK_IMPORTED_MODULE_56__["CreateAvenantComponent"], {
             width: '800px',
             data: "ajouter Avenant"
         });
@@ -9902,12 +11488,15 @@ let ProjetComponent = class ProjetComponent {
             console.log(result);
             //this.operations.push(result);
         });
-        this.dataSourceAvenants.push(_models_avenant_model__WEBPACK_IMPORTED_MODULE_57__["Avenant"].getDummy());
+        this.dataSourceAvenants.push(_models_avenant_model__WEBPACK_IMPORTED_MODULE_55__["Avenant"].getDummy());
         this.tableAvenants.renderRows();
     }
 };
 ProjetComponent.ctorParameters = () => [
-    { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] }
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_57__["ActivatedRoute"] },
+    { type: _domaine_business_logic_projets_service__WEBPACK_IMPORTED_MODULE_58__["ProjetService"] },
+    { type: _domaine_business_logic_sous_projets_service__WEBPACK_IMPORTED_MODULE_59__["SousProjetService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("tableLitiges", { static: true })
@@ -10021,10 +11610,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_enums_mode_passation_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/enums/mode.passation.enum */ "./src/app/enums/mode.passation.enum.ts");
 /* harmony import */ var src_app_enums_type_procedure_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/enums/type.procedure.enum */ "./src/app/enums/type.procedure.enum.ts");
 /* harmony import */ var src_app_enums_forme_marche_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/enums/forme.marche.enum */ "./src/app/enums/forme.marche.enum.ts");
-/* harmony import */ var src_app_enums_caractere_enum__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/enums/caractere.enum */ "./src/app/enums/caractere.enum.ts");
-/* harmony import */ var src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/enums/nature.prestation.enum */ "./src/app/enums/nature.prestation.enum.ts");
-/* harmony import */ var src_app_enums_source_financement_enum__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/enums/source.financement.enum */ "./src/app/enums/source.financement.enum.ts");
-/* harmony import */ var src_app_models_repertoire_filter_model__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/models/repertoire/filter.model */ "./src/app/models/repertoire/filter.model.ts");
+/* harmony import */ var src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/enums/nature.prestation.enum */ "./src/app/enums/nature.prestation.enum.ts");
+/* harmony import */ var src_app_enums_source_financement_enum__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/enums/source.financement.enum */ "./src/app/enums/source.financement.enum.ts");
+/* harmony import */ var src_app_models_repertoire_filter_model__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/models/repertoire/filter.model */ "./src/app/models/repertoire/filter.model.ts");
+/* harmony import */ var src_app_enums_caractere_marche_enum__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/enums/caractere.marche.enum */ "./src/app/enums/caractere.marche.enum.ts");
 
 
 
@@ -10043,11 +11632,11 @@ let ProjetsFiltreComponent = class ProjetsFiltreComponent {
         //FormesMarches
         this.formesMarche = Object.keys(src_app_enums_forme_marche_enum__WEBPACK_IMPORTED_MODULE_4__["FormeMarche"]).slice(0);
         //caracteresMarches
-        this.caracteresMarche = Object.keys(src_app_enums_caractere_enum__WEBPACK_IMPORTED_MODULE_5__["Caractere"]).slice(0);
+        this.caracteresMarche = Object.keys(src_app_enums_caractere_marche_enum__WEBPACK_IMPORTED_MODULE_8__["CaractereMarche"]).slice(0);
         //NaturePrestation
-        this.naturePrestation = Object.keys(src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_6__["NaturePrestation"]).slice(0);
+        this.naturePrestation = Object.keys(src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_5__["NaturePrestation"]).slice(0);
         //SourceFinancement
-        this.sourceFinancement = Object.keys(src_app_enums_source_financement_enum__WEBPACK_IMPORTED_MODULE_7__["SourceFinancement"]).slice(0);
+        this.sourceFinancement = Object.keys(src_app_enums_source_financement_enum__WEBPACK_IMPORTED_MODULE_6__["SourceFinancement"]).slice(0);
         this.filterApplied = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     parseValueModePassation(value) {
@@ -10060,18 +11649,18 @@ let ProjetsFiltreComponent = class ProjetsFiltreComponent {
         return src_app_enums_forme_marche_enum__WEBPACK_IMPORTED_MODULE_4__["FormeMarche"][value].toString();
     }
     parseValueCaractereMarche(value) {
-        return src_app_enums_caractere_enum__WEBPACK_IMPORTED_MODULE_5__["Caractere"][value].toString();
+        return src_app_enums_caractere_marche_enum__WEBPACK_IMPORTED_MODULE_8__["CaractereMarche"][value].toString();
     }
     parseValueNaturePrestation(value) {
-        return src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_6__["NaturePrestation"][value].toString();
+        return src_app_enums_nature_prestation_enum__WEBPACK_IMPORTED_MODULE_5__["NaturePrestation"][value].toString();
     }
     parseValueSourceFinancement(value) {
-        return src_app_enums_source_financement_enum__WEBPACK_IMPORTED_MODULE_7__["SourceFinancement"][value].toString();
+        return src_app_enums_source_financement_enum__WEBPACK_IMPORTED_MODULE_6__["SourceFinancement"][value].toString();
     }
     ngOnInit() {
     }
     applyFilter() {
-        this.filterApplied.emit(src_app_models_repertoire_filter_model__WEBPACK_IMPORTED_MODULE_8__["Filter"].getDummy());
+        this.filterApplied.emit(src_app_models_repertoire_filter_model__WEBPACK_IMPORTED_MODULE_7__["Filter"].getDummy());
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -10263,6 +11852,194 @@ ProjetsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     })
 ], ProjetsComponent);
 
+
+
+/***/ }),
+
+/***/ "./src/app/requests/commission-competente-post.request.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/requests/commission-competente-post.request.ts ***!
+  \****************************************************************/
+/*! exports provided: CommissionCompetentePostRequest */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommissionCompetentePostRequest", function() { return CommissionCompetentePostRequest; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class CommissionCompetentePostRequest {
+    constructor(numero, designation, typeCommission, membresCommissionCompetente, pathJustificatifDecision) {
+        this.numero = numero;
+        this.designation = designation;
+        this.typeCommission = typeCommission;
+        this.membresCommissionCompetente = membresCommissionCompetente;
+        this.pathJustificatifDecision = pathJustificatifDecision;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/requests/commission-competente-put.request.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/requests/commission-competente-put.request.ts ***!
+  \***************************************************************/
+/*! exports provided: CommissionCompetentePutRequest */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommissionCompetentePutRequest", function() { return CommissionCompetentePutRequest; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class CommissionCompetentePutRequest {
+    constructor(numero, designation, typeCommission, membresCommissionCompetente, pathJustificatifDecision) {
+        this.numero = numero;
+        this.designation = designation;
+        this.typeCommission = typeCommission;
+        this.membresCommissionCompetente = membresCommissionCompetente;
+        this.pathJustificatifDecision = pathJustificatifDecision;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/requests/elaboration-cdc-post.request.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/requests/elaboration-cdc-post.request.ts ***!
+  \**********************************************************/
+/*! exports provided: ElaborationCDCPostRequest */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ElaborationCDCPostRequest", function() { return ElaborationCDCPostRequest; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class ElaborationCDCPostRequest {
+    constructor(typeProcedure, modePassation, formeMarche, caractereMarche) {
+        this.typeProcedure = typeProcedure;
+        this.modePassation = modePassation;
+        this.formeMarche = formeMarche;
+        this.caractereMarche = caractereMarche;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/requests/elaboration-cdc-put.request.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/requests/elaboration-cdc-put.request.ts ***!
+  \*********************************************************/
+/*! exports provided: ElaborationCDCPutRequest */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ElaborationCDCPutRequest", function() { return ElaborationCDCPutRequest; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class ElaborationCDCPutRequest {
+    constructor(typeProcedure, modePassation, formeMarche, caractereMarche) {
+        this.typeProcedure = typeProcedure;
+        this.modePassation = modePassation;
+        this.formeMarche = formeMarche;
+        this.caractereMarche = caractereMarche;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/requests/modification-commission-competente-post.request.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/requests/modification-commission-competente-post.request.ts ***!
+  \*****************************************************************************/
+/*! exports provided: ModificationCommissionCompetentePostRequest */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModificationCommissionCompetentePostRequest", function() { return ModificationCommissionCompetentePostRequest; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class ModificationCommissionCompetentePostRequest {
+    constructor(numModification, numDecision, membresCommissionCompetente, pathJustificatifDecision) {
+        this.numModification = numModification;
+        this.numDecision = numDecision;
+        this.membresCommissionCompetente = membresCommissionCompetente;
+        this.pathJustificatifDecision = pathJustificatifDecision;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/requests/modification-commission-competente-put.request.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/requests/modification-commission-competente-put.request.ts ***!
+  \****************************************************************************/
+/*! exports provided: ModificationCommissionCompetentePutRequest */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModificationCommissionCompetentePutRequest", function() { return ModificationCommissionCompetentePutRequest; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class ModificationCommissionCompetentePutRequest {
+    constructor(numModification, numDecision, membresCommissionCompetente, pathJustificatifDecision) {
+        this.numModification = numModification;
+        this.numDecision = numDecision;
+        this.membresCommissionCompetente = membresCommissionCompetente;
+        this.pathJustificatifDecision = pathJustificatifDecision;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/requests/projet-cdc-post.request.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/requests/projet-cdc-post.request.ts ***!
+  \*****************************************************/
+/*! exports provided: ProjetCDCPostRequest */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjetCDCPostRequest", function() { return ProjetCDCPostRequest; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class ProjetCDCPostRequest {
+    constructor(pathProjetCDC) {
+        this.pathProjetCDC = pathProjetCDC;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/requests/projet-cdc-put.request.ts":
+/*!****************************************************!*\
+  !*** ./src/app/requests/projet-cdc-put.request.ts ***!
+  \****************************************************/
+/*! exports provided: ProjetCDCPutRequest */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjetCDCPutRequest", function() { return ProjetCDCPutRequest; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class ProjetCDCPutRequest {
+    constructor(pathProjetCDC) {
+        this.pathProjetCDC = pathProjetCDC;
+    }
+}
 
 
 /***/ }),
@@ -10498,7 +12275,7 @@ ServicesContractantsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".host {\r\n  \r\n}\r\n\r\n.mat-icon {\r\n  vertical-align: middle;\r\n  margin-right: 20px;\r\n}\r\n\r\n.profile-card {\r\n  text-align: center;\r\n  padding: 0 20px 20px 20px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2lkZWJhci9zaWRlYmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0FBRUE7O0FBRUE7RUFDRSxzQkFBc0I7RUFDdEIsa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtBQUMzQiIsImZpbGUiOiJzcmMvYXBwL3NpZGViYXIvc2lkZWJhci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhvc3Qge1xyXG4gIFxyXG59XHJcblxyXG4ubWF0LWljb24ge1xyXG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbiAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG59XHJcblxyXG4ucHJvZmlsZS1jYXJkIHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgcGFkZGluZzogMCAyMHB4IDIwcHggMjBweDtcclxufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".host {\r\n  \r\n}\r\n\r\n.mat-icon {\r\n  vertical-align: middle;\r\n  margin-right: 20px;\r\n}\r\n\r\n.profile-card {\r\n  text-align: center;\r\n  padding: 10px 10px 10px 10px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2lkZWJhci9zaWRlYmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0FBRUE7O0FBRUE7RUFDRSxzQkFBc0I7RUFDdEIsa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLDRCQUE0QjtBQUM5QiIsImZpbGUiOiJzcmMvYXBwL3NpZGViYXIvc2lkZWJhci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhvc3Qge1xyXG4gIFxyXG59XHJcblxyXG4ubWF0LWljb24ge1xyXG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbiAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG59XHJcblxyXG4ucHJvZmlsZS1jYXJkIHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgcGFkZGluZzogMTBweCAxMHB4IDEwcHggMTBweDtcclxufSJdfQ== */");
 
 /***/ }),
 
